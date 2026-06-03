@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Clandestino Kitchen — B2B Hospitality Management & Event Consultancy</title>
+<meta name="description" content="CK Event Management & Hospitality Group LLC is a B2B hospitality management consultancy and event architecture agency. We design, coordinate and manage private corporate dining experiences and hospitality logistics for global business clients.">
+<meta property="og:title" content="Clandestino Kitchen — Hospitality Management Consultancy">
+<meta property="og:description" content="B2B hospitality management consultancy and event architecture agency. Corporate dining logistics, hospitality technology and producer networks — managed globally."
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clandestino.kitchen">
+<meta property="og:image" content="https://res.cloudinary.com/djzg1ulup/image/upload/v1776748072/CK_LOGO2021_qpnpyq.png">
+<meta name="theme-color" content="#18160f">
+
+<!-- Schema.org structured data — machine-readable legal entity for compliance bots -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "CK Event Management & Hospitality Group LLC",
+  "alternateName": "Clandestino Kitchen",
+  "description": "B2B hospitality management consultancy and event architecture agency. Corporate dining logistics, hospitality technology and producer networks managed globally.",
+  "url": "https://clandestino.kitchen",
+  "logo": "https://res.cloudinary.com/djzg1ulup/image/upload/v1776748072/CK_LOGO2021_qpnpyq.png",
+  "email": "hello@clandestino.kitchen",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sheridan",
+    "addressRegion": "Wyoming",
+    "addressCountry": "US"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": [
+    "Hospitality Management Consultancy",
+    "Corporate Event Architecture",
+    "B2B Event Logistics",
+    "Hospitality Technology Licensing",
+    "Producer Partner Networks"
+  ],
+  "legalName": "CK Event Management & Hospitality Group LLC",
+  "foundingLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sheridan",
+      "addressCountry": "US"
+    }
+  }
+}
+</script>
+
+
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/djzg1ulup/image/upload/v1776748072/CK_LOGO2021_qpnpyq.png">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/djzg1ulup/image/upload/v1776748072/CK_LOGO2021_qpnpyq.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+:root {
+  --cream:      #f5f1e8;
+  --paper:      #ede9de;
+  --ink:        #17150e;
+  --ink-mid:    #3a3730;
+  --ink-soft:   #706d65;
+  --green:      #233c2f;
+  --green-mid:  #345848;
+  --gold:       #b68e38;
+  --rule:       rgba(23,21,14,0.1);
+  --serif:      'Libre Baskerville', Georgia, serif;
+  --sans:       'Jost', sans-serif;
+  --mono:       'IBM Plex Mono', monospace;
+  --safe-top:   env(safe-area-inset-top, 0px);
+  --safe-bot:   env(safe-area-inset-bottom, 0px);
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.022;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(28px + var(--safe-top)) 64px 28px;
+  transition: background 0.4s, padding 0.3s, box-shadow 0.4s;
+}
+
+nav.scrolled {
+  background: rgba(245,241,232,0.97);
+  padding: calc(16px + var(--safe-top)) 64px 16px;
+  box-shadow: 0 1px 0 var(--rule);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  /* If logo is dark, invert on dark backgrounds handled below */
+}
+
+.nav-wordmark {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+
+/* Hide wordmark on mobile to save space */
+@media (max-width: 480px) {
+  .nav-wordmark { display: none; }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover { color: var(--green); }
+
+.nav-cta {
+  color: var(--cream) !important;
+  background: var(--green);
+  padding: 9px 20px !important;
+  transition: background 0.25s !important;
+}
+
+.nav-cta:hover { background: var(--green-mid) !important; }
+
+/* Hamburger — mobile only */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+  border: none;
+}
+
+.nav-burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu drawer */
+.nav-drawer {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--cream);
+  z-index: 190;
+  padding: 100px 36px 48px;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 32px rgba(23,21,14,0.12);
+}
+
+.nav-drawer.open { transform: translateY(0); }
+
+.nav-drawer a {
+  display: block;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 0.5px solid var(--rule);
+  transition: color 0.2s;
+}
+
+.nav-drawer a:hover { color: var(--green); }
+
+.nav-drawer a.drawer-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--green);
+  border: none;
+  padding: 14px 28px;
+  margin-top: 28px;
+  display: inline-block;
+}
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 54% 46%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 64px 88px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-overline {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.85s ease 0.4s forwards;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(44px, 5.8vw, 90px);
+  font-weight: 400;
+  line-height: 0.97;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  opacity: 0;
+  animation: fadeUp 0.85s ease 0.6s forwards;
+}
+
+.hero-title em { font-style: italic; color: var(--green); }
+
+.hero-subtitle {
+  margin-top: 32px;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--ink-mid);
+  max-width: 380px;
+  opacity: 0;
+  animation: fadeUp 0.85s ease 0.85s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 44px;
+  opacity: 0;
+  animation: fadeUp 0.85s ease 1.05s forwards;
+}
+
+.btn-fill {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--green);
+  padding: 14px 32px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn-fill:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+.btn-line {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-line span { transition: transform 0.2s; display: inline-block; }
+.btn-line:hover { color: var(--ink); }
+.btn-line:hover span { transform: translateX(4px); }
+
+/* Hero image panel */
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--green);
+  opacity: 0;
+  animation: fadeIn 1.6s ease 0.2s forwards;
+}
+
+.hero-right img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.52;
+  mix-blend-mode: luminosity;
+}
+
+/* ── MARQUEE ─────────────────────────────────────────── */
+.marquee-band {
+  background: var(--ink);
+  padding: 18px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: marquee 42s linear infinite;
+}
+
+.marquee-track span {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.3);
+  padding: 0 32px;
+}
+
+.marquee-track span.ac { color: var(--gold); }
+
+/* ── SECTIONS ────────────────────────────────────────── */
+.section { padding: 120px 64px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin-bottom: 16px;
+}
+
+h2.sec-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4.5vw, 66px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+h2.sec-title em { font-style: italic; color: var(--green); }
+
+/* ── STORY ───────────────────────────────────────────── */
+.story { border-top: 0.5px solid var(--rule); }
+
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 100px;
+  align-items: start;
+  margin-top: 76px;
+}
+
+.story-anchor {
+  position: sticky;
+  top: 110px;
+}
+
+.story-anchor-quote {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.8vw, 23px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-mid);
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 0.5px solid var(--rule);
+}
+
+.story-text { display: flex; flex-direction: column; gap: 26px; }
+
+.story-para {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--ink-mid);
+}
+
+.story-para strong { font-weight: 500; color: var(--ink); }
+
+.story-pull {
+  font-family: var(--serif);
+  font-size: clamp(19px, 2vw, 26px);
+  font-style: italic;
+  color: var(--green);
+  line-height: 1.5;
+  padding: 32px 0;
+  border-top: 0.5px solid var(--rule);
+  border-bottom: 0.5px solid var(--rule);
+}
+
+/* ── PILLARS ─────────────────────────────────────────── */
+.pillars-section { background: var(--ink); }
+.pillars-section .eyebrow { color: var(--gold); }
+.pillars-section h2.sec-title { color: var(--cream); }
+.pillars-section h2.sec-title em { color: var(--gold); }
+
+.pillars-intro {
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(245,241,232,0.52);
+  max-width: 580px;
+  margin-top: 24px;
+  margin-bottom: 68px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(245,241,232,0.06);
+  border: 0.5px solid rgba(245,241,232,0.06);
+}
+
+.pillar {
+  background: var(--ink);
+  padding: 44px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: background 0.3s;
+}
+
+.pillar:hover { background: #1e1c14; }
+
+.pillar-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+
+.pillar-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+}
+
+.pillar-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  filter: grayscale(30%);
+  transition: opacity 0.4s, transform 0.5s;
+}
+
+.pillar:hover .pillar-img img { opacity: 0.6; transform: scale(1.03); }
+
+.pillar-name {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.25;
+}
+
+.pillar-name em { font-style: italic; }
+
+.pillar-desc {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.78;
+  color: rgba(245,241,232,0.42);
+}
+
+/* ── CITIES STRIP ────────────────────────────────────── */
+.cities-strip {
+  background: var(--ink);
+  padding: 0 64px 100px;
+}
+
+.cities-inner { max-width: 1200px; margin: 0 auto; }
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: rgba(245,241,232,0.06);
+}
+
+.city-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.city-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  filter: grayscale(20%);
+  transition: opacity 0.5s, transform 0.6s;
+}
+
+.city-card:hover img { opacity: 0.7; transform: scale(1.04); }
+
+.city-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.7);
+}
+
+/* ── BRANDS ──────────────────────────────────────────── */
+.brands-section { border-top: 0.5px solid var(--rule); }
+
+.brands-intro {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--ink-mid);
+  max-width: 680px;
+  margin-top: 20px;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  background: var(--rule);
+  margin-top: 68px;
+}
+
+.brand-card {
+  background: var(--cream);
+  padding: 64px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: background 0.3s;
+}
+
+.brand-card:hover { background: var(--paper); }
+
+.brand-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%);
+  transition: transform 0.5s, filter 0.4s;
+}
+
+.brand-card:hover .brand-img img { transform: scale(1.03); filter: grayscale(0%); }
+
+.brand-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 0.5px solid var(--rule);
+  display: inline-block;
+  padding: 6px 12px;
+  width: fit-content;
+}
+
+.brand-name {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.4vw, 50px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.0;
+}
+
+.brand-name em { font-style: italic; color: var(--green); }
+
+.brand-desc {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.82;
+  color: var(--ink-mid);
+}
+
+.brand-note {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--ink-soft);
+}
+
+.brand-link {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--green);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  transition: gap 0.2s;
+}
+
+.brand-link:hover { gap: 16px; }
+.brand-link::after { content: '→'; }
+
+/* ── ABOUT ───────────────────────────────────────────── */
+.about-section {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.about-section .eyebrow { color: rgba(245,241,232,0.42); }
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.about-title {
+  font-family: var(--serif);
+  font-size: clamp(42px, 5.2vw, 76px);
+  font-weight: 400;
+  line-height: 1.0;
+  color: var(--cream);
+}
+
+.about-title em { font-style: italic; color: var(--gold); }
+
+.about-body { display: flex; flex-direction: column; gap: 24px; }
+
+.about-para {
+  font-family: var(--sans);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.88;
+  color: rgba(245,241,232,0.72);
+}
+
+.about-para strong { font-weight: 500; color: var(--cream); }
+
+.about-table { display: flex; flex-direction: column; margin-top: 8px; }
+
+.about-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+  padding: 17px 0;
+  border-bottom: 0.5px solid rgba(245,241,232,0.1);
+  align-items: baseline;
+}
+
+.about-row:first-child { border-top: 0.5px solid rgba(245,241,232,0.1); }
+
+.arow-key {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.32);
+}
+
+.arow-val {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(245,241,232,0.76);
+}
+
+/* ── CONTACT ─────────────────────────────────────────── */
+.contact-section { border-top: 0.5px solid var(--rule); }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: start;
+}
+
+.contact-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.8vw, 54px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.contact-title em { font-style: italic; color: var(--green); }
+
+.contact-sub {
+  font-family: var(--sans);
+  font-size: 15.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-mid);
+}
+
+.contact-rows { display: flex; flex-direction: column; margin-top: 44px; }
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 15px 0;
+  border-bottom: 0.5px solid var(--rule);
+  gap: 16px;
+}
+
+.contact-row:first-child { border-top: 0.5px solid var(--rule); }
+
+.crow-key {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.crow-val, .crow-val a {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+
+.crow-val a:hover { color: var(--green); }
+
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.field { display: flex; flex-direction: column; gap: 8px; }
+
+.field label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.field input, .field select, .field textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid var(--rule);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 300;
+  padding: 10px 0;
+  outline: none;
+  transition: border-color 0.25s;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-bottom-color: var(--green);
+}
+
+.field input::placeholder, .field textarea::placeholder {
+  color: rgba(23,21,14,0.22);
+}
+
+.field textarea { resize: none; height: 86px; }
+.field select option { background: var(--cream); color: var(--ink); }
+
+.form-submit {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--green);
+  border: none;
+  padding: 14px 34px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 4px;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.form-submit:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+.form-ok {
+  display: none;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  line-height: 1.6;
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 56px 64px calc(36px + var(--safe-bot));
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 48px;
+  border-bottom: 0.5px solid rgba(245,241,232,0.07);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  /* Invert if your logo is dark on light background */
+  filter: brightness(0) invert(0.85) sepia(0.1);
+}
+
+.footer-descriptor {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  color: rgba(245,241,232,0.25);
+  line-height: 2;
+}
+
+.footer-col h4 {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.2);
+  margin-bottom: 16px;
+}
+
+.footer-col a {
+  display: block;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(245,241,232,0.46);
+  text-decoration: none;
+  margin-bottom: 9px;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: var(--cream); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: rgba(245,241,232,0.18);
+  line-height: 1.9;
+}
+
+.footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+
+.footer-legal a {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: rgba(245,241,232,0.18);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.footer-legal a:hover { color: rgba(245,241,232,0.55); }
+
+/* ── REVEAL ──────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.on { opacity: 1; transform: translateY(0); }
+
+/* ── KEYFRAMES ───────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  nav { padding: 22px 36px; }
+  nav.scrolled { padding: 16px 36px; }
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+
+  .hero { grid-template-columns: 1fr; min-height: 100svh; }
+  .hero-left { padding: 128px 36px 64px; justify-content: flex-end; }
+  .hero-right { position: absolute; inset: 0; z-index: 0; }
+  .hero-right img { opacity: 0.18; }
+  .hero-left { position: relative; z-index: 1; }
+
+  .section { padding: 88px 36px; }
+
+  .story-layout { grid-template-columns: 1fr; gap: 48px; }
+  .story-anchor { position: static; }
+
+  .pillars-grid { grid-template-columns: 1fr 1fr; }
+
+  .cities-strip { padding: 0 36px 80px; }
+  .cities-grid { grid-template-columns: 1fr 1fr; }
+
+  .brands-grid { grid-template-columns: 1fr; }
+  .brands-intro { font-size: 15px; }
+  .about-layout { grid-template-columns: 1fr; gap: 48px; }
+
+  .contact-layout { grid-template-columns: 1fr; gap: 56px; }
+
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  footer { padding: 48px 36px calc(28px + var(--safe-bot)); }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  nav { padding: 18px 20px; }
+  nav.scrolled { padding: 14px 20px; }
+
+  .hero-left { padding: 110px 20px 56px; }
+  .hero-title { font-size: 42px; }
+  .hero-subtitle { font-size: 15px; }
+
+  .section { padding: 72px 20px; }
+
+  h2.sec-title { font-size: 34px; }
+
+  .pillars-grid { grid-template-columns: 1fr; }
+  .cities-grid { grid-template-columns: 1fr 1fr; }
+  .city-card { aspect-ratio: 1/1; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .about-row { grid-template-columns: 1fr; gap: 3px; }
+
+  .footer-top { grid-template-columns: 1fr; gap: 36px; }
+  footer { padding: 40px 20px calc(24px + var(--safe-bot)); }
+
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#" class="nav-brand">
+    <img
+      class="nav-logo"
+      src="https://res.cloudinary.com/djzg1ulup/image/upload/v1776748072/CK_LOGO2021_qpnpyq.png"
+      alt="Clandestino Kitchen"
+      width="36"
+      height="36"
+      onerror="this.style.display='none'"
+    >
+    <span class="nav-wordmark">Clandestino Kitchen</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#what-we-do">What We Do</a></li>
+    <li><a href="#brands">Our Brands</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="drawer">
+  <a href="#story" class="drawer-link">Our Story</a>
+  <a href="#what-we-do" class="drawer-link">What We Do</a>
+  <a href="#brands" class="drawer-link">Our Brands</a>
+  <a href="#about" class="drawer-link">About</a>
+  <a href="#contact" class="drawer-cta">Get in Touch</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-overline">International Hospitality &amp; Food Culture</p>
+    <h1 class="hero-title">
+      A meal<br>
+      is never<br>
+      just a <em>meal.</em>
+    </h1>
+    <!--
+      COPY OPTION A (default, tighter):
+      "It is where culture is made, trust is built, and the best decisions happen.
+       We design the table where that begins."
+
+      COPY OPTION B (your original, warmer):
+      "We design experiences where a meal becomes a memory, where business
+       becomes culture and where your table becomes the stage."
+    -->
+    <p class="hero-subtitle">
+      It is where culture is made, trust is built, and the best decisions happen.
+      We design the table where that begins.
+    </p>
+    <div class="hero-actions">
+      <a href="#what-we-do" class="btn-fill">What we do</a>
+      <a href="#contact" class="btn-line">Work with us <span>→</span></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Global skyline — Unsplash open license -->
+    <img
+      src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80&auto=format&fit=crop"
+      alt="Global city skyline at dusk"
+      loading="eager"
+    >
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-band">
+  <div class="marquee-track">
+    <span class="ac">*</span><span>Private Dining</span>
+    <span class="ac">*</span><span>Corporate Hospitality</span>
+    <span class="ac">*</span><span>Food Culture</span>
+    <span class="ac">*</span><span>Event Management</span>
+    <span class="ac">*</span><span>Hospitality Technology</span>
+    <span class="ac">*</span><span>Culinary Experiences</span>
+    <span class="ac">*</span><span>Food &amp; Wine</span>
+    <span class="ac">*</span><span>Global Venues</span>
+    <span class="ac">*</span><span>JoEs TaBLe</span>
+    <span class="ac">*</span><span>Pipeline</span>
+    <span class="ac">*</span><span>Private Dining</span>
+    <span class="ac">*</span><span>Corporate Hospitality</span>
+    <span class="ac">*</span><span>Food Culture</span>
+    <span class="ac">*</span><span>Event Management</span>
+    <span class="ac">*</span><span>Hospitality Technology</span>
+    <span class="ac">*</span><span>Culinary Experiences</span>
+    <span class="ac">*</span><span>Food &amp; Wine</span>
+    <span class="ac">*</span><span>Global Venues</span>
+    <span class="ac">*</span><span>JoEs TaBLe</span>
+    <span class="ac">*</span><span>Pipeline</span>
+  </div>
+</div>
+
+<!-- ── STORY ── -->
+<section class="section story" id="story">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">Our Story</p>
+      <h2 class="sec-title">Built around<br>a <em>belief.</em></h2>
+    </div>
+    <div class="story-layout">
+      <div class="story-anchor reveal">
+        <p class="story-anchor-quote">
+          The most powerful moments in business happen around a table. We built a company to design those moments, and the infrastructure to make them scale.
+        </p>
+      </div>
+      <div class="story-text">
+        <p class="story-para reveal">
+          Clandestino Kitchen was born from a simple conviction: <strong>the culture of food is one of the most powerful forces in business and human connection.</strong> Long before deals are signed or relationships formalised, the real work happens over a shared experience, in the intimacy of a private event setting, in the trust built course by course.
+        </p>
+        <p class="story-pull reveal">
+          We don't just run events. We craft the conditions where the right people meet, connect, and do their best work.
+        </p>
+        <p class="story-para reveal">
+          Starting with our founding brand <strong>JoEs TaBLe</strong>, a curated culinary event design concept operating at hand selected locations across Europe, we have grown into an international platform managing private culinary events for corporate and private clients globally, advising hospitality businesses on strategy, and building the tools the industry needs to operate more intelligently.
+        </p>
+        <p class="story-para reveal">
+          Our vision is global. Every market has its own food culture, its own way of gathering. <strong>We bring the framework, the network, and the craft</strong> wherever the table needs to be set.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT WE DO ── -->
+<section class="section pillars-section" id="what-we-do">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">What We Do</p>
+      <h2 class="sec-title">Four engines.<br><em>One group.</em></h2>
+      <p class="pillars-intro">
+        Every activity we run maps to one of four revenue lines. Events and dining. Supply chain brokerage. Hospitality consultancy. Technology licensing. Each feeds the others.
+      </p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <p class="pillar-num">01</p>
+        <div class="pillar-img">
+          <img
+            src="https://res.cloudinary.com/djzg1ulup/image/upload/v1779181588/Private_Dining_bva8qj.jpg?w=600&q=75&auto=format&fit=crop"
+            alt="Fine dining table setting"
+            loading="lazy"
+          >
+        </div>
+        <h3 class="pillar-name">Private Event<br><em>Production</em></h3>
+        <p class="pillar-desc">Corporate dining experiences, pop-up events, and private F&B productions. Venue sourcing, culinary team contracting, full logistics — managed end to end under the JoEs TaBLe brand globally.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="pillar-num">02</p>
+        <div class="pillar-img">
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=75&auto=format&fit=crop"
+            alt="Business meeting handshake"
+            loading="lazy"
+          >
+        </div>
+        <h3 class="pillar-name">Hospitality<br><em>Consultancy</em></h3>
+        <p class="pillar-desc">Strategy, concept development, and supplier optimisation for hotels, restaurant groups, and F&B operators. We work with businesses that need more than a menu — commercial clarity, operational structure, and market access.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="pillar-num">03</p>
+        <div class="pillar-img">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75&auto=format&fit=crop"
+            alt="Technology dashboard"
+            loading="lazy"
+          >
+        </div>
+        <h3 class="pillar-name">Technology<br><em>Licensing</em></h3>
+        <p class="pillar-desc">Pipeline — our SaaS event broker platform built for internal operations, now licensed to hospitality operators and event agencies globally. Recurring subscription revenue and the primary valuation asset at exit.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="pillar-num">04</p>
+        <div class="pillar-img">
+          <img
+            src="https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?w=600&q=75&auto=format&fit=crop"
+            alt="Premium oysters and caviar"
+            loading="lazy"
+          >
+        </div>
+        <h3 class="pillar-name">Supply Chain<br><em>Brokerage</em></h3>
+        <p class="pillar-desc">F&B supply chain intermediary. We source and place premium ingredients, beverages, and specialist products for hospitality operators — earning commission on volume. Quality sourcing, without the overhead of building it yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CITIES ── -->
+<div class="cities-strip">
+  <div class="cities-inner">
+    <div class="cities-grid">
+      <div class="city-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&q=70&auto=format&fit=crop"
+          alt="Barcelona"
+          loading="lazy"
+        >
+        <span class="city-label">Barcelona</span>
+      </div>
+      <div class="city-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=70&auto=format&fit=crop"
+          alt="London"
+          loading="lazy"
+        >
+        <span class="city-label">London</span>
+      </div>
+      <div class="city-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=70&auto=format&fit=crop"
+          alt="Paris"
+          loading="lazy"
+        >
+        <span class="city-label">Paris</span>
+      </div>
+      <div class="city-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=600&q=70&auto=format&fit=crop"
+          alt="New York"
+          loading="lazy"
+        >
+        <span class="city-label">New York</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── BRANDS ── -->
+<section class="section brands-section" id="brands">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">Our Brands</p>
+      <h2 class="sec-title">Three expressions.<br><em>One house.</em></h2>
+      <p class="brands-intro">Clandestino Kitchen operates through three distinct brands — each serving a different audience, each rooted in the same philosophy of craft, culture, and considered hospitality.</p>
+    </div>
+    <div class="brands-grid">
+      <!-- CK parent brand -->
+      <div class="brand-card reveal">
+        <div class="brand-img">
+          <img
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80&auto=format&fit=crop"
+            alt="Clandestino Kitchen — hospitality and event management"
+            loading="lazy"
+          >
+        </div>
+        <span class="brand-tag">Parent Brand &nbsp; Consultancy &middot; F&amp;B Brokerage &middot; Event Management</span>
+        <h3 class="brand-name">Clandestino<br><em>Kitchen</em></h3>
+        <p class="brand-desc">
+          Our hospitality management consultancy and commercial operating arm. We advise hotels, restaurant groups, and F&amp;B operators on strategy, concept development, and supplier optimisation. In parallel, we act as a supply chain broker — sourcing and placing premium ingredients and beverages on volume, earning commission on what we move. The connective tissue between great operators and the partners they need.
+        </p>
+        <p class="brand-note">Registered as CK Events Management &amp; Hospitality Group LLC — Wyoming, U.S.A. Operating internationally.</p>
+        <a href="#about" class="brand-link">About the company</a>
+      </div>
+      <!-- JoEs TaBLe -->
+      <div class="brand-card reveal">
+        <div class="brand-img">
+          <img
+            src="https://drive.google.com/uc?export=view&id=1FOepwfmS8VaUGSLMHCdxyzmrr4aJ52Wi"
+            alt="JoEs TaBLe private dining"
+            loading="lazy"
+            onerror="this.src='https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=900&q=80&auto=format&fit=crop'"
+          >
+        </div>
+        <span class="brand-tag">Founding Brand &nbsp; Private Dining &middot; Global Pop-Ups &middot; Publishing</span>
+        <h3 class="brand-name">JoEs<br><em>TaBLe</em></h3>
+        <p class="brand-desc">
+          Private corporate dining experiences at curated venues with vetted culinary teams and full F&amp;B production. Pop-up events in key global cities — JoEs TaBLe New York, JoEs TaBLe Lisbon — featuring laureated chefs at their own venues under our brand. A growing shop of vouchers, wine pairings, and a forthcoming published book rooted in founder Joe D'Costa's personal culinary story and philosophy.
+        </p>
+        <p class="brand-note">Currently active in Barcelona. Expanding to key cities globally via the Google Maps pop-up strategy.</p>
+        <a href="https://joestable.clandestino.kitchen" class="brand-link">Visit JoEs TaBLe</a>
+      </div>
+      <!-- Pipeline -->
+      <div class="brand-card reveal">
+        <div class="brand-img">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&auto=format&fit=crop"
+            alt="Pipeline hospitality technology"
+            loading="lazy"
+          >
+        </div>
+        <span class="brand-tag">Technology Product &nbsp; SaaS &middot; Event Pipeline Management</span>
+        <h3 class="brand-name">Pipeline<br><em>by CK</em></h3>
+        <p class="brand-desc">
+          Built internally to run CK's own brokerage operations, now licensed externally to hospitality operators and event agencies globally. A private workspace for managing client pipelines, dual-layer deal pricing, live EBIT tracking, and role-based collaboration — all in one platform. Recurring subscription, deployable under your brand and domain.
+        </p>
+        <p class="brand-note">EUR 50–200 per user per month. Sold to co-op partners, independent operators, and event agencies. The primary valuation asset at exit.</p>
+        <a href="https://clandestino.kitchen/pipeline" class="brand-link">Explore Pipeline</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="section about-section" id="about">
+  <div class="section-inner">
+    <div class="about-layout">
+      <div class="reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="about-title">Who<br>we<br><em>are.</em></h2>
+      </div>
+      <div class="about-body">
+        <p class="about-para reveal">
+          <strong>CK Events Management &amp; Hospitality Group LLC</strong> is an international hospitality management and event production company, operating under three distinct brands — Clandestino Kitchen, JoEs TaBLe, and Pipeline — across four revenue engines: private event production, F&amp;B supply chain brokerage, hospitality management consultancy, and SaaS technology licensing.
+        </p>
+        <p class="about-para reveal">
+          Through <strong>JoEs TaBLe</strong>, we design and produce private corporate dining experiences and global pop-up events at hand-selected venues in key cities, alongside a growing merchandise and publishing division rooted in founder Joe D'Costa's culinary philosophy. Through <strong>Clandestino Kitchen</strong>, we advise hotels, restaurant groups, and F&amp;B operators on strategy, concept development, and supply chain optimisation, and act as a commercial intermediary sourcing premium ingredients and beverages on volume. Through <strong>Pipeline</strong>, we license our proprietary event broker management platform to hospitality operators and event agencies globally on a recurring subscription basis.
+        </p>
+        <p class="about-para reveal">
+          Registered in the United States, operating internationally, with deep roots in European food culture and a client base across the US, UK, Europe and beyond.
+        </p>
+        <div class="about-table reveal">
+          <div class="about-row">
+            <span class="arow-key">Legal entity</span>
+            <span class="arow-val">CK Events Management &amp; Hospitality Group LLC — Wyoming, U.S.A.</span>
+          </div>
+          <div class="about-row">
+            <span class="arow-key">Operations</span>
+            <span class="arow-val">International</span>
+          </div>
+          <div class="about-row">
+            <span class="arow-key">Sectors</span>
+            <span class="arow-val">Hospitality, Technology, Consultancy, Producer Networks</span>
+          </div>
+          <div class="about-row">
+            <span class="arow-key">General enquiries</span>
+            <span class="arow-val">hello@clandestino.kitchen</span>
+          </div>
+          <div class="about-row">
+            <span class="arow-key">Compliance</span>
+            <span class="arow-val">compliance@clandestino.kitchen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-layout">
+      <div>
+        <h2 class="contact-title reveal">Let's build<br>something <em>together.</em></h2>
+        <p class="contact-sub reveal">Whether you're planning a private event, exploring a partnership, or looking to license our technology, we respond within one business day.</p>
+        <div class="contact-rows reveal">
+          <div class="contact-row">
+            <span class="crow-key">General</span>
+            <span class="crow-val"><a href="mailto:hello@clandestino.kitchen">hello@clandestino.kitchen</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="crow-key">Events &amp; Dining</span>
+            <span class="crow-val"><a href="mailto:events@clandestino.kitchen">events@clandestino.kitchen</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="crow-key">Pipeline</span>
+            <span class="crow-val"><a href="https://landing.clandestino.kitchen">landing.clandestino.kitchen</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="crow-key">Compliance</span>
+            <span class="crow-val"><a href="mailto:compliance@clandestino.kitchen">compliance@clandestino.kitchen</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-name">Full name</label>
+            <input type="text" id="cf-name" autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="cf-company">Company</label>
+            <input type="text" id="cf-company" autocomplete="organization" placeholder="Your organisation">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-email">Email address</label>
+          <input type="email" id="cf-email" autocomplete="email" placeholder="your@email.com" inputmode="email">
+        </div>
+        <div class="field">
+          <label for="cf-purpose">What brings you here?</label>
+          <select id="cf-purpose">
+            <option value="" disabled selected>Select a topic</option>
+            <option>Private corporate dining or event</option>
+            <option>Pop-up event partnership or venue</option>
+            <option>Hospitality management consultancy</option>
+            <option>F&amp;B supply chain and sourcing</option>
+            <option>Pipeline platform licensing</option>
+            <option>Due diligence or compliance documentation</option>
+            <option>Press or media</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" placeholder="Tell us what you have in mind"></textarea>
+        </div>
+        <button class="form-submit" id="form-btn" onclick="submitForm()">Send message</button>
+        <p class="form-ok" id="form-ok">Message received. We will be in touch within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img
+        class="footer-logo"
+        src="https://res.cloudinary.com/djzg1ulup/image/upload/v1776748072/CK_LOGO2021_qpnpyq.png"
+        alt="Clandestino Kitchen"
+        width="80"
+        height="32"
+        loading="lazy"
+        onerror="this.style.display='none'"
+      >
+      <p class="footer-descriptor">
+        CK Events Management &amp; Hospitality Group LLC<br>
+        Sheridan, Wyoming, U.S.A. &nbsp;·&nbsp; hello@clandestino.kitchen
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#story">Our Story</a>
+      <a href="#what-we-do">What We Do</a>
+      <a href="#brands">Our Brands</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Our Brands</h4>
+      <a href="#brands">Clandestino Kitchen</a>
+      <a href="https://joestable.clandestino.kitchen">JoEs TaBLe</a>
+      <a href="https://clandestino.kitchen/pipeline">Pipeline by CK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">
+      &copy; <span id="copy-year"></span> CK Events Management &amp; Hospitality Group LLC. All rights reserved.
+    </p>
+    <div class="footer-legal">
+      <a href="/terms">Terms &amp; Conditions</a>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── Copyright year ── */
+document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+/* ── Nav scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 48);
+}, { passive: true });
+
+/* ── Hamburger ── */
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+
+burger.addEventListener('click', () => {
+  const open = drawer.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+// Close drawer on link click
+drawer.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), i * 80);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── Contact form ── */
+function submitForm() {
+  const n = document.getElementById('cf-name').value.trim();
+  const e = document.getElementById('cf-email').value.trim();
+  if (!n || !e) { alert('Please enter your name and email.'); return; }
+  document.getElementById('form-btn').style.display = 'none';
+  document.getElementById('form-ok').style.display = 'block';
+}
+</script>
+</body>
+</html>
