@@ -4,23 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>CK Events Management &amp; Hospitality Group LLC</title>
-<meta name="description" content="CK Events Management &amp; Hospitality Group LLC. Global event management and hospitality consultancy. Wyoming, USA.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="A global hospitality group operating at the intersection of culinary culture, event management, and F&B consultancy.">
 
-<!-- Open Graph -->
+<!-- Open Graph / Social -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://clandestino.kitchen/">
 <meta property="og:title" content="CK Events Management &amp; Hospitality Group LLC">
-<meta property="og:description" content="Global event management and hospitality consultancy. Non-operational management entity. Wyoming, USA.">
+<meta property="og:description" content="A global hospitality group. Curated culinary experiences, hospitality management consultancy, and proprietary operational technology.">
 <meta property="og:image" content="img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Clandestino Kitchen">
 
-<!-- Twitter -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CK Events Management &amp; Hospitality Group LLC">
-<meta name="twitter:description" content="Global event management and hospitality consultancy. Wyoming, USA.">
+<meta name="twitter:description" content="A global hospitality group at the intersection of culinary culture, event management, and F&B consultancy.">
 <meta name="twitter:image" content="img/og-image.jpg">
 
 <!-- Favicon -->
@@ -29,828 +28,680 @@
 <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#f7f4ef">
+<meta name="theme-color" content="#060504">
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-img{display:block;max-width:100%;height:auto;}
-
-/* ── Tokens ── */
 :root{
-  --bg:      #f7f4ef;
-  --ink:     #f0ece4;
-  --white:   #ffffff;
-  --dark:    #0d0b09;
-  --black:   #060504;
-  --text:    #1e1c1a;
-  --mid:     #5a5248;
-  --dim:     #9a9088;
-  --gold:    #b89a5e;
-  --rule:    rgba(30,28,26,.09);
-  --rule-d:  rgba(240,236,228,.07);
+  --bg:    #f7f4ef;
+  --ink:   #edeae3;
+  --dark:  #0e0c0a;
+  --black: #060504;
+  --off:   #ede8de;
+  --text:  #1e1c1a;
+  --mid:   #5a5248;
+  --dim:   #9a9088;
+  --gold:  #b89a5e;
+  --rule:  rgba(30,28,26,.09);
   --F:'Raleway','Helvetica Neue',Arial,sans-serif;
   --M:'Inter','Helvetica Neue',Arial,sans-serif;
 }
+html{background:var(--black);-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:var(--F);font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{display:block;max-width:100%;height:auto;}
+.ver{position:fixed;bottom:14px;right:18px;z-index:100;font-family:var(--M);font-size:8px;letter-spacing:.1em;color:rgba(237,232,222,.18);pointer-events:none;}
 
-html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--F);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+/* NAV */
+nav{position:fixed;inset:0 0 auto;z-index:400;height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;transition:background .5s,border-color .5s;border-bottom:1px solid transparent;}
+nav.solid{background:rgba(247,244,239,.97);border-bottom-color:var(--rule);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.n-left{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.n-mark{width:34px;height:34px;border:1px solid rgba(237,232,222,.35);display:flex;align-items:center;justify-content:center;transition:border-color .5s;}
+nav.solid .n-mark{border-color:rgba(30,28,26,.18);}
+.n-mark span{font-family:var(--M);font-size:9px;font-weight:400;letter-spacing:.08em;color:var(--off);transition:color .5s;}
+nav.solid .n-mark span{color:var(--text);}
+.n-wordmark{font-family:var(--F);font-size:13px;font-weight:400;letter-spacing:.04em;color:rgba(237,232,222,.75);transition:color .5s;}
+nav.solid .n-wordmark{color:var(--text);}
+.n-links{list-style:none;display:flex;gap:36px;}
+.n-links a{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(237,232,222,.4);text-decoration:none;transition:color .3s;min-height:44px;display:flex;align-items:center;}
+nav.solid .n-links a{color:var(--mid);}
+.n-links a:hover{color:var(--off);}
+nav.solid .n-links a:hover{color:var(--text);}
 
-/* ── Version stamp ── */
-.ver{position:fixed;bottom:14px;right:18px;z-index:50;font-family:var(--M);font-size:8px;letter-spacing:.1em;color:rgba(30,28,26,.18);pointer-events:none;}
+/* NAV CTA — translucent white on hero, solid on scroll */
+.n-cta{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,232,222,.85);background:rgba(237,232,222,.15);border:1px solid rgba(237,232,222,.25);padding:0 24px;min-height:42px;display:flex;align-items:center;text-decoration:none;transition:all .4s;flex-shrink:0;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+.n-cta:hover{background:rgba(237,232,222,.25);border-color:rgba(237,232,222,.4);}
+nav.solid .n-cta{color:var(--black);background:var(--gold);border-color:var(--gold);}
+nav.solid .n-cta:hover{background:#ccaa66;border-color:#ccaa66;}
 
-/* ═══════════════════════════════════
-   NAV
-═══════════════════════════════════ */
-nav{position:fixed;inset:0 0 auto;z-index:400;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;border-bottom:1px solid transparent;transition:background .4s,border-color .4s;}
-nav.solid{background:rgba(247,244,239,.96);border-bottom-color:var(--rule);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
-.n-left{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.n-mark{width:32px;height:32px;border:1px solid rgba(30,28,26,.2);display:flex;align-items:center;justify-content:center;}
-.n-mark span{font-family:var(--M);font-size:9px;font-weight:400;letter-spacing:.06em;color:var(--text);}
-.n-name{font-family:var(--F);font-size:12px;font-weight:400;letter-spacing:.04em;color:var(--text);}
-.n-links{list-style:none;display:flex;gap:32px;}
-.n-links a{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .25s;min-height:44px;display:flex;align-items:center;}
-.n-links a:hover{color:var(--text);}
-.n-cta{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:0 24px;min-height:40px;display:flex;align-items:center;text-decoration:none;transition:background .25s;flex-shrink:0;cursor:pointer;}
-.n-cta:hover{background:#ccaa66;}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px;min-width:44px;min-height:44px;justify-content:center;}
-.burger span{display:block;width:18px;height:1px;background:var(--text);}
+.burger span{display:block;width:18px;height:1px;background:rgba(237,232,222,.7);transition:background .5s;}
+nav.solid .burger span{background:var(--text);}
 
-/* ═══════════════════════════════════
-   HERO — compliance-forward, text-only
-═══════════════════════════════════ */
-.hero{background:var(--black);min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 56px 64px;position:relative;}
-.hero-top{position:absolute;top:0;left:0;right:0;padding:120px 56px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;}
-.hero-entity{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.24em;text-transform:uppercase;color:rgba(240,236,228,.3);}
-.hero-badges{display:flex;gap:12px;flex-wrap:wrap;}
-.hero-badge{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:rgba(184,154,94,.6);border:1px solid rgba(184,154,94,.2);padding:5px 10px;}
-.hero-h{font-family:var(--F);font-size:clamp(36px,6.5vw,92px);font-weight:200;line-height:.92;letter-spacing:-.03em;color:var(--ink);margin-bottom:28px;}
-.hero-h em{font-style:normal;color:var(--gold);}
-.hero-rule{width:48px;height:1px;background:var(--gold);margin-bottom:28px;}
-.hero-sub{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.06em;line-height:1.85;color:rgba(240,236,228,.45);max-width:480px;margin-bottom:44px;}
-.hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
-.btn-primary{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:0 32px;min-height:48px;text-decoration:none;display:inline-flex;align-items:center;transition:background .25s;cursor:pointer;}
-.btn-primary:hover{background:#ccaa66;}
-.btn-ghost{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,236,228,.5);background:transparent;border:1px solid rgba(240,236,228,.15);padding:0 32px;min-height:48px;text-decoration:none;display:inline-flex;align-items:center;transition:all .25s;}
-.btn-ghost:hover{color:var(--ink);border-color:rgba(240,236,228,.35);}
-.hero-scroll{position:absolute;bottom:64px;right:56px;font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,236,228,.2);display:flex;flex-direction:column;align-items:center;gap:10px;}
-.hero-scroll-line{width:1px;height:40px;background:rgba(184,154,94,.3);}
+/* HERO */
+.hero{position:relative;height:100svh;height:100dvh;min-height:600px;overflow:hidden;}
+.bg-slides{position:absolute;inset:0;}
+.bg-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;background-size:cover;background-position:center;}
+.bg-slide.active{opacity:1;}
+.bg-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,5,4,.3) 0%,rgba(6,5,4,.45) 50%,rgba(6,5,4,.88) 100%);}
+.hero-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;text-align:center;padding:0 24px;}
+.hero-brand{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:rgba(237,232,222,.52);margin-bottom:clamp(20px,5vw,40px);width:100%;}
+.hero-word{font-family:var(--F);font-size:clamp(45px,8.4vw,109px);font-weight:400;line-height:1.05;letter-spacing:-.03em;color:var(--off);position:absolute;opacity:0;transform:translateY(12px);transition:opacity .9s ease,transform .9s ease;text-align:center;width:100%;left:0;top:0;}
+.hero-word.active{opacity:1;transform:translateY(0);}
+.hero-tagline{position:absolute;bottom:0;left:0;right:0;padding:0 56px 28px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
+.hero-sub{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(237,232,222,.3);display:flex;align-items:center;gap:10px;}
+.hero-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;animation:blink 2.4s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+.hero-scroll{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(237,232,222,.25);display:flex;align-items:center;gap:8px;cursor:pointer;border:none;background:none;padding:0;transition:color .3s;}
+.hero-scroll:hover{color:rgba(237,232,222,.6);}
+.scroll-arrow{width:16px;height:16px;border-right:1px solid rgba(237,232,222,.25);border-bottom:1px solid rgba(237,232,222,.25);transform:rotate(45deg);transition:border-color .3s;}
+.hero-scroll:hover .scroll-arrow{border-color:rgba(237,232,222,.6);}
+.hero-dots{position:absolute;right:28px;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;gap:8px;}
+.hero-dot-btn{width:3px;height:20px;background:rgba(237,232,222,.2);border:none;cursor:pointer;padding:0;transition:background .4s,height .4s;}
+.hero-dot-btn.active{background:var(--gold);height:32px;}
 
-/* ═══════════════════════════════════
-   SHARED
-═══════════════════════════════════ */
-.section{padding:96px 56px;}
-.section-inner{max-width:1200px;margin:0 auto;}
-.ey{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px;}
-.ey-d{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:rgba(184,154,94,.6);display:block;margin-bottom:14px;}
-.section-h{font-family:var(--F);font-size:clamp(28px,4vw,52px);font-weight:300;line-height:.95;letter-spacing:-.02em;margin-bottom:40px;}
-.section-h em{font-style:normal;color:var(--dim);}
-.section-h-d{font-family:var(--F);font-size:clamp(28px,4vw,52px);font-weight:300;line-height:.95;letter-spacing:-.02em;margin-bottom:40px;color:var(--ink);}
-.section-h-d em{font-style:normal;color:rgba(240,236,228,.28);}
-.body-p{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.03em;line-height:1.9;color:var(--mid);margin-bottom:16px;}
-.body-p-d{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.03em;line-height:1.9;color:rgba(240,236,228,.45);margin-bottom:16px;}
-
-/* scroll reveal */
-.r{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease;}
+/* SHARED */
+.below{background:var(--bg);}
+.ey{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;}
+.ey-inv{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:rgba(184,154,94,.78);display:block;}
+.r{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease;}
 .r.on{opacity:1;transform:none;}
-@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
+.txt-link{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--text);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;align-self:flex-start;transition:all .3s;}
+.txt-link:hover{color:var(--gold);border-color:var(--gold);}
 
-/* ═══════════════════════════════════
-   STATS BAR
-═══════════════════════════════════ */
-.stats{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:repeat(4,1fr);}
-.stat{padding:28px 36px;border-right:1px solid var(--rule);}
-.stat:last-child{border-right:none;}
-.stat-val{font-family:var(--F);font-size:clamp(20px,2.8vw,38px);font-weight:300;color:var(--text);line-height:1;margin-bottom:5px;}
-.stat-lbl{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
+/* GROUP */
+.group{background:var(--dark);color:rgba(237,232,222,.8);padding:120px 56px;}
+.group-inner{max-width:1200px;margin:0 auto;}
+.group-inner .ey-inv{margin-bottom:52px;}
+.group-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start;}
+.g-h{font-family:var(--F);font-size:clamp(36px,5.5vw,72px);font-weight:400;line-height:.95;letter-spacing:-.03em;margin-bottom:28px;}
+.g-h em{font-style:normal;color:var(--gold);}
+.g-p{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.05em;line-height:2;color:rgba(237,232,222,.58);max-width:400px;margin-bottom:20px;}
+.g-entity{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(237,232,222,.35);padding:16px 0;border-top:1px solid rgba(237,232,222,.06);line-height:1.8;margin-top:16px;}
+.g-brands{display:flex;flex-direction:column;}
+.g-brand{padding:28px 0;border-bottom:1px solid rgba(237,232,222,.06);display:grid;grid-template-columns:28px 1fr;gap:16px;align-items:start;}
+.g-brand:first-child{border-top:1px solid rgba(237,232,222,.06);}
+.g-brand-n{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.06em;color:rgba(237,232,222,.38);padding-top:4px;}
+.g-brand-name{font-family:var(--F);font-size:22px;font-weight:400;color:rgba(237,232,222,.78);margin-bottom:4px;}
+.g-brand-role{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(184,154,94,.7);}
 
-/* ═══════════════════════════════════
-   ABOUT
-═══════════════════════════════════ */
-.about{background:var(--bg);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.about-right{display:flex;flex-direction:column;gap:0;}
-.fact-row{display:grid;grid-template-columns:120px 1fr;padding:14px 0;border-bottom:1px solid var(--rule);}
-.fact-row:first-child{border-top:1px solid var(--rule);}
-.fact-lbl{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding-top:2px;}
-.fact-val{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;color:var(--mid);line-height:1.7;}
-.entity-box{background:var(--dark);padding:24px 28px;margin-top:24px;}
-.entity-box-label{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,154,94,.5);margin-bottom:10px;display:block;}
-.entity-box-name{font-family:var(--F);font-size:16px;font-weight:300;color:rgba(240,236,228,.7);letter-spacing:.02em;line-height:1.4;}
+/* NUMBERS */
+.numbers{background:var(--bg);display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule);}
+.num{padding:28px 32px;border-right:1px solid var(--rule);}
+.num:last-child{border-right:none;}
+.num-val{font-family:var(--F);font-size:clamp(24px,3.5vw,48px);font-weight:400;color:var(--text);line-height:1;margin-bottom:5px;}
+.num-lbl{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);}
 
-/* ═══════════════════════════════════
-   BUSINESS MODEL
-═══════════════════════════════════ */
-.model{background:var(--dark);}
-.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px;}
-.model-card{background:rgba(240,236,228,.03);border:1px solid var(--rule-d);padding:40px 36px;}
-.model-tag{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,154,94,.6);border:1px solid rgba(184,154,94,.2);padding:4px 10px;display:inline-block;margin-bottom:20px;}
-.model-title{font-family:var(--F);font-size:22px;font-weight:300;color:rgba(240,236,228,.75);margin-bottom:16px;line-height:1.1;}
-.model-p{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;line-height:1.85;color:rgba(240,236,228,.38);}
-.model-divider{margin:16px 0;border:none;border-top:1px solid var(--rule-d);}
-.model-role{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.12em;color:rgba(240,236,228,.22);line-height:1.7;}
-.model-role strong{display:block;font-weight:300;letter-spacing:.18em;text-transform:uppercase;font-size:8px;color:rgba(184,154,94,.45);margin-bottom:4px;}
-
-/* ═══════════════════════════════════
-   BRANDS
-═══════════════════════════════════ */
-.brands{background:var(--bg);}
-.brand-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);}
-.brand-row.flip .b-text{order:2;}.brand-row.flip .b-panel{order:1;}
-.b-panel{background:var(--dark);padding:56px 48px;display:flex;flex-direction:column;justify-content:center;}
-.b-text{background:var(--bg);padding:56px 48px;display:flex;flex-direction:column;justify-content:center;}
-.b-tag{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);border:1px solid var(--rule);padding:5px 10px;margin-bottom:24px;align-self:flex-start;}
-.b-name{font-family:var(--F);font-size:clamp(28px,4vw,52px);font-weight:300;letter-spacing:-.02em;line-height:.9;margin-bottom:10px;color:var(--text);}
-.b-name-d{font-family:var(--F);font-size:clamp(28px,4vw,52px);font-weight:300;letter-spacing:-.02em;line-height:.9;margin-bottom:10px;color:rgba(240,236,228,.75);}
+/* BRANDS */
+.brands-hdr{background:var(--bg);padding:100px 56px 64px;}
+.brands-hdr-inner{max-width:1200px;margin:0 auto;}
+.brands-hdr-inner .ey{margin-bottom:14px;}
+.brands-h{font-family:var(--F);font-size:clamp(36px,5vw,64px);font-weight:400;line-height:.95;letter-spacing:-.025em;}
+.brands-h em{font-style:normal;color:rgba(30,28,26,.28);}
+.brand-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);min-height:500px;}
+.brand-row.flip .b-img{order:2;}.brand-row.flip .b-copy{order:1;}
+.b-img{position:relative;overflow:hidden;background:var(--dark);min-height:440px;}
+.b-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.16,1,.3,1);}
+.brand-row:hover .b-img img{transform:scale(1.04);}
+.b-copy{display:flex;flex-direction:column;justify-content:center;padding:72px 64px;background:var(--bg);}
+.b-tag{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);border:1px solid var(--rule);padding:6px 12px;margin-bottom:28px;align-self:flex-start;}
+.b-name{font-family:var(--F);font-size:clamp(34px,5vw,62px);font-weight:400;letter-spacing:-.02em;line-height:.95;margin-bottom:12px;}
 .b-sub{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
-.b-desc{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;line-height:1.9;color:var(--mid);max-width:360px;}
-.b-desc-d{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;line-height:1.9;color:rgba(240,236,228,.38);max-width:360px;}
-.b-meta{margin-top:24px;display:flex;flex-direction:column;gap:0;}
-.b-meta-row{display:grid;grid-template-columns:100px 1fr;padding:10px 0;border-bottom:1px solid var(--rule);}
-.b-meta-row:first-child{border-top:1px solid var(--rule);}
-.b-meta-lbl{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
-.b-meta-val{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.03em;color:var(--mid);}
-.b-meta-row-d .b-meta-lbl{color:rgba(240,236,228,.22);}
-.b-meta-row-d .b-meta-val{color:rgba(240,236,228,.38);}
+.b-desc{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.04em;line-height:2;color:var(--mid);max-width:360px;margin-bottom:36px;}
 
-/* ═══════════════════════════════════
-   PARTNER NETWORK
-═══════════════════════════════════ */
-.network{background:var(--white);}
-.network-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.do-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
-.do-card{background:var(--bg);padding:24px 20px;border:1px solid var(--rule);}
-.do-card.dont{background:#faf9f7;}
-.do-label{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px;display:block;}
-.do-label.yes{color:var(--gold);}
-.do-label.no{color:var(--dim);}
-.do-items{display:flex;flex-direction:column;gap:8px;}
-.do-item{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;line-height:1.6;color:var(--mid);display:flex;gap:8px;align-items:flex-start;}
-.do-item::before{content:'';display:block;width:3px;height:3px;border-radius:50%;background:var(--gold);margin-top:6px;flex-shrink:0;}
-.do-card.dont .do-item::before{background:var(--dim);opacity:.4;}
 
-/* ═══════════════════════════════════
-   COMPLIANCE
-═══════════════════════════════════ */
-.compliance{background:var(--dark);}
-.compliance-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:48px;}
-.comp-card{background:rgba(240,236,228,.03);border:1px solid var(--rule-d);padding:32px 28px;}
-.comp-icon{font-family:var(--M);font-size:24px;font-weight:200;color:rgba(184,154,94,.4);margin-bottom:16px;display:block;}
-.comp-title{font-family:var(--F);font-size:17px;font-weight:300;color:rgba(240,236,228,.65);margin-bottom:12px;}
-.comp-text{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;line-height:1.8;color:rgba(240,236,228,.32);}
+.pl-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55);transition:filter .8s,transform 1.2s cubic-bezier(.16,1,.3,1);}
 
-/* ═══════════════════════════════════
-   BANKING
-═══════════════════════════════════ */
-.banking{background:var(--bg);}
-.banking-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
-.bank-table{width:100%;border-collapse:collapse;margin-top:8px;}
-.bank-table tr{border-bottom:1px solid var(--rule);}
-.bank-table tr:first-child{border-top:1px solid var(--rule);}
-.bank-table td{padding:12px 0;font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;line-height:1.6;}
-.bank-table td:first-child{color:var(--dim);font-size:9px;letter-spacing:.14em;text-transform:uppercase;width:140px;vertical-align:top;padding-top:14px;}
-.bank-table td:last-child{color:var(--mid);}
 
-/* ═══════════════════════════════════
-   ROADMAP
-═══════════════════════════════════ */
-.roadmap{background:var(--dark);}
-.roadmap-items{display:flex;flex-direction:column;margin-top:48px;}
-.rm-item{display:grid;grid-template-columns:120px 1fr;padding:28px 0;border-bottom:1px solid var(--rule-d);}
-.rm-item:first-child{border-top:1px solid var(--rule-d);}
-.rm-phase{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);padding-top:3px;opacity:.8;}
-.rm-title{font-family:var(--F);font-size:20px;font-weight:300;color:rgba(240,236,228,.7);margin-bottom:8px;}
-.rm-desc{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;line-height:1.85;color:rgba(240,236,228,.32);}
 
-/* ═══════════════════════════════════
-   ACQUISITION
-═══════════════════════════════════ */
-.acquisition{background:var(--bg);}
-.acq-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.acq-points{display:flex;flex-direction:column;gap:0;margin-top:8px;}
-.acq-point{padding:18px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:20px 1fr;gap:14px;align-items:start;}
-.acq-point:first-child{border-top:1px solid var(--rule);}
-.acq-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:5px;flex-shrink:0;}
-.acq-point-text{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;line-height:1.8;color:var(--mid);}
-.acq-targets{margin-top:32px;}
-.acq-target-label{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;display:block;}
-.acq-target-list{display:flex;flex-wrap:wrap;gap:8px;}
-.acq-target{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.08em;color:var(--mid);border:1px solid var(--rule);padding:6px 12px;}
 
-/* ═══════════════════════════════════
-   CONTACT
-═══════════════════════════════════ */
-.contact{background:var(--black);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
-.contact-details{display:flex;flex-direction:column;gap:0;margin-top:12px;}
-.cd-row{display:grid;grid-template-columns:110px 1fr;padding:14px 0;border-bottom:1px solid var(--rule-d);}
-.cd-row:first-child{border-top:1px solid var(--rule-d);}
-.cd-lbl{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,236,228,.22);padding-top:2px;}
-.cd-val{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.03em;color:rgba(240,236,228,.55);line-height:1.7;}
-.cd-val a{color:inherit;text-decoration:none;transition:color .25s;}
-.cd-val a:hover{color:var(--gold);}
 
-/* Contact form */
+
+
+
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:360px 280px;gap:3px;background:rgba(30,28,26,.15);}
+.gs{position:relative;overflow:hidden;background:var(--dark);}
+.gs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.65);transition:filter .8s,transform 1.2s cubic-bezier(.16,1,.3,1);}
+.gs:hover img{filter:brightness(.88);transform:scale(1.05);}
+.gs-cap{position:absolute;bottom:14px;left:16px;z-index:1;font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,232,222,.36);}
+.gs-tall{grid-row:1/3;}
+
+/* CLIENTS */
+.clients{background:var(--bg);padding:100px 56px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.clients-inner{max-width:1200px;margin:0 auto;}
+.clients-inner .ey{margin-bottom:48px;}
+.clients-logos{display:flex;justify-content:center;}.clients-logos img{max-width:900px;width:100%;opacity:.65;}
+.c-div{height:1px;background:var(--rule);margin:72px 0;}
+.rec-grid{display:grid;grid-template-columns:1fr;gap:2px;}
+.rec{padding:36px 28px;border:1px solid var(--rule);background:var(--bg);transition:background .3s;}
+.rec:hover{background:var(--ink);}
+.rec-title{font-family:var(--F);font-size:20px;font-weight:400;color:var(--text);margin-bottom:10px;}
+.rec-body{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.04em;line-height:1.8;color:var(--mid);}
+
+/* PHILOSOPHY */
+.philosophy{background:var(--dark);color:rgba(237,232,222,.8);padding:140px 56px;}
+.phil-inner{max-width:1100px;margin:0 auto;}
+.phil-inner .ey-inv{margin-bottom:52px;}
+.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.ph-h{font-family:var(--F);font-size:clamp(36px,5.5vw,70px);font-weight:400;line-height:.95;letter-spacing:-.03em;}
+.ph-h em{font-style:normal;color:var(--gold);}
+.ph-quote{font-family:var(--F);font-size:clamp(18px,2.3vw,24px);font-weight:400;line-height:1.5;color:rgba(237,232,222,.58);border-left:2px solid rgba(184,154,94,.25);padding-left:24px;margin-bottom:18px;}
+.ph-cite{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,154,94,.7);padding-left:26px;display:block;}
+.ph-p{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.05em;line-height:2;color:rgba(237,232,222,.48);margin-top:28px;padding-left:26px;border-left:1px solid rgba(237,232,222,.05);}
+
+/* VISION */
+.vision{background:var(--bg);padding:120px 56px;border-bottom:1px solid var(--rule);}
+.vision-inner{max-width:1200px;margin:0 auto;}
+.vision-inner .ey{margin-bottom:52px;}
+.vis-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.vis-h{font-family:var(--F);font-size:clamp(36px,5vw,64px);font-weight:400;line-height:.95;letter-spacing:-.025em;margin-bottom:24px;}
+.vis-h em{font-style:normal;color:rgba(30,28,26,.28);}
+.vis-p{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.05em;line-height:2;color:var(--mid);margin-bottom:16px;}
+.ms{display:grid;grid-template-columns:72px 1fr;padding:22px 0;border-bottom:1px solid var(--rule);}
+.ms:first-child{border-top:1px solid var(--rule);}
+.ms:last-child{border-bottom:none;}
+.ms-period{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.1em;color:var(--gold);padding-top:3px;}
+.ms-title{font-family:var(--F);font-size:18px;font-weight:400;color:var(--text);margin-bottom:5px;}
+.ms-desc{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.04em;line-height:1.85;color:var(--mid);}
+
+/* CONTACT */
+.contact{background:var(--dark);color:rgba(237,232,222,.8);padding:120px 56px;}
+.contact-inner{max-width:1200px;margin:0 auto;}
+.contact-inner .ey-inv{margin-bottom:32px;}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.co-h{font-family:var(--F);font-size:clamp(36px,5.5vw,72px);font-weight:400;line-height:.95;letter-spacing:-.03em;margin-bottom:24px;}
+.co-h em{font-style:normal;color:var(--gold);}
+.co-p{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.05em;line-height:2;color:rgba(237,232,222,.52);margin-bottom:44px;}
+.co-item{display:grid;grid-template-columns:110px 1fr;padding:16px 0;border-bottom:1px solid rgba(237,232,222,.05);}
+.co-item:last-child{border-bottom:none;}
+.co-lbl{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,232,222,.42);padding-top:2px;}
+.co-val{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.04em;color:rgba(237,232,222,.72);line-height:1.7;}
+.co-val a{color:inherit;text-decoration:none;transition:color .25s;}
+.co-val a:hover{color:var(--gold);}
+.collab{padding:20px 0;border-bottom:1px solid rgba(237,232,222,.05);}
+.collab:first-child{border-top:1px solid rgba(237,232,222,.05);}
+.collab:last-child{border-bottom:none;}
+.collab-name{font-family:var(--F);font-size:20px;font-weight:400;color:rgba(237,232,222,.68);margin-bottom:6px;}
+.collab-desc{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.04em;line-height:1.8;color:rgba(237,232,222,.42);}
+
+/* CONTACT FORM MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:600;background:rgba(6,5,4,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--bg);max-width:560px;width:100%;padding:52px 48px;position:relative;animation:mopen .35s cubic-bezier(.16,1,.3,1) forwards;}
+@keyframes mopen{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:20px;right:20px;background:none;border:none;cursor:pointer;font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.1em;color:var(--dim);transition:color .25s;}
+.modal-close:hover{color:var(--text);}
+.modal-title{font-family:var(--F);font-size:28px;font-weight:400;color:var(--text);margin-bottom:8px;}
+.modal-sub{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:36px;}
 .form-group{margin-bottom:20px;}
-.form-group label{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,236,228,.28);display:block;margin-bottom:7px;}
-.form-group input,.form-group select,.form-group textarea{
-  width:100%;font-family:var(--M);font-size:10px;font-weight:300;
-  color:rgba(240,236,228,.7);background:transparent;
-  border:none;border-bottom:1px solid rgba(240,236,228,.1);
-  padding:10px 0;outline:none;transition:border-color .25s;
-  letter-spacing:.03em;
-}
+.form-group label{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;font-family:var(--M);font-size:10px;font-weight:300;color:var(--text);background:transparent;border:none;border-bottom:1px solid var(--rule);padding:10px 0;outline:none;transition:border-color .25s;letter-spacing:.04em;}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:var(--gold);}
 .form-group textarea{resize:none;height:80px;}
-.form-group select{appearance:none;cursor:pointer;color:rgba(240,236,228,.7);}
-.form-group select option{background:var(--black);color:var(--ink);}
-.form-submit{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:0 32px;min-height:48px;cursor:pointer;width:100%;transition:background .25s;margin-top:4px;}
+.form-group select{appearance:none;cursor:pointer;}
+.form-submit{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:0 36px;min-height:48px;cursor:pointer;width:100%;transition:background .25s;margin-top:8px;}
 .form-submit:hover{background:#ccaa66;}
-.form-note{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.05em;color:rgba(240,236,228,.22);text-align:center;margin-top:12px;}
+.form-note{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.06em;color:var(--dim);text-align:center;margin-top:14px;}
 
-/* ═══════════════════════════════════
-   LEGAL FOOTER SECTION
-═══════════════════════════════════ */
-.legal-section{background:var(--dark);padding:48px 56px;border-top:1px solid var(--rule-d);}
-.legal-section-inner{max-width:1200px;margin:0 auto;}
-.legal-section p{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.03em;line-height:1.9;color:rgba(240,236,228,.22);margin-bottom:12px;}
-.legal-section p:last-child{margin-bottom:0;}
-
-/* ═══════════════════════════════════
-   FOOTER
-═══════════════════════════════════ */
-footer{background:var(--black);padding:56px 56px 32px;border-top:1px solid rgba(240,236,228,.05);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
-.f-brand{font-family:var(--F);font-size:13px;font-weight:300;color:rgba(240,236,228,.45);display:block;margin-bottom:12px;}
-.f-entity{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.04em;color:rgba(240,236,228,.2);line-height:2;}
-.f-col h4{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:rgba(184,154,94,.45);margin-bottom:18px;}
+/* FOOTER */
+footer{background:#040302;padding:64px 56px 40px;border-top:1px solid rgba(237,232,222,.05);display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;color:rgba(237,232,222,.85);}
+.f-name{font-family:var(--F);font-size:14px;font-weight:400;display:block;margin-bottom:12px;color:rgba(237,232,222,.5);}
+.f-entity{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.05em;color:rgba(237,232,222,.45);line-height:2.1;}
+.f-col h4{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.24em;text-transform:uppercase;color:rgba(184,154,94,.65);margin-bottom:20px;}
 .f-col ul{list-style:none;}
 .f-col li{margin-bottom:10px;}
-.f-col a{font-family:var(--M);font-size:9px;font-weight:300;color:rgba(240,236,228,.38);text-decoration:none;letter-spacing:.04em;transition:color .25s;min-height:44px;display:inline-flex;align-items:center;}
-.f-col a:hover{color:rgba(240,236,228,.75);}
-.f-base{background:var(--black);padding:16px 56px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(240,236,228,.04);}
-.f-copy{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.05em;color:rgba(240,236,228,.18);}
+.f-col a{font-family:var(--M);font-size:10px;font-weight:300;color:rgba(237,232,222,.58);text-decoration:none;letter-spacing:.05em;transition:color .25s;min-height:44px;display:inline-flex;align-items:center;}
+.f-col a:hover{color:rgba(237,232,222,.8);}
+.f-base{background:#040302;padding:16px 56px;border-top:1px solid rgba(237,232,222,.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.f-copy{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.06em;color:rgba(237,232,222,.38);}
 .f-copy a{color:inherit;text-decoration:none;}
-.f-legal-links{display:flex;gap:20px;}
-.f-legal-links a{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,236,228,.18);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;transition:color .25s;}
-.f-legal-links a:hover{color:rgba(240,236,228,.5);}
+.f-soc{display:flex;gap:22px;}
+.f-soc a{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,232,222,.42);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;transition:color .25s;}
+.f-soc a:hover{color:rgba(237,232,222,.6);}
 
-/* ═══════════════════════════════════
-   MOBILE
-═══════════════════════════════════ */
+/* MOBILE */
 @media(max-width:960px){
-  nav{padding:0 20px;}
-  .n-links{display:none;}
-  .n-cta{display:none;}
+  nav{padding:0 24px;height:60px;}
+  .n-links,.n-cta{display:none;}
   .burger{display:flex;}
-  .n-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--bg);justify-content:center;align-items:center;gap:32px;z-index:399;}
-  .n-links.open a{font-size:14px;color:var(--text);}
-  .hero{padding:0 20px 48px;min-height:100svh;}
-  .hero-top{padding:80px 20px 0;}
-  .hero-badges{display:none;}
-  .hero-h{font-size:clamp(36px,10vw,60px);}
-  .stats{grid-template-columns:1fr 1fr;}
-  .stat{padding:20px;}
-  .section{padding:64px 20px;}
-  .about-grid,.network-grid,.banking-grid,.acq-grid,.contact-grid{grid-template-columns:1fr;gap:48px;}
-  .model-grid,.do-grid{grid-template-columns:1fr;gap:2px;}
-  .compliance-grid{grid-template-columns:1fr;gap:2px;}
-  .brand-row{grid-template-columns:1fr;}
-  .brand-row.flip .b-text,.brand-row.flip .b-panel{order:unset;}
-  .b-panel,.b-text{padding:40px 20px;}
-  .rm-item{grid-template-columns:90px 1fr;}
-  footer{padding:48px 20px;grid-template-columns:1fr 1fr;gap:32px;}
-  .f-base{padding:16px 20px;}
-  .legal-section{padding:40px 20px;}
+  .n-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--black);justify-content:center;align-items:center;gap:32px;z-index:399;}
+  .n-links.open a{font-size:14px;letter-spacing:.22em;color:rgba(237,232,222,.6);}
+  .hero-tagline{padding:0 24px 28px;}
+  .hero-dots{display:none;}
+  .group{padding:80px 24px;}
+  .group-grid{grid-template-columns:1fr;gap:48px;}
+  .numbers{grid-template-columns:1fr 1fr;}
+  .num{padding:24px;}
+  .brands-hdr{padding:72px 24px 48px;}
+  .brand-row{grid-template-columns:1fr;min-height:auto;}
+  .brand-row.flip .b-img,.brand-row.flip .b-copy{order:unset;}
+  .b-img{min-height:300px;}
+  .b-copy{padding:44px 24px;}
+  
+  
+  
+  
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 180px 180px;}
+  .gs-tall{grid-row:auto;grid-column:auto;}
+  .clients{padding:72px 24px;}
+  .rec-grid{grid-template-columns:1fr;gap:12px;}
+  .philosophy{padding:100px 24px;}
+  .phil-grid{grid-template-columns:1fr;gap:52px;}
+  .vision{padding:80px 24px;}
+  .vis-grid{grid-template-columns:1fr;gap:52px;}
+  .contact{padding:80px 24px;}
+  .co-grid{grid-template-columns:1fr;gap:52px;}
+  footer{padding:52px 24px;grid-template-columns:1fr 1fr;gap:32px;}
+  .f-base{padding:24px;flex-direction:column;align-items:flex-start;gap:16px;}
+  .modal{padding:36px 24px;}
 }
 @media(max-width:480px){
-  .stats{grid-template-columns:1fr 1fr;}
-  .acq-target-list{gap:6px;}
-  footer{grid-template-columns:1fr;}
+  .numbers{grid-template-columns:1fr 1fr;}
+  .num{padding:20px 16px;}
+  .gallery{grid-template-rows:160px 160px 160px;}
+  footer{grid-template-columns:1fr;gap:24px;}
 }
 </style>
 </head>
 <body>
-<div class="ver">CK v9</div>
+<div class="ver">CK v6</div>
 
-<!-- ═══════════════════════════════════
-     NAV
-═══════════════════════════════════ -->
+<!-- CONTACT FORM MODAL -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕ Close</button>
+    <h2 class="modal-title" id="modalTitle">Get in touch</h2>
+    <p class="modal-sub">CK Events Management &amp; Hospitality Group LLC</p>
+    <form id="contactForm" action="https://formspree.io/f/hello@clandestino.kitchen" method="POST">
+      <div class="form-group">
+        <label for="cf-name">Full name</label>
+        <input type="text" id="cf-name" name="name" required placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="cf-email">Email address</label>
+        <input type="email" id="cf-email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label for="cf-company">Company / Organisation</label>
+        <input type="text" id="cf-company" name="company" placeholder="Optional">
+      </div>
+      <div class="form-group">
+        <label for="cf-type">Enquiry type</label>
+        <select id="cf-type" name="type" required>
+          <option value="" disabled selected>Select a category</option>
+          <option value="Corporate event">Corporate event</option>
+          <option value="Private event">Private event</option>
+          <option value="Hospitality consultancy">Hospitality consultancy</option>
+          <option value="Investment / acquisition">Investment / acquisition</option>
+          <option value="Hospitality partnership">Hospitality partnership</option>
+          <option value="Press / media">Press / media</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cf-msg">Message</label>
+        <textarea id="cf-msg" name="message" required placeholder="Tell us about your enquiry"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send message</button>
+      <p class="form-note">We respond within 24 hours · hello@clandestino.kitchen</p>
+    </form>
+  </div>
+</div>
+
+<!-- NAV -->
 <nav id="nav">
   <a href="#" class="n-left">
     <div class="n-mark"><span>CK</span></div>
-    <span class="n-name">Clandestino Kitchen</span>
+    <span class="n-wordmark">Clandestino Kitchen</span>
   </a>
   <ul class="n-links" id="nLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#model">Business model</a></li>
-    <li><a href="#brands">Brands</a></li>
-    <li><a href="#compliance">Compliance</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#brands">Our brands</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#vision">Vision</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="n-cta">Get in touch</a>
+  <button class="n-cta" onclick="openModal()">Get in touch</button>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- ═══════════════════════════════════
-     HERO
-═══════════════════════════════════ -->
+<!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-top">
-    <span class="hero-entity">CK Events Management &amp; Hospitality Group LLC · Wyoming, USA</span>
-    <div class="hero-badges">
-      <span class="hero-badge">Non-operational entity</span>
-      <span class="hero-badge">Event broker</span>
-      <span class="hero-badge">Hospitality consultancy</span>
+  <div class="bg-slides">
+    <div class="bg-slide active" style="background-image:url('img/bg1.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg2.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg3.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg4.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg5.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg6.jpg');"></div>
+  </div>
+  <div class="hero-center">
+    <span class="hero-brand">CK Events Management &amp; Hospitality Group LLC</span>
+    <div style="position:relative;width:100%;height:clamp(100px,19vw,230px);display:flex;align-items:flex-start;justify-content:center;">
+      <div class="hero-word active">EAT</div>
+      <div class="hero-word">CONNECT</div>
+      <div class="hero-word">EXPERIENCE</div>
+      <div class="hero-word">FOOD CULTURE</div>
+      <div class="hero-word">CLANDESTINO<br>KITCHEN</div>
+      <div class="hero-word">HOSPITALITY<br>GROUP</div>
     </div>
   </div>
-  <div>
-    <h1 class="hero-h">Global event<br>management<br>&amp; <em>hospitality</em><br>consultancy.</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">CK Events Management &amp; Hospitality Group LLC designs premium culinary experiences and manages international corporate dining events through a network of carefully curated venue and hospitality partners. Wyoming, USA.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Corporate enquiry</a>
-      <a href="#model" class="btn-ghost">Our business model</a>
-    </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot-btn active" aria-label="Slide 1"></button>
+    <button class="hero-dot-btn" aria-label="Slide 2"></button>
+    <button class="hero-dot-btn" aria-label="Slide 3"></button>
+    <button class="hero-dot-btn" aria-label="Slide 4"></button>
+    <button class="hero-dot-btn" aria-label="Slide 5"></button>
+    <button class="hero-dot-btn" aria-label="Slide 6"></button>
   </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="hero-scroll-line"></div>
-    <span>Scroll</span>
+  <div class="hero-tagline">
+    <div class="hero-sub">
+      <span class="hero-dot"></span>
+      Hospitality · Gastronomy · Event Culture
+    </div>
+    <button class="hero-scroll" onclick="document.getElementById('below').scrollIntoView({behavior:'smooth'})">
+      Discover the group <span class="scroll-arrow"></span>
+    </button>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════
-     STATS BAR
-═══════════════════════════════════ -->
-<div class="stats r">
-  <div class="stat"><div class="stat-val">JoEs TaBLe</div><div class="stat-lbl">Popup Bespoke Concept</div></div>
-  <div class="stat"><div class="stat-val">Clandestino Kitchen</div><div class="stat-lbl">B2B MANAGEMENT and CONSULTING</div></div>
-  <div class="stat"><div class="stat-val">Global</div><div class="stat-lbl">Corporate delivery</div></div>
-  <div class="stat"><div class="stat-val">Wyoming</div><div class="stat-lbl">USA incorporated</div></div>
+<div id="below" class="below">
+
+<div class="numbers">
+  <div class="num"><div class="num-val">2</div><div class="num-lbl">Active brands</div></div>
+  <div class="num"><div class="num-val">50 Best</div><div class="num-lbl">Discovery recognised</div></div>
+  <div class="num"><div class="num-val">Global</div><div class="num-lbl">Corporate delivery</div></div>
+  <div class="num"><div class="num-val">Global</div><div class="num-lbl">Operations · Europe &amp; beyond</div></div>
 </div>
 
-<!-- ═══════════════════════════════════
-     ABOUT
-═══════════════════════════════════ -->
-<section class="section about r" id="about">
-  <div class="section-inner">
-    <span class="ey">About CK LLC</span>
-    <div class="about-grid">
+<section class="group r" id="about">
+  <div class="group-inner">
+    <span class="ey-inv">The group</span>
+    <div class="group-grid">
       <div>
-        <h2 class="section-h">A non-operational<br>management<br><em>entity.</em></h2>
-        <p class="body-p">CK Events Management &amp; Hospitality Group LLC is a global event management and hospitality consultancy incorporated in Wyoming, USA. We design premium culinary experiences and manage international corporate dining events through a network of carefully curated venue and hospitality partners.</p>
-        <p class="body-p">CK LLC does not own venues, operate restaurants, employ hospitality staff, or hold food service licenses. All physical event execution and hospitality services are delivered exclusively by our independent network of licensed, locally-registered venue partners and culinary professionals.</p>
-        <p class="body-p">CK LLC operates as an event broker and hospitality consultant. All revenue flows through a single USD account at Mercury Bank. All international invoicing is conducted in EUR.</p>
+        <h2 class="g-h">A hospitality group<br>built on <em>food culture</em></h2>
+        <p class="g-p">CK Events Management & Hospitality Group LLC is the parent entity for a portfolio of brands that share one conviction: that the most powerful human experiences happen around a table.</p>
+        <p class="g-p">We design, manage, and broker private culinary events for the world's leading corporations and discerning private clients. We consult for hotels, restaurants, and F&B operators on concept, strategy, and execution. And we have built the proprietary technology that powers our operations.</p>
+        <div class="g-entity">Incorporated in Wyoming, USA · Operating globally across Europe and beyond</div>
       </div>
-      <div class="about-right">
-        <div class="fact-row"><span class="fact-lbl">Entity</span><span class="fact-val">CK Events Management &amp; Hospitality Group LLC</span></div>
-        <div class="fact-row"><span class="fact-lbl">Jurisdiction</span><span class="fact-val">Wyoming, USA</span></div>
-        <div class="fact-row"><span class="fact-lbl">Address</span><span class="fact-val">30 N Gould St Ste N, Sheridan, WY 82801, USA</span></div>
-        <div class="fact-row"><span class="fact-lbl">Director</span><span class="fact-val">Joe D'Costa (Portuguese citizen)</span></div>
-        <div class="fact-row"><span class="fact-lbl">Banking</span><span class="fact-val">Mercury Bank (USD account)</span></div>
-        <div class="fact-row"><span class="fact-lbl">Accounting</span><span class="fact-val">Wave Accounting</span></div>
-        <div class="fact-row"><span class="fact-lbl">Tax status</span><span class="fact-val">US federal disregarded entity (single-member LLC). Form 5472 filed annually.</span></div>
-        <div class="fact-row"><span class="fact-lbl">Invoicing</span><span class="fact-val">All international invoicing in EUR. Reverse charge for EU B2B clients (Art. 44 EU VAT Directive).</span></div>
-        <div class="entity-box">
-          <span class="entity-box-label">Registered entity</span>
-          <span class="entity-box-name">CK Events Management<br>&amp; Hospitality Group LLC</span>
-        </div>
+      <div class="g-brands">
+        <div class="g-brand"><span class="g-brand-n">01</span><div><div class="g-brand-name">JoEs TaBLe</div><div class="g-brand-role">Private culinary event format · Consumer brand</div></div></div>
+        <div class="g-brand"><span class="g-brand-n">02</span><div><div class="g-brand-name">Clandestino Kitchen</div><div class="g-brand-role">Hospitality management consultancy · B2B brand</div></div></div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════
-     BUSINESS MODEL
-═══════════════════════════════════ -->
-<section class="section model r" id="model">
-  <div class="section-inner">
-    <span class="ey-d">Business model</span>
-    <h2 class="section-h-d">Two revenue channels.<br><em>One entity.</em></h2>
-    <p class="body-p-d" style="max-width:560px;">CK LLC operates two distinct revenue channels under a single legal entity and a single bank account. All B2B client invoicing is under reverse charge. CK LLC does not collect or remit local VAT, IVA, or sales tax.</p>
-    <div class="model-grid">
-      <div class="model-card">
-        <span class="model-tag">B2C</span>
-        <div class="model-title">Consumer culinary<br>experiences</div>
-        <p class="model-p">CK LLC designs and licenses a premium culinary event format under the JoEs TaBLe brand. Consumers purchase access to these curated experiences directly from CK LLC. A licensed, independent venue or chef partner executes each event under JoEs TaBLe brand standards. The consumer's contract is exclusively with CK LLC.</p>
-        <hr class="model-divider">
-        <div class="model-role">
-          <strong>CK LLC role</strong>
-          Concept design, brand curation, customer management, invoicing, payment collection, partner coordination.
-        </div>
-        <div class="model-role" style="margin-top:12px;">
-          <strong>Executing partner role</strong>
-          All physical event delivery, food preparation, service, and on-site hospitality.
-        </div>
-      </div>
-      <div class="model-card">
-        <span class="model-tag">B2B</span>
-        <div class="model-title">Corporate event management<br>&amp; consultancy</div>
-        <p class="model-p">CK LLC provides comprehensive event management and hospitality advisory services to corporate clients globally under the Clandestino Kitchen brand. We design bespoke corporate dining experiences, manage event logistics, coordinate with venue and culinary partners, and deliver turnkey international event execution.</p>
-        <hr class="model-divider">
-        <div class="model-role">
-          <strong>CK LLC role</strong>
-          Strategic event design, partner coordination, vendor management, invoicing, compliance oversight.
-        </div>
-        <div class="model-role" style="margin-top:12px;">
-          <strong>Executing partner role</strong>
-          Physical event delivery, culinary execution, on-site hospitality management.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     BRANDS
-═══════════════════════════════════ -->
-<section class="brands r" id="brands">
-  <div class="section-inner" style="padding:0;">
-    <div style="padding:64px 56px 0;">
-      <span class="ey">Our brands</span>
-      <h2 class="section-h">Two distinct brands.<br><em>One philosophy.</em></h2>
-    </div>
-  </div>
-
-  <div class="brand-row">
-    <div class="b-text">
-      <span class="b-tag">Consumer brand · B2C</span>
-      <div class="b-name">JoEs TaBLe</div>
-      <div class="b-sub">Premium Culinary Experience Platform</div>
-      <p class="b-desc">Premium culinary event format and consumer-facing brand. Consumers purchase curated dining experiences directly from CK LLC. Available globally through our partner network. Recognised by the 50 Best Discovery programme.</p>
-      <div class="b-meta">
-        <div class="b-meta-row"><span class="b-meta-lbl">Invoice entity</span><span class="b-meta-val">CK Events Management &amp; Hospitality Group LLC</span></div>
-        <div class="b-meta-row"><span class="b-meta-lbl">Customer type</span><span class="b-meta-val">B2C — individual consumers and small groups</span></div>
-        <div class="b-meta-row"><span class="b-meta-lbl">Availability</span><span class="b-meta-val">Global (executed via local partners)</span></div>
-        <div class="b-meta-row"><span class="b-meta-lbl">Pricing model</span><span class="b-meta-val">Per-person ticket sales</span></div>
-      </div>
-    </div>
-    <div class="b-panel">
-      <span class="b-tag" style="color:rgba(184,154,94,.5);border-color:rgba(184,154,94,.15);">Visit</span>
-      <div class="b-name-d">JoEs TaBLe</div>
-      <p class="b-desc-d">The consumer experience. Social fine dining. One table. By reservation only.</p>
-      <a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener" style="font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,154,94,.6);text-decoration:none;margin-top:24px;transition:color .25s;" onmouseover="this.style.color='#b89a5e'" onmouseout="this.style.color='rgba(184,154,94,.6)'">Visit JoEs TaBLe ↗</a>
-    </div>
-  </div>
-
-  <div class="brand-row flip" style="border-top:1px solid var(--rule);">
-    <div class="b-panel">
-      <span class="b-tag" style="color:rgba(184,154,94,.5);border-color:rgba(184,154,94,.15);">Enquire</span>
-      <div class="b-name-d">Clandestino<br>Kitchen</div>
-      <p class="b-desc-d">The corporate identity. B2B event management and hospitality advisory. Global execution.</p>
-      <a href="#contact" style="font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,154,94,.6);text-decoration:none;margin-top:24px;transition:color .25s;" onmouseover="this.style.color='#b89a5e'" onmouseout="this.style.color='rgba(184,154,94,.6)'">Send enquiry ↗</a>
-    </div>
-    <div class="b-text">
-      <span class="b-tag">B2B brand · Corporate</span>
-      <div class="b-name">Clandestino<br>Kitchen</div>
-      <div class="b-sub">Hospitality Management · Event Consultancy</div>
-      <p class="b-desc">B2B hospitality management consultancy and corporate event brand. Serves international corporations, teams, and business clients requiring bespoke event design and execution. Advisory services on concept development, brand management, concept licensing, operational strategy, and event production.</p>
-      <div class="b-meta">
-        <div class="b-meta-row"><span class="b-meta-lbl">Invoice entity</span><span class="b-meta-val">CK Events Management &amp; Hospitality Group LLC</span></div>
-        <div class="b-meta-row"><span class="b-meta-lbl">Customer type</span><span class="b-meta-val">B2B — corporations and teams</span></div>
-        <div class="b-meta-row"><span class="b-meta-lbl">Availability</span><span class="b-meta-val">Global</span></div>
-        <div class="b-meta-row"><span class="b-meta-lbl">Service model</span><span class="b-meta-val">Comprehensive event management, advisory, consulting</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     PARTNER NETWORK
-═══════════════════════════════════ -->
-<section class="section network r" id="network">
-  <div class="section-inner">
-    <span class="ey">Partner network model</span>
-    <div class="network-grid">
-      <div>
-        <h2 class="section-h">Asset-light.<br>Compliant.<br><em>Scalable.</em></h2>
-        <p class="body-p">CK LLC's operational model depends entirely on a global network of independent, licensed hospitality professionals and venue operators. We do not employ these partners. They operate as independent contractors under service agreements with CK LLC.</p>
-        <p class="body-p">Each partner maintains their own business licenses, food service permits, liability insurance, and local tax registration. Each partner invoices CK LLC for services rendered and has no direct contractual relationship with end consumers or corporate clients.</p>
-        <p class="body-p">This structure ensures CK LLC operates as a pure management and advisory entity with no operational liability tied to local jurisdiction food service, employment, or hospitality regulations.</p>
-      </div>
-      <div>
-        <div class="do-grid">
-          <div class="do-card">
-            <span class="do-label yes">CK LLC does</span>
-            <div class="do-items">
-              <div class="do-item">Design and curate the event experience</div>
-              <div class="do-item">Manage the client relationship</div>
-              <div class="do-item">Coordinate partner execution</div>
-              <div class="do-item">Invoice the end customer</div>
-              <div class="do-item">Retain operational margin and format ownership</div>
-            </div>
-          </div>
-          <div class="do-card dont">
-            <span class="do-label no">CK LLC does not</span>
-            <div class="do-items">
-              <div class="do-item">Own or lease venues</div>
-              <div class="do-item">Employ hospitality staff</div>
-              <div class="do-item">Hold food service licenses</div>
-              <div class="do-item">Prepare or serve food</div>
-              <div class="do-item">Operate under local hospitality regulations</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     COMPLIANCE
-═══════════════════════════════════ -->
-<section class="section compliance r" id="compliance">
-  <div class="section-inner">
-    <span class="ey-d">Regulatory and compliance framework</span>
-    <h2 class="section-h-d">Built for<br><em>due diligence.</em></h2>
-    <div class="compliance-grid">
-      <div class="comp-card">
-        <span class="comp-icon">01</span>
-        <div class="comp-title">US federal compliance</div>
-        <p class="comp-text">Annual Form 5472 filing with the IRS. US federal disregarded entity status (single-member LLC). Non-US sourced income not subject to US federal income tax. 10-year audit trail maintained on all transaction records.</p>
-      </div>
-      <div class="comp-card">
-        <span class="comp-icon">02</span>
-        <div class="comp-title">International VAT compliance</div>
-        <p class="comp-text">All EU B2B invoicing under Art. 44 reverse charge rules (EU VAT Directive). VIES validation conducted before each EU B2B invoice. Spanish autonomo and EU vendor payments under Art. 69 place-of-supply rules. Zero IVA on all inbound partner invoices.</p>
-      </div>
-      <div class="comp-card">
-        <span class="comp-icon">03</span>
-        <div class="comp-title">Partner compliance obligations</div>
-        <p class="comp-text">All executing partners hold valid food service and venue operation licenses in their respective jurisdictions. Partners maintain comprehensive liability and professional indemnity insurance. Partners comply with local employment, health and safety, and food safety regulations independently.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     BANKING
-═══════════════════════════════════ -->
-<section class="section banking r" id="banking">
-  <div class="section-inner">
-    <span class="ey">Banking and financial transparency</span>
-    <div class="banking-grid">
-      <div>
-        <h2 class="section-h">Single account.<br>Clean records.<br><em>Full transparency.</em></h2>
-        <p class="body-p">CK LLC operates under a single USD bank account at Mercury Bank. All transactions, whether generated by JoEs TaBLe (B2C) or Clandestino Kitchen (B2B), flow through this account. Monthly reconciliation through Wave Accounting. Clear separation of revenue streams by customer type and geographic jurisdiction.</p>
-      </div>
-      <div>
-        <table class="bank-table">
-          <tr><td>Primary bank</td><td>Mercury Bank (USD account)</td></tr>
-          <tr><td>B2C payments</td><td>Stripe payment processing (direct consumer payment)</td></tr>
-          <tr><td>B2B payments</td><td>Bank transfer (corporate invoicing, net 15-60 days)</td></tr>
-          <tr><td>Accounting</td><td>Wave Accounting — monthly reconciliation</td></tr>
-          <tr><td>Invoicing</td><td>All international invoicing in EUR</td></tr>
-          <tr><td>VAT treatment</td><td>EU B2B reverse charge (Art. 44). No VAT/IVA collected or remitted.</td></tr>
-          <tr><td>CRS reporting</td><td>Compliant as US tax resident entity</td></tr>
-          <tr><td>Record retention</td><td>10-year audit trail on all transactions</td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     ROADMAP
-═══════════════════════════════════ -->
-<section class="section roadmap r" id="roadmap">
-  <div class="section-inner">
-    <span class="ey-d">Vision and roadmap</span>
-    <h2 class="section-h-d">Structured for<br><em>scalable growth.</em></h2>
-    <div class="roadmap-items">
-      <div class="rm-item">
-        <span class="rm-phase">Phase 1<br>Current</span>
-        <div>
-          <div class="rm-title">Infrastructure and IP foundation</div>
-          <p class="rm-desc">Finalization of global partner network in key culinary hubs (Barcelona, London, Tel Aviv, Singapore). Establishment of clear contractual frameworks with venue and hospitality partners. Development of proprietary operational technology (Pipeline). Acquisition of international domain presence and brand assets.</p>
-        </div>
-      </div>
-      <div class="rm-item">
-        <span class="rm-phase">Phase 2<br>H2 2026</span>
-        <div>
-          <div class="rm-title">Revenue expansion</div>
-          <p class="rm-desc">Launch of beta revenue streams with initial corporate clients. Scaling of JoEs TaBLe B2C ticket sales through partner network. Expansion of Clandestino Kitchen corporate advisory services. Soft launch of Pipeline beta functionality for select international partners.</p>
-        </div>
-      </div>
-      <div class="rm-item">
-        <span class="rm-phase">Phase 3<br>2027+</span>
-        <div>
-          <div class="rm-title">Multi-jurisdictional scaling</div>
-          <p class="rm-desc">Establishment of Cyprus LTD as IP holding entity (pending first EU VAT invoice trigger). Expansion of partner network into additional geographic markets. Scaling of both B2C and B2B revenue streams across geographic regions. Commercialization of Pipeline SaaS infrastructure for third-party event operators.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     ACQUISITION
-═══════════════════════════════════ -->
-<section class="section acquisition r" id="acquisition">
-  <div class="section-inner">
-    <span class="ey">Strategic positioning for acquisition</span>
-    <div class="acq-grid">
-      <div>
-        <h2 class="section-h">Architected for<br><em>acquisition.</em></h2>
-        <p class="body-p">CK LLC is structured as an acquisition-friendly, high-margin business model. Non-operational structure minimizes local regulatory and employment liabilities. IP-first model (format ownership, brand ownership, technology ownership) is highly scalable.</p>
-        <div class="acq-points">
-          <div class="acq-point"><div class="acq-dot"></div><div class="acq-point-text">Non-operational structure minimizes local regulatory and employment liabilities</div></div>
-          <div class="acq-point"><div class="acq-dot"></div><div class="acq-point-text">IP-first business model is highly scalable across geographies</div></div>
-          <div class="acq-point"><div class="acq-dot"></div><div class="acq-point-text">Multiple revenue streams reduce concentration risk</div></div>
-          <div class="acq-point"><div class="acq-dot"></div><div class="acq-point-text">Global partner network is asset-light and rapidly expandable</div></div>
-          <div class="acq-point"><div class="acq-dot"></div><div class="acq-point-text">Clean invoicing and tax structure is audit-ready from Day 1</div></div>
-          <div class="acq-point"><div class="acq-dot"></div><div class="acq-point-text">Cyprus Non-Dom exit structure (post-2027) at 0% capital gains tax on share disposal</div></div>
-        </div>
-      </div>
-      <div>
-        <p class="body-p">Network effect: each new partner amplifies total addressable market. Margin expansion: as scale increases, fixed costs decrease. Revenue diversification across B2C, B2B, and future SaaS.</p>
-        <div class="acq-targets">
-          <span class="acq-target-label">Target acquirers</span>
-          <div class="acq-target-list">
-            <span class="acq-target">Hospitality groups</span>
-            <span class="acq-target">Luxury travel companies</span>
-            <span class="acq-target">Food conglomerates</span>
-            <span class="acq-target">Private equity</span>
-            <span class="acq-target">Lifestyle brands</span>
-            <span class="acq-target">International hotel groups</span>
-            <span class="acq-target">SaaS platforms</span>
-            <span class="acq-target">DMCs</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     CONTACT
-═══════════════════════════════════ -->
-<section class="section contact r" id="contact">
-  <div class="section-inner">
-    <span class="ey-d">Contact and inquiry</span>
-    <div class="contact-grid">
-      <div>
-        <h2 class="section-h-d">Let's talk<br>business.</h2>
-        <p class="body-p-d" style="margin-bottom:32px;">For corporate event inquiries, partnerships, vendor due diligence, or investment discussions.</p>
-        <div class="contact-details">
-          <div class="cd-row"><span class="cd-lbl">Email</span><span class="cd-val"><a href="mailto:inquiry@clandestino.kitchen">inquiry@clandestino.kitchen</a></span></div>
-          <div class="cd-row"><span class="cd-lbl">Entity</span><span class="cd-val">CK Events Management &amp; Hospitality Group LLC</span></div>
-          <div class="cd-row"><span class="cd-lbl">Address</span><span class="cd-val">30 N Gould St Ste N<br>Sheridan, WY 82801, USA</span></div>
-          <div class="cd-row"><span class="cd-lbl">Banking</span><span class="cd-val">Mercury Bank (details provided upon contract)</span></div>
-          <div class="cd-row"><span class="cd-lbl">Instagram</span><span class="cd-val"><a href="https://www.instagram.com/joses.table" target="_blank" rel="noopener">@joses.table</a></span></div>
-          <div class="cd-row"><span class="cd-lbl">LinkedIn</span><span class="cd-val"><a href="https://www.linkedin.com/company/joestable/" target="_blank" rel="noopener">JoEs TaBLe</a></span></div>
-        </div>
-      </div>
-      <div>
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="cf-name">Full name</label>
-            <input type="text" id="cf-name" name="name" required placeholder="Your name">
-          </div>
-          <div class="form-group">
-            <label for="cf-email">Email address</label>
-            <input type="email" id="cf-email" name="email" required placeholder="your@company.com">
-          </div>
-          <div class="form-group">
-            <label for="cf-company">Company / Organisation</label>
-            <input type="text" id="cf-company" name="company" placeholder="Optional">
-          </div>
-          <div class="form-group">
-            <label for="cf-type">Enquiry type</label>
-            <select id="cf-type" name="type" required>
-              <option value="" disabled selected>Select a category</option>
-              <option value="Corporate event">Corporate event</option>
-              <option value="Private event">Private event</option>
-              <option value="Hospitality consultancy">Hospitality consultancy</option>
-              <option value="Investment / acquisition">Investment / acquisition</option>
-              <option value="Hospitality partnership">Hospitality partnership</option>
-              <option value="Vendor due diligence">Vendor due diligence</option>
-              <option value="Press / media">Press / media</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="cf-msg">Message</label>
-            <textarea id="cf-msg" name="message" required placeholder="Tell us about your enquiry"></textarea>
-          </div>
-          <button type="submit" class="form-submit">Send enquiry</button>
-          <p class="form-note">We respond within 24 hours · inquiry@clandestino.kitchen</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════
-     LEGAL DISCLOSURES
-═══════════════════════════════════ -->
-<div class="legal-section">
-  <div class="legal-section-inner">
-    <p>This page and all content on clandestino.kitchen represent CK Events Management &amp; Hospitality Group LLC's corporate identity and regulatory positioning. CK LLC operates as an intellectual property and event management company. All culinary experiences, localized events, and hospitality services are delivered by independent, fully licensed third-party operators in their respective jurisdictions. CK LLC does not provide food, beverage, or physical hospitality services directly.</p>
-    <p>All international invoicing conducted by CK LLC is subject to Article 44 of the EU VAT Directive (reverse charge for B2B supplies), Article 69 of Spanish VAT Law (place-of-supply rules for services to non-EU recipients), or equivalent non-EU jurisdictional rules. CK LLC maintains a 10-year record retention policy for all transaction documentation as required by US federal law and international tax compliance standards.</p>
+<div class="brands-hdr r" id="brands">
+  <div class="brands-hdr-inner">
+    <span class="ey">Our brands</span>
+    <h2 class="brands-h">Two distinct brands.<br><em>One philosophy.</em></h2>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════
-     FOOTER
-═══════════════════════════════════ -->
+<div class="brand-row r">
+  <div class="b-img"><img src="img/brand-joestable.webp" alt="JoEs TaBLe private culinary event"></div>
+  <div class="b-copy">
+    <span class="b-tag">Consumer brand · Private events</span>
+    <div class="b-name">JoEs TaBLe</div>
+    <div class="b-sub">Social Fine Dining · A Culinary Journey</div>
+    <p class="b-desc">A clandestine culinary event format competing at the forefront of high-end pop-up gastronomy. One table. Hand-selected locations. Chef-led. A tasting menu built on food culture, personal history, and storytelling.<br><br>Recognised by the 50 Best Discovery programme.</p>
+    <a href="https://ckemhgroup.github.io/JoEs.TaBLe/" class="txt-link" target="_blank" rel="noopener">Visit JoEs TaBLe ↗</a>
+  </div>
+</div>
+
+<div class="brand-row flip r">
+  <div class="b-img"><img src="img/brand-clandestino.webp" alt="Clandestino Kitchen hospitality consultancy"></div>
+  <div class="b-copy">
+    <span class="b-tag">B2B brand · Consultancy</span>
+    <div class="b-name">Clandestino<br>Kitchen</div>
+    <div class="b-sub">Hospitality Management · F&amp;B Strategy</div>
+    <p class="b-desc">The group's B2B consulting identity. Advisory services for hotels, restaurant groups, and F&B operators on concept development, operational strategy, supplier optimisation, and event production.<br><br>We work behind the scenes of the hospitality industry — building the infrastructure, partnerships, and commercial relationships that make extraordinary experiences possible.</p>
+    <button onclick="openModal()" class="txt-link" style="background:none;border:none;border-bottom:1px solid var(--rule);cursor:pointer;padding-bottom:2px;">Enquire about consultancy ↗</button>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<section class="philosophy r" id="philosophy">
+  <div class="phil-inner">
+    <span class="ey-inv">Philosophy</span>
+    <div class="phil-grid">
+      <div><h2 class="ph-h">Food is not<br>a product.<br><em>It is culture.</em></h2></div>
+      <div>
+        <blockquote class="ph-quote">"Food culture is one of the most important pillars of civilization. An extension of our nationalistic feeling, our ethnic feeling, our personal history, our province, our region, our tribe, our origins. Food is everything we are."</blockquote>
+        <cite class="ph-cite">Anthony Bourdain · The conviction behind everything we build</cite>
+        <p class="ph-p">Every brand in the CK group shares one foundational belief: the most meaningful experiences — in business and in life — happen around a table. We do not sell meals. We design occasions. We build the cultural and commercial infrastructure that makes extraordinary hospitality possible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vision r" id="vision">
+  <div class="vision-inner">
+    <span class="ey">Vision &amp; roadmap</span>
+    <div class="vis-grid">
+      <div>
+        <h2 class="vis-h">Building a global<br><em>hospitality brand</em></h2>
+        <p class="vis-p">CK is building the number one global corporate culinary event brand — with clean auditable financials and a co-op execution network across multiple cities.</p>
+        <p class="vis-p">The group is structured for acquisition by a hospitality group, luxury travel company, food conglomerate, or private equity roll-up. Target exit: €8–20M at full build-out.</p>
+      </div>
+      <div>
+        <div class="ms"><span class="ms-period">Now</span><div><div class="ms-title">Operations &amp; brand building</div><div class="ms-desc">JoEs TaBLe events live. Corporate client pipeline active. Financial trace clean from Day 1. Co-op execution network in Barcelona.</div></div></div>
+        <div class="ms"><span class="ms-period">2026</span><div><div class="ms-title">Scale &amp; European expansion</div><div class="ms-desc">Revenue target €10,000–20,000/month. Co-op network expanding to second city. Cyprus LTD activated for EU operations.</div></div></div>
+        <div class="ms"><span class="ms-period">2027</span><div><div class="ms-title">Acquisition readiness</div><div class="ms-desc">Two years of audited financials. Multi-city operations. Recurring technology revenue established. Acquisition conversations begin.</div></div></div>
+        <div class="ms"><span class="ms-period">Exit</span><div><div class="ms-title">€8–20M target</div><div class="ms-desc">Cyprus LTD share disposal at 0% CGT. Exit to hospitality group, luxury travel company, food conglomerate, or PE roll-up.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact r" id="contact">
+  <div class="contact-inner">
+    <div class="co-grid">
+      <div>
+        <span class="ey-inv">Get in touch</span>
+        <h2 class="co-h">Let's build<br><em>something</em></h2>
+        <p class="co-p">Whether you are exploring a collaboration, considering an investment, or simply want to understand what the group does — we welcome the conversation.</p>
+        <div>
+          <div class="co-item"><span class="co-lbl">General</span><span class="co-val"><a href="#" onclick="openModal();return false;">Open enquiry form</a></span></div>
+          <div class="co-item"><span class="co-lbl">Events</span><span class="co-val"><a href="#" onclick="openModal();return false;">Book an event</a></span></div>
+          <div class="co-item"><span class="co-lbl">Email</span><span class="co-val"><a href="mailto:hello@clandestino.kitchen">hello@clandestino.kitchen</a></span></div>
+          <div class="co-item"><span class="co-lbl">Entity</span><span class="co-val">CK Events Management &amp; Hospitality Group LLC<br>30 N Gould St Ste N, Sheridan, WY 82801, USA</span></div>
+          <div class="co-item"><span class="co-lbl">Instagram</span><span class="co-val"><a href="https://www.instagram.com/joses.table" target="_blank" rel="noopener">@joses.table</a></span></div>
+          <div class="co-item"><span class="co-lbl">LinkedIn</span><span class="co-val"><a href="https://www.linkedin.com/company/joestable/" target="_blank" rel="noopener">JoEs TaBLe</a></span></div>
+        </div>
+      </div>
+      <div>
+        <span class="ey-inv" style="margin-bottom:32px;display:block;">We welcome</span>
+        <div>
+          <div class="collab"><div class="collab-name">Corporate clients</div><div class="collab-desc">Private culinary events for teams, client entertainment, and executive occasions. Custom formats. Any scale. Any European location.</div></div>
+          <div class="collab"><div class="collab-name">Investment &amp; acquisition</div><div class="collab-desc">Strategic investors and acquirers interested in the group's growth trajectory and exit structure are welcome to open a conversation.</div></div>
+          <div class="collab"><div class="collab-name">Hospitality partnerships</div><div class="collab-desc">Hotels, venue operators, and F&B groups looking to integrate JoEs TaBLe events or access Clandestino Kitchen consultancy.</div></div>
+
+          <div class="collab"><div class="collab-name">Press &amp; media</div><div class="collab-desc">Journalists and editors covering gastronomy, luxury hospitality, and food culture.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div>
-    <span class="f-brand">Clandestino Kitchen</span>
-    <p class="f-entity">CK Events Management<br>&amp; Hospitality Group LLC<br>30 N Gould St Ste N<br>Sheridan, WY 82801, USA<br><br>Global event management<br>and hospitality consultancy.</p>
+    <span class="f-name">Clandestino Kitchen</span>
+    <p class="f-entity">CK Events Management<br>&amp; Hospitality Group LLC<br>30 N Gould St Ste N<br>Sheridan, WY 82801, USA<br><br>A hospitality group at the intersection<br>of culinary culture, event management,<br>and F&amp;B strategy.</p>
   </div>
-  <div class="f-col">
-    <h4>The group</h4>
-    <ul>
-      <li><a href="#about">About CK LLC</a></li>
-      <li><a href="#model">Business model</a></li>
-      <li><a href="#compliance">Compliance</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-    </ul>
-  </div>
-  <div class="f-col">
-    <h4>Brands</h4>
-    <ul>
-      <li><a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener">JoEs TaBLe</a></li>
-      <li><a href="mailto:inquiry@clandestino.kitchen">Clandestino Kitchen</a></li>
-    </ul>
-  </div>
-  <div class="f-col">
-    <h4>Legal</h4>
-    <ul>
-      <li><a href="terms.html">Terms of use</a></li>
-      <li><a href="privacy-policy.html">Privacy policy</a></li>
-      <li><a href="cookie-policy.html">Cookie policy</a></li>
-    </ul>
-  </div>
+  <div class="f-col"><h4>The group</h4><ul><li><a href="#about">About CK</a></li><li><a href="#brands">Our brands</a></li><li><a href="#philosophy">Philosophy</a></li><li><a href="#vision">Vision</a></li></ul></div>
+  <div class="f-col"><h4>Brands</h4><ul><li><a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener">JoEs TaBLe</a></li><li><a href="mailto:hello@clandestino.kitchen">Clandestino Kitchen</a></li></ul></div>
+  <div class="f-col"><h4>Contact</h4><ul><li><a href="#" onclick="openModal();return false;">Send enquiry</a></li><li><a href="mailto:hello@clandestino.kitchen">hello@clandestino.kitchen</a></li><li><a href="#" onclick="openModal();return false;">Press &amp; media</a></li></ul></div>
+  <div class="f-col"><h4>Legal</h4><ul><li><a href="https://ckemhgroup.github.io/Clandestino.Kitchen/terms.html">Terms of use</a></li><li><a href="https://ckemhgroup.github.io/Clandestino.Kitchen/privacy-policy.html">Privacy policy</a></li><li><a href="https://ckemhgroup.github.io/Clandestino.Kitchen/cookie-policy.html">Cookie policy</a></li></ul></div>
 </footer>
 <div class="f-base">
-  <p class="f-copy">&copy; 2026 CK Events Management &amp; Hospitality Group LLC &nbsp;&middot;&nbsp; All rights reserved</p>
-  <div class="f-legal-links">
-    <a href="privacy-policy.html">Privacy</a>
-    <a href="cookie-policy.html">Cookies</a>
-  </div>
+  <p class="f-copy">© 2026 CK Events Management &amp; Hospitality Group LLC &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; <a href="https://ckemhgroup.github.io/JoEs.TaBLe/">JoEs TaBLe</a></p>
+  <div class="f-soc"><a href="https://www.instagram.com/joses.table" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/company/joestable/" target="_blank" rel="noopener">LinkedIn</a></div>
+</div>
+
 </div>
 
 <script>
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('solid', window.scrollY > 80);
-}, {passive:true});
+// Nav
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('solid',window.scrollY>window.innerHeight*.85);},{passive:true});
 
 // Burger
-const burger = document.getElementById('burger');
-const nLinks = document.getElementById('nLinks');
-burger.addEventListener('click', () => {
-  const o = nLinks.classList.toggle('open');
-  burger.setAttribute('aria-expanded', String(o));
-});
-nLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nLinks.classList.remove('open')));
+const burger=document.getElementById('burger');
+const nLinks=document.getElementById('nLinks');
+burger.addEventListener('click',()=>{const o=nLinks.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
+nLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nLinks.classList.remove('open')));
+
+// Hero rotation
+const slides=document.querySelectorAll('.bg-slide');
+const words=document.querySelectorAll('.hero-word');
+const dots=document.querySelectorAll('.hero-dot-btn');
+let current=0;
+const total=slides.length;
+function goTo(n){
+  slides[current].classList.remove('active');
+  words[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  current=n%total;
+  slides[current].classList.add('active');
+  words[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+let timer=setInterval(()=>goTo(current+1),3200);
+dots.forEach((d,i)=>d.addEventListener('click',()=>{clearInterval(timer);goTo(i);timer=setInterval(()=>goTo(current+1),3200);}));
 
 // Scroll reveal
-const io = new IntersectionObserver(e => {
-  e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target); } });
-}, {threshold:.04, rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.r').forEach(el => io.observe(el));
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}});},{threshold:.04,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
 
-// Contact form
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// Contact modal
+function openModal(){document.getElementById('contactModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('contactModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('contactModal').addEventListener('click',e=>{if(e.target===document.getElementById('contactModal'))closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+// Form submission — prevent default, show confirmation
+document.getElementById('contactForm').addEventListener('submit',function(e){
   e.preventDefault();
-  const btn = this.querySelector('.form-submit');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  setTimeout(() => {
-    this.innerHTML = '<p style="font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.05em;color:rgba(240,236,228,.45);text-align:center;padding:20px 0;">Enquiry sent. We will respond within 24 hours.</p>';
-  }, 900);
+  const btn=this.querySelector('.form-submit');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  // In production: replace with actual Formspree or backend endpoint
+  // For now: show success after 1s simulation
+  setTimeout(()=>{
+    this.innerHTML='<p style="font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.06em;color:var(--mid);text-align:center;padding:20px 0;">Message sent. We will be in touch within 24 hours.</p>';
+  },1000);
 });
 </script>
 
-<!-- GDPR Cookie Consent -->
+<!-- GDPR Cookie Consent Banner -->
 <script>
+/* ─────────────────────────────────────────────
+   CK / JoEs TaBLe — GDPR Cookie Consent
+   Lightweight, no dependencies, GDPR Art.7 compliant
+   Works on both joestable and clandestino.kitchen
+   v1 · June 2026
+───────────────────────────────────────────── */
 (function(){
   'use strict';
-  var KEY = 'ck_cookie_consent';
-  var POLICY = 'cookie-policy.html';
-  if (localStorage.getItem(KEY)) return;
+
+  var STORAGE_KEY = 'ck_cookie_consent';
+  var POLICY_URL  = 'https://ckemhgroup.github.io/Clandestino.Kitchen/cookie-policy.html';
+
+  // Already consented or declined — do nothing
+  if (localStorage.getItem(STORAGE_KEY)) return;
+
   var banner = document.createElement('div');
-  banner.id = 'ck-cb';
-  banner.setAttribute('role','dialog');
-  banner.setAttribute('aria-label','Cookie consent');
+  banner.id = 'ck-cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-modal', 'false');
+  banner.setAttribute('aria-label', 'Cookie consent');
+
+  banner.innerHTML = [
+    '<div class="ck-cb-inner">',
+    '  <div class="ck-cb-text">',
+    '    <strong>We use cookies</strong>',
+    '    <span>This site uses essential cookies only. No tracking, no analytics, no advertising. ',
+    '    By continuing you accept our <a href="' + POLICY_URL + '">Cookie Policy</a>.</span>',
+    '  </div>',
+    '  <div class="ck-cb-actions">',
+    '    <button id="ck-cb-accept" class="ck-cb-btn ck-cb-accept">Accept</button>',
+    '    <button id="ck-cb-decline" class="ck-cb-btn ck-cb-decline">Decline</button>',
+    '  </div>',
+    '</div>'
+  ].join('');
+
   var style = document.createElement('style');
-  style.textContent = '#ck-cb{position:fixed;bottom:0;left:0;right:0;z-index:9999;animation:ck-up .4s cubic-bezier(.16,1,.3,1) forwards;}@keyframes ck-up{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}.ck-cb-i{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:14px 40px;background:#0d0b09;border-top:1px solid rgba(184,154,94,.18);}.ck-cb-t{font-family:"Inter",sans-serif;font-size:11px;font-weight:300;letter-spacing:.03em;color:rgba(240,236,228,.5);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}.ck-cb-t strong{color:rgba(240,236,228,.8);font-weight:400;font-family:"Raleway",sans-serif;font-size:12px;white-space:nowrap;}.ck-cb-t a{color:rgba(184,154,94,.75);text-decoration:none;border-bottom:1px solid rgba(184,154,94,.25);}.ck-cb-a{display:flex;gap:8px;flex-shrink:0;}.ck-cb-btn{font-family:"Inter",sans-serif;font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;padding:0 20px;min-height:36px;transition:all .25s;}.ck-cb-ok{background:#b89a5e;color:#0d0b09;}.ck-cb-ok:hover{background:#ccaa66;}.ck-cb-no{background:transparent;color:rgba(240,236,228,.28);border:1px solid rgba(240,236,228,.1);}.ck-cb-no:hover{color:rgba(240,236,228,.6);border-color:rgba(240,236,228,.3);}@media(max-width:640px){.ck-cb-i{padding:14px 20px;flex-direction:column;align-items:flex-start;gap:12px;}.ck-cb-a{width:100%;justify-content:flex-end;}}';
-  banner.innerHTML = '<div class="ck-cb-i"><div class="ck-cb-t"><strong>We use cookies</strong><span>Essential cookies only. No tracking, no advertising. <a href="'+POLICY+'">Cookie Policy</a>.</span></div><div class="ck-cb-a"><button class="ck-cb-btn ck-cb-ok" id="ck-ok">Accept</button><button class="ck-cb-btn ck-cb-no" id="ck-no">Decline</button></div></div>';
-  function dismiss(v){localStorage.setItem(KEY,v);banner.style.transition='transform .3s ease,opacity .3s ease';banner.style.transform='translateY(100%)';banner.style.opacity='0';setTimeout(function(){banner.remove();style.remove();},320);}
+  style.textContent = [
+    '#ck-cookie-banner{',
+    '  position:fixed;bottom:0;left:0;right:0;z-index:9999;',
+    '  padding:0;',
+    '  animation:ck-slide-up .4s cubic-bezier(.16,1,.3,1) forwards;',
+    '}',
+    '@keyframes ck-slide-up{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}',
+    '.ck-cb-inner{',
+    '  max-width:1200px;margin:0 auto;',
+    '  display:flex;align-items:center;justify-content:space-between;',
+    '  gap:24px;flex-wrap:wrap;',
+    '  padding:16px 40px;',
+    '  background:var(--dark,#0e0c0a);',
+    '  border-top:1px solid rgba(184,154,94,.2);',
+    '}',
+    '.ck-cb-text{',
+    '  font-family:var(--M,"Inter",sans-serif);',
+    '  font-size:11px;font-weight:300;letter-spacing:.03em;',
+    '  color:rgba(237,232,222,.55);',
+    '  display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;',
+    '}',
+    '.ck-cb-text strong{',
+    '  color:rgba(237,232,222,.85);font-weight:400;',
+    '  font-family:var(--F,"Raleway",sans-serif);font-size:12px;',
+    '  white-space:nowrap;',
+    '}',
+    '.ck-cb-text a{color:rgba(184,154,94,.8);text-decoration:none;border-bottom:1px solid rgba(184,154,94,.3);}',
+    '.ck-cb-text a:hover{color:#b89a5e;}',
+    '.ck-cb-actions{display:flex;gap:8px;flex-shrink:0;}',
+    '.ck-cb-btn{',
+    '  font-family:var(--M,"Inter",sans-serif);',
+    '  font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;',
+    '  border:none;cursor:pointer;padding:0 20px;min-height:36px;',
+    '  transition:all .25s;',
+    '}',
+    '.ck-cb-accept{background:#b89a5e;color:#0e0c0a;}',
+    '.ck-cb-accept:hover{background:#ccaa66;}',
+    '.ck-cb-decline{background:transparent;color:rgba(237,232,222,.3);border:1px solid rgba(237,232,222,.1);}',
+    '.ck-cb-decline:hover{color:rgba(237,232,222,.6);border-color:rgba(237,232,222,.3);}',
+    '@media(max-width:640px){',
+    '  .ck-cb-inner{padding:14px 20px;flex-direction:column;align-items:flex-start;gap:14px;}',
+    '  .ck-cb-actions{width:100%;justify-content:flex-end;}',
+    '}'
+  ].join('');
+
+  function dismiss(value) {
+    localStorage.setItem(STORAGE_KEY, value);
+    banner.style.transition = 'transform .3s ease, opacity .3s ease';
+    banner.style.transform = 'translateY(100%)';
+    banner.style.opacity = '0';
+    setTimeout(function(){ banner.remove(); style.remove(); }, 320);
+  }
+
   document.head.appendChild(style);
   document.body.appendChild(banner);
-  document.getElementById('ck-ok').addEventListener('click',function(){dismiss('accepted');});
-  document.getElementById('ck-no').addEventListener('click',function(){dismiss('declined');});
+
+  document.getElementById('ck-cb-accept').addEventListener('click', function(){ dismiss('accepted'); });
+  document.getElementById('ck-cb-decline').addEventListener('click', function(){ dismiss('declined'); });
 })();
+
 </script>
 </body>
 </html>
