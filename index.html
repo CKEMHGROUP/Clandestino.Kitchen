@@ -203,9 +203,6 @@ footer{background:var(--black);padding:48px 56px 28px;border-top:1px solid rgba(
 .f-col a:hover{color:rgba(240,236,228,.78);}
 .f-base{background:var(--black);padding:14px 56px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(240,236,228,.04);}
 .f-copy{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.04em;color:rgba(240,236,228,.2);}
-.f-legal-links{display:flex;gap:18px;}
-.f-legal-links a{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:rgba(240,236,228,.2);text-decoration:none;min-height:40px;display:inline-flex;align-items:center;transition:color .25s;}
-.f-legal-links a:hover{color:rgba(240,236,228,.5);}
 
 /* ═══ MOBILE ═══ */
 @media(max-width:960px){
@@ -237,7 +234,7 @@ footer{background:var(--black);padding:48px 56px 28px;border-top:1px solid rgba(
 </style>
 </head>
 <body>
-<div class="ver">CK v13</div>
+<div class="ver">CK v14</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -431,18 +428,6 @@ footer{background:var(--black);padding:48px 56px 28px;border-top:1px solid rgba(
             <input type="text" id="cf-company" name="company" placeholder="Optional">
           </div>
           <div class="form-group">
-            <label for="cf-type">Enquiry type</label>
-            <select id="cf-type" name="type" required>
-              <option value="" disabled selected>Select a category</option>
-              <option value="Corporate event">Corporate event</option>
-              <option value="Private event">Private event</option>
-              <option value="Hospitality consultancy">Hospitality consultancy</option>
-              <option value="Investment / acquisition">Investment / acquisition</option>
-              <option value="Press / media">Press / media</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
             <label for="cf-msg">Message</label>
             <textarea id="cf-msg" name="message" required placeholder="Tell us about your enquiry"></textarea>
           </div>
@@ -486,10 +471,6 @@ footer{background:var(--black);padding:48px 56px 28px;border-top:1px solid rgba(
 </footer>
 <div class="f-base">
   <p class="f-copy">&copy; 2026 CK Events Management &amp; Hospitality Group LLC &nbsp;&middot;&nbsp; All rights reserved</p>
-  <div class="f-legal-links">
-    <a href="privacy-policy.html">Privacy</a>
-    <a href="cookie-policy.html">Cookies</a>
-  </div>
 </div>
 
 <script>
