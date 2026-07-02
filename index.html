@@ -73,7 +73,7 @@ nav.solid .burger span{background:var(--text);}
 .bg-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,4,.38) 0%,rgba(6,5,4,.38) 40%,rgba(6,5,4,.92) 100%);}
 
 /* Entity label -- moved above carousel */
-.hero-entity-top{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,228,.45);display:block;margin-bottom:clamp(20px,4vw,40px);}
+.hero-entity-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:82px 48px 0;font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,236,228,.4);}
 
 /* Word stage -- centred */
 .hero-center{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 32px;}
@@ -82,10 +82,10 @@ nav.solid .burger span{background:var(--text);}
 .hero-word.active{opacity:1;transform:none;}
 
 /* Dots + scroll */
-.hero-foot{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:0 48px 28px;display:flex;justify-content:space-between;align-items:flex-end;}
-.hero-dots{display:flex;gap:6px;}
-.hero-dot{width:3px;height:16px;background:rgba(240,236,228,.2);border:none;cursor:pointer;padding:0;transition:background .4s,height .3s;}
-.hero-dot.active{background:var(--gold);height:26px;}
+.hero-foot{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:0 48px 28px;display:flex;justify-content:flex-end;align-items:flex-end;}
+.hero-dots{position:absolute;right:26px;top:50%;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;gap:8px;}
+.hero-dot{width:3px;height:18px;background:rgba(240,236,228,.18);border:none;cursor:pointer;padding:0;transition:background .4s,height .3s;}
+.hero-dot.active{background:var(--gold);height:30px;}
 .hero-down{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,236,228,.28);display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;transition:color .2s;}
 .hero-down:hover{color:rgba(240,236,228,.6);}
 .hero-arr{width:12px;height:12px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);}
@@ -202,9 +202,9 @@ nav.solid .burger span{background:var(--text);}
 
 /* ── FOOTER ── */
 footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(240,236,228,.05);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;}
-.f-brand{font-family:var(--F);font-size:13px;font-weight:300;color:rgba(240,236,228,.48);display:block;margin-bottom:10px;}
-.f-entity{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.03em;color:rgba(240,236,228,.24);line-height:1.9;}
-.f-slogan{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,154,94,.55);display:block;margin:5px 0 14px;}
+.f-brand{font-family:var(--F);font-size:13px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,236,228,.55);display:block;margin-bottom:6px;}
+.f-entity{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.03em;color:rgba(240,236,228,.24);line-height:1.85;}
+.f-slogan{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:rgba(184,154,94,.55);display:block;margin:4px 0 16px;}
 .f-col h4{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,154,94,.48);margin-bottom:16px;}
 .f-col ul{list-style:none;}
 .f-col li{margin-bottom:7px;}
@@ -255,7 +255,7 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
 </style>
 </head>
 <body>
-<div class="ver">CK v20</div>
+<div class="ver">CK v21</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -283,9 +283,10 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
     <div class="bg-slide" style="background-image:url('img/bg4.jpg');"></div>
     <div class="bg-slide" style="background-image:url('img/bg6.jpg');"></div>
   </div>
-  <!-- Rotating words -- entity label centred above carousel -->
+  <!-- Entity label fixed top-left -->
+  <div class="hero-entity-top">CK Events Management &amp; Hospitality Group LLC</div>
+  <!-- Rotating words centred -->
   <div class="hero-center">
-    <span class="hero-entity-top">CK Events Management &amp; Hospitality Group LLC</span>
     <div class="hero-word-stage">
       <div class="hero-word active">EAT</div>
       <div class="hero-word">CONNECT</div>
@@ -295,14 +296,14 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
     </div>
   </div>
   <!-- Dots + scroll -->
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" aria-label="Slide 1"></button>
+    <button class="hero-dot" aria-label="Slide 2"></button>
+    <button class="hero-dot" aria-label="Slide 3"></button>
+    <button class="hero-dot" aria-label="Slide 4"></button>
+    <button class="hero-dot" aria-label="Slide 5"></button>
+  </div>
   <div class="hero-foot">
-    <div class="hero-dots" id="heroDots">
-      <button class="hero-dot active" aria-label="Slide 1"></button>
-      <button class="hero-dot" aria-label="Slide 2"></button>
-      <button class="hero-dot" aria-label="Slide 3"></button>
-      <button class="hero-dot" aria-label="Slide 4"></button>
-      <button class="hero-dot" aria-label="Slide 5"></button>
-    </div>
     <button class="hero-down" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
       Discover more <span class="hero-arr"></span>
     </button>
@@ -326,19 +327,19 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
   <div class="meth-grid">
     <div class="meth-collage">
       <div class="mc-cell">
-        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80" alt="Conceive">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Conceive">
         <span class="mc-label">Conceive</span>
       </div>
       <div class="mc-cell">
-        <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&q=80" alt="Curate">
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80" alt="Curate">
         <span class="mc-label">Curate</span>
       </div>
       <div class="mc-cell">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Direct">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80" alt="Direct">
         <span class="mc-label">Direct</span>
       </div>
       <div class="mc-cell">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Deliver">
+        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800&q=80" alt="Deliver">
         <span class="mc-label">Deliver</span>
       </div>
     </div>
