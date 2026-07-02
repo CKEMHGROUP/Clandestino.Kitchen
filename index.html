@@ -73,9 +73,7 @@ nav.solid .burger span{background:var(--text);}
 .bg-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,4,.38) 0%,rgba(6,5,4,.38) 40%,rgba(6,5,4,.92) 100%);}
 
 /* Entity label -- moved above carousel */
-.hero-entity-bar{position:absolute;top:0;left:0;right:0;z-index:3;padding:80px 48px 0;display:flex;justify-content:space-between;align-items:center;}
-.hero-entity{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,228,.48);}
-.hero-entity-right{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);}
+.hero-entity-top{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,228,.45);display:block;margin-bottom:clamp(20px,4vw,40px);}
 
 /* Word stage -- centred */
 .hero-center{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 32px;}
@@ -122,8 +120,11 @@ nav.solid .burger span{background:var(--text);}
 /* ── METHODOLOGY -- image left, text+steps right ── */
 .meth{background:var(--bg);}
 .meth-grid{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
-.meth-img{position:relative;overflow:hidden;background:var(--dark);}
-.meth-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.72);}
+.meth-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;background:var(--dark);}
+.mc-cell{position:relative;overflow:hidden;aspect-ratio:1/1;}
+.mc-cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62);transition:filter .6s ease;}
+.mc-cell:hover img{filter:brightness(.8);}
+.mc-label{position:absolute;bottom:12px;left:14px;font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,228,.7);z-index:2;}
 .meth-body{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;background:var(--white);}
 .meth-label{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:18px;}
 .meth-h{font-family:var(--F);font-size:clamp(22px,2.8vw,36px);font-weight:300;line-height:1.1;letter-spacing:-.012em;color:var(--text);margin-bottom:6px;}
@@ -203,7 +204,7 @@ nav.solid .burger span{background:var(--text);}
 footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(240,236,228,.05);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;}
 .f-brand{font-family:var(--F);font-size:13px;font-weight:300;color:rgba(240,236,228,.48);display:block;margin-bottom:10px;}
 .f-entity{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.03em;color:rgba(240,236,228,.24);line-height:1.9;}
-.f-slogan{font-family:var(--F);font-size:14px;font-weight:200;font-style:italic;color:rgba(184,154,94,.5);line-height:1.5;margin-top:14px;letter-spacing:.01em;}
+.f-slogan{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,154,94,.55);display:block;margin:5px 0 14px;}
 .f-col h4{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,154,94,.48);margin-bottom:16px;}
 .f-col ul{list-style:none;}
 .f-col li{margin-bottom:7px;}
@@ -219,13 +220,11 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
   .burger{display:flex;}
   .n-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,5,4,.97);justify-content:center;align-items:center;gap:28px;z-index:399;}
   .n-links.open a{font-size:16px;letter-spacing:.12em;color:rgba(240,236,228,.7);}
-  .hero-entity-bar{padding:72px 20px 0;}
-  .hero-entity-right{display:none;}
   .hero-foot{padding:0 20px 22px;}
   .hero-dots{display:none;}
   .intro{padding:64px 20px;}
   .meth-grid{grid-template-columns:1fr;}
-  .meth-img{min-height:260px;aspect-ratio:16/9;}
+  .meth-collage{min-height:260px;}
   .meth-body{padding:44px 20px;}
   .sec{padding:64px 20px;}
   .group-grid{grid-template-columns:1fr;gap:32px;}
@@ -256,7 +255,7 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
 </style>
 </head>
 <body>
-<div class="ver">CK v19</div>
+<div class="ver">CK v20</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -284,13 +283,9 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
     <div class="bg-slide" style="background-image:url('img/bg4.jpg');"></div>
     <div class="bg-slide" style="background-image:url('img/bg6.jpg');"></div>
   </div>
-  <!-- Entity label above carousel -->
-  <div class="hero-entity-bar">
-    <span class="hero-entity">CK Events Management &amp; Hospitality Group LLC</span>
-    <span class="hero-entity-right">Wyoming, USA &middot; Est. 2026</span>
-  </div>
-  <!-- Rotating words -- centred on image -->
+  <!-- Rotating words -- entity label centred above carousel -->
   <div class="hero-center">
+    <span class="hero-entity-top">CK Events Management &amp; Hospitality Group LLC</span>
     <div class="hero-word-stage">
       <div class="hero-word active">EAT</div>
       <div class="hero-word">CONNECT</div>
@@ -329,8 +324,23 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
 <!-- METHODOLOGY -- image left, text+steps right -->
 <div class="meth r" id="methodology">
   <div class="meth-grid">
-    <div class="meth-img">
-      <img src="img/event-applause.webp" alt="CK methodology in practice">
+    <div class="meth-collage">
+      <div class="mc-cell">
+        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80" alt="Conceive">
+        <span class="mc-label">Conceive</span>
+      </div>
+      <div class="mc-cell">
+        <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&q=80" alt="Curate">
+        <span class="mc-label">Curate</span>
+      </div>
+      <div class="mc-cell">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Direct">
+        <span class="mc-label">Direct</span>
+      </div>
+      <div class="mc-cell">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Deliver">
+        <span class="mc-label">Deliver</span>
+      </div>
     </div>
     <div class="meth-body">
       <span class="meth-label">How we work</span>
@@ -362,7 +372,7 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
         </div>
       </div>
       <div class="group-img">
-        <img src="img/ck-hero.webp" alt="Clandestino Kitchen">
+        <img src="img/brand-clandestino.webp" alt="Clandestino Kitchen">
       </div>
     </div>
   </div>
@@ -475,8 +485,8 @@ footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(
 <footer>
   <div>
     <span class="f-brand">Clandestino Kitchen</span>
-    <p class="f-entity">CK Events Management<br>&amp; Hospitality Group LLC<br>Wyoming, USA</p>
-    <p class="f-slogan">Eat. Connect. Experience.</p>
+    <span class="f-slogan">Eat. Connect. Experience.</span>
+    <p class="f-entity">CK Events Management &amp; Hospitality Group LLC<br>Wyoming, USA</p>
   </div>
   <div class="f-col">
     <h4>The group</h4>
