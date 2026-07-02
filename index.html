@@ -1,1931 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>CK Events Management &amp; Hospitality Group LLC</title>
-    <meta name="description" content="A portfolio of brands at the intersection of gastronomy, food culture, and hospitality. Wyoming, USA.">
-    <meta name="robots" content="index, follow">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://clandestino.kitchen/">
-    <meta property="og:title" content="CK Events Management &amp; Hospitality Group LLC">
-    <meta property="og:description" content="A portfolio of brands at the intersection of gastronomy, food culture, and hospitality.">
-    <meta property="og:image" content="img/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Clandestino Kitchen">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CK Events Management &amp; Hospitality Group LLC">
-    <meta name="twitter:description" content="A portfolio of brands at the intersection of gastronomy, food culture, and hospitality.">
-    <meta name="twitter:image" content="img/og-image.jpg">
-    <link rel="icon" href="img/favicon.ico" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#060504">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-    *, * ::before, * ::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-    }
-
-    :root {
-        --bg: #f7f4ef;
-        --ink: #f0ece4;
-        --white: #ffffff;
-        --dark: #0d0b09;
-        --black: #060504;
-        --text: #1e1c1a;
-        --mid: #5a5248;
-        --dim: #9a9088;
-        --gold: #b89a5e;
-        --rule: rgba(30, 28, 26, .09);
-        --ruled: rgba(240, 236, 228, .07);
-        --F: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
-        --M: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    html {
-        background: var(--bg);
-        -webkit-text-size-adjust: 100%;
-        scroll-behavior: smooth;
-    }
-
-    body {
-        background: var(--bg);
-        color: var(--text);
-        font-family: var(--F);
-        font-weight: 300;
-        -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
-    }
-
-    .ver {
-        position: fixed;
-        bottom: 14px;
-        right: 18px;
-        z-index: 50;
-        font-family: var(--M);
-        font-size: 8px;
-        letter-spacing: .1em;
-        color: rgba(30, 28, 26, .15);
-        pointer-events: none;
-    }/* NAV */
-    nav {
-        position: fixed;
-        inset: 0 0 auto;
-        z-index: 400;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 56px;
-        border-bottom: 1px solid transparent;
-        transition: background .4s, border-color .4s;
-    }
-
-    nav.solid {
-        background: rgba(247, 244, 239, .96);
-        border-bottom-color: var(--rule);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-    }
-
-    .n-left {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-    }
-
-    .n-mark {
-        width: 32px;
-        height: 32px;
-        border: 1px solid rgba(240, 236, 228, .35);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: border-color .4s;
-        flex-shrink: 0;
-    }
-
-    nav.solid .n-mark {
-        border-color: rgba(30, 28, 26, .2);
-    }
-
-    .n-mark span {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 400;
-        letter-spacing: .06em;
-        color: rgba(240, 236, 228, .85);
-        transition: color .4s;
-    }
-
-    nav.solid .n-mark span {
-        color: var(--text);
-    }
-
-    .n-name {
-        font-family: var(--F);
-        font-size: 12px;
-        font-weight: 300;
-        letter-spacing: .04em;
-        color: rgba(240, 236, 228, .85);
-        transition: color .4s;
-        white-space: nowrap;
-    }
-
-    nav.solid .n-name {
-        color: var(--text);
-    }
-
-    .n-links {
-        list-style: none;
-        display: flex;
-        gap: 32px;
-    }
-
-    .n-links a {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: rgba(240, 236, 228, .5);
-        text-decoration: none;
-        transition: color .25s;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-    }
-
-    nav.solid .n-links a {
-        color: var(--mid);
-    }
-
-    .n-links a:hover, .n-links a:focus {
-        color: rgba(240, 236, 228, .9);
-    }
-
-    nav.solid .n-links a:hover, nav.solid .n-links a:focus {
-        color: var(--text);
-    }
-
-    .n-cta {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: var(--black);
-        background: var(--gold);
-        border: none;
-        padding: 0 22px;
-        min-height: 40px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        transition: background .25s;
-        flex-shrink: 0;
-    }
-
-    .n-cta:hover {
-        background: #ccaa66;
-    }
-
-    .burger {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        min-width: 44px;
-        min-height: 44px;
-        justify-content: center;
-    }
-
-    .burger span {
-        display: block;
-        width: 18px;
-        height: 1px;
-        background: rgba(240, 236, 228, .8);
-        transition: background .4s;
-    }
-
-    nav.solid .burger span {
-        background: var(--text);
-    }/* HERO */
-    .hero {
-        position: relative;
-        height: 100svh;
-        height: 100dvh;
-        min-height: 580px;
-        overflow: hidden;
-    }
-
-    .bg-slides {
-        position: absolute;
-        inset: 0;
-    }
-
-    .bg-slide {
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        transition: opacity 1.8s ease;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .bg-slide.active {
-        opacity: 1;
-    }
-
-    .bg-slide::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(6, 5, 4, .32) 0%, rgba(6, 5, 4, .42) 45%, rgba(6, 5, 4, .9) 100%);
-    }
-
-    .hero-center {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 0 32px;
-    }
-
-    .hero-label {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .28em;
-        text-transform: uppercase;
-        color: rgba(240, 236, 228, .38);
-        margin-bottom: clamp(24px, 5vw, 44px);
-    }
-
-    .hero-word-stage {
-        position: relative;
-        width: 100%;
-        height: clamp(72px, 13vw, 148px);
-    }
-
-    .hero-word {
-        font-family: var(--F);
-        font-size: clamp(40px, 8vw, 108px);
-        font-weight: 200;
-        letter-spacing: -.025em;
-        line-height: 1;
-        color: var(--ink);
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity .75s ease, transform .75s ease;
-        text-align: center;
-    }
-
-    .hero-word.active {
-        opacity: 1;
-        transform: none;
-    }
-
-    .hero-foot {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 2;
-        padding: 0 56px 32px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .hero-tag {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        color: rgba(240, 236, 228, .35);
-        display: flex;
-        align-items: center;
-        gap: 9px;
-    }
-
-    .hero-blink {
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--gold);
-        flex-shrink: 0;
-        animation: blink 2.4s ease-in-out infinite;
-    }
-
-    @keyframes blink {
-        0%, 100% {
-            opacity:1
-        }
-
-        50% {
-            opacity: .15
-        }
-    }
-
-    .hero-down {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        color: rgba(240, 236, 228, .28);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        transition: color .25s;
-    }
-
-    .hero-down:hover {
-        color: rgba(240, 236, 228, .65);
-    }
-
-    .hero-arr {
-        width: 13px;
-        height: 13px;
-        border-right: 1px solid currentColor;
-        border-bottom: 1px solid currentColor;
-        transform: rotate(45deg);
-    }
-
-    .hero-dots {
-        position: absolute;
-        right: 26px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .hero-dot {
-        width: 3px;
-        height: 18px;
-        background: rgba(240, 236, 228, .2);
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        transition: background .4s, height .4s;
-    }
-
-    .hero-dot.active {
-        background: var(--gold);
-        height: 30px;
-    }/* INTRO */
-    .intro {
-        background: var(--black);
-        padding: 96px 56px;
-    }
-
-    .intro-inner {
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .intro-h {
-        font-family: var(--F);
-        font-size: clamp(30px, 4.5vw, 58px);
-        font-weight: 200;
-        line-height: 1.04;
-        letter-spacing: -.022em;
-        color: var(--ink);
-        margin-bottom: 24px;
-    }
-
-    .intro-h em {
-        font-style: normal;
-        color: var(--gold);
-    }
-
-    .intro-sub {
-        font-family: var(--M);
-        font-size: 12px;
-        font-weight: 300;
-        letter-spacing: .04em;
-        line-height: 1.8;
-        color: rgba(240, 236, 228, .55);
-        max-width: 520px;
-        margin-bottom: 40px;
-    }
-
-    .intro-btns {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-    }
-
-    .btn-g {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: var(--black);
-        background: var(--gold);
-        border: none;
-        padding: 0 28px;
-        min-height: 48px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        transition: background .25s;
-        cursor: pointer;
-    }
-
-    .btn-g:hover {
-        background: #ccaa66;
-    }
-
-    .btn-o {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: rgba(240, 236, 228, .65);
-        background: transparent;
-        border: 1px solid rgba(240, 236, 228, .18);
-        padding: 0 28px;
-        min-height: 48px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        transition: all .25s;
-    }
-
-    .btn-o:hover {
-        color: var(--ink);
-        border-color: rgba(240, 236, 228, .42);
-    }/* SHARED */
-    .r {
-        opacity: 0;
-        transform: translateY(18px);
-        transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .r.on {
-        opacity: 1;
-        transform: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .r {
-            opacity: 1;
-            transform: none;
-            transition: none;
-        }
-    }
-
-    .sec {
-        padding: 96px 56px;
-    }
-
-    .si {
-        max-width: 1180px;
-        margin: 0 auto;
-    }
-
-    .ey {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .28em;
-        text-transform: uppercase;
-        color: var(--gold);
-        display: block;
-        margin-bottom: 16px;
-    }
-
-    .eyd {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .28em;
-        text-transform: uppercase;
-        color: rgba(184, 154, 94, .6);
-        display: block;
-        margin-bottom: 16px;
-    }
-
-    .sh {
-        font-family: var(--F);
-        font-size: clamp(26px, 3.6vw, 46px);
-        font-weight: 300;
-        line-height: 1.02;
-        letter-spacing: -.016em;
-        margin-bottom: 36px;
-    }
-
-    .sh em {
-        font-style: normal;
-        color: var(--dim);
-    }
-
-    .shd {
-        font-family: var(--F);
-        font-size: clamp(26px, 3.6vw, 46px);
-        font-weight: 300;
-        line-height: 1.02;
-        letter-spacing: -.016em;
-        margin-bottom: 36px;
-        color: var(--ink);
-    }
-
-    .shd em {
-        font-style: normal;
-        color: rgba(240, 236, 228, .28);
-    }
-
-    .bp {
-        font-family: var(--M);
-        font-size: 11px;
-        font-weight: 300;
-        letter-spacing: .025em;
-        line-height: 1.88;
-        color: var(--mid);
-        margin-bottom: 14px;
-    }
-
-    .bpd {
-        font-family: var(--M);
-        font-size: 11px;
-        font-weight: 300;
-        letter-spacing: .025em;
-        line-height: 1.88;
-        color: rgba(240, 236, 228, .52);
-        margin-bottom: 14px;
-    }/* METHODOLOGY */
-    .meth {
-        background: var(--bg);
-    }
-
-    .meth-inner {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 96px 56px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-        align-items: start;
-    }
-
-    .meth-left {
-    }
-
-    .meth-headline {
-        font-family: var(--F);
-        font-size: clamp(26px, 3.6vw, 46px);
-        font-weight: 300;
-        line-height: 1.02;
-        letter-spacing: -.016em;
-        margin-bottom: 0;
-        color: var(--text);
-    }
-
-    .meth-headline em {
-        font-style: normal;
-        color: var(--dim);
-    }
-
-    .meth-steps {
-        display: flex;
-        flex-direction: column;
-        margin-top: 8px;
-    }
-
-    .meth-step {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 22px 0;
-        border-bottom: 1px solid var(--rule);
-        cursor: pointer;
-        transition: all .22s;
-        gap: 16px;
-        text-decoration: none;
-    }
-
-    .meth-step:first-child {
-        border-top: 1px solid var(--rule);
-    }
-
-    .meth-step:hover {
-        padding-left: 12px;
-    }
-
-    .meth-step-left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .meth-n {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .12em;
-        color: var(--gold);
-        opacity: .75;
-        flex-shrink: 0;
-        width: 20px;
-    }
-
-    .meth-w {
-        font-family: var(--F);
-        font-size: 22px;
-        font-weight: 300;
-        color: var(--text);
-        letter-spacing: -.01em;
-        transition: color .22s;
-    }
-
-    .meth-step:hover .meth-w {
-        color: var(--gold);
-    }
-
-    .meth-plus {
-        font-family: var(--M);
-        font-size: 18px;
-        font-weight: 300;
-        color: var(--gold);
-        opacity: .5;
-        transition: transform .25s, opacity .25s;
-        flex-shrink: 0;
-    }
-
-    .meth-step:hover .meth-plus {
-        transform: rotate(45deg);
-        opacity: 1;
-    }/* MODAL */
-    .m-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        z-index: 900;
-        background: rgba(6, 5, 4, .75);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-    }
-
-    .m-overlay.open {
-        display: flex;
-    }
-
-    .m-box {
-        background: var(--bg);
-        max-width: 540px;
-        width: 100%;
-        padding: 52px 48px;
-        position: relative;
-        animation: mup .28s cubic-bezier(.16, 1, .3, 1) forwards;
-    }
-
-    @keyframes mup {
-        from {
-            opacity: 0;
-            transform:translateY(14px)
-        }
-
-        to {
-            opacity: 1;
-            transform: none
-        }
-    }
-
-    .m-close {
-        position: absolute;
-        top: 20px;
-        right: 22px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: var(--M);
-        font-size: 11px;
-        font-weight: 300;
-        letter-spacing: .08em;
-        color: var(--dim);
-        transition: color .22s;
-    }
-
-    .m-close:hover {
-        color: var(--text);
-    }
-
-    .m-n {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .22em;
-        text-transform: uppercase;
-        color: var(--gold);
-        display: block;
-        margin-bottom: 10px;
-        opacity: .8;
-    }
-
-    .m-title {
-        font-family: var(--F);
-        font-size: 36px;
-        font-weight: 200;
-        letter-spacing: -.02em;
-        color: var(--text);
-        margin-bottom: 22px;
-    }
-
-    .m-body {
-        font-family: var(--M);
-        font-size: 11px;
-        font-weight: 300;
-        letter-spacing: .025em;
-        line-height: 1.88;
-        color: var(--mid);
-    }/* THE GROUP */
-    .group-sec {
-        background: var(--dark);
-    }
-
-    .group-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 64px;
-        align-items: center;
-    }
-
-    .group-img {
-        position: relative;
-        overflow: hidden;
-        background: var(--black);
-        aspect-ratio: 4/5;
-    }
-
-    .group-img img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .g-facts {
-        margin-top: 32px;
-    }
-
-    .g-row {
-        display: grid;
-        grid-template-columns: 108px 1fr;
-        padding: 13px 0;
-        border-bottom: 1px solid var(--ruled);
-    }
-
-    .g-row:first-child {
-        border-top: 1px solid var(--ruled);
-    }
-
-    .g-lbl {
-        font-family: var(--M);
-        font-size: 8px;
-        font-weight: 300;
-        letter-spacing: .16em;
-        text-transform: uppercase;
-        color: rgba(240, 236, 228, .3);
-        padding-top: 2px;
-    }
-
-    .g-val {
-        font-family: var(--M);
-        font-size: 10px;
-        font-weight: 300;
-        color: rgba(240, 236, 228, .58);
-        letter-spacing: .025em;
-        line-height: 1.6;
-    }/* BRAND */
-    .brand-sec {
-        background: var(--bg);
-    }
-
-    .brand-head {
-        padding: 0 0 52px;
-    }
-
-    .brand-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .b-img {
-        position: relative;
-        overflow: hidden;
-        background: var(--dark);
-        min-height: 440px;
-    }
-
-    .b-img img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 1.1s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    .brand-row:hover .b-img img {
-        transform: scale(1.034);
-    }
-
-    .b-copy {
-        background: var(--white);
-        padding: 60px 52px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .b-tag {
-        font-family: var(--M);
-        font-size: 8px;
-        font-weight: 300;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: var(--dim);
-        border: 1px solid var(--rule);
-        padding: 5px 10px;
-        margin-bottom: 24px;
-        align-self: flex-start;
-    }
-
-    .b-name {
-        font-family: var(--F);
-        font-size: clamp(28px, 3.8vw, 46px);
-        font-weight: 300;
-        letter-spacing: -.016em;
-        line-height: .95;
-        margin-bottom: 10px;
-        color: var(--text);
-    }
-
-    .b-sub {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .16em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 20px;
-    }
-
-    .b-desc {
-        font-family: var(--M);
-        font-size: 10px;
-        font-weight: 300;
-        letter-spacing: .025em;
-        line-height: 1.88;
-        color: var(--mid);
-        max-width: 420px;
-        margin-bottom: 28px;
-    }
-
-    .b-link {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .16em;
-        text-transform: uppercase;
-        color: var(--text);
-        text-decoration: none;
-        border-bottom: 1px solid var(--rule);
-        padding-bottom: 2px;
-        align-self: flex-start;
-        transition: all .25s;
-    }
-
-    .b-link:hover {
-        color: var(--gold);
-        border-color: var(--gold);
-    }/* WHAT WE DO */
-    .wwd {
-        background: var(--white);
-    }
-
-    .wwd-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2px;
-        margin-top: 44px;
-    }
-
-    .wwd-card {
-        background: var(--bg);
-        border: 1px solid var(--rule);
-        padding: 40px 36px;
-        transition: background .25s;
-    }
-
-    .wwd-card:hover {
-        background: #eee8dc;
-    }
-
-    .wwd-n {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .12em;
-        color: var(--gold);
-        opacity: .7;
-        display: block;
-        margin-bottom: 14px;
-    }
-
-    .wwd-title {
-        font-family: var(--F);
-        font-size: 19px;
-        font-weight: 300;
-        color: var(--text);
-        margin-bottom: 14px;
-        line-height: 1.1;
-    }
-
-    .wwd-desc {
-        font-family: var(--M);
-        font-size: 10px;
-        font-weight: 300;
-        letter-spacing: .025em;
-        line-height: 1.82;
-        color: var(--mid);
-    }/* VISION */
-    .vision {
-        background: var(--dark);
-    }
-
-    .vis-intro {
-        max-width: 660px;
-        margin-bottom: 60px;
-    }
-
-    .vis-rows {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .vis-row {
-        display: grid;
-        grid-template-columns: 130px 1fr;
-        padding: 28px 0;
-        border-bottom: 1px solid var(--ruled);
-        gap: 24px;
-    }
-
-    .vis-row:first-child {
-        border-top: 1px solid var(--ruled);
-    }
-
-    .vis-phase {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        color: var(--gold);
-        opacity: .8;
-        line-height: 1.65;
-        padding-top: 3px;
-    }
-
-    .vis-title {
-        font-family: var(--F);
-        font-size: 19px;
-        font-weight: 300;
-        color: rgba(240, 236, 228, .72);
-        margin-bottom: 8px;
-    }
-
-    .vis-desc {
-        font-family: var(--M);
-        font-size: 10px;
-        font-weight: 300;
-        letter-spacing: .025em;
-        line-height: 1.82;
-        color: rgba(240, 236, 228, .42);
-    }/* CONTACT */
-    .contact {
-        background: var(--black);
-    }
-
-    .co-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 72px;
-    }
-
-    .co-details {
-        margin-top: 8px;
-    }
-
-    .co-row {
-        display: grid;
-        grid-template-columns: 100px 1fr;
-        padding: 13px 0;
-        border-bottom: 1px solid var(--ruled);
-    }
-
-    .co-row:first-child {
-        border-top: 1px solid var(--ruled);
-    }
-
-    .co-lbl {
-        font-family: var(--M);
-        font-size: 8px;
-        font-weight: 300;
-        letter-spacing: .16em;
-        text-transform: uppercase;
-        color: rgba(240, 236, 228, .3);
-        padding-top: 1px;
-    }
-
-    .co-val {
-        font-family: var(--M);
-        font-size: 10px;
-        font-weight: 300;
-        letter-spacing: .025em;
-        color: rgba(240, 236, 228, .62);
-        line-height: 1.6;
-    }
-
-    .co-val a {
-        color: inherit;
-        text-decoration: none;
-        transition: color .25s;
-    }
-
-    .co-val a:hover {
-        color: var(--gold);
-    }
-
-    .fg {
-        margin-bottom: 18px;
-    }
-
-    .fg label {
-        font-family: var(--M);
-        font-size: 8px;
-        font-weight: 300;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: rgba(240, 236, 228, .35);
-        display: block;
-        margin-bottom: 6px;
-    }
-
-    .fg input, .fg textarea {
-        width: 100%;
-        font-family: var(--M);
-        font-size: 10px;
-        font-weight: 300;
-        color: rgba(240, 236, 228, .82);
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid rgba(240, 236, 228, .12);
-        padding: 10px 0;
-        outline: none;
-        transition: border-color .25s;
-        letter-spacing: .025em;
-    }
-
-    .fg input:focus, .fg textarea:focus {
-        border-bottom-color: var(--gold);
-    }
-
-    .fg textarea {
-        resize: none;
-        height: 74px;
-    }
-
-    .f-submit {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .2em;
-        text-transform: uppercase;
-        color: var(--black);
-        background: var(--gold);
-        border: none;
-        padding: 0 28px;
-        min-height: 48px;
-        cursor: pointer;
-        width: 100%;
-        transition: background .25s;
-        margin-top: 4px;
-    }
-
-    .f-submit:hover {
-        background: #ccaa66;
-    }
-
-    .f-note {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        color: rgba(240, 236, 228, .28);
-        text-align: center;
-        margin-top: 11px;
-        letter-spacing: .03em;
-    }/* FOOTER */
-    footer {
-        background: var(--black);
-        padding: 56px 56px 30px;
-        border-top: 1px solid rgba(240, 236, 228, .05);
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 40px;
-    }
-
-    .f-brand {
-        font-family: var(--F);
-        font-size: 14px;
-        font-weight: 300;
-        color: rgba(240, 236, 228, .5);
-        display: block;
-        margin-bottom: 12px;
-    }
-
-    .f-entity {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .03em;
-        color: rgba(240, 236, 228, .25);
-        line-height: 1.95;
-    }
-
-    .f-slogan {
-        font-family: var(--F);
-        font-size: 13px;
-        font-weight: 200;
-        font-style: italic;
-        color: rgba(184, 154, 94, .45);
-        line-height: 1.5;
-        margin-top: 14px;
-    }
-
-    .f-col h4 {
-        font-family: var(--M);
-        font-size: 8px;
-        font-weight: 300;
-        letter-spacing: .24em;
-        text-transform: uppercase;
-        color: rgba(184, 154, 94, .5);
-        margin-bottom: 18px;
-    }
-
-    .f-col ul {
-        list-style: none;
-    }
-
-    .f-col li {
-        margin-bottom: 8px;
-    }
-
-    .f-col a {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        color: rgba(240, 236, 228, .42);
-        text-decoration: none;
-        letter-spacing: .03em;
-        transition: color .25s;
-        min-height: 40px;
-        display: inline-flex;
-        align-items: center;
-    }
-
-    .f-col a:hover {
-        color: rgba(240, 236, 228, .8);
-    }
-
-    .f-base {
-        background: var(--black);
-        padding: 14px 56px 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        border-top: 1px solid rgba(240, 236, 228, .04);
-    }
-
-    .f-copy {
-        font-family: var(--M);
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .04em;
-        color: rgba(240, 236, 228, .2);
-    }/* MOBILE */
-    @media (max-width: 960px) {
-        nav {
-            padding: 0 20px;
-        }
-
-        .n-links, .n-cta {
-            display: none;
-        }
-
-        .burger {
-            display: flex;
-        }
-
-        .n-links.open {
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            inset: 0;
-            background: var(--black);
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            z-index: 399;
-        }
-
-        .n-links.open a {
-            font-size: 14px;
-            color: rgba(240, 236, 228, .7);
-        }
-
-        .intro {
-            padding: 64px 20px;
-        }
-
-        .meth-inner {
-            grid-template-columns: 1fr;
-            gap: 40px;
-            padding: 64px 20px;
-        }
-
-        .sec {
-            padding: 64px 20px;
-        }
-
-        .group-grid {
-            grid-template-columns: 1fr;
-            gap: 36px;
-        }
-
-        .group-img {
-            aspect-ratio: 16/10;
-        }
-
-        .brand-row {
-            grid-template-columns: 1fr;
-        }
-
-        .b-img {
-            min-height: 280px;
-        }
-
-        .b-copy {
-            padding: 40px 20px;
-        }
-
-        .wwd-grid {
-            grid-template-columns: 1fr;
-            gap: 2px;
-        }
-
-        .vis-row {
-            grid-template-columns: 1fr;
-            gap: 6px;
-        }
-
-        .co-grid {
-            grid-template-columns: 1fr;
-            gap: 44px;
-        }
-
-        footer {
-            padding: 44px 20px;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .f-base {
-            padding: 14px 20px;
-        }
-
-        .hero-foot {
-            padding: 0 20px 24px;
-        }
-
-        .hero-dots {
-            display: none;
-        }
-
-        .m-box {
-            padding: 36px 24px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        footer {
-            grid-template-columns: 1fr;
-        }
-    }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CK Events Management &amp; Hospitality Group LLC</title>
+<meta name="description" content="A portfolio of brands at the intersection of gastronomy, culture, and hospitality. Wyoming, USA.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clandestino.kitchen/">
+<meta property="og:title" content="CK Events Management &amp; Hospitality Group LLC">
+<meta property="og:description" content="A portfolio of brands at the intersection of gastronomy, culture, and hospitality.">
+<meta property="og:image" content="img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Clandestino Kitchen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CK Events Management &amp; Hospitality Group LLC">
+<meta name="twitter:description" content="A portfolio of brands at the intersection of gastronomy, culture, and hospitality.">
+<meta name="twitter:image" content="img/og-image.jpg">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#060504">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+img{display:block;max-width:100%;height:auto;}
+:root{
+  --bg:#f7f4ef;--ink:#f0ece4;--white:#ffffff;
+  --dark:#0d0b09;--black:#060504;
+  --text:#1e1c1a;--mid:#5a5248;--dim:#9a9088;
+  --gold:#b89a5e;--gold2:rgba(184,154,94,.55);
+  --rule:rgba(30,28,26,.08);--ruled:rgba(240,236,228,.07);
+  --F:'Raleway','Helvetica Neue',Arial,sans-serif;
+  --M:'Inter','Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--F);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.ver{position:fixed;bottom:12px;right:16px;z-index:50;font-family:var(--M);font-size:8px;letter-spacing:.08em;color:rgba(30,28,26,.14);pointer-events:none;}
+
+/* ── NAV ── */
+nav{position:fixed;inset:0 0 auto;z-index:400;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid transparent;transition:background .5s,border-color .5s;}
+nav.solid{background:rgba(247,244,239,.95);border-bottom-color:var(--rule);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
+.n-left{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.n-mark{width:30px;height:30px;border:1px solid rgba(240,236,228,.3);display:flex;align-items:center;justify-content:center;transition:border-color .4s;flex-shrink:0;}
+nav.solid .n-mark{border-color:rgba(30,28,26,.18);}
+.n-mark span{font-family:var(--M);font-size:9px;font-weight:400;letter-spacing:.05em;color:rgba(240,236,228,.82);transition:color .4s;}
+nav.solid .n-mark span{color:var(--text);}
+.n-name{font-family:var(--F);font-size:11px;font-weight:300;letter-spacing:.05em;color:rgba(240,236,228,.82);transition:color .4s;white-space:nowrap;}
+nav.solid .n-name{color:var(--text);}
+.n-links{list-style:none;display:flex;gap:28px;}
+.n-links a{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,236,228,.48);text-decoration:none;transition:color .2s;min-height:44px;display:flex;align-items:center;}
+nav.solid .n-links a{color:var(--mid);}
+.n-links a:hover{color:rgba(240,236,228,.88);}
+nav.solid .n-links a:hover{color:var(--text);}
+.n-cta{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:0 20px;min-height:38px;display:flex;align-items:center;text-decoration:none;transition:background .2s;flex-shrink:0;}
+.n-cta:hover{background:#ccaa66;}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px;min-width:44px;min-height:44px;justify-content:center;}
+.burger span{display:block;width:18px;height:1px;background:rgba(240,236,228,.8);transition:background .4s;}
+nav.solid .burger span{background:var(--text);}
+
+/* ── HERO ── */
+.hero{position:relative;height:100svh;height:100dvh;min-height:600px;overflow:hidden;}
+.bg-slides{position:absolute;inset:0;}
+.bg-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease;background-size:cover;background-position:center;}
+.bg-slide.active{opacity:1;}
+.bg-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,4,.38) 0%,rgba(6,5,4,.38) 40%,rgba(6,5,4,.92) 100%);}
+
+/* Entity label -- moved above carousel */
+.hero-entity-bar{position:absolute;top:0;left:0;right:0;z-index:3;padding:80px 48px 0;display:flex;justify-content:space-between;align-items:center;}
+.hero-entity{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,228,.48);}
+.hero-entity-right{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);}
+
+/* Word stage -- centred */
+.hero-center{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 32px;}
+.hero-word-stage{position:relative;width:100%;height:clamp(72px,13vw,144px);}
+.hero-word{font-family:var(--F);font-size:clamp(44px,8.5vw,112px);font-weight:200;letter-spacing:-.025em;line-height:1;color:var(--ink);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:opacity .7s ease,transform .7s ease;text-align:center;}
+.hero-word.active{opacity:1;transform:none;}
+
+/* Dots + scroll */
+.hero-foot{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:0 48px 28px;display:flex;justify-content:space-between;align-items:flex-end;}
+.hero-dots{display:flex;gap:6px;}
+.hero-dot{width:3px;height:16px;background:rgba(240,236,228,.2);border:none;cursor:pointer;padding:0;transition:background .4s,height .3s;}
+.hero-dot.active{background:var(--gold);height:26px;}
+.hero-down{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,236,228,.28);display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;transition:color .2s;}
+.hero-down:hover{color:rgba(240,236,228,.6);}
+.hero-arr{width:12px;height:12px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);}
+
+/* ── INTRO ── */
+.intro{background:var(--black);padding:88px 48px;}
+.intro-inner{max-width:860px;margin:0 auto;}
+.intro-h{font-family:var(--F);font-size:clamp(28px,4.4vw,56px);font-weight:200;line-height:1.06;letter-spacing:-.022em;color:var(--ink);margin-bottom:20px;}
+.intro-h em{font-style:italic;color:var(--gold);}
+.intro-sub{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.04em;line-height:1.8;color:rgba(240,236,228,.52);max-width:500px;margin-bottom:36px;}
+.intro-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-g{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:0 28px;min-height:48px;text-decoration:none;display:inline-flex;align-items:center;transition:background .2s;cursor:pointer;}
+.btn-g:hover{background:#ccaa66;}
+.btn-o{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,236,228,.62);background:transparent;border:1px solid rgba(240,236,228,.16);padding:0 28px;min-height:48px;text-decoration:none;display:inline-flex;align-items:center;transition:all .2s;}
+.btn-o:hover{color:var(--ink);border-color:rgba(240,236,228,.4);}
+
+/* ── SHARED ── */
+.r{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease;}
+.r.on{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+.sec{padding:88px 48px;}
+.si{max-width:1160px;margin:0 auto;}
+.ey{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px;}
+.eyd{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:14px;}
+.sh{font-family:var(--F);font-size:clamp(24px,3.4vw,44px);font-weight:300;line-height:1.04;letter-spacing:-.016em;margin-bottom:32px;color:var(--text);}
+.sh em{font-style:normal;color:var(--dim);}
+.shd{font-family:var(--F);font-size:clamp(24px,3.4vw,44px);font-weight:300;line-height:1.04;letter-spacing:-.016em;margin-bottom:32px;color:var(--ink);}
+.shd em{font-style:normal;color:rgba(240,236,228,.28);}
+.bp{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.025em;line-height:1.85;color:var(--mid);margin-bottom:14px;}
+.bpd{font-family:var(--M);font-size:11px;font-weight:300;letter-spacing:.025em;line-height:1.85;color:rgba(240,236,228,.5);margin-bottom:14px;}
+
+/* ── METHODOLOGY -- image left, text+steps right ── */
+.meth{background:var(--bg);}
+.meth-grid{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+.meth-img{position:relative;overflow:hidden;background:var(--dark);}
+.meth-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.72);}
+.meth-body{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;background:var(--white);}
+.meth-label{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:18px;}
+.meth-h{font-family:var(--F);font-size:clamp(22px,2.8vw,36px);font-weight:300;line-height:1.1;letter-spacing:-.012em;color:var(--text);margin-bottom:6px;}
+.meth-h em{font-style:normal;color:var(--dim);}
+.meth-tagline{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.04em;line-height:1.75;color:var(--mid);margin-bottom:32px;max-width:360px;}
+.meth-steps{display:flex;flex-direction:column;}
+.meth-step{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid var(--rule);}
+.meth-step:first-child{border-top:1px solid var(--rule);}
+.meth-n{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.1em;color:var(--gold);opacity:.7;flex-shrink:0;width:22px;}
+.meth-w{font-family:var(--F);font-size:20px;font-weight:300;color:var(--text);letter-spacing:-.01em;}
+
+/* ── THE GROUP ── */
+.group-sec{background:var(--dark);}
+.group-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.group-img{position:relative;overflow:hidden;background:var(--black);aspect-ratio:4/5;}
+.group-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.g-facts{margin-top:28px;}
+.g-row{display:grid;grid-template-columns:110px 1fr;padding:12px 0;border-bottom:1px solid var(--ruled);}
+.g-row:first-child{border-top:1px solid var(--ruled);}
+.g-lbl{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,236,228,.28);padding-top:2px;}
+.g-val{font-family:var(--M);font-size:10px;font-weight:300;color:rgba(240,236,228,.56);letter-spacing:.025em;line-height:1.6;}
+
+/* ── BRAND ── */
+.brand-sec{background:var(--bg);}
+.brand-head{max-width:1160px;margin:0 auto;padding:0 0 48px;}
+.brand-row{display:grid;grid-template-columns:1fr 1fr;}
+.b-img{position:relative;overflow:hidden;background:var(--dark);min-height:480px;}
+.b-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);}
+.brand-row:hover .b-img img{transform:scale(1.03);}
+.b-copy{background:var(--white);padding:60px 52px;display:flex;flex-direction:column;justify-content:center;}
+.b-tag{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);border:1px solid var(--rule);padding:5px 10px;margin-bottom:22px;align-self:flex-start;}
+.b-name{font-family:var(--F);font-size:clamp(28px,3.6vw,46px);font-weight:300;letter-spacing:-.016em;line-height:.95;margin-bottom:10px;color:var(--text);}
+.b-sub{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.b-desc{font-family:var(--M);font-size:10.5px;font-weight:300;letter-spacing:.025em;line-height:1.85;color:var(--mid);max-width:420px;margin-bottom:26px;}
+.b-link{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--text);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;align-self:flex-start;transition:all .2s;}
+.b-link:hover{color:var(--gold);border-color:var(--gold);}
+
+/* ── WHAT WE DO ── */
+.wwd{background:var(--white);}
+.wwd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;}
+.wwd-card{background:var(--bg);padding:36px 32px;transition:background .2s;}
+.wwd-card:hover{background:#ece6da;}
+.wwd-n{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.1em;color:var(--gold);opacity:.7;display:block;margin-bottom:12px;}
+.wwd-title{font-family:var(--F);font-size:18px;font-weight:300;color:var(--text);margin-bottom:12px;line-height:1.1;}
+.wwd-desc{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.025em;line-height:1.8;color:var(--mid);}
+
+/* ── VISION ── */
+.vision{background:var(--dark);}
+.vis-intro{max-width:620px;margin-bottom:52px;}
+.vis-rows{display:flex;flex-direction:column;}
+.vis-row{display:grid;grid-template-columns:130px 1fr;padding:24px 0;border-bottom:1px solid var(--ruled);gap:20px;}
+.vis-row:first-child{border-top:1px solid var(--ruled);}
+.vis-phase{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.78;line-height:1.65;padding-top:3px;}
+.vis-title{font-family:var(--F);font-size:18px;font-weight:300;color:rgba(240,236,228,.7);margin-bottom:7px;}
+.vis-desc{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.025em;line-height:1.8;color:rgba(240,236,228,.4);}
+
+/* ── CONTACT ── */
+.contact{background:var(--black);}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
+.co-details{margin-top:8px;}
+.co-row{display:grid;grid-template-columns:96px 1fr;padding:12px 0;border-bottom:1px solid var(--ruled);}
+.co-row:first-child{border-top:1px solid var(--ruled);}
+.co-lbl{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,236,228,.28);padding-top:1px;}
+.co-val{font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.025em;color:rgba(240,236,228,.6);line-height:1.6;}
+.co-val a{color:inherit;text-decoration:none;transition:color .2s;}
+.co-val a:hover{color:var(--gold);}
+.fg{margin-bottom:16px;}
+.fg label{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,236,228,.32);display:block;margin-bottom:5px;}
+.fg input,.fg textarea{width:100%;font-family:var(--M);font-size:11px;font-weight:300;color:rgba(240,236,228,.82);background:transparent;border:none;border-bottom:1px solid rgba(240,236,228,.1);padding:9px 0;outline:none;transition:border-color .2s;letter-spacing:.025em;}
+.fg input:focus,.fg textarea:focus{border-bottom-color:var(--gold);}
+.fg textarea{resize:none;height:70px;}
+.f-submit{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:0 28px;min-height:48px;cursor:pointer;width:100%;transition:background .2s;margin-top:6px;}
+.f-submit:hover{background:#ccaa66;}
+.f-note{font-family:var(--M);font-size:9px;font-weight:300;color:rgba(240,236,228,.26);text-align:center;margin-top:10px;letter-spacing:.03em;}
+
+/* ── FOOTER ── */
+footer{background:var(--black);padding:52px 48px 26px;border-top:1px solid rgba(240,236,228,.05);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;}
+.f-brand{font-family:var(--F);font-size:13px;font-weight:300;color:rgba(240,236,228,.48);display:block;margin-bottom:10px;}
+.f-entity{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.03em;color:rgba(240,236,228,.24);line-height:1.9;}
+.f-slogan{font-family:var(--F);font-size:14px;font-weight:200;font-style:italic;color:rgba(184,154,94,.5);line-height:1.5;margin-top:14px;letter-spacing:.01em;}
+.f-col h4{font-family:var(--M);font-size:8px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,154,94,.48);margin-bottom:16px;}
+.f-col ul{list-style:none;}
+.f-col li{margin-bottom:7px;}
+.f-col a{font-family:var(--M);font-size:9px;font-weight:300;color:rgba(240,236,228,.4);text-decoration:none;letter-spacing:.03em;transition:color .2s;min-height:40px;display:inline-flex;align-items:center;}
+.f-col a:hover{color:rgba(240,236,228,.78);}
+.f-base{background:var(--black);padding:12px 48px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-top:1px solid rgba(240,236,228,.04);}
+.f-copy{font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.04em;color:rgba(240,236,228,.18);}
+
+/* ── MOBILE ── */
+@media(max-width:960px){
+  nav{padding:0 20px;}
+  .n-links,.n-cta{display:none;}
+  .burger{display:flex;}
+  .n-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,5,4,.97);justify-content:center;align-items:center;gap:28px;z-index:399;}
+  .n-links.open a{font-size:16px;letter-spacing:.12em;color:rgba(240,236,228,.7);}
+  .hero-entity-bar{padding:72px 20px 0;}
+  .hero-entity-right{display:none;}
+  .hero-foot{padding:0 20px 22px;}
+  .hero-dots{display:none;}
+  .intro{padding:64px 20px;}
+  .meth-grid{grid-template-columns:1fr;}
+  .meth-img{min-height:260px;aspect-ratio:16/9;}
+  .meth-body{padding:44px 20px;}
+  .sec{padding:64px 20px;}
+  .group-grid{grid-template-columns:1fr;gap:32px;}
+  .group-img{aspect-ratio:16/10;}
+  .brand-row{grid-template-columns:1fr;}
+  .b-img{min-height:300px;}
+  .b-copy{padding:40px 20px;}
+  .wwd-grid{grid-template-columns:1fr;gap:2px;}
+  .vis-row{grid-template-columns:1fr;gap:4px;}
+  .co-grid{grid-template-columns:1fr;gap:40px;}
+  footer{padding:44px 20px;grid-template-columns:1fr 1fr;gap:28px;}
+  .f-base{padding:12px 20px;}
+}
+@media(max-width:480px){
+  footer{grid-template-columns:1fr;}
+  .brand-row{grid-template-columns:1fr;}
+  .wwd-grid{grid-template-columns:1fr;}
+  .intro-h{font-size:clamp(26px,8vw,40px);}
+}
+
+/* ── HANDHELD REFINEMENTS ── */
+@media(max-width:390px){
+  .hero-word{font-size:clamp(38px,11vw,56px);}
+  .intro-h{font-size:28px;}
+  .sh,.shd{font-size:24px;}
+  .meth-h{font-size:22px;}
+}
+</style>
 </head>
 <body>
-    <div class="ver">CK v18</div>
+<div class="ver">CK v19</div>
 
-    <!-- MODAL -->
-    <div class="m-overlay" id="mOverlay" onclick="if(event.target===this)closeModal()">
-        <div class="m-box" role="dialog" aria-modal="true">
-            <button class="m-close" onclick="closeModal()">Close &times;</button>
-            <span class="m-n" id="mN"></span>
-            <div class="m-title" id="mTitle"></div>
-            <div class="m-body" id="mBody"></div>
-        </div>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="n-left">
+    <div class="n-mark"><span>CK</span></div>
+    <span class="n-name">Clandestino Kitchen</span>
+  </a>
+  <ul class="n-links" id="nLinks">
+    <li><a href="#group">The group</a></li>
+    <li><a href="#brand">Brand</a></li>
+    <li><a href="#wwd">What we do</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="n-cta">Get in touch</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="bg-slides">
+    <div class="bg-slide active" style="background-image:url('img/bg1.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg2.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg3.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg4.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg6.jpg');"></div>
+  </div>
+  <!-- Entity label above carousel -->
+  <div class="hero-entity-bar">
+    <span class="hero-entity">CK Events Management &amp; Hospitality Group LLC</span>
+    <span class="hero-entity-right">Wyoming, USA &middot; Est. 2026</span>
+  </div>
+  <!-- Rotating words -- centred on image -->
+  <div class="hero-center">
+    <div class="hero-word-stage">
+      <div class="hero-word active">EAT</div>
+      <div class="hero-word">CONNECT</div>
+      <div class="hero-word">EXPERIENCE</div>
+      <div class="hero-word">HOSPITALITY</div>
+      <div class="hero-word">FOOD&nbsp;CULTURE</div>
     </div>
-
-    <!-- NAV -->
-    <nav id="nav">
-        <a href="#" class="n-left">
-            <div class="n-mark">
-                <span>CK</span>
-            </div>
-            <span class="n-name">Clandestino Kitchen</span>
-        </a>
-        <ul class="n-links" id="nLinks">
-            <li>
-                <a href="#group">The group</a>
-            </li>
-            <li>
-                <a href="#brand">Brand</a>
-            </li>
-            <li>
-                <a href="#wwd">What we do</a>
-            </li>
-            <li>
-                <a href="#vision">Vision</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-        <a href="#contact" class="n-cta">Get in touch</a>
-        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero" id="top">
-        <div class="bg-slides">
-            <div class="bg-slide active" style="background-image:url('img/bg1.jpg');"></div>
-            <div class="bg-slide" style="background-image:url('img/bg2.jpg');"></div>
-            <div class="bg-slide" style="background-image:url('img/bg3.jpg');"></div>
-            <div class="bg-slide" style="background-image:url('img/bg4.jpg');"></div>
-            <div class="bg-slide" style="background-image:url('img/bg6.jpg');"></div>
-        </div>
-        <div class="hero-center">
-            <span class="hero-label">CK Events Management &amp; Hospitality Group LLC</span>
-            <div class="hero-word-stage">
-                <div class="hero-word active">EAT</div>
-                <div class="hero-word">CONNECT</div>
-                <div class="hero-word">EXPERIENCE</div>
-                <div class="hero-word">HOSPITALITY</div>
-                <div class="hero-word">FOOD&nbsp;CULTURE</div>
-            </div>
-        </div>
-        <div class="hero-dots" id="heroDots">
-            <button class="hero-dot active" aria-label="Slide 1"></button>
-            <button class="hero-dot" aria-label="Slide 2"></button>
-            <button class="hero-dot" aria-label="Slide 3"></button>
-            <button class="hero-dot" aria-label="Slide 4"></button>
-            <button class="hero-dot" aria-label="Slide 5"></button>
-        </div>
-        <div class="hero-foot">
-            <div class="hero-tag">
-                <span class="hero-blink"></span>
-
-                      Gastronomy &middot; Hospitality &middot; Food Culture
-                    
-            </div>
-            <button class="hero-down" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
-
-                      Discover more 
-                <span class="hero-arr"></span>
-            </button>
-        </div>
-    </section>
-
-    <!-- INTRO -->
-    <section class="intro r" id="intro">
-        <div class="intro-inner">
-            <h1 class="intro-h">
-                The definitive
-                <br>
-                culinary 
-                <em>experience</em>
-                 group.
-            </h1>
-            <p class="intro-sub">We build the concepts, the networks, and the standards that carry extraordinary hospitality anywhere in the world.</p>
-            <div class="intro-btns">
-                <a href="#contact" class="btn-g">Get in touch</a>
-                <a href="#wwd" class="btn-o">What we do</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- METHODOLOGY -->
-    <div class="meth r" id="methodology">
-        <div class="meth-inner">
-            <div class="meth-left">
-                <span class="ey">How we work</span>
-                <h2 class="meth-headline">
-                    Conceive.
-                    <br>
-                    Curate.
-                    <br>
-                    Direct.
-                    <br>
-                    <em>Deliver.</em>
-                </h2>
-            </div>
-            <div class="meth-steps">
-                <button class="meth-step" onclick="openModal('conceive')">
-                    <div class="meth-step-left">
-                        <span class="meth-n">01</span>
-                        <span class="meth-w">Conceive</span>
-                    </div>
-                    <span class="meth-plus">+</span>
-                </button>
-                <button class="meth-step" onclick="openModal('curate')">
-                    <div class="meth-step-left">
-                        <span class="meth-n">02</span>
-                        <span class="meth-w">Curate</span>
-                    </div>
-                    <span class="meth-plus">+</span>
-                </button>
-                <button class="meth-step" onclick="openModal('direct')">
-                    <div class="meth-step-left">
-                        <span class="meth-n">03</span>
-                        <span class="meth-w">Direct</span>
-                    </div>
-                    <span class="meth-plus">+</span>
-                </button>
-                <button class="meth-step" onclick="openModal('deliver')">
-                    <div class="meth-step-left">
-                        <span class="meth-n">04</span>
-                        <span class="meth-w">Deliver</span>
-                    </div>
-                    <span class="meth-plus">+</span>
-                </button>
-            </div>
-        </div>
+  </div>
+  <!-- Dots + scroll -->
+  <div class="hero-foot">
+    <div class="hero-dots" id="heroDots">
+      <button class="hero-dot active" aria-label="Slide 1"></button>
+      <button class="hero-dot" aria-label="Slide 2"></button>
+      <button class="hero-dot" aria-label="Slide 3"></button>
+      <button class="hero-dot" aria-label="Slide 4"></button>
+      <button class="hero-dot" aria-label="Slide 5"></button>
     </div>
+    <button class="hero-down" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
+      Discover more <span class="hero-arr"></span>
+    </button>
+  </div>
+</section>
 
-    <!-- THE GROUP -->
-    <section class="sec group-sec r" id="group">
-        <div class="si">
-            <span class="eyd">The group</span>
-            <div class="group-grid">
-                <div>
-                    <h2 class="shd">Clandestino Kitchen.</h2>
-                    <p class="bpd">Clandestino Kitchen is the operating identity behind a portfolio of brands at the intersection of gastronomy, food culture, and hospitality. The concept is the product. The format travels. The standard never changes.</p>
-                    <div class="g-facts">
-                        <div class="g-row">
-                            <span class="g-lbl">Entity</span>
-                            <span class="g-val">CK Events Management &amp; Hospitality Group LLC</span>
-                        </div>
-                        <div class="g-row">
-                            <span class="g-lbl">Corp ID</span>
-                            <span class="g-val">Clandestino Kitchen</span>
-                        </div>
-                        <div class="g-row">
-                            <span class="g-lbl">Brand Concept</span>
-                            <span class="g-val">JoEs TaBLe</span>
-                        </div>
-                        <div class="g-row">
-                            <span class="g-lbl">Worldwide</span>
-                            <span class="g-val">Global operations across Europe and beyond</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="group-img">
-                    <img src="img/ck-hero.webp" alt="Clandestino Kitchen">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BRAND -->
-    <section class="sec brand-sec r" id="brand">
-        <div class="si">
-            <div class="brand-head">
-                <span class="ey">Our brand</span>
-                <h2 class="sh">Our brand</h2>
-                <p class="bp" style="max-width:580px;">Clandestino Kitchen is the corporate identity behind everything we build. JoEs TaBLe is the brand we built it for.</p>
-            </div>
-        </div>
-        <div class="brand-row">
-            <div class="b-img">
-                <img src="img/brand-joestable.webp" alt="JoEs TaBLe">
-            </div>
-            <div class="b-copy">
-                <span class="b-tag">Culinary concept event brand</span>
-                <div class="b-name">JoEs TaBLe</div>
-                <div class="b-sub">Premium Culinary Experience Platform</div>
-                <p class="b-desc">Culinary experiences that build relationships and signal intent. A single-table dining format staged at hand-selected locations worldwide. Chef-led tasting menus built on food culture, personal history, and the stories behind every ingredient. Conceived and directed by CK. Executed through a curated global network of independent venue partners and culinary professionals. Available to corporate clients and discerning private guests.</p>
-                <a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener" class="b-link">Visit JoEs TaBLe ↗</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHAT WE DO -->
-    <section class="sec wwd r" id="wwd">
-        <div class="si">
-            <span class="ey">What we do</span>
-            <h2 class="sh">
-                Three disciplines.
-                <br>
-                <em>One standard.</em>
-            </h2>
-            <div class="wwd-grid">
-                <div class="wwd-card">
-                    <span class="wwd-n">01</span>
-                    <div class="wwd-title">Culinary event management</div>
-                    <p class="wwd-desc">The complete architecture of a high-end dining experience. Concept, partner selection, creative direction, and on-the-ground execution. Zero overhead for the client.</p>
-                </div>
-                <div class="wwd-card">
-                    <span class="wwd-n">02</span>
-                    <div class="wwd-title">Hospitality consultancy</div>
-                    <p class="wwd-desc">Concept, strategy, and brand architecture for operators building for longevity. We work at the level where decisions compound.</p>
-                </div>
-                <div class="wwd-card">
-                    <span class="wwd-n">03</span>
-                    <div class="wwd-title">Brand and concept licensing</div>
-                    <p class="wwd-desc">A proven format, ready to travel. Independent operators. CK's standards. Your market.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VISION -->
-    <section class="sec vision r" id="vision">
-        <div class="si">
-            <span class="eyd">Vision</span>
-            <div class="vis-intro">
-                <h2 class="shd">
-                    Building a global
-                    <br>
-                    <em>food culture company.</em>
-                </h2>
-                <p class="bpd">A portfolio of complementary brands, each distinct in its market, unified by one conviction: that food is the most powerful connector of people, cultures, and ideas.</p>
-            </div>
-            <div class="vis-rows">
-                <div class="vis-row">
-                    <span class="vis-phase">
-                        Foundation
-                        <br>
-                        Now
-                    </span>
-                    <div>
-                        <div class="vis-title">Infrastructure established</div>
-                        <p class="vis-desc">Corporate infrastructure established. Brand portfolio active. Partner network operational across Europe. Corporate and private client engagement underway.</p>
-                    </div>
-                </div>
-                <div class="vis-row">
-                    <span class="vis-phase">
-                        Expansion
-                        <br>
-                        2026
-                    </span>
-                    <div>
-                        <div class="vis-title">Footprint extended</div>
-                        <p class="vis-desc">Geographic footprint extended across multiple European markets. EU corporate vehicle activated. Consultancy and editorial revenue streams contributing alongside event operations.</p>
-                    </div>
-                </div>
-                <div class="vis-row">
-                    <span class="vis-phase">
-                        Maturity
-                        <br>
-                        2027
-                    </span>
-                    <div>
-                        <div class="vis-title">Portfolio at scale</div>
-                        <p class="vis-desc">Multi-brand portfolio at scale. Food culture editorial platform established across key global markets. Proprietary technology infrastructure fully deployed.</p>
-                    </div>
-                </div>
-                <div class="vis-row">
-                    <span class="vis-phase">
-                        Scale
-                        <br>
-                        2028+
-                    </span>
-                    <div>
-                        <div class="vis-title">Global presence</div>
-                        <p class="vis-desc">Group presence across multiple continents. Portfolio expanded through organic development and strategic brand acquisition. CK recognised as a leading name in premium hospitality and food culture.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="sec contact r" id="contact">
-        <div class="si">
-            <span class="eyd">Contact</span>
-            <div class="co-grid">
-                <div>
-                    <h2 class="shd">
-                        Let's talk
-                        <br>
-                        business.
-                    </h2>
-                    <p class="bpd" style="margin-bottom:28px;">For corporate event inquiries and partnerships.</p>
-                    <div class="co-details">
-                        <div class="co-row">
-                            <span class="co-lbl">Entity</span>
-                            <span class="co-val">CK Events Management &amp; Hospitality Group LLC</span>
-                        </div>
-                        <div class="co-row">
-                            <span class="co-lbl">Address</span>
-                            <span class="co-val">
-                                30 N Gould St Ste N
-                                <br>
-                                Sheridan, WY 82801, USA
-                            </span>
-                        </div>
-                        <div class="co-row">
-                            <span class="co-lbl">LinkedIn</span>
-                            <span class="co-val">
-                                <a href="https://www.linkedin.com/company/clandestinokitchen" target="_blank" rel="noopener">Clandestino Kitchen</a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <form id="contactForm">
-                        <div class="fg">
-                            <label for="cf-name">Full name</label>
-                            <input type="text" id="cf-name" name="name" required placeholder="Your name">
-                        </div>
-                        <div class="fg">
-                            <label for="cf-email">Email address</label>
-                            <input type="email" id="cf-email" name="email" required placeholder="your@company.com">
-                        </div>
-                        <div class="fg">
-                            <label for="cf-co">Company</label>
-                            <input type="text" id="cf-co" name="company" placeholder="Optional">
-                        </div>
-                        <div class="fg">
-                            <label for="cf-msg">Message</label>
-                            <textarea id="cf-msg" name="message" required placeholder="Tell us about your enquiry"></textarea>
-                        </div>
-                        <button type="submit" class="f-submit">Send enquiry</button>
-                        <p class="f-note">We respond within 24 hours</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div>
-            <span class="f-brand">Clandestino Kitchen</span>
-            <p class="f-entity">
-                CK Events Management
-                <br>
-                &amp; Hospitality Group LLC
-                <br>
-                Wyoming, USA
-            </p>
-            <p class="f-slogan">
-                The definitive culinary
-                <br>
-                experience group.
-            </p>
-        </div>
-        <div class="f-col">
-            <h4>The group</h4>
-            <ul>
-                <li>
-                    <a href="#group">About</a>
-                </li>
-                <li>
-                    <a href="#wwd">What we do</a>
-                </li>
-                <li>
-                    <a href="#vision">Vision</a>
-                </li>
-            </ul>
-        </div>
-        <div class="f-col">
-            <h4>Brand</h4>
-            <ul>
-                <li>
-                    <a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener">JoEs TaBLe</a>
-                </li>
-                <li>
-                    <a href="#contact">Enquire</a>
-                </li>
-            </ul>
-        </div>
-        <div class="f-col">
-            <h4>Legal</h4>
-            <ul>
-                <li>
-                    <a href="terms.html">Terms of use</a>
-                </li>
-                <li>
-                    <a href="privacy-policy.html">Privacy policy</a>
-                </li>
-                <li>
-                    <a href="cookie-policy.html">Cookie policy</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-    <div class="f-base">
-        <p class="f-copy">&copy; 2026 CK Events Management &amp; Hospitality Group LLC &nbsp;&middot;&nbsp; All rights reserved</p>
+<!-- INTRO -->
+<section class="intro r" id="intro">
+  <div class="intro-inner">
+    <h1 class="intro-h">Where <em>gastronomy</em><br>becomes an event.</h1>
+    <p class="intro-sub">We build the concepts, the networks, and the standards that carry extraordinary hospitality anywhere in the world.</p>
+    <div class="intro-btns">
+      <a href="#contact" class="btn-g">Get in touch</a>
+      <a href="#wwd" class="btn-o">What we do</a>
     </div>
+  </div>
+</section>
 
-    <script>
-    /* NAV */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('solid', window.scrollY > window.innerHeight * .8);
-    }, {
-        passive: true
-    });
-    const burger = document.getElementById('burger'),
-        nLinks = document.getElementById('nLinks');
-    burger.addEventListener('click', () => {
-        const o = nLinks.classList.toggle('open');
-        burger.setAttribute('aria-expanded', String(o));
-    });
-    nLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nLinks.classList.remove('open')));
+<!-- METHODOLOGY -- image left, text+steps right -->
+<div class="meth r" id="methodology">
+  <div class="meth-grid">
+    <div class="meth-img">
+      <img src="img/event-applause.webp" alt="CK methodology in practice">
+    </div>
+    <div class="meth-body">
+      <span class="meth-label">How we work</span>
+      <h2 class="meth-h">Conceive. Curate.<br>Direct. <em>Deliver.</em></h2>
+      <p class="meth-tagline">Every engagement runs on this sequence. Every time.</p>
+      <div class="meth-steps">
+        <div class="meth-step"><span class="meth-n">01</span><span class="meth-w">Conceive</span></div>
+        <div class="meth-step"><span class="meth-n">02</span><span class="meth-w">Curate</span></div>
+        <div class="meth-step"><span class="meth-n">03</span><span class="meth-w">Direct</span></div>
+        <div class="meth-step"><span class="meth-n">04</span><span class="meth-w">Deliver</span></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    /* HERO ROTATION */
-    const slides = document.querySelectorAll('.bg-slide');
-    const words = document.querySelectorAll('.hero-word');
-    const dots = document.querySelectorAll('.hero-dot');
-    let cur = 0,
-        total = slides.length;
-    function goTo(n) {
-        slides[cur].classList.remove('active');
-        words[cur].classList.remove('active');
-        dots[cur].classList.remove('active');
-        cur = n % total;
-        slides[cur].classList.add('active');
-        words[cur].classList.add('active');
-        dots[cur].classList.add('active');
-    }
-    let timer = setInterval(() => goTo(cur + 1), 3200);
-    dots.forEach((d, i) => d.addEventListener('click', () => {
-        clearInterval(timer);
-        goTo(i);
-        timer = setInterval(() => goTo(cur + 1), 3200);
-    }));
+<!-- THE GROUP -->
+<section class="sec group-sec r" id="group">
+  <div class="si">
+    <span class="eyd">The group</span>
+    <div class="group-grid">
+      <div>
+        <h2 class="shd">Clandestino Kitchen.</h2>
+        <p class="bpd">Clandestino Kitchen is the operating identity behind a portfolio of brands at the intersection of gastronomy, culture, and hospitality. The concept is the product. The format travels. The standard holds.</p>
+        <div class="g-facts">
+          <div class="g-row"><span class="g-lbl">Entity</span><span class="g-val">CK Events Management &amp; Hospitality Group LLC</span></div>
+          <div class="g-row"><span class="g-lbl">Corp ID</span><span class="g-val">Clandestino Kitchen</span></div>
+          <div class="g-row"><span class="g-lbl">Brand Concept</span><span class="g-val">JoEs TaBLe</span></div>
+          <div class="g-row"><span class="g-lbl">Worldwide</span><span class="g-val">Global operations</span></div>
+        </div>
+      </div>
+      <div class="group-img">
+        <img src="img/ck-hero.webp" alt="Clandestino Kitchen">
+      </div>
+    </div>
+  </div>
+</section>
 
-    /* SCROLL REVEAL */
-    const io = new IntersectionObserver(e => {
-        e.forEach(x => {
-            if (x.isIntersecting) {
-                x.target.classList.add('on');
-                io.unobserve(x.target);
-            }
-        });
-    }, {
-        threshold: .04,
-        rootMargin: '0px 0px -20px 0px'
-    });
-    document.querySelectorAll('.r').forEach(el => io.observe(el));
+<!-- BRAND -->
+<section class="sec brand-sec r" id="brand">
+  <div class="si">
+    <div class="brand-head">
+      <span class="ey">Our brand</span>
+      <h2 class="sh">Our brand</h2>
+      <p class="bp" style="max-width:560px;">Clandestino Kitchen is the corporate identity behind everything we build. JoEs TaBLe is the brand we built it for.</p>
+    </div>
+  </div>
+  <div class="brand-row">
+    <div class="b-img"><img src="img/brand-joestable.webp" alt="JoEs TaBLe"></div>
+    <div class="b-copy">
+      <span class="b-tag">Culinary concept event brand</span>
+      <div class="b-name">JoEs TaBLe</div>
+      <div class="b-sub">Conceptual dining. Singular format.</div>
+      <p class="b-desc">Culinary experiences that build relationships and signal intent. A single-table format staged at hand-selected locations worldwide. Chef-led tasting menus built on food culture, personal history, and the stories behind every ingredient. Conceived and directed by CK. Executed through a curated global network of independent venue partners and culinary professionals. Available to corporate clients and discerning private guests.</p>
+      <a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener" class="b-link">Visit JoEs TaBLe ↗</a>
+    </div>
+  </div>
+</section>
 
-    /* MODAL */
-    const mData = {
-        conceive: {
-            n: '01',
-            title: 'Conceive',
-            body: 'Every engagement begins with a brief and an idea that goes beyond it. We take the client\'s intent and translate it into a format, a setting, and a sequence of moments. The concept defines everything that follows. Nothing moves until the concept is right.'
-        },
-        curate: {
-            n: '02',
-            title: 'Curate',
-            body: 'We select the venue, the culinary team, the producers, and the partners with the same criteria every time: are they the best available for this specific event? Our global network is not a roster to cycle through. It is a standard to defend. Curation is the work that the guest never sees and never forgets.'
-        },
-        direct: {
-            n: '03',
-            title: 'Direct',
-            body: 'Creative direction, brand compliance, timeline management, partner coordination. This is where the concept becomes a production. We oversee every detail from brief to table so that every element the guest encounters has been considered, approved, and placed deliberately.'
-        },
-        deliver: {
-            n: '04',
-            title: 'Deliver',
-            body: 'Zero overhead for the client. One point of contact. The event happens. The standard holds. We take accountability for the outcome, not just the process. Delivery is not the end of the engagement. It is the proof of everything that came before it.'
-        }
-    };
-    function openModal(key) {
-        const d = mData[key];
-        document.getElementById('mN').textContent = d.n;
-        document.getElementById('mTitle').textContent = d.title;
-        document.getElementById('mBody').textContent = d.body;
-        document.getElementById('mOverlay').classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-        document.getElementById('mOverlay').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape')
-            closeModal();
-    });
+<!-- WHAT WE DO -->
+<section class="sec wwd r" id="wwd">
+  <div class="si">
+    <span class="ey">What we do</span>
+    <h2 class="sh">Three disciplines.<br><em>One standard.</em></h2>
+    <div class="wwd-grid">
+      <div class="wwd-card">
+        <span class="wwd-n">01</span>
+        <div class="wwd-title">Culinary event management</div>
+        <p class="wwd-desc">The complete architecture of a high-end dining experience. Concept, partner selection, creative direction, and on-the-ground execution. Zero overhead for the client.</p>
+      </div>
+      <div class="wwd-card">
+        <span class="wwd-n">02</span>
+        <div class="wwd-title">Hospitality consultancy</div>
+        <p class="wwd-desc">Concept, strategy, and brand architecture for operators building for longevity. We work at the level where decisions compound.</p>
+      </div>
+      <div class="wwd-card">
+        <span class="wwd-n">03</span>
+        <div class="wwd-title">Brand and concept licensing</div>
+        <p class="wwd-desc">A proven format, ready to travel. Independent operators. CK's standards. Your market.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    /* CONTACT FORM */
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = this.querySelector('.f-submit');
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-        setTimeout(() => {
-            this.innerHTML = '<p style="font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.04em;color:rgba(240,236,228,.5);text-align:center;padding:18px 0;">Enquiry sent. We will respond within 24 hours.</p>';
-        }, 900);
-    });
-    </script>
+<!-- VISION -->
+<section class="sec vision r" id="vision">
+  <div class="si">
+    <span class="eyd">Vision</span>
+    <div class="vis-intro">
+      <h2 class="shd">Building the global<br><em>gastronomic experience company.</em></h2>
+      <p class="bpd">A portfolio of complementary brands, each distinct in its market, unified by one conviction: that food is the most powerful connector of people, cultures, and ideas.</p>
+    </div>
+    <div class="vis-rows">
+      <div class="vis-row">
+        <span class="vis-phase">Foundation<br>Now</span>
+        <div><div class="vis-title">Infrastructure established</div><p class="vis-desc">Corporate infrastructure established. Brand portfolio active. Partner network operational across Europe. Corporate and private client engagement underway.</p></div>
+      </div>
+      <div class="vis-row">
+        <span class="vis-phase">Expansion<br>2026</span>
+        <div><div class="vis-title">Footprint extended</div><p class="vis-desc">Geographic footprint extended across multiple markets globally. EU corporate vehicle activated. Consultancy and editorial revenue streams contributing alongside event operations.</p></div>
+      </div>
+      <div class="vis-row">
+        <span class="vis-phase">Maturity<br>2027</span>
+        <div><div class="vis-title">Portfolio at scale</div><p class="vis-desc">Multi-brand portfolio at scale. Gastronomic culture editorial platform established across key global markets. Proprietary technology infrastructure fully deployed.</p></div>
+      </div>
+      <div class="vis-row">
+        <span class="vis-phase">Scale<br>2028+</span>
+        <div><div class="vis-title">Global presence</div><p class="vis-desc">Group presence across multiple continents. Portfolio expanded through organic development and strategic brand acquisition. CK recognised as a leading name in premium hospitality and gastronomic culture.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-    (function() {
-        var KEY = 'ck_cookie_consent',
-            P = 'cookie-policy.html';
-        if (localStorage.getItem(KEY))
-            return;
-        var b = document.createElement('div'),
-            s = document.createElement('style');
-        s.textContent = '#ckcb{position:fixed;bottom:0;left:0;right:0;z-index:9999;animation:ckup .4s cubic-bezier(.16,1,.3,1) forwards;}@keyframes ckup{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}.cki{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:14px 40px;background:#0d0b09;border-top:1px solid rgba(184,154,94,.18);}.ckt{font-family:"Inter",sans-serif;font-size:11px;font-weight:300;color:rgba(240,236,228,.5);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}.ckt strong{color:rgba(240,236,228,.8);font-weight:400;font-family:"Raleway",sans-serif;font-size:12px;white-space:nowrap;}.ckt a{color:rgba(184,154,94,.75);text-decoration:none;border-bottom:1px solid rgba(184,154,94,.25);}.cka{display:flex;gap:8px;flex-shrink:0;}.ckb{font-family:"Inter",sans-serif;font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;padding:0 18px;min-height:36px;transition:all .25s;}.ckok{background:#b89a5e;color:#0d0b09;}.ckok:hover{background:#ccaa66;}.ckno{background:transparent;color:rgba(240,236,228,.28);border:1px solid rgba(240,236,228,.1);}.ckno:hover{color:rgba(240,236,228,.6);border-color:rgba(240,236,228,.3);}@media(max-width:640px){.cki{padding:14px 20px;flex-direction:column;align-items:flex-start;gap:12px;}.cka{width:100%;justify-content:flex-end;}}';
-        b.id = 'ckcb';
-        b.innerHTML = '<div class="cki"><div class="ckt"><strong>We use cookies</strong><span>Essential cookies only. <a href="' + P + '">Cookie Policy</a>.</span></div><div class="cka"><button class="ckb ckok" id="ckok">Accept</button><button class="ckb ckno" id="ckno">Decline</button></div></div>';
-        function dismiss(v) {
-            localStorage.setItem(KEY, v);
-            b.style.transition = 'transform .3s ease,opacity .3s ease';
-            b.style.transform = 'translateY(100%)';
-            b.style.opacity = '0';
-            setTimeout(function() {
-                b.remove();
-                s.remove();
-            }, 320);
-        }
-        document.head.appendChild(s);
-        document.body.appendChild(b);
-        document.getElementById('ckok').addEventListener('click', function() {
-            dismiss('accepted');
-        });
-        document.getElementById('ckno').addEventListener('click', function() {
-            dismiss('declined');
-        });
-    })();
-    </script>
+<!-- CONTACT -->
+<section class="sec contact r" id="contact">
+  <div class="si">
+    <span class="eyd">Contact</span>
+    <div class="co-grid">
+      <div>
+        <h2 class="shd">Let's talk<br>business.</h2>
+        <p class="bpd" style="margin-bottom:26px;">For corporate event inquiries and partnerships.</p>
+        <div class="co-details">
+          <div class="co-row"><span class="co-lbl">Entity</span><span class="co-val">CK Events Management &amp; Hospitality Group LLC</span></div>
+          <div class="co-row"><span class="co-lbl">Address</span><span class="co-val">30 N Gould St Ste N<br>Sheridan, WY 82801, USA</span></div>
+          <div class="co-row"><span class="co-lbl">LinkedIn</span><span class="co-val"><a href="https://www.linkedin.com/company/clandestinokitchen" target="_blank" rel="noopener">Clandestino Kitchen</a></span></div>
+        </div>
+      </div>
+      <div>
+        <form id="contactForm">
+          <div class="fg"><label for="cf-name">Full name</label><input type="text" id="cf-name" name="name" required placeholder="Your name"></div>
+          <div class="fg"><label for="cf-email">Email address</label><input type="email" id="cf-email" name="email" required placeholder="your@company.com"></div>
+          <div class="fg"><label for="cf-co">Company</label><input type="text" id="cf-co" name="company" placeholder="Optional"></div>
+          <div class="fg"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" required placeholder="Tell us about your enquiry"></textarea></div>
+          <button type="submit" class="f-submit">Send enquiry</button>
+          <p class="f-note">We respond within 24 hours</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <span class="f-brand">Clandestino Kitchen</span>
+    <p class="f-entity">CK Events Management<br>&amp; Hospitality Group LLC<br>Wyoming, USA</p>
+    <p class="f-slogan">Eat. Connect. Experience.</p>
+  </div>
+  <div class="f-col">
+    <h4>The group</h4>
+    <ul>
+      <li><a href="#group">About</a></li>
+      <li><a href="#wwd">What we do</a></li>
+      <li><a href="#vision">Vision</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Brand</h4>
+    <ul>
+      <li><a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener">JoEs TaBLe</a></li>
+      <li><a href="#contact">Enquire</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Legal</h4>
+    <ul>
+      <li><a href="terms.html">Terms of use</a></li>
+      <li><a href="privacy-policy.html">Privacy policy</a></li>
+      <li><a href="cookie-policy.html">Cookie policy</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="f-base">
+  <p class="f-copy">&copy; 2026 CK Events Management &amp; Hospitality Group LLC &nbsp;&middot;&nbsp; All rights reserved</p>
+</div>
+
+<script>
+/* NAV */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('solid',window.scrollY>window.innerHeight*.75);},{passive:true});
+const burger=document.getElementById('burger'),nLinks=document.getElementById('nLinks');
+burger.addEventListener('click',()=>{const o=nLinks.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
+nLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nLinks.classList.remove('open')));
+
+/* HERO */
+const slides=document.querySelectorAll('.bg-slide');
+const words=document.querySelectorAll('.hero-word');
+const dots=document.querySelectorAll('.hero-dot');
+let cur=0,total=slides.length;
+function goTo(n){
+  slides[cur].classList.remove('active');words[cur].classList.remove('active');dots[cur].classList.remove('active');
+  cur=n%total;
+  slides[cur].classList.add('active');words[cur].classList.add('active');dots[cur].classList.add('active');
+}
+let timer=setInterval(()=>goTo(cur+1),3200);
+dots.forEach((d,i)=>d.addEventListener('click',()=>{clearInterval(timer);goTo(i);timer=setInterval(()=>goTo(cur+1),3200);}));
+
+/* SCROLL REVEAL */
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}});},{threshold:.04,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
+
+/* CONTACT */
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const btn=this.querySelector('.f-submit');
+  btn.textContent='Sending...';btn.disabled=true;
+  setTimeout(()=>{this.innerHTML='<p style="font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.04em;color:rgba(240,236,228,.5);text-align:center;padding:20px 0;">Enquiry sent. We will respond within 24 hours.</p>';},900);
+});
+</script>
+
+<script>
+(function(){
+  var KEY='ck_cookie_consent',P='cookie-policy.html';
+  if(localStorage.getItem(KEY))return;
+  var b=document.createElement('div'),s=document.createElement('style');
+  s.textContent='#ckcb{position:fixed;bottom:0;left:0;right:0;z-index:9999;animation:ckup .4s cubic-bezier(.16,1,.3,1) forwards;}@keyframes ckup{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}.cki{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:14px 40px;background:#0d0b09;border-top:1px solid rgba(184,154,94,.16);}.ckt{font-family:"Inter",sans-serif;font-size:11px;font-weight:300;color:rgba(240,236,228,.48);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}.ckt strong{color:rgba(240,236,228,.78);font-weight:400;font-family:"Raleway",sans-serif;font-size:12px;white-space:nowrap;}.ckt a{color:rgba(184,154,94,.72);text-decoration:none;border-bottom:1px solid rgba(184,154,94,.22);}.cka{display:flex;gap:8px;flex-shrink:0;}.ckb{font-family:"Inter",sans-serif;font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;border:none;cursor:pointer;padding:0 18px;min-height:36px;transition:all .2s;}.ckok{background:#b89a5e;color:#0d0b09;}.ckok:hover{background:#ccaa66;}.ckno{background:transparent;color:rgba(240,236,228,.26);border:1px solid rgba(240,236,228,.1);}.ckno:hover{color:rgba(240,236,228,.55);border-color:rgba(240,236,228,.28);}@media(max-width:640px){.cki{padding:14px 20px;flex-direction:column;align-items:flex-start;gap:12px;}.cka{width:100%;justify-content:flex-end;}}';
+  b.id='ckcb';
+  b.innerHTML='<div class="cki"><div class="ckt"><strong>We use cookies</strong><span>Essential cookies only. <a href="'+P+'">Cookie Policy</a>.</span></div><div class="cka"><button class="ckb ckok" id="ckok">Accept</button><button class="ckb ckno" id="ckno">Decline</button></div></div>';
+  function dismiss(v){localStorage.setItem(KEY,v);b.style.transition='transform .3s ease,opacity .3s ease';b.style.transform='translateY(100%)';b.style.opacity='0';setTimeout(function(){b.remove();s.remove();},320);}
+  document.head.appendChild(s);document.body.appendChild(b);
+  document.getElementById('ckok').addEventListener('click',function(){dismiss('accepted');});
+  document.getElementById('ckno').addEventListener('click',function(){dismiss('declined');});
+})();
+</script>
 </body>
 </html>
