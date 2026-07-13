@@ -392,7 +392,7 @@ body{
 
 <script>
 /* ── Worker URL: replace with your deployed partner worker URL ── */
-const WORKER_URL = 'https://ck-partner-intake.mr-charly-brown.workers.dev/';
+const WORKER_URL = 'https://ck-partner-intake.YOUR-SUBDOMAIN.workers.dev/';
 
 /* ── Field validation ── */
 function getVal(id) {
@@ -519,8 +519,18 @@ document.getElementById('partnerForm').addEventListener('submit', async function
     var data = await res.json();
 
     if (res.ok && data.success) {
+      /* Clear all field values before hiding */
+      var fields = document.getElementById('partnerForm').querySelectorAll('input, select, textarea');
+      fields.forEach(function(f) {
+        if (f.type === 'checkbox' || f.type === 'radio') { f.checked = false; }
+        else { f.value = ''; }
+      });
       document.getElementById('partnerForm').style.display = 'none';
       document.getElementById('successWrap').style.display = 'block';
+      /* Replace history entry so back button does not restore the filled form */
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({ submitted: true }, '', window.location.href);
+      }
     } else {
       statusEl.className = 'form-status err';
       statusEl.textContent = data.error || 'An error occurred. Please try again or email hello@clandestino.kitchen.';
@@ -534,6 +544,16 @@ document.getElementById('partnerForm').addEventListener('submit', async function
     statusEl.style.display = 'block';
     btn.disabled = false;
     btn.textContent = 'Submit partner profile';
+  }
+});
+
+/* Clear form if user navigates back after successful submission */
+window.addEventListener('pageshow', function(e) {
+  if (e.persisted || (window.history.state && window.history.state.submitted)) {
+    var form = document.getElementById('partnerForm');
+    var success = document.getElementById('successWrap');
+    if (form) form.style.display = 'none';
+    if (success) success.style.display = 'block';
   }
 });
 </script>
