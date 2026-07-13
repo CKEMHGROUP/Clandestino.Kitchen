@@ -1,132 +1,651 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Partner with us — Clandestino Kitchen</title>
-  <style>
-    :root {
-      --ck-bg: #000000;
-      --ck-surface: #111111;
-      --ck-text: #ffffff;
-      --ck-muted: #8c8c8c;
-      --ck-border: #222222;
-      --ck-accent: #ffffff;
-      --ck-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Partner with us - Clandestino Kitchen</title>
+<meta name="description" content="Partner with Clandestino Kitchen. We build our events through a curated network of independent venues, culinary professionals, and production partners.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clandestino.kitchen/partners">
+<meta property="og:title" content="Partner with us - Clandestino Kitchen">
+<meta property="og:description" content="We build our events through a curated network of independent venues, culinary professionals, and production partners.">
+<meta property="og:image" content="img/og-image.jpg">
+<meta property="og:site_name" content="Clandestino Kitchen">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0a0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-    * { box-sizing: border-box; }
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+img{display:block;max-width:100%;height:auto;}
+:root{
+  --white:#ffffff;--paper:#f9f8f6;
+  --text:#0a0908;--mid:#4a4643;--dim:#888380;
+  --rule:rgba(10,9,8,.08);
+  --ink:#f0ece4;--dark:#0a0908;--gold:#b89a5e;
+  --F:'Raleway','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --M:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+html{background:var(--white);-webkit-text-size-adjust:100%;}
+body{background:var(--white);color:var(--text);font-family:var(--M);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 
-    body {
-      background-color: var(--ck-bg);
-      color: var(--ck-text);
-      font-family: var(--ck-font);
-      line-height: 1.6;
-      margin: 0;
-      padding: 60px 24px;
-      -webkit-font-smoothing: antialiased;
-    }
+/* ── NAV: matches live site exactly ── */
+nav{
+  position:fixed;inset:0 0 auto;z-index:400;height:48px;
+  display:flex;align-items:center;padding:0 48px;gap:48px;
+  border-bottom:1px solid transparent;
+  background:rgba(255,255,255,.97);
+  border-bottom-color:var(--rule);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.n-logo{
+  font-family:var(--M);font-size:10px;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text);text-decoration:none;white-space:nowrap;flex-shrink:0;
+}
+.n-links{list-style:none;display:flex;gap:36px;flex:1;}
+.n-links a{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--dim);text-decoration:none;
+  transition:color .2s;min-height:48px;
+  display:flex;align-items:center;
+}
+.n-links a:hover{color:var(--text);}
+.n-links a.active{color:var(--text);}
+.n-enquire{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--dim);text-decoration:none;
+  transition:color .2s;flex-shrink:0;
+}
+.n-enquire:hover{color:var(--text);}
+.burger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:10px;min-width:44px;min-height:44px;justify-content:center;margin-left:auto;}
+.burger span{display:block;width:18px;height:1px;background:var(--text);}
 
-    .ck-container { max-width: 600px; margin: 0 auto; }
-    .ck-header { margin-bottom: 48px; }
-    .ck-header h1 { font-size: 32px; font-weight: 400; letter-spacing: -0.5px; margin: 0 0 12px 0; }
-    .ck-header p { color: var(--ck-muted); font-size: 15px; margin: 0; }
-    .ck-section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--ck-muted); margin: 40px 0 20px 0; padding-bottom: 6px; border-bottom: 1px solid var(--ck-border); font-weight: 600; }
-    .ck-field-group { margin-bottom: 20px; }
-    .ck-field-group label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
-    
-    .ck-input, .ck-select, .ck-textarea {
-      width: 100%; background-color: var(--ck-surface); border: 1px solid var(--ck-border);
-      color: var(--ck-text); padding: 12px 14px; font-size: 14px; font-family: var(--ck-font);
-      border-radius: 0px; outline: none;
-    }
-    .ck-input:focus, .ck-select:focus, .ck-textarea:focus { border-color: var(--ck-accent); }
-    .ck-note { display: block; font-size: 12px; color: var(--ck-muted); margin-top: 4px; }
-    
-    .ck-checkbox-label { display: flex; align-items: flex-start; font-size: 13px; color: var(--ck-muted); margin-bottom: 16px; cursor: pointer; }
-    .ck-checkbox-label input { margin: 4px 10px 0 0; accent-color: var(--ck-accent); flex-shrink: 0; }
-    
-    .ck-submit-btn {
-      background-color: var(--ck-accent); color: #000000; border: none; width: 100%; padding: 16px;
-      font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; margin-top: 24px;
-    }
-  </style>
+/* ── PAGE HEADER ── */
+.page-header{
+  padding:120px 48px 72px;
+  border-bottom:1px solid var(--rule);
+  max-width:1160px;margin:0 auto;
+}
+.page-eyebrow{
+  font-family:var(--M);font-size:8px;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--dim);display:block;margin-bottom:20px;
+}
+.page-h{
+  font-family:var(--F);
+  font-size:clamp(32px,5vw,68px);
+  font-weight:200;line-height:.96;
+  letter-spacing:-.025em;
+  color:var(--text);margin-bottom:28px;
+}
+.page-sub{
+  font-family:var(--M);font-size:12px;font-weight:300;
+  letter-spacing:.02em;line-height:1.82;
+  color:var(--mid);max-width:580px;
+}
+
+/* ── FORM CONTAINER ── */
+.form-wrap{
+  max-width:1160px;margin:0 auto;
+  padding:72px 48px 96px;
+}
+
+/* ── SECTION HEADINGS inside form ── */
+.form-section{margin-bottom:52px;}
+.form-section-rule{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:32px;padding-bottom:14px;
+  border-bottom:1px solid var(--rule);
+}
+.form-section-label{
+  font-family:var(--M);font-size:8px;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--dim);
+}
+.form-section-n{
+  font-family:var(--M);font-size:8px;font-weight:300;
+  letter-spacing:.1em;color:var(--dim);opacity:.45;margin-left:auto;
+}
+
+/* ── TALLY EMBED ── */
+/* Tally renders an iframe that takes full width.
+   The wrapper ensures it matches our page width and has breathing room. */
+.tally-embed-wrap{
+  width:100%;
+  min-height:600px;
+}
+.tally-embed-wrap iframe{
+  width:100%;
+  border:none;
+  min-height:600px;
+}
+
+/* ── MANUAL FORM (shown while Tally loads or as fallback) ── */
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;}
+.fg{margin-bottom:22px;}
+.fg label{
+  font-family:var(--M);font-size:8px;font-weight:300;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);display:block;margin-bottom:6px;
+}
+.fg label span{
+  color:var(--gold);margin-left:2px;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;font-family:var(--M);font-size:11px;font-weight:300;
+  color:var(--text);background:transparent;border:none;
+  border-bottom:1px solid var(--rule);padding:9px 0;
+  outline:none;transition:border-color .2s;letter-spacing:.02em;
+  -webkit-appearance:none;border-radius:0;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-bottom-color:var(--text);
+}
+.fg select{cursor:pointer;background:var(--white);}
+.fg select option{background:var(--white);color:var(--text);}
+.fg textarea{resize:none;height:80px;line-height:1.6;}
+.fg-note{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.03em;color:var(--dim);margin-top:5px;
+  line-height:1.6;
+}
+.fg-full{grid-column:1/-1;}
+
+/* ── RADIO / CHECKBOX group ── */
+.check-group{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+.check-item{display:flex;align-items:flex-start;gap:10px;cursor:pointer;}
+.check-item input[type="checkbox"],
+.check-item input[type="radio"]{
+  width:14px;height:14px;margin-top:2px;
+  flex-shrink:0;cursor:pointer;
+  border:1px solid rgba(10,9,8,.3);
+  -webkit-appearance:none;appearance:none;
+  background:transparent;border-radius:0;
+  transition:border-color .2s,background .2s;
+}
+.check-item input[type="checkbox"]:checked,
+.check-item input[type="radio"]:checked{
+  background:var(--text);border-color:var(--text);
+}
+.check-label{
+  font-family:var(--M);font-size:10px;font-weight:300;
+  letter-spacing:.02em;color:var(--mid);line-height:1.55;
+}
+.check-label a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--rule);}
+.check-label a:hover{border-bottom-color:var(--text);}
+
+/* ── SUBMIT ── */
+.submit-row{
+  padding-top:32px;border-top:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;margin-top:40px;
+}
+.submit-note{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.04em;color:var(--dim);max-width:420px;line-height:1.7;
+}
+.f-submit{
+  font-family:var(--M);font-size:9px;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--white);background:var(--text);
+  border:none;padding:0 36px;min-height:46px;
+  cursor:pointer;transition:background .2s;flex-shrink:0;
+}
+.f-submit:hover{background:var(--mid);}
+.f-submit:disabled{background:rgba(10,9,8,.2);cursor:not-allowed;}
+
+/* ── SUCCESS ── */
+.form-success{
+  display:none;padding:48px 0;text-align:center;
+}
+.form-success h3{
+  font-family:var(--F);font-size:28px;font-weight:200;
+  letter-spacing:-.015em;color:var(--text);margin-bottom:14px;
+}
+.form-success p{
+  font-family:var(--M);font-size:11px;font-weight:300;
+  letter-spacing:.03em;line-height:1.8;color:var(--mid);
+  max-width:440px;margin:0 auto;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dark);
+  border-top:1px solid rgba(240,236,228,.06);
+  padding:52px 48px 26px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+}
+.f-name{
+  font-family:var(--M);font-size:10px;font-weight:400;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(240,236,228,.55);display:block;margin-bottom:4px;
+}
+.f-slogan{
+  font-family:var(--M);font-size:8px;font-weight:300;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(184,154,94,.5);display:block;margin-bottom:14px;
+}
+.f-entity{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.02em;color:rgba(240,236,228,.2);line-height:1.85;
+}
+.f-col h4{
+  font-family:var(--M);font-size:8px;font-weight:400;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(240,236,228,.28);margin-bottom:16px;
+}
+.f-col ul{list-style:none;}
+.f-col li{margin-bottom:8px;}
+.f-col a{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  color:rgba(240,236,228,.35);text-decoration:none;
+  letter-spacing:.02em;transition:color .2s;
+  min-height:40px;display:inline-flex;align-items:center;
+}
+.f-col a:hover{color:rgba(240,236,228,.75);}
+.f-col a.active{color:rgba(240,236,228,.65);}
+.f-base{
+  background:var(--dark);padding:12px 48px 22px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:10px;
+  border-top:1px solid rgba(240,236,228,.04);
+}
+.f-copy{
+  font-family:var(--M);font-size:8px;font-weight:300;
+  letter-spacing:.06em;color:rgba(240,236,228,.18);
+}
+
+/* ── MOBILE ── */
+@media(max-width:960px){
+  nav{padding:0 20px;gap:20px;}
+  .n-links{display:none;}
+  .n-enquire{display:none;}
+  .burger{display:flex;}
+  .n-links.open{
+    display:flex;flex-direction:column;
+    position:fixed;inset:0;
+    background:rgba(10,9,8,.98);
+    justify-content:center;align-items:center;
+    gap:26px;z-index:399;
+  }
+  .n-links.open a{font-size:14px;letter-spacing:.1em;color:rgba(240,236,228,.7);}
+  .page-header{padding:96px 20px 52px;}
+  .form-wrap{padding:52px 20px 72px;}
+  .form-grid-2{grid-template-columns:1fr;}
+  .submit-row{flex-direction:column;align-items:flex-start;}
+  .f-submit{width:100%;}
+  footer{padding:44px 20px;grid-template-columns:1fr 1fr;gap:28px;}
+  .f-base{padding:12px 20px;}
+}
+@media(max-width:480px){
+  footer{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
 
-  <div class="ck-container">
-    <header class="ck-header">
-      <h1>Partner with Clandestino Kitchen</h1>
-      <p>Introduce your company profile to our operational asset network below.</p>
-    </header>
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="n-logo">Clandestino Kitchen</a>
+  <ul class="n-links" id="nLinks">
+    <li><a href="index.html#about">The group</a></li>
+    <li><a href="index.html#brand">Brand</a></li>
+    <li><a href="index.html#wwd">What we do</a></li>
+    <li><a href="index.html#vision">Vision</a></li>
+    <li><a href="partners.html" class="active">Partners</a></li>
+  </ul>
+  <a href="index.html#contact" class="n-enquire">Contact</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-    <!-- Fail-safe pure native payload dispatcher linked directly to your desk -->
-    <form action="mailto:hello@clandestino.kitchen" method="POST" enctype="text/plain">
-      
-      <div class="ck-section-title">Company Identity</div>
-      <div class="ck-field-group"><label>Legal Company Name *</label><input type="text" name="[COMPANY_LEGAL_NAME]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Trading Name (if different)</label><input type="text" name="[COMPANY_TRADING_NAME]" class="ck-input"></div>
-      <div class="ck-field-group"><label>Legal Form * (SL, SA, GmbH, Ltd...)</label><input type="text" name="[LEGAL_FORM]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Country & City of Registration *</label><input type="text" name="[REGISTRATION_LOCALE]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Company Registration Number *</label><input type="text" name="[REGISTRATION_NUMBER]" class="ck-input" required></div>
-      <div class="ck-field-group">
-        <label>VAT / Tax ID Number *</label>
-        <input type="text" name="[VAT_TAX_ID]" class="ck-input" required>
-        <span class="ck-note">EU VIES-registered VAT validation required.</span>
-      </div>
-      <div class="ck-field-group"><label>Website / Social Profiles</label><input type="text" name="[WEB_URL]" class="ck-input" placeholder="https://"></div>
+<!-- PAGE HEADER -->
+<div style="max-width:1160px;margin:0 auto;">
+  <div class="page-header">
+    <span class="page-eyebrow">Partner network</span>
+    <h1 class="page-h">Partner with<br>Clandestino Kitchen.</h1>
+    <p class="page-sub">We build our events through a curated network of independent venues, culinary professionals, and production partners. If your standard matches ours, introduce your company below. We review every submission and respond where there is a fit.</p>
+  </div>
+</div>
 
-      <div class="ck-section-title">Contact Profile</div>
-      <div class="ck-field-group"><label>Contact Person *</label><input type="text" name="[CONTACT_NAME]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Role / Job Title *</label><input type="text" id="p_role" name="[CONTACT_ROLE]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Email Address *</label><input type="email" name="[CONTACT_EMAIL]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Phone Number *</label><input type="text" name="[CONTACT_PHONE]" class="ck-input" required></div>
+<!-- FORM -->
+<div class="form-wrap">
 
-      <div class="ck-section-title">Capability Profile</div>
-      <div class="ck-field-group">
-        <label>Partner Type *</label>
-        <select name="[PARTNER_TYPE]" class="ck-select" required>
-          <option value="" disabled selected hidden>Select...</option>
-          <option value="Venue">Venue</option>
-          <option value="Culinary Production">Culinary Production</option>
-          <option value="Catering & Logistics">Catering & Logistics</option>
-          <option value="Producer & Supplier">Producer & Supplier</option>
-          <option value="Event Production">Event Production</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="ck-field-group"><label>Services & Capacity Summary *</label><textarea name="[SERVICES_DESCRIPTION]" class="ck-textarea" rows="4" required></textarea></div>
-      <div class="ck-field-group"><label>Geographic Locations Served *</label><input type="text" name="[GEOGRAPHIC_LOCATIONS_SERVED]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Max Guests per Event *</label><input type="text" name="[MAX_GUEST_CAPACITY]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Years Operating *</label><input type="text" name="[YEARS_OPERATING]" class="ck-input" required></div>
-
-      <div class="ck-section-title">Compliance & Commercials</div>
-      <div class="ck-field-group">
-        <label>Hold mandatory local licenses? *</label>
-        <select name="[HOLDS_MANDATORY_LICENSES]" class="ck-select" required>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-      <div class="ck-field-group"><label>Food Safety / Venue Licenses</label><textarea name="[LICENSES_HELD_DETAILS]" class="ck-textarea" rows="2"></textarea></div>
-      <div class="ck-field-group"><label>Public Liability Insurance Limit (EUR) *</label><input type="text" name="[LIABILITY_INSURANCE_LIMIT]" class="ck-input" required></div>
-      <div class="ck-field-group"><label>Availability Profile *</label><input type="text" name="[AVAILABILITY_PROFILE]" class="ck-input" required></div>
-      <div class="ck-field-group">
-        <label>Worked with event agencies before? *</label>
-        <select name="[AGENCY_EXPERIENCE]" class="ck-select" required>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-      <div class="ck-field-group"><label>References (Optional)</label><textarea name="[PROFESSIONAL_REFERENCES]" class="ck-textarea" rows="2"></textarea></div>
-
-      <div class="ck-section-title">Legal Terms</div>
-      <label class="ck-checkbox-label"><input type="checkbox" name="[PRIVACY_GDPR_CONSENT]" value="AGREED" required><span>GDPR policy agreement per processing rules. *</span></label>
-      <label class="ck-checkbox-label"><input type="checkbox" name="[FRAMEWORK_ENGAGEMENT_DISCLAIMER]" value="CONFIRMED" required><span>Confirm submission creates no commercial engagement. *</span></label>
-
-      <button type="submit" class="ck-submit-btn">Send Partner Portfolio</button>
-    </form>
+  <!-- TALLY EMBED -->
+  <!-- Replace TALLY_FORM_ID below with your actual Tally form ID once created at tally.so -->
+  <!-- The Tally form should be configured to:
+       - Send email notifications to hello@clandestino.kitchen
+       - Use the field structure defined in the manual form below
+       - Match CK brand: white background, minimal style in Tally settings -->
+  <div id="tallyEmbed">
+    <div data-tally-src="https://tally.so/embed/TALLY_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+         style="width:100%;min-height:600px;"
+         data-tally-width="100%"
+         data-tally-align-left="1"
+         data-tally-hide-title="1"
+         data-tally-transparent-background="1"
+         data-tally-dynamic-height="1">
+    </div>
+    <!-- Tally embed script - loads asynchronously -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <noscript>
+      <p style="font-family:'Inter',sans-serif;font-size:11px;color:#888380;padding:20px 0;">
+        Please enable JavaScript to load the partner application form, or email us directly at
+        <a href="mailto:hello@clandestino.kitchen" style="color:#0a0908;">hello@clandestino.kitchen</a>.
+      </p>
+    </noscript>
   </div>
 
+  <!-- MANUAL FORM - shown as fallback if Tally ID not yet configured -->
+  <!-- Remove this section once Tally form is live -->
+  <form id="partnerForm" style="display:none;" novalidate>
+
+    <!-- 01 COMPANY IDENTITY -->
+    <div class="form-section">
+      <div class="form-section-rule">
+        <span class="form-section-label">Company identity</span>
+        <span class="form-section-n">01</span>
+      </div>
+      <div class="form-grid-2">
+        <div class="fg">
+          <label for="legalName">Legal name <span>*</span></label>
+          <input type="text" id="legalName" name="legalName" required placeholder="Full registered legal name">
+        </div>
+        <div class="fg">
+          <label for="tradingName">Trading name</label>
+          <input type="text" id="tradingName" name="tradingName" placeholder="If different from legal name">
+        </div>
+        <div class="fg">
+          <label for="legalForm">Legal form <span>*</span></label>
+          <input type="text" id="legalForm" name="legalForm" required placeholder="e.g. SL, GmbH, Ltd, LLC">
+        </div>
+        <div class="fg">
+          <label for="country">Country / City <span>*</span></label>
+          <input type="text" id="country" name="country" required placeholder="e.g. Spain / Barcelona">
+        </div>
+        <div class="fg">
+          <label for="regNumber">Company registration number</label>
+          <input type="text" id="regNumber" name="regNumber" placeholder="Where applicable">
+        </div>
+        <div class="fg">
+          <label for="vatId">VAT / Tax ID</label>
+          <input type="text" id="vatId" name="vatId" placeholder="EU VAT number or local tax ID">
+          <p class="fg-note">EU entities: your VAT number will be verified on VIES before any commercial engagement.</p>
+        </div>
+        <div class="fg fg-full">
+          <label for="website">Company website <span>*</span></label>
+          <input type="url" id="website" name="website" required placeholder="https://yourcompany.com">
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 CONTACT -->
+    <div class="form-section">
+      <div class="form-section-rule">
+        <span class="form-section-label">Contact</span>
+        <span class="form-section-n">02</span>
+      </div>
+      <div class="form-grid-2">
+        <div class="fg">
+          <label for="contactName">Full name <span>*</span></label>
+          <input type="text" id="contactName" name="contactName" required placeholder="Your name">
+        </div>
+        <div class="fg">
+          <label for="contactRole">Role / Title <span>*</span></label>
+          <input type="text" id="contactRole" name="contactRole" required placeholder="e.g. Managing Director">
+        </div>
+        <div class="fg">
+          <label for="contactEmail">Email address <span>*</span></label>
+          <input type="email" id="contactEmail" name="contactEmail" required placeholder="your@company.com">
+        </div>
+        <div class="fg">
+          <label for="contactPhone">Phone</label>
+          <input type="tel" id="contactPhone" name="contactPhone" placeholder="Including country code">
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 CAPABILITY PROFILE -->
+    <div class="form-section">
+      <div class="form-section-rule">
+        <span class="form-section-label">Capability profile</span>
+        <span class="form-section-n">03</span>
+      </div>
+      <div class="form-grid-2">
+        <div class="fg fg-full">
+          <label for="partnerType">Partner type <span>*</span></label>
+          <select id="partnerType" name="partnerType" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="Venue">Venue</option>
+            <option value="Culinary production">Culinary production</option>
+            <option value="Catering and logistics">Catering and logistics</option>
+            <option value="Producer and supplier">Producer and supplier</option>
+            <option value="Event production">Event production</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="fg fg-full">
+          <label for="servicesDesc">Services description <span>*</span></label>
+          <textarea id="servicesDesc" name="servicesDesc" required placeholder="Describe your core services, specialisations, and what distinguishes your offering."></textarea>
+        </div>
+        <div class="fg">
+          <label for="locationsServed">Locations served <span>*</span></label>
+          <input type="text" id="locationsServed" name="locationsServed" required placeholder="Cities, regions, or countries you operate in">
+        </div>
+        <div class="fg">
+          <label for="capacityRange">Capacity range</label>
+          <input type="text" id="capacityRange" name="capacityRange" placeholder="e.g. 10 to 200 guests per event">
+        </div>
+        <div class="fg">
+          <label for="yearsOperating">Years operating <span>*</span></label>
+          <input type="text" id="yearsOperating" name="yearsOperating" required placeholder="e.g. 8 years">
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 COMPLIANCE -->
+    <div class="form-section">
+      <div class="form-section-rule">
+        <span class="form-section-label">Compliance</span>
+        <span class="form-section-n">04</span>
+      </div>
+      <div class="form-grid-2">
+        <div class="fg fg-full">
+          <label>Does your company hold its own operating licenses and professional insurance? <span>*</span></label>
+          <div class="check-group" style="margin-top:12px;flex-direction:row;gap:32px;">
+            <label class="check-item">
+              <input type="radio" name="hasLicenses" value="yes" required>
+              <span class="check-label">Yes</span>
+            </label>
+            <label class="check-item">
+              <input type="radio" name="hasLicenses" value="no">
+              <span class="check-label">No</span>
+            </label>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="licensesHeld">Licenses held</label>
+          <input type="text" id="licensesHeld" name="licensesHeld" placeholder="e.g. food handler, liquor, venue operation">
+        </div>
+        <div class="fg">
+          <label for="liabilityCoverage">Liability coverage</label>
+          <input type="text" id="liabilityCoverage" name="liabilityCoverage" placeholder="e.g. EUR 2M public liability">
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 COMMERCIAL -->
+    <div class="form-section">
+      <div class="form-section-rule">
+        <span class="form-section-label">Commercial</span>
+        <span class="form-section-n">05</span>
+      </div>
+      <div class="form-grid-2">
+        <div class="fg">
+          <label for="availability">General availability</label>
+          <input type="text" id="availability" name="availability" placeholder="e.g. weekends, year-round, seasonal">
+        </div>
+        <div class="fg">
+          <label for="agencyExperience">Agency / operator experience</label>
+          <input type="text" id="agencyExperience" name="agencyExperience" placeholder="Have you worked under a management entity before?">
+        </div>
+        <div class="fg fg-full">
+          <label for="references">References</label>
+          <textarea id="references" name="references" placeholder="Optional. Previous clients, events, or collaborations you can reference. Names or links welcome."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 CONSENT -->
+    <div class="form-section">
+      <div class="form-section-rule">
+        <span class="form-section-label">Consent</span>
+        <span class="form-section-n">06</span>
+      </div>
+      <div class="check-group">
+        <label class="check-item">
+          <input type="checkbox" id="gdprConsent" name="gdprConsent" required>
+          <span class="check-label">
+            I consent to CK Events Management &amp; Hospitality Group LLC processing the information submitted in this form for the purpose of evaluating a potential partnership. I have read the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>. <span style="color:var(--gold);">*</span>
+          </span>
+        </label>
+        <label class="check-item" style="margin-top:6px;">
+          <input type="checkbox" id="noEngagement" name="noEngagement" required>
+          <span class="check-label">
+            I understand that submitting this form does not constitute a commercial engagement, service agreement, or commitment of any kind from CK Events Management &amp; Hospitality Group LLC. <span style="color:var(--gold);">*</span>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="submit-row">
+      <p class="submit-note">Fields marked <span style="color:var(--gold);">*</span> are required. We review every submission and respond where there is a fit. Response time is typically 5 to 10 business days.</p>
+      <button type="submit" class="f-submit" id="submitBtn">Submit application</button>
+    </div>
+
+    <div class="form-success" id="formSuccess">
+      <h3>Application received.</h3>
+      <p>Thank you for introducing your company. We review every submission and will respond where there is a fit. Response time is typically 5 to 10 business days.</p>
+    </div>
+
+  </form>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <span class="f-name">Clandestino Kitchen</span>
+    <span class="f-slogan">Eat. Connect. Experience.</span>
+    <p class="f-entity">CK Events Management &amp; Hospitality Group LLC<br>Wyoming, USA</p>
+  </div>
+  <div class="f-col">
+    <h4>The group</h4>
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#wwd">What we do</a></li>
+      <li><a href="index.html#vision">Vision</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Brand</h4>
+    <ul>
+      <li><a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener">JoEs TaBLe</a></li>
+      <li><a href="index.html#contact">Enquire</a></li>
+      <li><a href="partners.html" class="active">Partners</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Legal</h4>
+    <ul>
+      <li><a href="terms.html">Terms of use</a></li>
+      <li><a href="privacy-policy.html">Privacy policy</a></li>
+      <li><a href="cookie-policy.html">Cookie policy</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="f-base">
+  <p class="f-copy">&copy; 2026 CK Events Management &amp; Hospitality Group LLC</p>
+</div>
+
+<script>
+/* Burger */
+const burger=document.getElementById('burger'),nLinks=document.getElementById('nLinks');
+burger.addEventListener('click',()=>{const o=nLinks.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
+nLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nLinks.classList.remove('open')));
+
+/* Tally detection: if Tally embed script fails or form ID is placeholder, show manual form */
+(function(){
+  var tallyDiv = document.querySelector('[data-tally-src]');
+  var src = tallyDiv ? tallyDiv.getAttribute('data-tally-src') : '';
+  if (!tallyDiv || src.indexOf('TALLY_FORM_ID') !== -1) {
+    document.getElementById('tallyEmbed').style.display = 'none';
+    document.getElementById('partnerForm').style.display = 'block';
+  }
+})();
+
+/* Manual form submission (fallback) */
+var form = document.getElementById('partnerForm');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var required = form.querySelectorAll('[required]');
+    var valid = true;
+    required.forEach(function(el) {
+      if (el.type === 'checkbox' && !el.checked) { valid = false; el.style.outline = '1px solid #b89a5e'; }
+      else if (el.type === 'radio') {
+        var name = el.name;
+        var checked = form.querySelector('input[name="' + name + '"]:checked');
+        if (!checked) valid = false;
+      }
+      else if (!el.value.trim()) { valid = false; el.style.borderBottomColor = '#b89a5e'; }
+    });
+    if (!valid) { return; }
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    /* Compose mailto as fallback -- direct email to hello@clandestino.kitchen */
+    var data = new FormData(form);
+    var body = '';
+    data.forEach(function(val, key) { if (val) body += key + ': ' + val + '\n'; });
+    var mailto = 'mailto:hello@clandestino.kitchen'
+      + '?subject=' + encodeURIComponent('Partner application - Clandestino Kitchen')
+      + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+
+    setTimeout(function() {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }, 1200);
+  });
+}
+</script>
+
+<script>
+(function(){
+  var KEY='ck_cookie_consent',P='cookie-policy.html';
+  if(localStorage.getItem(KEY))return;
+  var b=document.createElement('div'),s=document.createElement('style');
+  s.textContent='#ckcb{position:fixed;bottom:0;left:0;right:0;z-index:9999;animation:ckup .4s cubic-bezier(.16,1,.3,1) forwards;}@keyframes ckup{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}.cki{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:14px 48px;background:#0a0908;border-top:1px solid rgba(240,236,228,.06);}.ckt{font-family:"Inter",sans-serif;font-size:10px;font-weight:300;letter-spacing:.03em;color:rgba(240,236,228,.4);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}.ckt strong{color:rgba(240,236,228,.7);font-weight:300;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}.ckt a{color:rgba(240,236,228,.4);text-decoration:none;border-bottom:1px solid rgba(240,236,228,.18);}.cka{display:flex;gap:8px;flex-shrink:0;}.ckb{font-family:"Inter",sans-serif;font-size:8px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;border:none;cursor:pointer;padding:0 16px;min-height:34px;transition:all .2s;}.ckok{background:rgba(240,236,228,.9);color:#0a0908;}.ckok:hover{background:#ffffff;}.ckno{background:transparent;color:rgba(240,236,228,.25);border:1px solid rgba(240,236,228,.1);}.ckno:hover{color:rgba(240,236,228,.55);border-color:rgba(240,236,228,.3);}@media(max-width:640px){.cki{padding:14px 20px;flex-direction:column;align-items:flex-start;gap:12px;}.cka{width:100%;justify-content:flex-end;}}';
+  b.id='ckcb';
+  b.innerHTML='<div class="cki"><div class="ckt"><strong>Cookies</strong><span>Essential only. <a href="'+P+'">Cookie Policy</a>.</span></div><div class="cka"><button class="ckb ckok" id="ckok">Accept</button><button class="ckb ckno" id="ckno">Decline</button></div></div>';
+  function dismiss(v){localStorage.setItem(KEY,v);b.style.transition='transform .3s ease,opacity .3s ease';b.style.transform='translateY(100%)';b.style.opacity='0';setTimeout(function(){b.remove();s.remove();},320);}
+  document.head.appendChild(s);document.body.appendChild(b);
+  document.getElementById('ckok').addEventListener('click',function(){dismiss('accepted');});
+  document.getElementById('ckno').addEventListener('click',function(){dismiss('declined');});
+})();
+</script>
 </body>
 </html>
