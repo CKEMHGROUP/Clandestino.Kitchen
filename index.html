@@ -622,123 +622,6 @@ footer{
   .ed-h{font-size:clamp(32px,9vw,52px);}
   footer{grid-template-columns:1fr;}
 }
-/* ── CLANDESTINO KITCHEN: Partner Application ── */
-  :root {
-  --ck-bg: #0a0a0a;
-  --ck-text: #ffffff;
-  --ck-muted: #888888;
-  --ck-border: #222222;
-  --ck-accent: #ffffff;
-  --ck-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-.ck-partners-body {
-  background-color: var(--ck-bg);
-  color: var(--ck-text);
-  font-family: var(--ck-font);
-  line-height: 1.6;
-  margin: 0;
-  padding: 60px 20px;
-  -webkit-font-smoothing: antialiased;
-}
-
-.ck-container {
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.ck-header h1 {
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin: 0 0 16px 0;
-}
-
-.ck-header p {
-  color: var(--ck-muted);
-  font-size: 16px;
-  margin: 0 0 40px 0;
-}
-
-.ck-section-title {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--ck-muted);
-  margin: 40px 0 24px 0;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--ck-border);
-}
-
-.ck-field-group {
-  margin-bottom: 24px;
-}
-
-.ck-field-group label {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-.ck-input, .ck-select, .ck-textarea {
-  width: 100%;
-  box-sizing: border-box;
-  background-color: #121212;
-  border: 1px solid var(--ck-border);
-  color: var(--ck-text);
-  padding: 12px 16px;
-  font-size: 15px;
-  font-family: var(--ck-font);
-  border-radius: 0px;
-  transition: border-color 0.2s ease;
-}
-
-.ck-input:focus, .ck-select:focus, .ck-textarea:focus {
-  outline: none;
-  border-color: var(--ck-accent);
-}
-
-.ck-note {
-  display: block;
-  font-size: 12px;
-  color: var(--ck-muted);
-  margin-top: 6px;
-}
-
-.ck-checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  font-size: 13px;
-  color: var(--ck-muted);
-  margin-bottom: 16px;
-  cursor: pointer;
-  line-height: 1.4;
-}
-
-.ck-checkbox-label input {
-  margin: 3px 12px 0 0;
-  accent-color: var(--ck-accent);
-}
-
-.ck-submit-btn {
-  background-color: var(--ck-accent);
-  color: #000000;
-  border: none;
-  width: 100%;
-  padding: 16px;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  margin-top: 24px;
-  transition: opacity 0.2s ease;
-}
-
-.ck-submit-btn:hover {
-  opacity: 0.9;
-}
 </style>
 </head>
 <body>
@@ -753,6 +636,9 @@ footer{
     <li><a href="#wwd">What we do</a></li>
     <li><a href="#vision">Vision</a></li>
   </ul>
+  <a href="#" onclick="window.open('partners.html', 'CKPartners', 'width=760,height=900,scrollbars=yes,resizable=yes'); return false;" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#ffffff';" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';">
+  Partner with Us ↗
+</a>
   <a href="#contact" class="n-contact">Get in touch</a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -1001,6 +887,9 @@ footer{
 
 <!-- FOOTER -->
 <footer>
+  <a href="#" onclick="window.open('partners.html', 'CKPartners', 'width=760,height=900,scrollbars=yes,resizable=yes'); return false;" style="color: #888888; text-decoration: none; font-size: 13px; transition: color 0.2s ease;" onmouseover="this.style.color='#ffffff';" onmouseout="this.style.color='#888888';">
+  Become a Partner (Type C)
+</a>
   <div class="f-col-brand">
     <span class="f-name">Clandestino Kitchen</span>
     <span class="f-slogan">Eat. Connect. Experience.</span>
@@ -1032,168 +921,6 @@ footer{
 </footer>
 <div class="f-base">
   <p class="f-copy">&copy; 2026 CK Events Management &amp; Hospitality Group LLC</p>
-</div>
-
-  /* ── HTML FORM STRUCTURE Section CLANDESTINO KITCHEN: Partner Application ── */
-<div class="ck-partners-body">
-  <div class="ck-container">
-    
-    <header class="ck-header">
-      <h1>Partner with Clandestino Kitchen</h1>
-      <p>We build our events through a curated network of independent venues, culinary professionals, and production partners. If your standard matches ours, introduce your company below. We review every submission and respond where there is a fit.</p>
-    </header>
-
-    <form id="ck-onboarding-form">
-      
-      <div class="ck-section-title">Company Identity</div>
-      
-      <div class="ck-field-group">
-        <label>Legal Company Name *</label>
-        <input type="text" name="legal_name" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Trading Name (if different)</label>
-        <input type="text" name="trading_name" class="ck-input">
-      </div>
-
-      <div class="ck-field-group">
-        <label>Legal Form * (SL, SA, GmbH, Ltd...)</label>
-        <input type="text" name="legal_form" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Country & City of Registration *</label>
-        <input type="text" name="registration_locale" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Company Registration Number *</label>
-        <input type="text" name="registration_number" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>VAT / Tax ID Number *</label>
-        <input type="text" name="vat_number" class="ck-input" required>
-        <span class="ck-note">EU companies — VIES-registered VAT number required for B2B invoicing.</span>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Website / Social Profiles</label>
-        <input type="url" name="website" class="ck-input" placeholder="https://">
-      </div>
-
-      <div class="ck-section-title">Contact Profile</div>
-
-      <div class="ck-field-group">
-        <label>Contact Person *</label>
-        <input type="text" name="contact_person" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Role / Job Title *</label>
-        <input type="text" name="contact_role" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Email Address *</label>
-        <input type="email" name="contact_email" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Phone Number *</label>
-        <input type="tel" name="contact_phone" class="ck-input" required>
-      </div>
-
-      <div class="ck-section-title">Capability Profile</div>
-
-      <div class="ck-field-group">
-        <label>Partner Type *</label>
-        <select name="partner_type" class="ck-select" required>
-          <option value="" disabled selected hidden>Select architecture type...</option>
-          <option value="Venue">Venue</option>
-          <option value="Culinary Production">Culinary Production</option>
-          <option value="Catering & Logistics">Catering & Logistics</option>
-          <option value="Producer & Supplier">Producer & Supplier</option>
-          <option value="Event Production">Event Production</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Description of Services & Capacity *</label>
-        <textarea name="services_desc" class="ck-textarea" rows="5" required></textarea>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Geographic Locations / Cities Served *</label>
-        <input type="text" name="locations_served" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Capacity Range * (Max guests you can serve/host)</label>
-        <input type="number" name="capacity_range" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Years Operating *</label>
-        <input type="number" name="years_operating" class="ck-input" required>
-      </div>
-
-      <div class="ck-section-title">Compliance & Commercials</div>
-
-      <div class="ck-field-group">
-        <label>Do you hold required licenses & insurance for your scope? *</label>
-        <select name="licenses_held_yn" class="ck-select" required>
-          <option value="Yes">Yes (Hard Requirement)</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Food Safety / Venue Licenses Held</label>
-        <textarea name="licenses_text" class="ck-textarea" rows="3"></textarea>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Public Liability Insurance Coverage Level (EUR) *</label>
-        <input type="text" name="insurance_coverage" class="ck-input" placeholder="e.g., 1,000,000" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Availability Profile *</label>
-        <input type="text" name="availability" class="ck-input" placeholder="e.g., Weekdays, Weekends, Seasonal Peak">
-      </div>
-
-      <div class="ck-field-group">
-        <label>Worked with event agencies or brokers before? *</label>
-        <select name="agency_exp" class="ck-select" required>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-
-      <div class="ck-field-group">
-        <label>References (Optional)</label>
-        <textarea name="references" class="ck-textarea" rows="3" placeholder="Name, Company, Contact info..."></textarea>
-      </div>
-
-      <div class="ck-section-title">Legal Terms</div>
-
-      <label class="ck-checkbox-label">
-        <input type="checkbox" name="gdpr_consent" value="Yes" required>
-        I agree to the processing of this data by CK Events Management & Hospitality Group LLC per the Privacy Policy for partner evaluation purposes. *
-      </label>
-
-      <label class="ck-checkbox-label">
-        <input type="checkbox" name="framework_consent" value="Yes" required>
-        I confirm submission creates no engagement. Commercial engagements arise strictly through signed framework agreements and Service Orders. *
-      </label>
-
-      <button type="submit" class="ck-submit-btn">Submit Partner Profile</button>
-    </form>
-    
-  </div>
 </div>
 
 <script>
@@ -1248,75 +975,6 @@ document.getElementById('contactForm').addEventListener('submit',function(e){
   document.getElementById('ckok').addEventListener('click',function(){dismiss('accepted');});
   document.getElementById('ckno').addEventListener('click',function(){dismiss('declined');});
 })();
-  /* ── Form Element Scripting Section CLANDESTINO KITCHEN: Partner Application ── */
-<script>
-document.getElementById('ck-onboarding-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
-  
-  // Custom payload builder matching your routing spec
-  const emailPayload = `
-[Partner Application] Submission Received
-=======================================================
-COMPANY IDENTITY
-=======================================================
-Legal Name:       ${data.legal_name}
-Trading Name:     ${data.trading_name || 'N/A'}
-Legal Form:       ${data.legal_form}
-Registration:     ${data.registration_locale}
-Reg Number:       ${data.registration_number}
-VAT/Tax ID:       ${data.vat_number} (VIES: https://europa.eu)
-Web/Social:       ${data.website || 'N/A'}
-
-=======================================================
-CONTACT DETAILS
-=======================================================
-Contact Person:   ${data.contact_person}
-Role/Title:       ${data.contact_role}
-Email:            ${data.contact_email}
-Phone:            ${data.contact_phone}
-
-=======================================================
-CAPABILITY PROFILE
-=======================================================
-Partner Type:     ${data.partner_type}
-Locations Served: ${data.locations_served}
-Max Capacity:     ${data.capacity_range} guests
-Years Operating:  ${data.years_operating}
-Services Summary:
-${data.services_desc}
-
-=======================================================
-COMPLIANCE & COMMERCIAL
-=======================================================
-Holds Licenses:   ${data.licenses_held_yn}
-Licenses Held:    ${data.licenses_text || 'None listed'}
-Liability Ins:    ${data.insurance_coverage} EUR
-Availability:     ${data.availability}
-Agency Experience:${data.agency_exp}
-
-References:
-${data.references || 'None provided'}
-
-=======================================================
-CONSENTS VERIFIED
-=======================================================
-[X] GDPR / Privacy Policy Consent
-[X] Framework Agreement Disclaimer
-  `.trim();
-
-  // Route directly to your site mail transaction handler
-  console.log("Email Payload Compiled for Dispatch:\n", emailPayload);
-  
-  // Replace this alert with your specific theme form action confirmation
-  alert('Application submitted successfully. Your profile has been sent to our evaluation desk.');
-  this.reset();
-});
-</script>
-
-  
 </script>
 </body>
 </html>
