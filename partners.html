@@ -12,12 +12,10 @@
       --ck-muted: #8c8c8c;
       --ck-border: #222222;
       --ck-accent: #ffffff;
-      --ck-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --ck-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       background-color: var(--ck-bg);
@@ -25,115 +23,32 @@
       font-family: var(--ck-font);
       line-height: 1.6;
       margin: 0;
-      padding: 80px 24px;
+      padding: 60px 24px;
       -webkit-font-smoothing: antialiased;
     }
 
-    .ck-container {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .ck-header {
-      margin-bottom: 56px;
-    }
-
-    .ck-header h1 {
-      font-size: 36px;
-      font-weight: 400;
-      letter-spacing: -1px;
-      margin: 0 0 16px 0;
-    }
-
-    .ck-header p {
-      color: var(--ck-muted);
-      font-size: 15px;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .ck-section-title {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--ck-muted);
-      margin: 48px 0 24px 0;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--ck-border);
-      font-weight: 600;
-    }
-
-    .ck-field-group {
-      margin-bottom: 24px;
-    }
-
-    .ck-field-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 8px;
-      letter-spacing: 0.3px;
-    }
-
+    .ck-container { max-width: 600px; margin: 0 auto; }
+    .ck-header { margin-bottom: 48px; }
+    .ck-header h1 { font-size: 32px; font-weight: 400; letter-spacing: -0.5px; margin: 0 0 12px 0; }
+    .ck-header p { color: var(--ck-muted); font-size: 15px; margin: 0; }
+    .ck-section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--ck-muted); margin: 40px 0 20px 0; padding-bottom: 6px; border-bottom: 1px solid var(--ck-border); font-weight: 600; }
+    .ck-field-group { margin-bottom: 20px; }
+    .ck-field-group label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+    
     .ck-input, .ck-select, .ck-textarea {
-      width: 100%;
-      background-color: var(--ck-surface);
-      border: 1px solid var(--ck-border);
-      color: var(--ck-text);
-      padding: 14px 16px;
-      font-size: 14px;
-      font-family: var(--ck-font);
-      border-radius: 0px;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
-      outline: none;
+      width: 100%; background-color: var(--ck-surface); border: 1px solid var(--ck-border);
+      color: var(--ck-text); padding: 12px 14px; font-size: 14px; font-family: var(--ck-font);
+      border-radius: 0px; outline: none;
     }
-
-    .ck-input:focus, .ck-select:focus, .ck-textarea:focus {
-      border-color: var(--ck-accent);
-      background-color: #161616;
-    }
-
-    .ck-note {
-      display: block;
-      font-size: 12px;
-      color: var(--ck-muted);
-      margin-top: 6px;
-      line-height: 1.4;
-    }
-
-    .ck-checkbox-label {
-      display: flex;
-      align-items: flex-start;
-      font-size: 13px;
-      color: var(--ck-muted);
-      margin-bottom: 20px;
-      cursor: pointer;
-      line-height: 1.5;
-    }
-
-    .ck-checkbox-label input {
-      margin: 3px 12px 0 0;
-      accent-color: var(--ck-accent);
-      flex-shrink: 0;
-    }
-
+    .ck-input:focus, .ck-select:focus, .ck-textarea:focus { border-color: var(--ck-accent); }
+    .ck-note { display: block; font-size: 12px; color: var(--ck-muted); margin-top: 4px; }
+    
+    .ck-checkbox-label { display: flex; align-items: flex-start; font-size: 13px; color: var(--ck-muted); margin-bottom: 16px; cursor: pointer; }
+    .ck-checkbox-label input { margin: 4px 10px 0 0; accent-color: var(--ck-accent); flex-shrink: 0; }
+    
     .ck-submit-btn {
-      background-color: var(--ck-accent);
-      color: #000000;
-      border: none;
-      width: 100%;
-      padding: 18px;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      cursor: pointer;
-      margin-top: 32px;
-      transition: opacity 0.2s ease;
-    }
-
-    .ck-submit-btn:hover {
-      opacity: 0.85;
+      background-color: var(--ck-accent); color: #000000; border: none; width: 100%; padding: 16px;
+      font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; margin-top: 24px;
     }
   </style>
 </head>
@@ -142,78 +57,36 @@
   <div class="ck-container">
     <header class="ck-header">
       <h1>Partner with Clandestino Kitchen</h1>
-      <p>We build our events through a curated network of independent venues, culinary professionals, and production partners. If your standard matches ours, introduce your company below. We review every submission and respond where there is a fit.</p>
+      <p>Introduce your company profile to our operational asset network below.</p>
     </header>
 
-    <!-- Configure your form processing URL inside the action attribute below -->
-    <form id="ck-onboarding-form" method="POST" action="mailto:hello@clandestino.kitchen" enctype="text/plain">
+    <!-- Fail-safe pure native payload dispatcher linked directly to your desk -->
+    <form action="mailto:hello@clandestino.kitchen" method="POST" enctype="text/plain">
       
       <div class="ck-section-title">Company Identity</div>
-      
-      <div class="ck-field-group">
-        <label>Legal Company Name *</label>
-        <input type="text" name="Legal Company Name" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Trading Name (if different)</label>
-        <input type="text" name="Trading Name" class="ck-input">
-      </div>
-
-      <div class="ck-field-group">
-        <label>Legal Form * (SL, SA, GmbH, Ltd...)</label>
-        <input type="text" name="Legal Form" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Country & City of Registration *</label>
-        <input type="text" name="Registration Location" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Company Registration Number *</label>
-        <input type="text" name="Registration Number" class="ck-input" required>
-      </div>
-
+      <div class="ck-field-group"><label>Legal Company Name *</label><input type="text" name="[COMPANY_LEGAL_NAME]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Trading Name (if different)</label><input type="text" name="[COMPANY_TRADING_NAME]" class="ck-input"></div>
+      <div class="ck-field-group"><label>Legal Form * (SL, SA, GmbH, Ltd...)</label><input type="text" name="[LEGAL_FORM]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Country & City of Registration *</label><input type="text" name="[REGISTRATION_LOCALE]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Company Registration Number *</label><input type="text" name="[REGISTRATION_NUMBER]" class="ck-input" required></div>
       <div class="ck-field-group">
         <label>VAT / Tax ID Number *</label>
-        <input type="text" name="VAT Number" class="ck-input" required>
-        <span class="ck-note">EU companies — VIES-registered VAT number required for B2B invoicing.</span>
+        <input type="text" name="[VAT_TAX_ID]" class="ck-input" required>
+        <span class="ck-note">EU VIES-registered VAT validation required.</span>
       </div>
-
-      <div class="ck-field-group">
-        <label>Website / Social Profiles</label>
-        <input type="url" name="Website" class="ck-input" placeholder="https://">
-      </div>
+      <div class="ck-field-group"><label>Website / Social Profiles</label><input type="text" name="[WEB_URL]" class="ck-input" placeholder="https://"></div>
 
       <div class="ck-section-title">Contact Profile</div>
-
-      <div class="ck-field-group">
-        <label>Contact Person *</label>
-        <input type="text" name="Contact Person" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Role / Job Title *</label>
-        <input type="text" name="Job Title" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Email Address *</label>
-        <input type="email" name="Email" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Phone Number *</label>
-        <input type="tel" name="Phone" class="ck-input" required>
-      </div>
+      <div class="ck-field-group"><label>Contact Person *</label><input type="text" name="[CONTACT_NAME]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Role / Job Title *</label><input type="text" id="p_role" name="[CONTACT_ROLE]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Email Address *</label><input type="email" name="[CONTACT_EMAIL]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Phone Number *</label><input type="text" name="[CONTACT_PHONE]" class="ck-input" required></div>
 
       <div class="ck-section-title">Capability Profile</div>
-
       <div class="ck-field-group">
         <label>Partner Type *</label>
-        <select name="Partner Type" class="ck-select" required>
-          <option value="" disabled selected hidden>Select architecture type...</option>
+        <select name="[PARTNER_TYPE]" class="ck-select" required>
+          <option value="" disabled selected hidden>Select...</option>
           <option value="Venue">Venue</option>
           <option value="Culinary Production">Culinary Production</option>
           <option value="Catering & Logistics">Catering & Logistics</option>
@@ -222,78 +95,36 @@
           <option value="Other">Other</option>
         </select>
       </div>
-
-      <div class="ck-field-group">
-        <label>Description of Services & Capacity *</label>
-        <textarea name="Services Summary" class="ck-textarea" rows="5" required></textarea>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Geographic Locations / Cities Served *</label>
-        <input type="text" name="Locations Served" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Capacity Range * (Max guests you can serve/host)</label>
-        <input type="number" name="Max Guest Capacity" class="ck-input" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Years Operating *</label>
-        <input type="number" name="Years Operating" class="ck-input" required>
-      </div>
+      <div class="ck-field-group"><label>Services & Capacity Summary *</label><textarea name="[SERVICES_DESCRIPTION]" class="ck-textarea" rows="4" required></textarea></div>
+      <div class="ck-field-group"><label>Geographic Locations Served *</label><input type="text" name="[GEOGRAPHIC_LOCATIONS_SERVED]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Max Guests per Event *</label><input type="text" name="[MAX_GUEST_CAPACITY]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Years Operating *</label><input type="text" name="[YEARS_OPERATING]" class="ck-input" required></div>
 
       <div class="ck-section-title">Compliance & Commercials</div>
-
       <div class="ck-field-group">
-        <label>Do you hold required licenses & insurance for your scope? *</label>
-        <select name="Holds Core Licenses" class="ck-select" required>
-          <option value="Yes">Yes (Hard Requirement)</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Food Safety / Venue Licenses Held</label>
-        <textarea name="Licenses Log" class="ck-textarea" rows="3"></textarea>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Public Liability Insurance Coverage Level (EUR) *</label>
-        <input type="text" name="Liability Insurance Limit" class="ck-input" placeholder="e.g., 1,000,000" required>
-      </div>
-
-      <div class="ck-field-group">
-        <label>Availability Profile *</label>
-        <input type="text" name="Availability Window" class="ck-input" placeholder="e.g., Weekdays, Weekends, Seasonal Peak">
-      </div>
-
-      <div class="ck-field-group">
-        <label>Worked with event agencies or brokers before? *</label>
-        <select name="Agency Experience" class="ck-select" required>
+        <label>Hold mandatory local licenses? *</label>
+        <select name="[HOLDS_MANDATORY_LICENSES]" class="ck-select" required>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>
       </div>
-
+      <div class="ck-field-group"><label>Food Safety / Venue Licenses</label><textarea name="[LICENSES_HELD_DETAILS]" class="ck-textarea" rows="2"></textarea></div>
+      <div class="ck-field-group"><label>Public Liability Insurance Limit (EUR) *</label><input type="text" name="[LIABILITY_INSURANCE_LIMIT]" class="ck-input" required></div>
+      <div class="ck-field-group"><label>Availability Profile *</label><input type="text" name="[AVAILABILITY_PROFILE]" class="ck-input" required></div>
       <div class="ck-field-group">
-        <label>References (Optional)</label>
-        <textarea name="References" class="ck-textarea" rows="3" placeholder="Name, Company, Contact info..."></textarea>
+        <label>Worked with event agencies before? *</label>
+        <select name="[AGENCY_EXPERIENCE]" class="ck-select" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
       </div>
+      <div class="ck-field-group"><label>References (Optional)</label><textarea name="[PROFESSIONAL_REFERENCES]" class="ck-textarea" rows="2"></textarea></div>
 
       <div class="ck-section-title">Legal Terms</div>
+      <label class="ck-checkbox-label"><input type="checkbox" name="[PRIVACY_GDPR_CONSENT]" value="AGREED" required><span>GDPR policy agreement per processing rules. *</span></label>
+      <label class="ck-checkbox-label"><input type="checkbox" name="[FRAMEWORK_ENGAGEMENT_DISCLAIMER]" value="CONFIRMED" required><span>Confirm submission creates no commercial engagement. *</span></label>
 
-      <label class="ck-checkbox-label">
-        <input type="checkbox" name="GDPR Consent Verified" value="Yes" required>
-        <span>I agree to the processing of this data by CK Events Management & Hospitality Group LLC per the Privacy Policy for partner evaluation purposes. *</span>
-      </label>
-
-      <label class="ck-checkbox-label">
-        <input type="checkbox" name="Engagement Disclaimer Verified" value="Yes" required>
-        <span>I confirm submission creates no engagement. Commercial engagements arise strictly through signed framework agreements and Service Orders. *</span>
-      </label>
-
-      <button type="submit" class="ck-submit-btn">Submit Partner Profile</button>
+      <button type="submit" class="ck-submit-btn">Send Partner Portfolio</button>
     </form>
   </div>
 
