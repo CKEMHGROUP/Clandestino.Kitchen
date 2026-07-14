@@ -133,6 +133,11 @@ nav.solid .burger span{background:var(--text);}
   max-width:900px;
 }
 .hero-h em{font-style:italic;color:rgba(240,236,228,.5);}
+.hero-entity-sub{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(240,236,228,.38);margin-bottom:14px;
+}
 .hero-sub{
   font-family:var(--M);font-size:11px;font-weight:300;
   letter-spacing:.04em;line-height:1.75;
@@ -636,7 +641,7 @@ footer{
 </style>
 </head>
 <body>
-<div class="ver">CK v22.3</div>
+<div class="ver">CK v22.5</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -644,10 +649,9 @@ footer{
   <ul class="n-links" id="nLinks">
     <li><a href="#about">The group</a></li>
     <li><a href="#brand">Brand</a></li>
-    <li><a href="#wwd">What we do</a></li>
     <li><a href="#vision">Vision</a></li>
   </ul>
-  <a href="partners.html" class="n-contact" target="_blank" rel="noopener">Partner with us</a>
+  <a href="partners.html" class="n-contact n-gold" target="_blank" rel="noopener">Partner with us</a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -662,7 +666,7 @@ footer{
     <div class="bg-slide" style="background-image:url('img/bg4.jpg');"></div>
     <div class="bg-slide" style="background-image:url('img/bg6.jpg');"></div>
   </div>
-  <div class="hero-id">CK Events Management &amp; Hospitality Group LLC</div>
+
   <div class="hero-indicator" id="heroIndicator">
     <button class="hi-dot active" aria-label="1"></button>
     <button class="hi-dot" aria-label="2"></button>
@@ -672,11 +676,8 @@ footer{
   </div>
   <div class="hero-copy">
     <h1 class="hero-h">Where<br><em>gastronomy</em><br>becomes<br>an event.</h1>
+    <p class="hero-entity-sub">CK Events Management &amp; Hospitality Group LLC</p>
     <p class="hero-sub">We build the concepts, the networks, and the standards that carry extraordinary hospitality anywhere in the world.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="hero-cta gold">Get in touch</a>
-      <a href="#wwd" class="hero-cta">What we do</a>
-    </div>
   </div>
 </section>
 
@@ -870,6 +871,13 @@ footer{
   <a href="#contact" class="cta-main">Get in touch <span class="cta-main-arr"></span></a>
 </div>
 
+<!-- PARTNER BAND -->
+<div class="cta-band r" style="background:var(--black);border-top:none;">
+  <h2 style="color:var(--ink);">Join our<br><em style="color:rgba(240,236,228,.28);">partner network.</em></h2>
+  <p style="color:rgba(240,236,228,.5);">We build our events through a curated network of independent venues, culinary professionals, and production partners. If your standard matches ours, introduce your company.</p>
+  <a href="partners.html" target="_blank" rel="noopener" class="cta-main" style="color:var(--ink);border-bottom-color:rgba(240,236,228,.3);">Become a partner <span class="cta-main-arr"></span></a>
+</div>
+
 <!-- CONTACT -->
 <section class="contact r" id="contact">
   <div class="contact-inner">
@@ -901,22 +909,21 @@ footer{
   <div class="f-col-brand">
     <span class="f-name">Clandestino Kitchen</span>
     <span class="f-slogan">Eat. Connect. Experience.</span>
-    <p class="f-entity">CK Events Management &amp; Hospitality Group LLC<br>Wyoming, USA</p>
+    <p class="f-entity">CK Events Management<br>&amp; Hospitality Group LLC<br>Sheridan, Wyoming, USA</p>
   </div>
   <div class="f-col">
     <h4>The group</h4>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#wwd">What we do</a></li>
-      <li><a href="#vision">Vision</a></li>
+        <li><a href="#vision">Vision</a></li>
     </ul>
   </div>
   <div class="f-col">
     <h4>Brand</h4>
     <ul>
       <li><a href="https://ckemhgroup.github.io/JoEs.TaBLe/" target="_blank" rel="noopener">JoEs TaBLe</a></li>
-      <li><a href="#contact">Enquire</a></li>
-      <li><a href="partners.html" target="_blank" rel="noopener">Become a partner / supplier</a></li>
+      <li><a href="#" aria-disabled="true" style="opacity:.4;cursor:default;">Clandestino Kitchen</a></li>
+      <li><a href="#" aria-disabled="true" style="opacity:.4;cursor:default;">Top 51 Discovery</a></li>
     </ul>
   </div>
   <div class="f-col">
