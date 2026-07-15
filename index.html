@@ -660,15 +660,15 @@ footer{
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="bg-slides">
-    <div class="bg-slide active" style="background-image:url('img/bg1.jpg');"></div>
+    <div class="bg-slide active" style="background-image:url('img/bg1.webp');"></div>
     <div class="bg-slide" style="background-image:url('img/1.1.webp');"></div>
-    <div class="bg-slide" style="background-image:url('img/bg2.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg2.webp');"></div>
     <div class="bg-slide" style="background-image:url('img/2.1.webp');"></div>
-    <div class="bg-slide" style="background-image:url('img/bg3.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg3.webp');"></div>
     <div class="bg-slide" style="background-image:url('img/3.1.webp');"></div>
-    <div class="bg-slide" style="background-image:url('img/bg4.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg4.webp');"></div>
     <div class="bg-slide" style="background-image:url('img/4.1.webp');"></div>
-    <div class="bg-slide" style="background-image:url('img/bg6.jpg');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg6.webp');"></div>
     <div class="bg-slide" style="background-image:url('img/6.1.webp');"></div>
   </div>
 
@@ -735,19 +735,19 @@ footer{
     <div class="meth-img">
       <div class="meth-img-collage">
         <div class="mc">
-          <img src="../img/conceive.webp?w=800&q=80" alt="Conceive">
+          <img src="img/conceive.webp" alt="Conceive">
           <span class="mc-lbl">Conceive</span>
         </div>
         <div class="mc">
-          <img src="../img/curate.webp?w=800&q=80" alt="Curate">
+          <img src="img/curate.webp" alt="Curate">
           <span class="mc-lbl">Curate</span>
         </div>
         <div class="mc">
-          <img src="../img/direct.webp?w=800&q=80" alt="Direct">
+          <img src="img/direct.webp" alt="Direct">
           <span class="mc-lbl">Direct</span>
         </div>
         <div class="mc">
-          <img src="../img/deliver.webp?w=800&q=80" alt="Deliver">
+          <img src="img/deliver.webp" alt="Deliver">
           <span class="mc-lbl">Deliver</span>
         </div>
       </div>
@@ -981,13 +981,37 @@ const io=new IntersectionObserver(e=>{
 document.querySelectorAll('.r').forEach(el=>io.observe(el));
 
 /* CONTACT */
-document.getElementById('contactForm').addEventListener('submit',function(e){
+const CONTACT_WORKER_URL='https://ck-partner-intake.mr-charly-brown.workers.dev';
+document.getElementById('contactForm').addEventListener('submit',async function(e){
   e.preventDefault();
-  const btn=this.querySelector('.f-submit');
+  const form=this;
+  const btn=form.querySelector('.f-submit');
   btn.textContent='Sending...';btn.disabled=true;
-  setTimeout(()=>{
-    this.innerHTML='<p style="font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.04em;color:rgba(240,236,228,.5);text-align:center;padding:20px 0;">Enquiry sent. We will respond within 24 hours.</p>';
-  },900);
+  let statusEl=form.querySelector('.f-error');
+  if(statusEl)statusEl.remove();
+  try{
+    const res=await fetch(CONTACT_WORKER_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        formType:'contact',
+        contactName:form.name.value,
+        contactEmail:form.email.value,
+        company:form.company.value,
+        message:form.message.value
+      })
+    });
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||data.success===false)throw new Error(data.error||'Request failed');
+    form.innerHTML='<p style="font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.04em;color:rgba(240,236,228,.5);text-align:center;padding:20px 0;">Enquiry sent. We will respond within 24 hours.</p>';
+  }catch(err){
+    const p=document.createElement('p');
+    p.className='f-error';
+    p.style.cssText='font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.03em;color:#d98c6b;margin-top:10px;text-align:center;';
+    p.textContent='Could not send your enquiry. Please email hello@clandestino.kitchen directly.';
+    form.appendChild(p);
+    btn.textContent='Send enquiry';btn.disabled=false;
+  }
 });
 </script>
 
