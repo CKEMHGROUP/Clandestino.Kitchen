@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /partners.html
+
+Sitemap: https://clandestino.kitchen/sitemap.xml
