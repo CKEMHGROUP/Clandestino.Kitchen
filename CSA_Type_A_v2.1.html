@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chef Services Agreement — Type A (v2.1)</title>
+    <title>Global Master Chef Services Agreement — Type A (v3.0)</title>
     <style>
-        /* Base Reset & Page Styling */
+        /* Base Reset & Document Layout */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -12,7 +13,7 @@
         }
 
         body {
-            background-color: #f7f4ee; /* Light creme background */
+            background-color: #f7f4ee;
             font-family: "Georgia", "Times New Roman", serif;
             color: #2b2b2b;
             line-height: 1.6;
@@ -21,11 +22,10 @@
             justify-content: center;
         }
 
-        /* Paper / Letter Container */
         .letter-container {
-            background-color: #ffffff; /* White letter */
+            background-color: #ffffff;
             width: 100%;
-            max-width: 800px;
+            max-width: 850px;
             padding: 60px 65px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.05);
             border-radius: 2px;
@@ -51,7 +51,7 @@
         }
 
         .document-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             color: #2c3e50;
             margin-bottom: 6px;
@@ -64,12 +64,12 @@
             letter-spacing: 0.5px;
         }
 
-        /* Section & Content Styling */
+        /* Headings & Text */
         h2.section-heading {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: #1a2a3a;
-            margin-top: 28px;
+            margin-top: 26px;
             margin-bottom: 12px;
             border-bottom: 1px solid #eee;
             padding-bottom: 4px;
@@ -78,7 +78,7 @@
         }
 
         p {
-            font-size: 14px;
+            font-size: 13.5px;
             margin-bottom: 12px;
             text-align: justify;
             color: #333333;
@@ -90,7 +90,7 @@
             margin-bottom: 10px;
         }
 
-        /* Tables Styling */
+        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -107,7 +107,7 @@
 
         .parties-table td.party-label {
             font-weight: bold;
-            width: 18%;
+            width: 20%;
             background-color: #f1f5f9;
             color: #1e293b;
             text-align: center;
@@ -153,23 +153,9 @@
             color: #94a3b8;
         }
 
-        /* Responsive tweaks */
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .letter-container {
-                padding: 30px 20px;
-            }
-            p.clause {
-                text-indent: 0;
-                padding-left: 0;
-            }
-            .signatures-table td {
-                display: block;
-                width: 100%;
-                margin-bottom: 10px;
-            }
+        @media print {
+            body { background-color: #ffffff; padding: 0; }
+            .letter-container { box-shadow: none; border: none; padding: 0; }
         }
     </style>
 </head>
@@ -180,117 +166,102 @@
         <!-- Header -->
         <div class="header">
             <div class="company-title">CLANDESTINO KITCHEN LLC &nbsp;&middot;&nbsp; JoEs TaBLe</div>
-            <div class="document-title">Chef Services Agreement — Type A</div>
-            <div class="document-ref">Ref: CSA-2026-ENG &nbsp;&middot;&nbsp; Version 2.1</div>
+            <div class="document-title">Global Master Chef Services Agreement — Type A</div>
+            <div class="document-ref">Ref: GCSA-2026-GLOBAL &nbsp;&middot;&nbsp; Version 3.0</div>
         </div>
 
-        <!-- Parties>
+        <!-- Parties Table -->
         <h2 class="section-heading">Parties</h2>
         <table class="parties-table">
             <tr>
-                <td class="party-label">Party A</td>
-                <td><strong>Clandestino Kitchen LLC</strong>, a limited liability company incorporated in the State of Wyoming, United States of America (EIN: [XX-XXXXXXX]), trading as <strong>JoEs TaBLe</strong>, with its registered address at 30 N. Gould Street, Ste N, Sheridan, WY 82801, USA. Hereinafter referred to as "CK LLC".</td>
+                <td class="party-label">Party A (Client)</td>
+                <td><strong>Clandestino Kitchen LLC</strong>, a limited liability company incorporated in the State of Wyoming, United States of America (EIN: [XX-XXXXXXX]), trading as <strong>JoEs TaBLe</strong>, with registered address at 30 N. Gould Street, Ste N, Sheridan, WY 82801, USA. Hereinafter referred to as "CK LLC".</td>
             </tr>
         </table>
         <table class="parties-table">
             <tr>
-                <td class="party-label">Party B</td>
-                <td><strong>[Full legal name of Chef]</strong>, autónomo, with NIF [XXXXXXXXX], with address at [address], Spain. Hereinafter referred to as "the Chef".</td>
+                <td class="party-label">Party B (Chef)</td>
+                <td><strong>[Full legal name of Chef]</strong>, independent professional contractor / autónomo, holding Tax ID / NIF/NIE [XXXXXXXXX], with business address at [Address, City, Country]. Hereinafter referred to as "the Chef".</td>
             </tr>
-        <table-->
+        </table>
 
         <!-- Recitals -->
         <h2 class="section-heading">Recitals</h2>
-        <p>CK LLC owns and operates JoEs TaBLe, a corporate event management and culinary concept brand operating globally. The Chef is a Spanish autónomo providing professional culinary management and event execution services to CK LLC, a US entity incorporated in Wyoming. The Chef invoices CK LLC as a non-EU client under the place-of-supply rules governing B2B services to non-EU recipients. The parties wish to establish the terms under which the Chef will provide those services at JoEs TaBLe Events.</p>
+        <p>CK LLC owns and operates JoEs TaBLe, a corporate event management and culinary concept brand operating globally. The Chef is an independent professional culinary contractor operating globally. CK LLC engages the Chef as an independent international service provider to supply professional culinary management, menu concept execution, and culinary event direction for JoEs TaBLe Events worldwide. The parties wish to establish a global framework agreement governing all such engagements, ensuring absolute legal, operational, health, labor, and tax liability insulation for CK LLC.</p>
 
         <!-- 1. Definitions -->
         <h2 class="section-heading">1. Definitions</h2>
-        <p class="clause"><strong>1.1.</strong> An "Event" means a corporate experience delivered under the JoEs TaBLe brand, as confirmed in a Service Order issued by CK LLC.</p>
-        <p class="clause"><strong>1.2.</strong> A "Service Order" means a written document issued by CK LLC to the Chef specifying the date, venue, guest count, brief, agreed fee, and any additional requirements for a specific Event.</p>
-        <p class="clause"><strong>1.3.</strong> The "Brand Standards" means the concept presentation guidelines, plating aesthetics, service conduct expectations, and experiential requirements communicated by CK LLC in respect of each Event.</p>
-        <p class="clause"><strong>1.4.</strong> The "Menu Concept" means any tasting menu, course concept, or culinary narrative developed by or for CK LLC in connection with JoEs TaBLe Events.</p>
+        <p class="clause"><strong>1.1.</strong> An "Event" means a corporate experience or culinary activation delivered under the JoEs TaBLe brand anywhere in the world, as confirmed in a Service Order issued by CK LLC.</p>
+        <p class="clause"><strong>1.2.</strong> A "Service Order" means a written or electronic document issued by CK LLC to the Chef specifying the event date, host country/jurisdiction, venue, guest count, creative brief, agreed fee, and operational parameters for a specific Event.</p>
+        <p class="clause"><strong>1.3.</strong> "Host Jurisdiction" means the specific country, state, territory, province, or municipality where the physical preparation or execution of an Event takes place.</p>
+        <p class="clause"><strong>1.4.</strong> The "Brand Standards" means concept presentation guidelines, plating aesthetics, service conduct expectations, and experiential narratives communicated by CK LLC for an Event.</p>
+        <p class="clause"><strong>1.5.</strong> The "Menu Concept" means any tasting menu, course concept, recipe narrative, or culinary structure developed by or for CK LLC in connection with JoEs TaBLe Events.</p>
 
         <!-- 2. Scope of Services -->
-        <h2 class="section-heading">2. Scope of Services</h2>
-        <p class="clause"><strong>2.1.</strong> CK LLC engages the Chef as an independent professional contractor to provide professional culinary consultation and event execution management services to CK LLC. The Chef’s engagement is as an independent professional contractor advising on and executing the culinary production component of CK LLC’s branded concept events. The Chef does not provide services to any end consumer or event guest. No direct contractual or commercial relationship exists between the Chef and any guest or attendee. The Chef’s deliverable under each Service Order is the professional culinary management of an Event on behalf of CK LLC, pursuant to CK LLC’s brand standards and operational direction.</p>
-        <p class="clause"><strong>2.2.</strong> CK LLC engages the Chef on a per-event basis. This agreement establishes the framework for all such engagements. Each Event is governed by a separate Service Order issued by CK LLC.</p>
-        <p class="clause"><strong>2.3.</strong> The Chef shall ensure that all activity on Event premises complies with applicable Spanish and Catalan food hygiene and safety regulations for the duration of each Event.</p>
+        <h2 class="section-heading">2. Scope of Services & Absolute Operational Separation</h2>
+        <p class="clause"><strong>2.1. Independent Engagement:</strong> CK LLC engages the Chef as an independent professional contractor to provide culinary consultation, menu implementation, and production direction directly to CK LLC. The Chef’s services are provided strictly B2B to CK LLC. The Chef does not render services to, nor enter into any commercial or contractual relationship with, any end guest, attendee, or event sponsor.</p>
+        <p class="clause"><strong>2.2. Global Per-Event Scope:</strong> This agreement establishes a global framework. CK LLC has no obligation to guarantee a minimum volume of Events. Each Event shall be governed by a separate Service Order.</p>
+        <p class="clause"><strong>2.3. Exclusion of Facilities & Logistics:</strong> CK LLC does not own, lease, manage, supervise, inspect, or operate any kitchen, food preparation space, cold-storage facility, transport vehicle, or culinary equipment in any Host Jurisdiction. The Chef is solely and exclusively responsible for securing, inspecting, and utilizing fully licensed, sanitary, and legally compliant production premises and equipment.</p>
 
-        <!-- 3. Compliance Requirements -->
-        <h2 class="section-heading">3. Compliance Requirements</h2>
-        <p class="clause"><strong>3.1.</strong> The Chef warrants that they hold a valid <em>carnet de manipulador de alimentos</em> issued in accordance with Spanish food safety legislation. A copy of the valid certificate shall be provided to CK LLC before the first Event and upon each renewal thereafter.</p>
-        <p class="clause"><strong>3.2.</strong> The Chef shall maintain their autónomo registration and all required professional certifications for the duration of this agreement. CK LLC reserves the right to suspend engagement pending confirmation of valid certification.</p>
+        <!-- 3. Health & Food Safety -->
+        <h2 class="section-heading">3. Global Health, Sanitary & Food Safety Compliance</h2>
+        <p class="clause"><strong>3.1. Local & International Compliance:</strong> The Chef warrants that all ingredient sourcing, transportation, cold-chain maintenance, storage, preparation, cooking, holding, allergen management, and service strictly comply with: (a) all applicable public health, food hygiene, and sanitary laws of the Host Jurisdiction; (b) recognized international food safety standards (including HACCP / APPCC protocols and Codex Alimentarius guidelines); and (c) mandatory allergen disclosure regulations applicable in the Host Jurisdiction (including EU Regulation 1169/2011 where applicable, FDA food labeling guidelines, or local equivalents).</p>
+        <p class="clause"><strong>3.2. Universal Certification Warranty:</strong> The Chef warrants that they and all members of their culinary team hold all valid food handler certificates, health permits, and professional licenses required by the Host Jurisdiction. Proof of certification shall be submitted to CK LLC prior to the execution of any Service Order.</p>
+        <p class="clause"><strong>3.3. Traceability & Allergen Control:</strong> The Chef retains sole operational responsibility for maintaining food temperature logs, preventing cross-contamination, managing guest dietary restriction notifications, and maintaining ingredient origin traceability records.</p>
 
-        <!-- 4. Brand Standards Scope Limitation -->
-        <h2 class="section-heading">4. Brand Standards Scope Limitation</h2>
-        <p class="clause"><strong>4.1.</strong> CK LLC’s Brand Standards govern the concept presentation, table setting, service conduct, plating aesthetics, and guest experience at JoEs TaBLe Events. They do not govern and are not intended to govern food preparation methods, kitchen hygiene practices, food handling procedures, ingredient sourcing, allergen management, or any matter that is the subject of the Chef’s autonomous professional obligations or of Spanish food safety and hygiene regulations.</p>
-        <p class="clause"><strong>4.2.</strong> Compliance with all applicable food safety, hygiene, and food handling regulations is the Chef’s sole and exclusive responsibility as an independent professional operator. CK LLC does not direct, supervise, or assume responsibility for any aspect of the Chef’s food preparation or kitchen operations.</p>
+        <!-- 4. Operational Autonomy -->
+        <h2 class="section-heading">4. Brand Standards vs. Operational Autonomy</h2>
+        <p class="clause"><strong>4.1. Scope of Brand Standards:</strong> CK LLC’s Brand Standards govern exclusively visual aesthetics, concept narrative, plating alignment, service timing, and guest experience design.</p>
+        <p class="clause"><strong>4.2. Complete Operational Independence:</strong> Brand Standards do not control or direct—and shall never be interpreted as controlling or directing—kitchen operations, food handling methods, raw ingredient selection, sanitation, or physical culinary execution. The Chef retains total operational autonomy over the mechanics of food production.</p>
 
-        <!-- 5. Liability and Indemnity -->
-        <h2 class="section-heading">5. Liability and Indemnity</h2>
-        <p class="clause"><strong>5.1.</strong> The Chef is solely responsible for the food safety, hygiene, allergen management, and professional standards of all culinary services performed under this agreement and under each Service Order.</p>
-        <p class="clause"><strong>5.2.</strong> The Chef shall indemnify and hold harmless CK LLC from and against any and all claims, losses, damages, costs, and liabilities, including reasonable legal costs, arising from: the Chef’s negligence or breach of food safety obligations; any failure by the Chef to hold or maintain required certifications including the <em>carnet de manipulador de alimentos</em>; any act or omission of the Chef or any member of the Chef’s culinary team at an Event; or any claim by a guest or third party arising from the Chef’s activities at an Event.</p>
-        <p class="clause"><strong>5.3.</strong> CK LLC’s liability to the Chef for indirect, consequential, or economic losses is excluded to the fullest extent permitted by Spanish law. Nothing in this clause limits the liability of either party for death or personal injury caused by that party’s own negligence.</p>
+        <!-- 5. Liability & Indemnity -->
+        <h2 class="section-heading">5. Total Liability Allocation, Indemnity & Hold Harmless</h2>
+        <p class="clause"><strong>5.1. Sole Operational Responsibility:</strong> The Chef retains 100% exclusive legal, civil, criminal, regulatory, and financial liability for food safety, toxic food exposures, foodborne illnesses, allergic reactions, kitchen accidents, physical property damage, personal injury, and sanitary infractions occurring at or in connection with any Event.</p>
+        <p class="clause"><strong>5.2. Absolute Indemnification:</strong> To the maximum extent permitted by law, the Chef shall defend, indemnify, and hold completely harmless CK LLC, its parent entities, officers, directors, members, managers, employees, agents, and brand affiliates from and against any and all claims, liabilities, damages, losses, penalties, fines, administrative sanctions, costs, and legal fees (including attorney fees) arising directly or indirectly from: (a) the Chef’s or the Chef's team's performance, negligence, gross negligence, or willful misconduct; (b) food poisoning, allergic reactions, illness, death, or bodily injury linked to food, beverage, or services prepared or provided by the Chef; (c) failure of the Chef or the Chef’s team/subcontractors to maintain required licenses, permits, tax registrations, or insurance in any Host Jurisdiction; (d) any damage to venue premises, leased kitchens, or third-party equipment; or (e) any dispute, audit, fine, or sanction brought by health, municipal, labor, tax, or social security authorities in any Host Jurisdiction against the Chef or CK LLC relating to the Chef's services.</p>
+        <p class="clause"><strong>5.3. Limitation of Liability:</strong> CK LLC shall not be liable to the Chef or any third party for indirect, incidental, consequential, punitive, or special damages. CK LLC’s total aggregate liability under any circumstances arising out of or related to a Service Order shall be strictly limited to the direct contract fee paid to the Chef under that specific Service Order.</p>
 
         <!-- 6. Insurance -->
-        <h2 class="section-heading">6. Insurance</h2>
-        <p class="clause"><strong>6.1.</strong> The Chef shall hold and maintain throughout the term of this agreement: public liability insurance covering third-party personal injury and property damage with a minimum insured sum of EUR 300,000 per event; and professional indemnity insurance covering claims arising from the Chef’s professional culinary services.</p>
-        <p class="clause"><strong>6.2.</strong> The Chef shall provide CK LLC with a current certificate of insurance before the first Event and within five business days of each annual renewal. CK LLC shall be named as an additional insured on the Chef’s public liability policy.</p>
-        <p class="clause"><strong>6.3.</strong> If the Chef cannot produce evidence of current compliant insurance cover, CK LLC reserves the right to suspend the relevant Service Order until cover is confirmed.</p>
+        <h2 class="section-heading">6. Insurance Requirements</h2>
+        <p class="clause"><strong>6.1. Mandatory Policy Maintenance:</strong> The Chef shall maintain in full force at their own cost throughout the term of this agreement: (a) Public & General Liability Insurance covering third-party bodily injury, property damage, and product/foodborne liability with a minimum insured sum of EUR 300,000 / USD 350,000 (or local equivalent) per occurrence; and (b) Professional Indemnity Insurance appropriate for global culinary consultation.</p>
+        <p class="clause"><strong>6.2. Proof of Coverage:</strong> The Chef shall provide CK LLC with an active Certificate of Insurance naming CK LLC as an Additional Insured (where permitted by the insurer) prior to providing services under any Service Order.</p>
 
-        <!-- 7. Due Diligence Records -->
-        <h2 class="section-heading">7. Due Diligence Records</h2>
-        <p class="clause"><strong>7.1.</strong> Before the first Event and annually thereafter, the Chef shall provide CK LLC with: a current <em>carnet de manipulador de alimentos</em>; a current certificate of public liability insurance meeting the minimum requirements set out in Clause 6; and confirmation of current IAE registration under a professional services epígrafe.</p>
-        <p class="clause"><strong>7.2.</strong> CK LLC shall retain copies of all documents provided. Provision of these documents is a condition of engagement under each Service Order.</p>
+        <!-- 7. Tax & Invoicing -->
+        <h2 class="section-heading">7. Tax Status, Cross-Border Invoicing & B2B Localization</h2>
+        <p class="clause"><strong>7.1. Non-EU / Cross-Border B2B Supply:</strong> CK LLC is a legal entity incorporated in the State of Wyoming, USA, and maintains no permanent establishment outside the United States. All services rendered by the Chef are B2B cross-border professional services supplied to a non-resident US corporate entity.</p>
+        <p class="clause"><strong>7.2. Global Tax Invoicing Rules:</strong> (a) For Chefs/Services originating within the European Union: The supply is categorized as a B2B service to a non-EU recipient localized outside the EU (e.g., Art. 69 Ley 37/1992 in Spain or equivalent EU VAT Directive provisions). Invoices shall state: <em>"Operación no sujeta a IVA por reglas de localización — Art. 69 Ley 37/1992 / Cross-border B2B supply to non-EU entity."</em> No VAT shall be charged. (b) For Chefs/Services originating outside the European Union: Invoices shall be issued in accordance with local export/cross-border service tax regulations without local VAT/GST/sales tax additions.</p>
+        <p class="clause"><strong>7.3. Zero Withholding Tax:</strong> CK LLC is a non-resident corporate entity and will not act as a foreign tax withholding agent. The Chef is solely responsible for declaring all income and paying all personal, corporate, income, self-employment, and sales taxes in their home tax jurisdiction and any applicable Host Jurisdiction.</p>
 
-        <!-- 8. IAE Registration Warranty -->
-        <h2 class="section-heading">8. IAE Registration Warranty</h2>
-        <p class="clause"><strong>8.1.</strong> The Chef warrants that their activity is registered with the Agencia Tributaria under an IAE epígrafe appropriate to the professional services described in this agreement. The Chef specifically confirms that the activity is not registered under epígrafe 677.9 (servicios de alimentación propios de la restauración) or any equivalent restauración or catering classification.</p>
-        <p class="clause"><strong>8.2.</strong> The Chef shall notify CK LLC immediately if their IAE registration changes at any time during the term of this agreement.</p>
-        <p class="clause"><strong>8.3.</strong> CK LLC reserves the right to suspend engagement under this agreement or to require documentary confirmation of the Chef’s IAE classification at any time.</p>
+        <!-- 8. Labor Shield -->
+        <h2 class="section-heading">8. Independent Contractor & Labor Shield</h2>
+        <p class="clause"><strong>8.1. Global Independent Status:</strong> The Chef is engaged solely as an independent professional contractor. Nothing in this agreement creates or implies an employment contract, agency relationship, joint venture, statutory partnership, or franchise between CK LLC and the Chef.</p>
+        <p class="clause"><strong>8.2. Labor & Subcontractor Insulation:</strong> If the Chef engages any assistants, sub-chefs, kitchen staff, or helpers for an Event, such individuals are exclusively employed or contracted by the Chef. The Chef assumes 100% legal, financial, and regulatory responsibility for their compensation, workplace safety, labor law compliance, worker's compensation, social security contributions, and visa/work authorization permits in the Host Jurisdiction. CK LLC has zero employment relationship with the Chef’s personnel and is completely shielded from joint labor liability claims globally.</p>
 
-        <!-- 9. Intellectual Property -->
-        <h2 class="section-heading">9. Intellectual Property</h2>
-        <p class="clause"><strong>9.1.</strong> Any Menu Concept developed by the Chef in connection with a JoEs TaBLe Event, whether developed independently or in collaboration with CK LLC, shall be owned exclusively by CK LLC from the date of creation. The Chef assigns to CK LLC all intellectual property rights in any such Menu Concept.</p>
-        <p class="clause"><strong>9.2.</strong> The Chef grants CK LLC a perpetual, royalty-free licence to use any techniques, recipes, or creative contributions made by the Chef in connection with JoEs TaBLe Events.</p>
-        <p class="clause"><strong>9.3.</strong> The Chef shall not represent any JoEs TaBLe Menu Concept, event format, or brand element as their own work in any public, commercial, or promotional context.</p>
+        <!-- 9. IP & Confidentiality -->
+        <h2 class="section-heading">9. Intellectual Property & Brand Protection</h2>
+        <p class="clause"><strong>9.1. Ownership of Menu Concepts:</strong> All Menu Concepts, recipe pairings, tasting narratives, presentation formats, and creative deliverables developed by the Chef for JoEs TaBLe Events shall be the exclusive intellectual property of CK LLC globally from the moment of creation.</p>
+        <p class="clause"><strong>9.2. Public Communication & NDAs:</strong> The Chef shall keep strictly confidential all client details, pricing, attendee identities, and operational models. The Chef shall not publish photographs, client logos, or promotional references regarding JoEs TaBLe Events without prior written authorization from CK LLC.</p>
 
-        <!-- 10. Fees and Payment -->
-        <h2 class="section-heading">10. Fees and Payment</h2>
-        <p class="clause"><strong>10.1.</strong> The fee for each Event shall be agreed in the relevant Service Order. No fee is payable by CK LLC in respect of any Event unless a Service Order has been issued and accepted.</p>
-        <p class="clause"><strong>10.2.</strong> The Chef shall issue an invoice to CK LLC following each Event at the agreed fee. The invoice shall cite the Chef’s NIF. Given that CK LLC is incorporated in Wyoming, USA and is not established in the European Union, the supply is a B2B service to a non-EU recipient. The place of supply is deemed to be outside Spain pursuant to Art. 69 Ley 37/1992. The invoice shall bear the note: <em>“Operación no sujeta a IVA por reglas de localización — Art. 69 Ley 37/1992.”</em> No IVA shall be charged. No IRPF retention applies.</p>
-        <p class="clause"><strong>10.3.</strong> CK LLC shall pay the Chef’s invoice within fourteen days of receipt by bank transfer.</p>
+        <!-- 10. Term & Termination -->
+        <h2 class="section-heading">10. Term and Termination</h2>
+        <p class="clause"><strong>10.1. Framework Term:</strong> This framework agreement commences upon signature and continues until terminated by either party upon fourteen (14) calendar days' written notice.</p>
+        <p class="clause"><strong>10.2. Immediate Termination for Cause:</strong> CK LLC may terminate this agreement and any pending Service Order immediately without penalty if: (a) the Chef fails to maintain required food safety permits, professional licenses, or insurance; (b) the Chef causes a public health risk, sanitary breach, or severe reputational damage; (c) the Chef fails to comply with local tax, labor, or immigration laws in any Host Jurisdiction; or (d) the Chef materially breaches any provision of this agreement.</p>
 
-        <!-- 11. Confidentiality -->
-        <h2 class="section-heading">11. Confidentiality</h2>
-        <p class="clause"><strong>11.1.</strong> The Chef shall keep confidential all client information, event details, pricing, and operational information of CK LLC and shall not disclose such information to any third party without prior written consent.</p>
-        <p class="clause"><strong>11.2.</strong> The Chef shall not make any public statement, post, or publication referencing JoEs TaBLe clients, event locations, guest identities, or event details without the prior written consent of CK LLC.</p>
+        <!-- 11. Governing Law -->
+        <h2 class="section-heading">11. Governing Law and Jurisdiction</h2>
+        <p class="clause"><strong>11.1. Wyoming Governing Law:</strong> This agreement, its interpretation, validity, and all contractual or extra-contractual claims arising between CK LLC and the Chef shall be governed exclusively by and construed in accordance with the laws of the State of Wyoming, USA, without regard to its conflict-of-laws rules.</p>
+        <p class="clause"><strong>11.2. Exclusive Forum:</strong> The parties irrevocably agree that any suit, action, or legal proceeding arising out of or relating to this agreement shall be brought exclusively in the State or Federal Courts located in the State of Wyoming, USA. The Chef explicitly waives any objection to personal jurisdiction or venue in such courts.</p>
+        <p class="clause"><strong>11.3. Local Operational Compliance Disclaimer:</strong> Notwithstanding Clause 11.1, the Chef acknowledges that physical operations performed within any Host Jurisdiction must strictly observe mandatory local public health, safety, and sanitary laws, for which the Chef assumes sole legal liability.</p>
 
-        <!-- 12. Independent Contractor Status -->
-        <h2 class="section-heading">12. Independent Contractor Status</h2>
-        <p class="clause"><strong>12.1.</strong> The Chef is engaged as an independent contractor and not as an employee of CK LLC. Nothing in this agreement creates or implies any employment relationship, partnership, or agency between the parties. The Chef is solely responsible for their own tax obligations, social security contributions, and professional insurance.</p>
-        <p class="clause"><strong>12.2.</strong> The Chef is free to provide services to other clients during the term of this agreement, provided that such engagement does not conflict with any obligation under this agreement or any active Service Order.</p>
-
-        <!-- 13. Term and Termination -->
-        <h2 class="section-heading">13. Term and Termination</h2>
-        <p class="clause"><strong>13.1.</strong> This agreement commences on the date of signature and continues until terminated by either party.</p>
-        <p class="clause"><strong>13.2.</strong> Either party may terminate this agreement by giving fourteen days’ written notice. Termination does not affect any rights or obligations arising from Service Orders confirmed prior to the date of termination.</p>
-        <p class="clause"><strong>13.3.</strong> CK LLC may terminate this agreement with immediate effect if the Chef’s food handler certificate lapses, if the Chef’s autónomo registration is deactivated, if the Chef’s IAE classification changes to a restauración or catering epígrafe, if the Chef fails to maintain required insurance cover, or if the Chef materially breaches any obligation under this agreement.</p>
-
-        <!-- 14. Governing Law -->
-        <h2 class="section-heading">14. Governing Law</h2>
-        <p class="clause"><strong>14.1.</strong> This agreement is governed by the laws of Spain. Any dispute arising out of or in connection with this agreement shall be subject to the exclusive jurisdiction of the courts of Barcelona, Spain.</p>
-
-        <!-- Signatures>
+        <!-- Signatures -->
         <h2 class="section-heading">Signatures</h2>
-        <p>Each party confirms that it has read, understood, and agrees to be bound by the terms of this agreement.</p>
+        <p>Each party confirms that it has read, understood, and agrees to be bound by the terms of this global agreement.</p>
         
         <table class="signatures-table">
             <tr>
                 <td>
                     <strong>The Chef</strong><br>
-                    [Full legal name]<br>
-                    Autónomo — NIF [XXXXXXXXX]<br><br>
+                    [Full Legal Name]<br>
+                    Tax ID / NIF: [XXXXXXXXX]<br><br>
                     Signature: <div class="signature-line"></div><br>
                     Date: ________________________
                 </td>
@@ -302,14 +273,14 @@
                     Date: ________________________
                 </td>
             </tr>
-        </table-->
+        </table>
 
         <!-- Footer -->
         <div class="footer">
-            <div>Clandestino Kitchen LLC &nbsp;&middot;&nbsp; JoEs TaBLe &nbsp;&middot;&nbsp; Confidential &nbsp;&middot;&nbsp; For operational use only</div>
+            <div>Clandestino Kitchen LLC &nbsp;&middot;&nbsp; JoEs TaBLe &nbsp;&middot;&nbsp; Confidential &nbsp;&middot;&nbsp; Global Master Service Agreement</div>
             <div class="footer-nav">
-                <span>Clandestino Kitchen LLC &nbsp;&middot;&nbsp; JoEs TaBLe &nbsp;&middot;&nbsp; Confidential</span>
-                <span>Chef Services Agreement — Type A &nbsp;v2.1 &nbsp;&middot;&nbsp; June 2026</span>
+                <span>Clandestino Kitchen LLC (Wyoming, USA)</span>
+                <span>Ref: GCSA-2026-GLOBAL &nbsp;&middot;&nbsp; Version 3.0</span>
             </div>
         </div>
 
