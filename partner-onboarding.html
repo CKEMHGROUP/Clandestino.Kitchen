@@ -351,12 +351,27 @@ footer { border-top: 1px solid var(--rule); padding: 24px 64px; display: flex; j
     </div>
   </div>
 
-  <!-- STEP 3: AGREEMENTS (dynamic by partner type) -->
-  <div class="step" id="step-3">
-    <p class="step-overline">Partner Onboarding</p>
-    <h1>Agreements</h1>
-    <p class="step-intro">Read each document before accepting. You can download a copy for your records. The Continue button becomes available only after both documents are accepted.</p>
+<!-- STEP 3: AGREEMENTS (dynamic by partner type) -->
+<div class="step" id="step-3">
+  <p class="step-overline">Partner Onboarding</p>
+  <h1>Agreements</h1>
+  <p class="step-intro">Read each document before accepting. You can download a copy for your records. The Continue button becomes available only after both documents are accepted.</p>
 
+  <label class="checkbox-group">
+    <input type="checkbox" id="acceptedFrameworkAgreement" required>
+    <span>I have read and agree to the <span class="doc-link" onclick="openGcsaModal()" style="text-decoration: underline; cursor: pointer; color: #a78bfa;">Global Partner Framework Agreement (GCSA)</span>. <span class="req">*</span></span>
+  </label>
+
+  <label class="checkbox-group">
+    <input type="checkbox" id="acceptedMasterTCs" required>
+    <span>I accept the <span class="doc-link" onclick="openGcsaModal()" style="text-decoration: underline; cursor: pointer; color: #a78bfa;">Master Terms & Conditions</span> governing individual Service Orders. <span class="req">*</span></span>
+  </label>
+
+  <div class="btn-row">
+    <button type="button" class="btn btn-back" onclick="goTo(2)">Back</button>
+    <button type="button" class="btn btn-primary" onclick="goTo(4)">Continue</button>
+    <span class="step-counter">3 / 4</span>
+  </div>
     <!-- CHEF -->
     <div id="agreement-chef" class="agreement-section" style="display:none;">
       <div class="agreement-block">
