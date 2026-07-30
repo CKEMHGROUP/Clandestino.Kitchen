@@ -1,547 +1,811 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clandestino Kitchen · Partner Onboarding</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0a0a0b;
-      --card: #121215;
-      --border: #222228;
-      --border-focus: #444450;
-      --text: #f0f0f3;
-      --muted: #888892;
-      --accent: #d4af37;
-      --accent-hover: #e5c158;
-      --accent-dim: rgba(212, 175, 55, 0.12);
-      --error: #f87171;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
-    nav {
-      width: 100%;
-      max-width: 720px;
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--text); }
-    .brand span { color: var(--accent); }
-    .nav-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Onboarding — Clandestino Kitchen</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --cream: #f5f1e8; --paper: #ede9de; --ink: #17150e;
+  --ink-mid: #3a3730; --ink-soft: #706d65; --green: #233c2f;
+  --green-light: rgba(35,60,47,0.07); --gold: #b68e38;
+  --rule: rgba(23,21,14,0.1); --error: #8b2000;
+  --serif: 'Libre Baskerville', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+nav { padding: 20px 64px; border-bottom: 1px solid var(--rule); display: flex; align-items: baseline; gap: 8px; }
+.nav-wordmark { font-family: var(--serif); font-size: 13px; letter-spacing: 0.04em; color: var(--ink); }
+.nav-sub { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+main { max-width: 720px; margin: 0 auto; padding: 64px 64px 100px; }
+.progress-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+.progress-bar { display: flex; gap: 4px; margin-bottom: 52px; }
+.progress-step { flex: 1; height: 2px; background: var(--rule); transition: background 0.3s; }
+.progress-step.active { background: var(--green); }
+.step { display: none; }
+.step.visible { display: block; }
+.step-overline { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+h1 { font-family: var(--serif); font-size: clamp(26px,4vw,38px); font-weight: 400; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 12px; }
+.step-intro { font-size: 15px; font-weight: 300; color: var(--ink-soft); line-height: 1.75; margin-bottom: 40px; padding-bottom: 28px; border-bottom: 0.5px solid var(--rule); }
+fieldset { border: none; margin-bottom: 32px; }
+legend { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 0.5px solid var(--rule); width: 100%; display: block; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+.field label .req { color: var(--gold); margin-left: 2px; }
+.field label .opt { font-weight: 300; color: var(--ink-soft); font-size: 12px; margin-left: 4px; }
+.field input, .field select, .field textarea { width: 100%; padding: 12px 14px; font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--ink); background: white; border: 1px solid rgba(23,21,14,0.2); outline: none; transition: border-color 0.2s; -webkit-appearance: none; appearance: none; border-radius: 0; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--green); }
+.field textarea { min-height: 90px; resize: vertical; }
+.field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23706d65' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+.field .hint { font-size: 12px; color: var(--ink-soft); margin-top: 5px; font-weight: 300; line-height: 1.5; }
+.field .error-msg { font-size: 12px; color: var(--error); margin-top: 5px; display: none; }
+.field.has-error input, .field.has-error select, .field.has-error textarea { border-color: var(--error); }
+.field.has-error .error-msg { display: block; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.info-box { background: var(--green-light); border-left: 2px solid var(--green); padding: 16px 20px; margin-bottom: 20px; }
+.info-box p { font-size: 13px; color: var(--ink-mid); line-height: 1.65; margin-bottom: 6px; }
+.info-box p:last-child { margin-bottom: 0; }
+.info-box strong { font-weight: 500; color: var(--ink); }
+.agreement-block { background: var(--paper); border: 1px solid var(--rule); padding: 24px; margin-bottom: 20px; }
+.agreement-block h3 { font-family: var(--serif); font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.agreement-block .agreement-type-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 0.5px solid var(--rule); display: block; }
+.agreement-scroll { max-height: 280px; overflow-y: auto; margin-bottom: 16px; padding-right: 12px; }
+.agreement-scroll::-webkit-scrollbar { width: 4px; }
+.agreement-scroll::-webkit-scrollbar-thumb { background: var(--rule); }
+.agreement-text { font-size: 13px; color: var(--ink-mid); line-height: 1.8; text-align: justify; }
+.agreement-text p { margin-bottom: 12px; }
+.agreement-text p:last-child { margin-bottom: 0; }
+.agreement-download { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); text-decoration: none; border: 1px solid var(--green); padding: 8px 14px; margin-bottom: 16px; transition: background 0.2s, color 0.2s; }
+.agreement-download:hover { background: var(--green); color: white; }
+.invoice-guidance { border: 1px solid var(--rule); margin-bottom: 24px; }
+.invoice-guidance-header { padding: 14px 18px; background: var(--green); border-bottom: 1px solid rgba(245,241,232,0.1); display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
+.invoice-guidance-header span { color: rgba(245,241,232,0.88) !important; letter-spacing: 0.06em; }
+.invoice-guidance-header .toggle-icon { color: rgba(245,241,232,0.6) !important; }
+.invoice-guidance-header:hover { background: #1a2e23; }
+.invoice-guidance-header span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+.toggle-icon { font-size: 18px; color: var(--ink-soft); transition: transform 0.2s; display: inline-block; }
+.invoice-guidance-header.open .toggle-icon { transform: rotate(45deg); }
+.invoice-guidance-body { padding: 20px 18px; display: none; }
+.invoice-guidance-body.open { display: block; }
+.invoice-example { background: #f8f6f2; border: 1px dashed rgba(23,21,14,0.15); padding: 14px 16px; font-family: var(--mono); font-size: 12px; color: var(--ink-mid); line-height: 1.9; margin-bottom: 12px; }
+.invoice-example .ph { color: var(--gold); }
+.invoice-example .lk { color: var(--green); font-weight: 500; }
+.guidance-note { font-size: 12px; color: var(--ink-soft); line-height: 1.6; font-style: italic; }
+.checkbox-field { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.checkbox-field input[type="checkbox"] { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--green); cursor: pointer; }
+.checkbox-field label { font-size: 14px; font-weight: 300; color: var(--ink-mid); line-height: 1.6; cursor: pointer; }
+.checkbox-field label a { color: var(--green); }
+.btn-row { display: flex; gap: 12px; margin-top: 40px; align-items: center; }
+.btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 28px; border: none; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.btn-primary { background: var(--green); color: white; }
+.btn-primary:hover:not(:disabled) { background: #1a2e23; }
+.btn-primary:disabled { background: var(--rule); color: var(--ink-soft); cursor: not-allowed; }
+.btn-back { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); }
+.btn-back:hover { border-color: var(--ink-soft); color: var(--ink); }
+.step-counter { font-family: var(--mono); font-size: 10px; color: var(--ink-soft); letter-spacing: 0.08em; margin-left: auto; }
+.success-block { text-align: center; padding: 80px 0; }
+.success-icon { font-size: 48px; margin-bottom: 24px; }
+.success-block h2 { font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 12px; }
+.success-block p { font-size: 15px; color: var(--ink-soft); font-weight: 300; line-height: 1.7; max-width: 440px; margin: 0 auto 8px; }
+.pending-notice { font-family: var(--mono); font-size: 11px; color: var(--gold); background: rgba(182,142,56,0.08); border: 1px solid rgba(182,142,56,0.3); padding: 10px 14px; margin-bottom: 16px; }
+footer { border-top: 1px solid var(--rule); padding: 24px 64px; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 9px; color: var(--ink-soft); letter-spacing: 0.07em; }
+@media (max-width: 640px) {
+  nav, main, footer { padding-left: 20px; padding-right: 20px; }
+  .field-row { grid-template-columns: 1fr; }
+  main { padding-top: 40px; }
+}
 
-    main { width: 100%; max-width: 720px; }
+.modal-overlay { display:none; position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(23,21,14,0.65); z-index:500; backdrop-filter:blur(4px); align-items:center; justify-content:center; }
+.modal-overlay.open { display:flex; }
+.modal-frame { background:var(--paper); width:92%; max-width:780px; height:88vh; display:flex; flex-direction:column; box-shadow:0 8px 48px rgba(0,0,0,0.3); }
+.modal-header { padding:14px 24px; border-bottom:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; background:var(--cream); flex-shrink:0; }
+.modal-title { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); }
+.modal-close { font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; background:var(--green); color:white; border:none; padding:8px 16px; cursor:pointer; }
+.modal-close:hover { background:#1a2e23; }
+.modal-body { flex:1; overflow:hidden; }
+.modal-body iframe { width:100%; height:100%; border:none; }
+.modal-footer-note { padding:10px 24px; border-top:1px solid var(--rule); background:var(--paper-alt); font-family:var(--mono); font-size:10px; letter-spacing:0.07em; color:var(--ink-soft); text-align:center; flex-shrink:0; }
 
-    /* Progress Steps */
-    .progress-bar { display: flex; gap: 8px; margin-bottom: 32px; }
-    .progress-step { flex: 1; height: 3px; background: var(--border); border-radius: 2px; transition: background 0.3s; }
-    .progress-step.active { background: var(--accent); }
-
-    /* Card Panels */
-    .step-panel {
-      display: none;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 36px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-    .step-panel.active { display: block; }
-
-    .step-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
-    h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
-    p.subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 28px; line-height: 1.5; }
-
-    fieldset { border: none; margin-bottom: 28px; }
-    legend { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 16px; width: 100%; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } .step-panel { padding: 24px; } }
-
-    .form-group { margin-bottom: 18px; }
-    label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text); }
-    label .req { color: var(--accent); margin-left: 2px; }
-
-    input[type="text"], input[type="email"], input[type="url"], select, textarea {
-      width: 100%;
-      padding: 12px 14px;
-      background: #18181c;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-dim);
-    }
-
-    .help-text { font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
-
-    /* Checkbox list */
-    .checkbox-group {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 18px;
-      cursor: pointer;
-      font-size: 0.88rem;
-      color: #d0d0d5;
-      line-height: 1.5;
-    }
-    .checkbox-group input { margin-top: 3px; accent-color: var(--accent); width: 16px; height: 16px; flex-shrink: 0; }
-
-    .doc-link {
-      color: var(--accent);
-      text-decoration: underline;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .doc-link:hover { color: var(--accent-hover); }
-
-    /* Buttons */
-    .nav-buttons { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); }
-    button {
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      font-size: 0.9rem;
-      transition: all 0.2s;
-    }
-    .btn-next { background: var(--accent); color: #0a0a0b; }
-    .btn-next:hover { background: var(--accent-hover); }
-    .btn-prev { background: transparent; color: var(--muted); border: 1px solid var(--border); }
-    .btn-prev:hover { color: var(--text); border-color: var(--border-focus); }
-
-    /* Modal / Popup Window */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      width: 100%;
-      max-width: 680px;
-      max-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-    }
-    .modal-header {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .modal-header h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); }
-    .modal-close {
-      background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; padding: 4px;
-    }
-    .modal-close:hover { color: var(--text); }
-    .modal-body {
-      padding: 24px;
-      overflow-y: auto;
-      font-size: 0.88rem;
-      color: #c4c4cc;
-      line-height: 1.6;
-    }
-    .modal-body p { margin-bottom: 14px; }
-  </style>
+</style>
 </head>
 <body>
 
-  <nav>
-    <div class="brand">CLANDESTINO <span>KITCHEN</span></div>
-    <div class="nav-tag">Partner Onboarding</div>
-  </nav>
+<nav>
+  <span class="nav-wordmark">Clandestino Kitchen</span>
+  <span class="nav-sub">&nbsp;&middot;&nbsp; Partner Onboarding</span>
+</nav>
 
-  <main>
-    <div class="progress-bar">
-      <div class="progress-step active" id="p-step-1"></div>
-      <div class="progress-step" id="p-step-2"></div>
-      <div class="progress-step" id="p-step-3"></div>
-      <div class="progress-step" id="p-step-4"></div>
-    </div>
+<main>
+  <p class="progress-label" id="progress-label">Step 1 of 4</p>
+  <div class="progress-bar">
+    <div class="progress-step active" id="prog-1"></div>
+    <div class="progress-step" id="prog-2"></div>
+    <div class="progress-step" id="prog-3"></div>
+    <div class="progress-step" id="prog-4"></div>
+  </div>
 
-    <form id="onboardingForm">
-      
-      <!-- STEP 1 -->
-      <div class="step-panel active" id="step-1">
-        <div class="step-tag">Step 1 of 4</div>
-        <h1>Legal Identity & Contact</h1>
-        <p class="subtitle">Please provide your official entity details for contracting and compliance.</p>
-
-        <fieldset>
-          <legend>Entity Details</legend>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>Legal Name <span class="req">*</span></label>
-              <input type="text" id="legalName" required placeholder="Registered company or legal full name">
-            </div>
-            <div class="form-group">
-              <label>Trading Name</label>
-              <input type="text" id="tradingName" placeholder="Operating brand name (if different)">
-            </div>
-          </div>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>Tax ID / CIF / VAT <span class="req">*</span></label>
-              <input type="text" id="taxId" required placeholder="DNI, NIE, CIF, VAT, UTR, or EIN">
-              <div class="help-text">Used on invoices issued to CK LLC</div>
-            </div>
-            <div class="form-group">
-              <label>Legal Form <span class="req">*</span></label>
-              <select id="legalForm" required>
-                <option value="">Select legal structure…</option>
-                <option value="Autónomo (Spain)">Autónomo (Spain)</option>
-                <option value="Sociedad Limitada — SL (Spain)">Sociedad Limitada — SL (Spain)</option>
-                <option value="Sole trader (UK)">Sole trader (UK)</option>
-                <option value="Limited company (UK)">Limited company (UK)</option>
-                <option value="LLC (USA)">LLC (USA)</option>
-                <option value="GmbH (Germany)">GmbH (Germany)</option>
-                <option value="SARL (France)">SARL (France)</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Registered Address</legend>
-          <div class="form-group">
-            <label>Street Address <span class="req">*</span></label>
-            <input type="text" id="address" required>
-          </div>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>City <span class="req">*</span></label>
-              <input type="text" id="city" required>
-            </div>
-            <div class="form-group">
-              <label>Postcode / ZIP <span class="req">*</span></label>
-              <input type="text" id="postcode" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Country <span class="req">*</span></label>
-            <input type="text" id="country" required placeholder="Spain, United Kingdom, USA, etc.">
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Primary Contact</legend>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>Contact Person <span class="req">*</span></label>
-              <input type="text" id="contactName" required>
-            </div>
-            <div class="form-group">
-              <label>Email Address <span class="req">*</span></label>
-              <input type="email" id="email" required placeholder="hello@domain.com">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Website / Portfolio</label>
-            <input type="url" id="website" placeholder="https://">
-          </div>
-        </fieldset>
-
-        <div class="nav-buttons">
-          <div></div>
-          <button type="button" class="btn-next" onclick="nextStep(1)">Continue</button>
+  <!-- STEP 1: IDENTITY -->
+  <div class="step visible" id="step-1">
+    <p class="step-overline">Partner Onboarding</p>
+    <h1>Your details</h1>
+    <p class="step-intro">We use this information to set up your partner file, issue Service Orders, and ensure all payments are processed correctly. Fields marked with a gold asterisk are required.</p>
+    <fieldset>
+      <legend>Legal identity</legend>
+      <div class="field-row">
+        <div class="field" id="f-legal-name">
+          <label>Full legal name <span class="req">*</span></label>
+          <input type="text" id="legal-name" placeholder="As registered with your tax authority">
+          <div class="error-msg">Required</div>
+        </div>
+        <div class="field">
+          <label>Trading name <span class="opt">(if different)</span></label>
+          <input type="text" id="trading-name">
         </div>
       </div>
-
-      <!-- STEP 2 -->
-      <div class="step-panel" id="step-2">
-        <div class="step-tag">Step 2 of 4</div>
-        <h1>Operational Scope</h1>
-        <p class="subtitle">Tell us about your services, capacity, and readiness.</p>
-
-        <fieldset>
-          <legend>Capabilities</legend>
-          <div class="form-group">
-            <label>Partner Type <span class="req">*</span></label>
-            <select id="partnerType" required>
-              <option value="">Select profile…</option>
-              <option value="chef">Culinary professional / Guest Chef</option>
-              <option value="venue">Venue operator</option>
-              <option value="agency">Event production agency</option>
-              <option value="catering">Catering & logistics</option>
-              <option value="supplier">Producer / Supplier</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Primary Services Offered <span class="req">*</span></label>
-            <input type="text" id="services" required placeholder="e.g., Fine dining, venue space, mixology">
-          </div>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>Operating Locations <span class="req">*</span></label>
-              <input type="text" id="locations" required placeholder="Cities/Regions active">
-            </div>
-            <div class="form-group">
-              <label>Event Capacity <span class="req">*</span></label>
-              <input type="text" id="capacity" required placeholder="Max pax supported">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Years in Operation <span class="req">*</span></label>
-            <select id="yearsOperating" required>
-              <option value="">Select duration…</option>
-              <option value="Less than 1 year">Less than 1 year</option>
-              <option value="1–3 years">1–3 years</option>
-              <option value="3–5 years">3–5 years</option>
-              <option value="5–10 years">5–10 years</option>
-              <option value="More than 10 years">More than 10 years</option>
-            </select>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Compliance & Insurance</legend>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>Active Licences <span class="req">*</span></label>
-              <select id="licensesConfirmed" required>
-                <option value="">Select…</option>
-                <option value="YES">Yes — Fully licensed</option>
-                <option value="NO">No</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Active Insurance <span class="req">*</span></label>
-              <select id="insuranceConfirmed" required>
-                <option value="">Select…</option>
-                <option value="YES">Yes</option>
-                <option value="NO">No</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Coverage Amount</label>
-            <input type="text" id="coverageAmount" placeholder="e.g., €300,000 / $500,000">
-          </div>
-        </fieldset>
-
-        <div class="nav-buttons">
-          <button type="button" class="btn-prev" onclick="prevStep(2)">Back</button>
-          <button type="button" class="btn-next" onclick="nextStep(2)">Continue</button>
+      <div class="field-row">
+        <div class="field" id="f-nif">
+          <label>Tax identification number <span class="req">*</span></label>
+          <input type="text" id="nif" placeholder="NIF / NIE / VAT ID / EIN…">
+          <div class="hint">Spanish autónomos: your DNI or NIE. UK: UTR or VAT number. US: EIN.</div>
+          <div class="error-msg">Required — appears on every invoice you issue to CK LLC</div>
+        </div>
+        <div class="field" id="f-legal-form">
+          <label>Legal form <span class="req">*</span></label>
+          <select id="legal-form">
+            <option value="">Select…</option>
+            <option>Autónomo (Spain)</option>
+            <option>Sociedad Limitada — SL (Spain)</option>
+            <option>Sole trader (UK)</option>
+            <option>Limited company (UK)</option>
+            <option>LLC (USA)</option>
+            <option>GmbH (Germany)</option>
+            <option>SARL (France)</option>
+            <option>Other</option>
+          </select>
+          <div class="error-msg">Required</div>
         </div>
       </div>
-
-      <!-- STEP 3 -->
-      <div class="step-panel" id="step-3">
-        <div class="step-tag">Step 3 of 4</div>
-        <h1>Framework Agreement</h1>
-        <p class="subtitle">Please review and accept our master partner conditions.</p>
-
-        <label class="checkbox-group">
-          <input type="checkbox" id="acceptedFrameworkAgreement" required>
-          <span>I have read and agree to the <span class="doc-link" onclick="openGcsaModal()">Global Partner Framework Agreement (GCSA)</span>. <span class="req">*</span></span>
-        </label>
-
-        <label class="checkbox-group">
-          <input type="checkbox" id="acceptedMasterTCs" required>
-          <span>I accept the <span class="doc-link" onclick="openGcsaModal()">Master Terms & Conditions</span> governing individual Service Orders. <span class="req">*</span></span>
-        </label>
-
-        <div class="nav-buttons">
-          <button type="button" class="btn-prev" onclick="prevStep(3)">Back</button>
-          <button type="button" class="btn-next" onclick="nextStep(3)">Continue</button>
+    </fieldset>
+    <fieldset>
+      <legend>Registered address</legend>
+      <div class="field" id="f-address">
+        <label>Street address <span class="req">*</span></label>
+        <input type="text" id="address">
+        <div class="error-msg">Required</div>
+      </div>
+      <div class="field-row">
+        <div class="field" id="f-city">
+          <label>City <span class="req">*</span></label>
+          <input type="text" id="city">
+          <div class="error-msg">Required</div>
+        </div>
+        <div class="field" id="f-postcode">
+          <label>Postcode <span class="req">*</span></label>
+          <input type="text" id="postcode">
+          <div class="error-msg">Required</div>
         </div>
       </div>
-
-      <!-- STEP 4 -->
-      <div class="step-panel" id="step-4">
-        <div class="step-tag">Step 4 of 4</div>
-        <h1>Consents & Submission</h1>
-        <p class="subtitle">Final operational and legal confirmations.</p>
-
-        <label class="checkbox-group">
-          <input type="checkbox" id="confirmedInvoiceNote" required>
-          <span>I confirm invoices will be issued from the registered Legal Entity specified in Step 1. <span class="req">*</span></span>
-        </label>
-
-        <label class="checkbox-group">
-          <input type="checkbox" id="gdprConsent" required>
-          <span>I consent to CK Events Management & Hospitality Group LLC storing and processing these details for partner management. <span class="req">*</span></span>
-        </label>
-
-        <label class="checkbox-group">
-          <input type="checkbox" id="engagementNotice" required>
-          <span>I acknowledge that onboarding completion does not guarantee engagement until a specific Service Order is executed. <span class="req">*</span></span>
-        </label>
-
-        <div class="nav-buttons">
-          <button type="button" class="btn-prev" onclick="prevStep(4)">Back</button>
-          <button type="submit" id="submitBtn" class="btn-next">Complete Onboarding</button>
+      <div class="field" id="f-country">
+        <label>Country <span class="req">*</span></label>
+        <input type="text" id="country">
+        <div class="error-msg">Required</div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Contact</legend>
+      <div class="field-row">
+        <div class="field" id="f-contact-name">
+          <label>Contact name <span class="req">*</span></label>
+          <input type="text" id="contact-name">
+          <div class="error-msg">Required</div>
+        </div>
+        <div class="field" id="f-email">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" id="email">
+          <div class="error-msg">Please enter a valid email address</div>
         </div>
       </div>
-
-    </form>
-  </main>
-
-  <!-- GCSA POPUP MODAL -->
-  <div class="modal-overlay" id="gcsaModal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3>Global Client & Services Framework Agreement (GCSA)</h3>
-        <button type="button" class="modal-close" onclick="closeGcsaModal()">&times;</button>
+      <div class="field">
+        <label>Website <span class="opt">(optional)</span></label>
+        <input type="url" id="website" placeholder="https://">
       </div>
-      <div class="modal-body">
-        <p><strong>GLOBAL MASTER SERVICES AGREEMENT — VERSION 3.1</strong></p>
-        <p>This framework agreement establishes the master legal and operational principles governing collaborations between <strong>CK Events Management & Hospitality Group LLC</strong> and the partner entity identified in Step 1.</p>
-        <p><strong>1. Independent Entity Status:</strong> The partner operates strictly as an independent B2B contractor. Nothing herein shall construct an employment, agency, or partnership relationship.</p>
-        <p><strong>2. Permits & Compliance:</strong> The partner retains full operational autonomy and 100% legal responsibility for maintaining all food safety, alcohol, health, tax, and local business permits required in their operational jurisdiction.</p>
-        <p><strong>3. Cross-Border Invoicing:</strong> All invoices issued to CK Events Management & Hospitality Group LLC (Wyoming, USA) must reflect complete legal business registration numbers and appropriate tax handling per the partner's jurisdiction.</p>
-        <p><strong>4. Confidentiality & Brand Standards:</strong> Event concepts, client lists, menus, and operational documentation disclosed by CK LLC remain strict intellectual property.</p>
-        <p><strong>5. Service Orders:</strong> Individual activations, schedules, and deliverables are executed under standalone, project-specific Service Orders subject to these overarching master terms.</p>
-      </div>
+    </fieldset>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="goTo(2)">Continue</button>
+      <span class="step-counter">1 / 4</span>
     </div>
   </div>
 
-  <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxcQRD92uTmAo7IIiL7l03sh1ZntpVCee2tddH-2oYzug3BarSuhs9K-SUqaonJRo3kXw/exec";
+  <!-- STEP 2: CAPABILITY -->
+  <div class="step" id="step-2">
+    <p class="step-overline">Partner Onboarding</p>
+    <h1>Your capability</h1>
+    <p class="step-intro">Your partner type determines which agreement applies to your engagement. Select carefully — this routes you to the correct documentation in the next step.</p>
+    <fieldset>
+      <legend>Partner type and services</legend>
+      <div class="field" id="f-partner-type">
+        <label>Partner type <span class="req">*</span></label>
+        <select id="partner-type">
+          <option value="">Select…</option>
+          <option value="chef">Culinary professional — independent chef (autónomo or equivalent)</option>
+          <option value="venue">Venue operator</option>
+          <option value="agency">Event production agency</option>
+          <option value="catering">Catering and logistics operator</option>
+          <option value="supplier">Producer or supplier</option>
+          <option value="other">Other</option>
+        </select>
+        <div class="error-msg">Required</div>
+      </div>
+      <div class="field" id="f-services">
+        <label>Services you provide <span class="req">*</span></label>
+        <textarea id="services" placeholder="Describe what you do specifically in the context of private dining or corporate events"></textarea>
+        <div class="error-msg">Required</div>
+      </div>
+      <div class="field-row">
+        <div class="field" id="f-locations">
+          <label>Locations served <span class="req">*</span></label>
+          <input type="text" id="locations" placeholder="e.g. Barcelona, Madrid, London">
+          <div class="error-msg">Required</div>
+        </div>
+        <div class="field" id="f-capacity">
+          <label>Capacity range <span class="req">*</span></label>
+          <input type="text" id="capacity" placeholder="e.g. 8–40 guests">
+          <div class="error-msg">Required</div>
+        </div>
+      </div>
+      <div class="field" id="f-years">
+        <label>Years operating <span class="req">*</span></label>
+        <select id="years">
+          <option value="">Select…</option>
+          <option>Less than 1 year</option>
+          <option>1–3 years</option>
+          <option>3–5 years</option>
+          <option>5–10 years</option>
+          <option>More than 10 years</option>
+        </select>
+        <div class="error-msg">Required</div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Compliance</legend>
+      <div class="field" id="f-licenses">
+        <label>Do you hold all licences required to operate in your jurisdiction? <span class="req">*</span></label>
+        <select id="licenses">
+          <option value="">Select…</option>
+          <option value="yes">Yes — all required licences are current</option>
+          <option value="no">No</option>
+        </select>
+        <div class="hint">For Spanish venues: licencia de actividad. For chefs: carnet de manipulador de alimentos. For agencies: all applicable permits.</div>
+        <div class="error-msg">Required</div>
+      </div>
+      <div class="field" id="f-insurance">
+        <label>Do you hold public liability insurance? <span class="req">*</span></label>
+        <select id="insurance">
+          <option value="">Select…</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <div class="error-msg">Required</div>
+      </div>
+      <div class="field">
+        <label>Coverage amount <span class="opt">(if known)</span></label>
+        <input type="text" id="coverage" placeholder="e.g. EUR 300,000 per event">
+      </div>
+    </fieldset>
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="goTo(1)">Back</button>
+      <button class="btn btn-primary" onclick="goTo(3)">Continue</button>
+      <span class="step-counter">2 / 4</span>
+    </div>
+  </div>
 
-    let currentStep = 1;
+  <!-- STEP 3: AGREEMENTS (dynamic by partner type) -->
+  <div class="step" id="step-3">
+    <p class="step-overline">Partner Onboarding</p>
+    <h1>Agreements</h1>
+    <p class="step-intro">Read each document before accepting. You can download a copy for your records. The Continue button becomes available only after both documents are accepted.</p>
 
-    /* POPUP CONTROLS */
-    function openGcsaModal() {
-      document.getElementById('gcsaModal').classList.add('open');
-    }
-    function closeGcsaModal() {
-      document.getElementById('gcsaModal').classList.remove('open');
-    }
-    document.getElementById('gcsaModal').addEventListener('click', function(e) {
-      if (e.target === this) closeGcsaModal();
-    });
+    <!-- CHEF -->
+    <div id="agreement-chef" class="agreement-section" style="display:none;">
+      <div class="agreement-block">
+        <h3>Chef Services Agreement — Type A</h3>
+        <span class="agreement-type-tag">Applies to: independent culinary professionals engaged per event</span>
+        <div class="agreement-scroll">
+          <div class="agreement-text">
+            <p><strong>GLOBAL MASTER CHEF SERVICES AGREEMENT (TYPE A) — VERSION 3.1</strong></p>
+            <p><em>Ref: GCSA-2026-GLOBAL &nbsp;&middot;&nbsp; Electronic Onboarding Click-Through Agreement</em></p>
+            <br>
+            <p><strong>RECITALS &amp; ELECTRONIC ACCEPTANCE</strong><br>
+            This Global Master Chef Services Agreement ("Agreement") establishes a binding legal framework between <strong>CK Events Management &amp; Hospitality Group LLC</strong> (trading as <strong>Clandestino Kitchen</strong> and <strong>JoEs TaBLe</strong>), a limited liability company incorporated in the State of Wyoming, USA, and you as the independent culinary contractor ("the Chef") identified in Step 1 of this onboarding submission. By checking the acceptance box below, you electronically consent and agree to all terms set forth herein, which shall govern all future Service Orders issued to you by CK Events Management &amp; Hospitality Group LLC.</p>
 
-    /* STEP NAVIGATION */
-    function showStep(step) {
-      document.querySelectorAll('.step-panel').forEach(panel => panel.classList.remove('active'));
-      document.querySelectorAll('.progress-step').forEach((p, index) => {
-        if (index < step) p.classList.add('active');
-        else p.classList.remove('active');
+            <p><strong>1. DEFINITIONS</strong><br>
+            <strong>1.1.</strong> An "Event" means a corporate experience or culinary activation delivered under the JoEs TaBLe brand anywhere in the world, as confirmed in a Service Order.<br>
+            <strong>1.2.</strong> A "Service Order" means a written or electronic document issued by CK Events Management &amp; Hospitality Group LLC specifying the event date, host country/jurisdiction, venue, guest count, brief, agreed fee, and operational parameters for an Event.<br>
+            <strong>1.3.</strong> "Host Jurisdiction" means the specific country, state, territory, province, or municipality where physical food preparation or service execution takes place.<br>
+            <strong>1.4.</strong> "Brand Standards" means concept presentation guidelines, plating aesthetics, service conduct, and experiential narratives communicated by CK Events Management &amp; Hospitality Group LLC.</p>
+
+            <p><strong>2. SCOPE OF SERVICES &amp; ABSOLUTE OPERATIONAL SEPARATION</strong><br>
+            <strong>2.1. Independent Engagement:</strong> You are engaged solely as an independent professional contractor providing B2B culinary consultation, menu execution, and event direction directly to CK Events Management &amp; Hospitality Group LLC. You do not provide services to, nor maintain any direct commercial or contractual relationship with, any end guest, attendee, or event client.<br>
+            <strong>2.2. Exclusion of Facilities &amp; Logistics:</strong> CK Events Management &amp; Hospitality Group LLC does not own, lease, operate, manage, supervise, or inspect any kitchen, food preparation space, cold storage, transport vehicle, or culinary equipment in any Host Jurisdiction. You are solely and exclusively responsible for securing, inspecting, and operating fully licensed, sanitary, and legally compliant production premises and equipment.</p>
+
+            <p><strong>3. GLOBAL HEALTH, SANITARY &amp; FOOD SAFETY COMPLIANCE</strong><br>
+            <strong>3.1. Health &amp; Hygiene Standards:</strong> You warrant that all ingredient sourcing, transportation, cold-chain maintenance, storage, preparation, cooking, holding, allergen management, and service strictly comply with: (a) all applicable public health and food hygiene laws of the Host Jurisdiction; (b) international hygiene standards (HACCP / APPCC protocols); and (c) mandatory allergen disclosure regulations applicable in the Host Jurisdiction (including EU Regulation 1169/2011 or local equivalents).<br>
+            <strong>3.2. Universal Certification Warranty:</strong> You warrant that you and all members of your culinary team hold valid food handler certificates, health permits, and professional registrations required by the Host Jurisdiction. You shall upload or supply copies of these certificates upon request.<br>
+            <strong>3.3. Traceability:</strong> You retain sole operational responsibility for food temperature logs, allergen cross-contamination prevention, dietary restriction enforcement, and ingredient origin traceability records.</p>
+
+            <p><strong>4. BRAND STANDARDS vs. OPERATIONAL AUTONOMY</strong><br>
+            <strong>4.1. Scope:</strong> CK Events Management &amp; Hospitality Group LLC’s Brand Standards govern exclusively visual aesthetics, concept narrative, plating alignment, service timing, and guest experience design.<br>
+            <strong>4.2. Total Independence:</strong> Brand Standards do not control or direct—and shall never be interpreted as controlling or directing—kitchen operations, food safety procedures, raw ingredient selection, sanitation, or physical food production mechanics. You retain complete operational autonomy over all food safety practices.</p>
+
+            <p><strong>5. TOTAL LIABILITY ALLOCATION, INDEMNITY &amp; HOLD HARMLESS</strong><br>
+            <strong>5.1. Sole Liability:</strong> You retain 100% exclusive legal, civil, criminal, regulatory, and financial liability for food safety, toxic food reactions, foodborne illnesses, allergic reactions, kitchen accidents, personal injury, physical property damage, and sanitary infractions arising from your services.<br>
+            <strong>5.2. Absolute Indemnification:</strong> To the maximum extent permitted by law, you shall defend, indemnify, and hold completely harmless CK Events Management &amp; Hospitality Group LLC, its officers, directors, members, employees, agents, and brand affiliates from and against any and all claims, liabilities, damages, losses, penalties, fines, administrative sanctions, and legal costs (including attorney fees) arising from: (a) your negligence, gross negligence, or willful misconduct; (b) food poisoning, allergic reactions, or injury suffered by any guest or third party; (c) failure to maintain required health permits, tax registrations, or insurance; (d) damage to venue premises or equipment; or (e) any labor, health, or tax audit/fine brought by local authorities in any Host Jurisdiction relating to your services.<br>
+            <strong>5.3. Limitation of Liability:</strong> Under no circumstances shall CK Events Management &amp; Hospitality Group LLC be liable for indirect, incidental, or consequential damages. CK Events Management &amp; Hospitality Group LLC’s total aggregate liability arising out of or related to any Service Order shall not exceed the direct contract fee paid to you under that specific Service Order.</p>
+
+            <p><strong>6. INSURANCE REQUIREMENTS</strong><br>
+            <strong>6.1. Mandatory Policy:</strong> You shall maintain in full force: (a) Public &amp; General Liability Insurance covering third-party bodily injury, property damage, and foodborne product liability with a minimum limit of EUR 300,000 / USD 350,000 (or local equivalent) per occurrence; and (b) Professional Indemnity Insurance.<br>
+            <strong>6.2. Proof:</strong> You shall supply an active Certificate of Insurance naming CK Events Management &amp; Hospitality Group LLC as an Additional Insured upon request prior to performing under any Service Order.</p>
+
+            <p><strong>7. TAX STATUS AND CROSS-BORDER INVOICING</strong><br>
+            <strong>7.1.</strong> CK Events Management &amp; Hospitality Group LLC is incorporated in Wyoming, USA, with no permanent establishment outside the United States. Services rendered by you are B2B professional services supplied to a US entity.<br>
+            <strong>7.2.</strong> You shall invoice CK LLC in accordance with the cross-border invoicing rules applicable in your own jurisdiction for services supplied to a US recipient. CK LLC will not act as a tax withholding agent in any jurisdiction. You are solely responsible for the correct tax treatment of your invoices and for declaring and paying all taxes applicable to your income in your home jurisdiction. The correct treatment is your responsibility — verify with your own accountant before issuing.<br>
+            <strong>7.3.</strong> Invoices to CK LLC shall include your full legal name, your tax identification number, your registered address, the service description referencing the relevant Concept Experience, the agreed fee, and your applicable tax treatment. CK LLC will provide its EIN upon request for your compliance records.</p>
+
+            <p><strong>8. INDEPENDENT CONTRACTOR &amp; LABOR SHIELD</strong><br>
+            <strong>8.1. Status:</strong> You act strictly as an independent contractor. Nothing herein creates an employment, agency, joint venture, or statutory partnership relationship.<br>
+            <strong>8.2. Subcontractor &amp; Staff Insulation:</strong> Any assistants, sub-chefs, or kitchen staff engaged by you for an Event are exclusively employed or contracted by you. You assume 100% legal, financial, and administrative responsibility for their compensation, workplace safety, social security contributions, tax withholdings, and work permits. CK Events Management &amp; Hospitality Group LLC is completely shielded from joint labor, social security, or <em>cesión ilegal de trabajadores</em> claims globally.</p>
+
+            <p><strong>9. INTELLECTUAL PROPERTY &amp; CONFIDENTIALITY</strong><br>
+            <strong>9.1. IP Ownership:</strong> All Menu Concepts, recipe pairings, tasting narratives, and presentation formats developed by you for JoEs TaBLe Events are the exclusive intellectual property of CK Events Management &amp; Hospitality Group LLC globally from creation.<br>
+            <strong>9.2. NDA:</strong> You shall keep strictly confidential all client details, pricing models, guest identities, and operational procedures, and shall not publish photos or brand references without prior written authorization.</p>
+
+            <p><strong>10. TERM, TERMINATION &amp; GOVERNING LAW</strong><br>
+            <strong>10.1. Term:</strong> Commences upon electronic acceptance during onboarding and continues until terminated by either party upon fourteen (14) days' written notice.<br>
+            <strong>10.2. Immediate Termination:</strong> CK Events Management &amp; Hospitality Group LLC may terminate this Agreement immediately if you lose required health permits, fail to maintain insurance, cause a sanitary/food safety risk, or materially breach any term.<br>
+            <strong>10.3. Governing Law:</strong> This Agreement is governed strictly by the laws of the State of Wyoming, USA, with exclusive jurisdiction in the State or Federal Courts located in Wyoming, USA. Physical food execution on-site remains subject to local mandatory Host Jurisdiction public health regulations for which you assume 100% sole liability.</p>
+          </div>
+        </div>
+        <button class="agreement-download" onclick="openModal('modal-csa','modal-csa-frame','/GCSA_Type_A.html')">↗ Read full agreement</button>
+        <div class="checkbox-field">
+          <input type="checkbox" id="accept-primary" onchange="checkAcceptance()">
+          <label for="accept-primary">I have read the Chef Services Agreement — Type A (v3.1) in full and accept its terms.</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENUE -->
+    <div id="agreement-venue" class="agreement-section" style="display:none;">
+      <div class="agreement-block">
+        <h3>Venue Partnership Agreement</h3>
+        <span class="agreement-type-tag">Applies to: independently licensed venue operators</span>
+        <div class="agreement-scroll">
+          <div class="agreement-text">
+            <p>This Venue Partnership Agreement ("Agreement") is between CK Events Management &amp; Hospitality Group LLC ("CK LLC"), trading as JoEs TaBLe, and you as the venue operator ("the Venue Partner") identified in this onboarding submission.</p>
+            <p>You agree to make your licensed premises available for JoEs TaBLe Concept Experiences on dates confirmed via Service Order. The premises shall be made available exclusively for the experience during the agreed period. You shall provide qualified on-site service staff and kitchen access to the culinary team appointed by CK LLC.</p>
+            <p>You shall obtain and maintain all licences, permits, and certifications required by applicable law for the operation of a food service establishment, including but not limited to the applicable operating licence in your jurisdiction. CK LLC bears no responsibility for any regulatory compliance obligation relating to your premises or food service operation.</p>
+            <p>CK LLC's Brand Standards govern concept presentation, table setting, and guest experience. They do not govern the structural condition of the premises, venue safety, fire safety compliance, food service hygiene, or any matter that is the subject of your autonomous regulatory obligations. Compliance with all applicable regulations governing licensed premises is your sole and exclusive responsibility.</p>
+            <p>You shall indemnify and hold harmless CK LLC from and against any and all claims, losses, damages, costs, and liabilities arising from the condition of your premises; any failure to maintain required licences or certifications; any act or omission of your staff at an event; or any claim by a guest or third party arising from the physical condition or operation of your premises.</p>
+            <p>Client relationships, bookings, and all correspondence with clients are the exclusive property of CK LLC. You shall not contact clients directly without prior written consent of CK LLC. You agree not to directly solicit or accept bookings from clients introduced to you through JoEs TaBLe Concept Experiences during the term of this Agreement and for a period of twelve months following termination.</p>
+            <p>All intellectual property rights in the JoEs TaBLe brand, concept, and associated materials are owned exclusively by CK LLC. Events delivered at your premises operate exclusively under the JoEs TaBLe brand. You shall not co-brand or present the experience under your own trading name without prior written consent.</p>
+            <p>This Agreement commences on acceptance and continues until terminated by either party on thirty days' written notice. CK LLC may terminate immediately if you lose or fail to maintain any required licence, or if you fail to maintain required insurance cover.</p>
+            <p>This Agreement is governed by the laws of the State of Wyoming, United States of America. Disputes are subject to the exclusive jurisdiction of the courts of Wyoming, USA. Nothing in this clause limits your rights under any mandatory applicable laws of your own jurisdiction.</p>
+          </div>
+        </div>
+        <button class="agreement-download" onclick="openModal('modal-vpa','modal-vpa-frame','/VPA.html')">↗ Read full agreement</button>
+        <div class="checkbox-field">
+          <input type="checkbox" id="accept-primary" onchange="checkAcceptance()">
+          <label for="accept-primary">I have read the Venue Partnership Agreement in full and accept its terms.</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGENCY / CATERING / SUPPLIER / OTHER -->
+    <div id="agreement-general" class="agreement-section" style="display:none;">
+      <div class="agreement-block">
+        <h3>Independent Partner Agreement</h3>
+        <span class="agreement-type-tag">Applies to: agencies, catering operators, suppliers, and other partners</span>
+        <div class="pending-notice">A tailored framework agreement for this partner type is in preparation. The terms below represent the general conditions that apply to all CK LLC partners pending issuance of a specific framework agreement. A signed Service Order is required before any engagement commences.</div>
+        <div class="agreement-scroll">
+          <div class="agreement-text">
+            <p>This Independent Partner Agreement ("Agreement") is between CK Events Management &amp; Hospitality Group LLC ("CK LLC"), trading as JoEs TaBLe and Clandestino Kitchen, and you as the independent partner ("the Partner") identified in this onboarding submission.</p>
+            <p>You are engaged as an independent contractor and not as an employee, agent, or representative of CK LLC. Nothing in this Agreement creates or implies any employment relationship, partnership, or agency. You are solely responsible for your own tax obligations, regulatory compliance, and professional insurance under the laws of your own jurisdiction.</p>
+            <p>The specific scope, deliverables, fee, and conditions for each engagement are confirmed in a Service Order issued by CK LLC. No engagement commences without a signed Service Order. This Agreement establishes the general framework for all such engagements.</p>
+            <p>You shall obtain and maintain all licences, permits, certifications, and insurance required by applicable law to deliver the services described in your onboarding submission. Compliance with all applicable regulations in your jurisdiction is your sole and exclusive responsibility.</p>
+            <p>You shall indemnify and hold harmless CK LLC from and against any and all claims, losses, damages, costs, and liabilities arising from your negligence, breach of regulatory obligations, acts or omissions in the delivery of services, or any claim by a guest or third party arising from your activities.</p>
+            <p>You shall keep confidential all client information, event details, pricing, and operational information of CK LLC. You shall not contact clients directly without prior written consent and shall not solicit engagements from clients introduced to you through CK LLC for a period of twelve months following any engagement.</p>
+            <p>All intellectual property rights in the JoEs TaBLe and Clandestino Kitchen brands, concepts, and associated materials are owned exclusively by CK LLC. Nothing in this Agreement grants you any right, title, or licence to use CK LLC's intellectual property.</p>
+            <p>This Agreement commences on acceptance and continues until terminated by either party on fourteen days' written notice. CK LLC may terminate immediately in the event of licence lapse, failure to maintain required insurance, or material breach.</p>
+            <p>This Agreement is governed by the laws of the State of Wyoming, United States of America. Disputes are subject to the exclusive jurisdiction of the courts of Wyoming, USA. Nothing in this clause limits your rights under any mandatory applicable laws of your own jurisdiction.</p>
+          </div>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="accept-primary" onchange="checkAcceptance()">
+          <label for="accept-primary">I have read the Independent Partner Agreement in full and accept its terms.</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- MASTER T&Cs — always shown -->
+    <div class="agreement-block">
+      <h3>CK Master Terms and Conditions</h3>
+      <span class="agreement-type-tag">Applies to: all partners without exception</span>
+      <div class="agreement-scroll">
+        <div class="agreement-text">
+          <p>The CK Master Terms and Conditions govern the relationship between all partners and CK Events Management &amp; Hospitality Group LLC across all brands. As a partner, you confirm that you have read and understood the terms applicable to your engagement type and the General Terms in Section 4, which apply to all partners.</p>
+          <p>Partners confirm that they are independent operators and not agents, employees, or representatives of CK LLC. Each partner is solely responsible for compliance with all applicable regulations governing their domain in their own jurisdiction.</p>
+          <p>Partners agree not to directly solicit, engage, or contract with any client introduced to them through a JoEs TaBLe Concept Experience during the term of any engagement and for a period of twelve months following the relevant experience, without the prior written consent of CK LLC.</p>
+          <p>The full Master Terms and Conditions are available at clandestino.kitchen/terms.</p>
+        </div>
+      </div>
+      <a href="https://clandestino.kitchen/terms" class="agreement-download" target="_blank">↗ Read full Master T&Cs</a>
+      <div class="checkbox-field">
+        <input type="checkbox" id="accept-tcs" onchange="checkAcceptance()">
+        <label for="accept-tcs">I have read the CK Master Terms and Conditions and accept their terms as they apply to partners.</label>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="goTo(2)">Back</button>
+      <button class="btn btn-primary" id="btn-step3" onclick="goTo(4)" disabled>Continue</button>
+      <span class="step-counter">3 / 4</span>
+    </div>
+  </div>
+
+  <!-- STEP 4: INVOICE GUIDANCE + CONSENT -->
+  <div class="step" id="step-4">
+    <p class="step-overline">Partner Onboarding</p>
+    <h1>Invoice guidance and consent</h1>
+    <p class="step-intro">Before your first Service Order, review the information below on how to invoice CK LLC. This is reference information only. The correct tax treatment in your jurisdiction is your sole responsibility — verify with your own accountant or tax adviser before issuing any invoice.</p>
+
+    <div class="info-box">
+      <p><strong>CK Events Management &amp; Hospitality Group LLC is a US entity</strong></p>
+      <p>We are incorporated in Wyoming, USA. We are not established in the EU, UK, or any other jurisdiction. When you invoice us, you are invoicing a US business entity. The sections below outline what this means for your invoice depending on where you are based.</p>
+    </div>
+
+    <div class="invoice-guidance">
+      <div class="invoice-guidance-header" id="gh-eu" onclick="toggleGuidance('eu')">
+        <span>EU partners</span>
+        <span class="toggle-icon" id="ti-eu">+</span>
+      </div>
+      <div class="invoice-guidance-body" id="gb-eu">
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">You are invoicing a US entity. For B2B services supplied to a recipient outside the EU, the reverse charge mechanism applies under EU VAT rules. Invoice CK LLC without local VAT. Your invoice should include a reference to the applicable reverse charge rule in your jurisdiction.</p>
+        <div class="invoice-example">
+<span class="lk">CLIENT</span><br>
+CK Events Management &amp; Hospitality Group LLC<br>
+30 N. Gould Street, Ste N, Sheridan, WY 82801, USA<br><br>
+<span class="lk">SERVICE DESCRIPTION</span><br>
+<span class="ph">[Description of services provided] | JoEs TaBLe | [Event date]</span><br><br>
+Net amount: <span class="ph">[EUR X,XXX.00]</span><br>
+<span class="lk">VAT: 0% — B2B supply to a non-EU recipient. Reverse charge / non-subject per applicable EU VAT rules.</span><br>
+Total: <span class="ph">[EUR X,XXX.00]</span>
+        </div>
+        <p class="guidance-note">The correct VAT treatment in your jurisdiction is your responsibility. Verify with your own accountant before issuing.</p>
+      </div>
+    </div>
+
+    <div class="invoice-guidance">
+      <div class="invoice-guidance-header" id="gh-uk" onclick="toggleGuidance('uk')">
+        <span>UK partners</span>
+        <span class="toggle-icon" id="ti-uk">+</span>
+      </div>
+      <div class="invoice-guidance-body" id="gb-uk">
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">You are invoicing a US entity. For B2B services supplied to a recipient outside the UK, the reverse charge mechanism applies under UK VAT rules. Invoice CK LLC without UK VAT.</p>
+        <div class="invoice-example">
+<span class="lk">CLIENT</span><br>
+CK Events Management &amp; Hospitality Group LLC<br>
+30 N. Gould Street, Ste N, Sheridan, WY 82801, USA<br><br>
+<span class="lk">SERVICE DESCRIPTION</span><br>
+<span class="ph">[Description of services provided] | JoEs TaBLe | [Event date]</span><br><br>
+Net amount: <span class="ph">[GBP / EUR X,XXX.00]</span><br>
+<span class="lk">VAT: 0% — B2B supply to a non-UK recipient. Outside scope of UK VAT.</span><br>
+Total: <span class="ph">[GBP / EUR X,XXX.00]</span>
+        </div>
+        <p class="guidance-note">The correct VAT treatment in your jurisdiction is your responsibility. Verify with your own accountant before issuing.</p>
+      </div>
+    </div>
+
+    <div class="invoice-guidance">
+      <div class="invoice-guidance-header" id="gh-us" onclick="toggleGuidance('us')">
+        <span>US partners</span>
+        <span class="toggle-icon" id="ti-us">+</span>
+      </div>
+      <div class="invoice-guidance-body" id="gb-us">
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">You are invoicing another US entity. B2B services between US businesses are generally not subject to sales tax. Invoice CK LLC in USD or EUR as agreed in your Service Order.</p>
+        <div class="invoice-example">
+<span class="lk">CLIENT</span><br>
+CK Events Management &amp; Hospitality Group LLC<br>
+EIN: <span class="ph">[XX-XXXXXXX]</span><br>
+30 N. Gould Street, Ste N, Sheridan, WY 82801, USA<br><br>
+<span class="lk">SERVICE DESCRIPTION</span><br>
+<span class="ph">[Description of services provided] | JoEs TaBLe | [Event date]</span><br><br>
+Amount: <span class="ph">[USD / EUR X,XXX.00]</span><br>
+Sales tax: Not applicable — B2B professional services<br>
+Total: <span class="ph">[USD / EUR X,XXX.00]</span>
+        </div>
+        <p class="guidance-note">The correct tax treatment in your jurisdiction is your responsibility. Verify with your own accountant before issuing.</p>
+      </div>
+    </div>
+
+    <div class="invoice-guidance">
+      <div class="invoice-guidance-header" id="gh-row" onclick="toggleGuidance('row')">
+        <span>Rest of world</span>
+        <span class="toggle-icon" id="ti-row">+</span>
+      </div>
+      <div class="invoice-guidance-body" id="gb-row">
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">You are invoicing a US entity. In most jurisdictions, B2B services exported to a foreign recipient are not subject to local VAT or sales tax. Invoice CK LLC without local tax where your jurisdiction does not tax services supplied to overseas recipients.</p>
+        <div class="invoice-example">
+<span class="lk">CLIENT</span><br>
+CK Events Management &amp; Hospitality Group LLC<br>
+30 N. Gould Street, Ste N, Sheridan, WY 82801, USA<br><br>
+<span class="lk">SERVICE DESCRIPTION</span><br>
+<span class="ph">[Description of services provided] | JoEs TaBLe | [Event date]</span><br><br>
+Net amount: <span class="ph">[EUR / USD X,XXX.00]</span><br>
+<span class="lk">Tax: Not applicable — exported professional services supplied to a US recipient.</span><br>
+Total: <span class="ph">[EUR / USD X,XXX.00]</span>
+        </div>
+        <p class="guidance-note">The correct tax treatment in your jurisdiction is your responsibility. Verify with your own accountant before issuing.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <div class="checkbox-field">
+        <input type="checkbox" id="confirm-invoice" onchange="checkFinalStep()">
+        <label for="confirm-invoice">I confirm I have reviewed the invoicing guidance above and understand that I am responsible for the content and legal compliance of any invoice I issue to CK LLC.</label>
+      </div>
+      <div class="checkbox-field">
+        <input type="checkbox" id="confirm-gdpr" onchange="checkFinalStep()">
+        <label for="confirm-gdpr">I consent to CK Events Management &amp; Hospitality Group LLC processing the data submitted in this form for partner evaluation and network management purposes, in accordance with the <a href="https://clandestino.kitchen/privacy-policy.html" target="_blank">Privacy Policy</a>. I understand my data will be retained on file unless I request deletion.</label>
+      </div>
+      <div class="checkbox-field">
+        <input type="checkbox" id="confirm-engagement" onchange="checkFinalStep()">
+        <label for="confirm-engagement">I understand that submitting this form is an introduction only. No commercial engagement, exclusivity, or obligation arises from this submission. Any engagement requires a signed Service Order issued by CK LLC under the terms of the signed framework agreement above.</label>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="goTo(3)">Back</button>
+      <button class="btn btn-primary" id="btn-submit" onclick="submitForm()" disabled>Submit onboarding</button>
+      <span class="step-counter">4 / 4</span>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="step" id="step-success">
+    <div class="success-block">
+      <div class="success-icon">✓</div>
+      <h2>Onboarding submitted</h2>
+      <p>Your information has been received and your agreement acceptances are on record with a timestamp.</p>
+      <p>CK LLC will review your submission and be in touch. No engagement exists until a Service Order is issued and signed by both parties.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>CK Events Management &amp; Hospitality Group LLC &nbsp;&middot;&nbsp; Internal partner onboarding &nbsp;&middot;&nbsp; Not for public distribution</span>
+  <span>
+    <a href="https://clandestino.kitchen/terms" target="_blank" style="color:var(--ink-soft);text-decoration:none;">Terms</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://clandestino.kitchen/privacy-policy.html" target="_blank" style="color:var(--ink-soft);text-decoration:none;">Privacy</a>
+  </span>
+</footer>
+
+<script>
+// ── CONFIG ───────────────────────────────────────────────────────────────────
+// Replace with your Google Apps Script Web App URL after deployment
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcQRD92uTmAo7IIiL7l03sh1ZntpVCee2tddH-2oYzug3BarSuhs9K-SUqaonJRo3kXw/exec';
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+const state = { current: 1 };
+
+// ── NAVIGATION ───────────────────────────────────────────────────────────────
+function goTo(n) {
+  if (n > state.current && !validateStep(state.current)) return;
+  const cur = document.getElementById('step-' + state.current);
+  if (cur) cur.classList.remove('visible');
+  if (n === 'success') {
+    document.getElementById('step-success').classList.add('visible');
+    updateProgress(5);
+    return;
+  }
+  state.current = n;
+  // On step 3: route agreements by partner type
+  if (n === 3) routeAgreements();
+  // On step 4: pre-open relevant guidance
+  if (n === 4) preOpenGuidance();
+  const next = document.getElementById('step-' + n);
+  if (next) next.classList.add('visible');
+  updateProgress(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(n) {
+  document.getElementById('progress-label').textContent = n <= 4 ? 'Step ' + n + ' of 4' : 'Complete';
+  for (let i = 1; i <= 4; i++) {
+    const el = document.getElementById('prog-' + i);
+    if (el) el.classList.toggle('active', i <= n);
+  }
+}
+
+// ── AGREEMENT ROUTING ─────────────────────────────────────────────────────────
+function routeAgreements() {
+  const type = document.getElementById('partner-type').value;
+  document.querySelectorAll('.agreement-section').forEach(el => el.style.display = 'none');
+  const map = {
+    chef:     'agreement-chef',
+    venue:    'agreement-venue',
+    agency:   'agreement-general',
+    catering: 'agreement-general',
+    supplier: 'agreement-general',
+    other:    'agreement-general',
+  };
+  const target = map[type] || 'agreement-general';
+  const el = document.getElementById(target);
+  if (el) el.style.display = 'block';
+  // Reset checkboxes on re-entry
+  const cb = document.getElementById('accept-primary');
+  if (cb) cb.checked = false;
+  const tcs = document.getElementById('accept-tcs');
+  if (tcs) tcs.checked = false;
+  checkAcceptance();
+}
+
+// ── INVOICE GUIDANCE AUTO-OPEN ────────────────────────────────────────────────
+function preOpenGuidance() {
+  // Open EU section by default for all partner types — partners self-select the relevant section
+  const body = document.getElementById('gb-eu');
+  const header = document.getElementById('gh-eu');
+  const icon = document.getElementById('ti-eu');
+  if (body) body.classList.add('open');
+  if (header) header.classList.add('open');
+  if (icon) icon.style.transform = 'rotate(45deg)';
+}
+
+// ── VALIDATION ────────────────────────────────────────────────────────────────
+function validateStep(n) {
+  let ok = true;
+  const rules = {
+    1: [
+      { id: 'legal-name',   fid: 'f-legal-name',   test: v => v.length > 1 },
+      { id: 'nif',          fid: 'f-nif',           test: v => v.length > 3 },
+      { id: 'legal-form',   fid: 'f-legal-form',   test: v => v !== '' },
+      { id: 'address',      fid: 'f-address',       test: v => v.length > 3 },
+      { id: 'city',         fid: 'f-city',          test: v => v.length > 1 },
+      { id: 'postcode',     fid: 'f-postcode',      test: v => v.length > 1 },
+      { id: 'country',      fid: 'f-country',       test: v => v.length > 1 },
+      { id: 'contact-name', fid: 'f-contact-name', test: v => v.length > 1 },
+      { id: 'email',        fid: 'f-email',         test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+    ],
+    2: [
+      { id: 'partner-type', fid: 'f-partner-type', test: v => v !== '' },
+      { id: 'services',     fid: 'f-services',     test: v => v.length > 10 },
+      { id: 'locations',    fid: 'f-locations',    test: v => v.length > 1 },
+      { id: 'capacity',     fid: 'f-capacity',     test: v => v.length > 1 },
+      { id: 'years',        fid: 'f-years',        test: v => v !== '' },
+      { id: 'licenses',     fid: 'f-licenses',     test: v => v !== '' },
+      { id: 'insurance',    fid: 'f-insurance',    test: v => v !== '' },
+    ],
+  };
+  if (!rules[n]) return true;
+  rules[n].forEach(r => {
+    const el = document.getElementById(r.id);
+    const field = document.getElementById(r.fid);
+    const pass = el && r.test(el.value.trim());
+    if (field) field.classList.toggle('has-error', !pass);
+    if (!pass) ok = false;
+  });
+  return ok;
+}
+
+// ── ACCEPTANCE ────────────────────────────────────────────────────────────────
+function checkAcceptance() {
+  const primary = document.getElementById('accept-primary');
+  const tcs = document.getElementById('accept-tcs');
+  const btn = document.getElementById('btn-step3');
+  if (btn) btn.disabled = !(primary && primary.checked && tcs && tcs.checked);
+}
+
+function checkFinalStep() {
+  const all = ['confirm-invoice', 'confirm-gdpr', 'confirm-engagement']
+    .every(id => document.getElementById(id) && document.getElementById(id).checked);
+  const btn = document.getElementById('btn-submit');
+  if (btn) btn.disabled = !all;
+}
+
+// ── INVOICE GUIDANCE TOGGLE ───────────────────────────────────────────────────
+function toggleGuidance(key) {
+  const body = document.getElementById('gb-' + key);
+  const header = document.getElementById('gh-' + key);
+  const icon = document.getElementById('ti-' + key);
+  if (!body) return;
+  const open = body.classList.toggle('open');
+  if (header) header.classList.toggle('open', open);
+  if (icon) icon.style.transform = open ? 'rotate(45deg)' : 'rotate(0)';
+}
+
+// ── SUBMIT ────────────────────────────────────────────────────────────────────
+async function submitForm() {
+  const btn = document.getElementById('btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  const payload = {
+    timestamp:             new Date().toISOString(),
+    legalName:             document.getElementById('legal-name').value,
+    tradingName:           document.getElementById('trading-name').value,
+    taxId:                 document.getElementById('nif').value,
+    legalForm:             document.getElementById('legal-form').value,
+    address:               document.getElementById('address').value,
+    city:                  document.getElementById('city').value,
+    postcode:              document.getElementById('postcode').value,
+    country:               document.getElementById('country').value,
+    contactName:           document.getElementById('contact-name').value,
+    email:                 document.getElementById('email').value,
+    website:               document.getElementById('website').value,
+    partnerType:           document.getElementById('partner-type').value,
+    services:              document.getElementById('services').value,
+    locations:             document.getElementById('locations').value,
+    capacity:              document.getElementById('capacity').value,
+    yearsOperating:        document.getElementById('years').value,
+    licensesConfirmed:     document.getElementById('licenses').value,
+    insuranceConfirmed:    document.getElementById('insurance').value,
+    coverageAmount:        document.getElementById('coverage').value,
+    acceptedFrameworkAgreement: document.getElementById('accept-primary') ? document.getElementById('accept-primary').checked : false,
+    acceptedMasterTCs:     document.getElementById('accept-tcs').checked,
+    confirmedInvoiceNote:  document.getElementById('confirm-invoice').checked,
+    gdprConsent:           document.getElementById('confirm-gdpr').checked,
+    engagementNotice:      document.getElementById('confirm-engagement').checked,
+  };
+
+  try {
+    if (APPS_SCRIPT_URL && APPS_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbxRzbS0nyHPSMWwTCZ2WdTIfy377XCMbxzWr0F_XY2zLncdhCgQHsI-zDanNtz-0lSJjg/exec') {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
-      document.getElementById(`step-${step}`).classList.add('active');
-      window.scrollTo(0, 0);
+    } else {
+      // Dev fallback: log to console
+      console.log('CK Partner Onboarding:', JSON.stringify(payload, null, 2));
     }
+  } catch (e) {
+    console.error('Submission error:', e);
+  }
 
-    function nextStep(step) {
-      const currentPanel = document.getElementById(`step-${step}`);
-      const inputs = currentPanel.querySelectorAll('input[required], select[required]');
-      
-      let valid = true;
-      inputs.forEach(input => {
-        if (!input.checkValidity()) {
-          input.reportValidity();
-          valid = false;
-          return false;
-        }
-      });
+  document.getElementById('step-4').classList.remove('visible');
+  document.getElementById('step-success').classList.add('visible');
+  updateProgress(5);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 
-      if (valid && step < 4) {
-        currentStep = step + 1;
-        showStep(currentStep);
-      }
-    }
-
-    function prevStep(step) {
-      if (step > 1) {
-        currentStep = step - 1;
-        showStep(currentStep);
-      }
-    }
-
-    /* SUBMISSION TO APPS SCRIPT */
-    document.getElementById('onboardingForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
-
-      const payload = {
-        timestamp: new Date().toISOString(),
-        legalName: document.querySelector('#legalName').value,
-        tradingName: document.querySelector('#tradingName').value,
-        taxId: document.querySelector('#taxId').value,
-        legalForm: document.querySelector('#legalForm').value,
-        address: document.querySelector('#address').value,
-        city: document.querySelector('#city').value,
-        postcode: document.querySelector('#postcode').value,
-        country: document.querySelector('#country').value,
-        contactName: document.querySelector('#contactName').value,
-        email: document.querySelector('#email').value,
-        website: document.querySelector('#website').value,
-        partnerType: document.querySelector('#partnerType').value,
-        services: document.querySelector('#services').value,
-        locations: document.querySelector('#locations').value,
-        capacity: document.querySelector('#capacity').value,
-        yearsOperating: document.querySelector('#yearsOperating').value,
-        licensesConfirmed: document.querySelector('#licensesConfirmed').value,
-        insuranceConfirmed: document.querySelector('#insuranceConfirmed').value,
-        coverageAmount: document.querySelector('#coverageAmount').value,
-        acceptedFrameworkAgreement: document.querySelector('#acceptedFrameworkAgreement').checked,
-        acceptedMasterTCs: document.querySelector('#acceptedMasterTCs').checked,
-        confirmedInvoiceNote: document.querySelector('#confirmedInvoiceNote').checked,
-        gdprConsent: document.querySelector('#gdprConsent').checked,
-        engagementNotice: document.querySelector('#engagementNotice').checked
-      };
-
-      try {
-        const response = await fetch(SCRIPT_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-
-        if (result.status === 'ok') {
-          alert('Submission successful!');
-          window.location.reload();
-        } else {
-          alert('Error: ' + (result.message || 'Unknown error'));
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Complete Onboarding';
-        }
-      } catch (err) {
-        console.error('Submission error:', err);
-        alert('Network error. Please try again.');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Complete Onboarding';
-      }
-    });
-  </script>
+<div class="modal-overlay" id="modal-csa">
+  <div class="modal-frame">
+    <div class="modal-header">
+      <span class="modal-title">Chef Services Agreement — Type A</span>
+      <button class="modal-close" onclick="closeModal('modal-csa')">&#x2715; Close and return to onboarding</button>
+    </div>
+    <div class="modal-body"><iframe id="modal-csa-frame" src="" title="Chef Services Agreement Type A"></iframe></div>
+    <div class="modal-footer-note">Read the agreement in full, then close this window to return to the form and confirm acceptance.</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-vpa">
+  <div class="modal-frame">
+    <div class="modal-header">
+      <span class="modal-title">Venue Partnership Agreement</span>
+      <button class="modal-close" onclick="closeModal('modal-vpa')">&#x2715; Close and return to onboarding</button>
+    </div>
+    <div class="modal-body"><iframe id="modal-vpa-frame" src="" title="Venue Partnership Agreement"></iframe></div>
+    <div class="modal-footer-note">Read the agreement in full, then close this window to return to the form and confirm acceptance.</div>
+  </div>
+</div>
 </body>
 </html>
