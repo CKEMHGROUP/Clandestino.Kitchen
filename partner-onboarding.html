@@ -113,51 +113,6 @@ footer { border-top: 1px solid var(--rule); padding: 24px 64px; display: flex; j
 .modal-body iframe { width:100%; height:100%; border:none; }
 .modal-footer-note { padding:10px 24px; border-top:1px solid var(--rule); background:var(--paper-alt); font-family:var(--mono); font-size:10px; letter-spacing:0.07em; color:var(--ink-soft); text-align:center; flex-shrink:0; }
 
-  /* Modal Overlay & Card Styling */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      width: 100%;
-      max-width: 680px;
-      max-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-    }
-    .modal-header {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .modal-header h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); }
-    .modal-close {
-      background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; padding: 4px;
-    }
-    .modal-close:hover { color: var(--text); }
-    .modal-body {
-      padding: 24px;
-      overflow-y: auto;
-      font-size: 0.88rem;
-      color: #c4c4cc;
-      line-height: 1.6;
-    }
-    .modal-body p { margin-bottom: 14px; }
-  
 </style>
 </head>
 <body>
@@ -351,27 +306,12 @@ footer { border-top: 1px solid var(--rule); padding: 24px 64px; display: flex; j
     </div>
   </div>
 
-<!-- STEP 3: AGREEMENTS (dynamic by partner type) -->
-<div class="step" id="step-3">
-  <p class="step-overline">Partner Onboarding</p>
-  <h1>Agreements</h1>
-  <p class="step-intro">Read each document before accepting. You can download a copy for your records. The Continue button becomes available only after both documents are accepted.</p>
+  <!-- STEP 3: AGREEMENTS (dynamic by partner type) -->
+  <div class="step" id="step-3">
+    <p class="step-overline">Partner Onboarding</p>
+    <h1>Agreements</h1>
+    <p class="step-intro">Read each document before accepting. You can download a copy for your records. The Continue button becomes available only after both documents are accepted.</p>
 
-  <label class="checkbox-group">
-    <input type="checkbox" id="acceptedFrameworkAgreement" required>
-    <span>I have read and agree to the <span class="doc-link" onclick="openGcsaModal()" style="text-decoration: underline; cursor: pointer; color: #a78bfa;">Global Partner Framework Agreement (GCSA)</span>. <span class="req">*</span></span>
-  </label>
-
-  <label class="checkbox-group">
-    <input type="checkbox" id="acceptedMasterTCs" required>
-    <span>I accept the <span class="doc-link" onclick="openGcsaModal()" style="text-decoration: underline; cursor: pointer; color: #a78bfa;">Master Terms & Conditions</span> governing individual Service Orders. <span class="req">*</span></span>
-  </label>
-
-  <div class="btn-row">
-    <button type="button" class="btn btn-back" onclick="goTo(2)">Back</button>
-    <button type="button" class="btn btn-primary" onclick="goTo(4)">Continue</button>
-    <span class="step-counter">3 / 4</span>
-  </div>
     <!-- CHEF -->
     <div id="agreement-chef" class="agreement-section" style="display:none;">
       <div class="agreement-block">
@@ -845,16 +785,6 @@ async function submitForm() {
   updateProgress(5);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-  /* POPUP CONTROLS */
-    function openGcsaModal() {
-      document.getElementById('gcsaModal').classList.add('open');
-    }
-    function closeGcsaModal() {
-      document.getElementById('gcsaModal').classList.remove('open');
-    }
-    document.getElementById('gcsaModal').addEventListener('click', function(e) {
-      if (e.target === this) closeGcsaModal();
-    });
 </script>
 
 <div class="modal-overlay" id="modal-csa">
@@ -877,24 +807,5 @@ async function submitForm() {
     <div class="modal-footer-note">Read the agreement in full, then close this window to return to the form and confirm acceptance.</div>
   </div>
 </div>
-<!-- GCSA POPUP MODAL -->
-  <div class="modal-overlay" id="gcsaModal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3>Global Client & Services Framework Agreement (GCSA)</h3>
-        <button type="button" class="modal-close" onclick="closeGcsaModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p><strong>GLOBAL MASTER SERVICES AGREEMENT — VERSION 3.1</strong></p>
-        <p>This framework agreement establishes the master legal and operational principles governing collaborations between <strong>CK Events Management & Hospitality Group LLC</strong> and the partner entity identified in Step 1.</p>
-        <p><strong>1. Independent Entity Status:</strong> The partner operates strictly as an independent B2B contractor. Nothing herein shall construct an employment, agency, or partnership relationship.</p>
-        <p><strong>2. Permits & Compliance:</strong> The partner retains full operational autonomy and 100% legal responsibility for maintaining all food safety, alcohol, health, tax, and local business permits required in their operational jurisdiction.</p>
-        <p><strong>3. Cross-Border Invoicing:</strong> All invoices issued to CK Events Management & Hospitality Group LLC (Wyoming, USA) must reflect complete legal business registration numbers and appropriate tax handling per the partner's jurisdiction.</p>
-        <p><strong>4. Confidentiality & Brand Standards:</strong> Event concepts, client lists, menus, and operational documentation disclosed by CK LLC remain strict intellectual property.</p>
-        <p><strong>5. Service Orders:</strong> Individual activations, schedules, and deliverables are executed under standalone, project-specific Service Orders subject to these overarching master terms.</p>
-      </div>
-    </div>
-  </div>
-  
 </body>
 </html>
