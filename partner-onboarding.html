@@ -449,90 +449,95 @@ footer { border-top: 1px solid var(--rule); padding: 24px 64px; display: flex; j
   <div class="step" id="step-4">
     <p class="step-overline">Partner Onboarding</p>
     <h1>Invoice guidance and consent</h1>
-    <p class="step-intro">Before your first Service Order, review the information below on how to invoice CK LLC. This is reference information only — you are responsible for the content of your own invoices and should verify the correct treatment with your own accountant or tax adviser.</p>
+    <p class="step-intro">Before your first Service Order, review the information below on how to invoice CK LLC. This is reference information only. The correct tax treatment in your jurisdiction is your sole responsibility — verify with your own accountant or tax adviser before issuing any invoice.</p>
 
     <div class="info-box">
-      <p><strong>Why this matters</strong></p>
-      <p>CK Events Management &amp; Hospitality Group LLC is incorporated in Wyoming, USA and is not established in the European Union. Under the tax laws of many jurisdictions, services supplied to a non-EU or foreign recipient are subject to different treatment than services supplied to a local client. The following guidance illustrates how invoices to CK LLC are typically structured depending on your jurisdiction. Verify the correct treatment with your own accountant.</p>
-      <p style="margin-top:10px;"><strong>Important for Spanish chefs and venue operators:</strong> The general non-subject rule under Art. 69.Uno.1.° Ley 37/1992 applies to most professional B2B services. However, Art. 70 Ley 37/1992 contains special rules for certain services including restauración and catering services delivered materially on-site, which are localised where they are physically provided — not at the recipient's seat. If your activity could be classified as restauración or catering, the IVA treatment may differ. Confirm your activity classification with your accountant or with the AEAT's online localisation tool at <a href="https://sede.agenciatributaria.gob.es" target="_blank" style="color:var(--green);">sede.agenciatributaria.gob.es</a> before issuing.</p>
+      <p><strong>CK Events Management &amp; Hospitality Group LLC is a US entity</strong></p>
+      <p>We are incorporated in Wyoming, USA. We are not established in the EU, UK, or any other jurisdiction. When you invoice us, you are invoicing a US business entity. The sections below outline what this means for your invoice depending on where you are based.</p>
     </div>
 
     <div class="invoice-guidance">
-      <div class="invoice-guidance-header" id="gh-chef" onclick="toggleGuidance('chef')">
-        <span>Spanish autónomos (chefs and independent professionals)</span>
-        <span class="toggle-icon" id="ti-chef">+</span>
+      <div class="invoice-guidance-header" id="gh-eu" onclick="toggleGuidance('eu')">
+        <span>EU partners</span>
+        <span class="toggle-icon" id="ti-eu">+</span>
       </div>
-      <div class="invoice-guidance-body" id="gb-chef">
-        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">Under Art. 69 of Ley 37/1992, B2B services supplied to a recipient established outside the EU are treated as taking place at the seat of the recipient — Wyoming, USA. This means your services are not subject to Spanish IVA, and IRPF retention does not apply because CK LLC is not established in Spain. The following illustrates how compliant invoices from Spanish autónomos to CK LLC are typically structured.</p>
+      <div class="invoice-guidance-body" id="gb-eu">
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">You are invoicing a US entity. For B2B services supplied to a recipient outside the EU, the reverse charge mechanism applies under EU VAT rules. Invoice CK LLC without local VAT. Your invoice should include a reference to the applicable reverse charge rule in your jurisdiction.</p>
         <div class="invoice-example">
-<span class="lk">FACTURA</span><br>
-Número: <span class="ph">[Sequential invoice number, e.g. 2026-001]</span><br>
-Fecha: <span class="ph">[Issue date]</span><br><br>
-<span class="lk">EMISOR</span><br>
-Nombre: <span class="ph">[Your full legal name]</span><br>
-NIF/NIE: <span class="ph">[Your NIF or NIE]</span><br>
-Dirección: <span class="ph">[Your registered address, Spain]</span><br><br>
-<span class="lk">CLIENTE</span><br>
+<span class="lk">CLIENT</span><br>
+CK Events Management &amp; Hospitality Group LLC<br>
+30 N. Gould Street, Ste N, Sheridan, WY 82801, USA<br><br>
+<span class="lk">SERVICE DESCRIPTION</span><br>
+<span class="ph">[Description of services provided] | JoEs TaBLe | [Event date]</span><br><br>
+Net amount: <span class="ph">[EUR X,XXX.00]</span><br>
+<span class="lk">VAT: 0% — B2B supply to a non-EU recipient. Reverse charge / non-subject per applicable EU VAT rules.</span><br>
+Total: <span class="ph">[EUR X,XXX.00]</span>
+        </div>
+        <p class="guidance-note">The correct VAT treatment in your jurisdiction is your responsibility. Verify with your own accountant before issuing.</p>
+      </div>
+    </div>
+
+    <div class="invoice-guidance">
+      <div class="invoice-guidance-header" id="gh-uk" onclick="toggleGuidance('uk')">
+        <span>UK partners</span>
+        <span class="toggle-icon" id="ti-uk">+</span>
+      </div>
+      <div class="invoice-guidance-body" id="gb-uk">
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">You are invoicing a US entity. For B2B services supplied to a recipient outside the UK, the reverse charge mechanism applies under UK VAT rules. Invoice CK LLC without UK VAT.</p>
+        <div class="invoice-example">
+<span class="lk">CLIENT</span><br>
+CK Events Management &amp; Hospitality Group LLC<br>
+30 N. Gould Street, Ste N, Sheridan, WY 82801, USA<br><br>
+<span class="lk">SERVICE DESCRIPTION</span><br>
+<span class="ph">[Description of services provided] | JoEs TaBLe | [Event date]</span><br><br>
+Net amount: <span class="ph">[GBP / EUR X,XXX.00]</span><br>
+<span class="lk">VAT: 0% — B2B supply to a non-UK recipient. Outside scope of UK VAT.</span><br>
+Total: <span class="ph">[GBP / EUR X,XXX.00]</span>
+        </div>
+        <p class="guidance-note">The correct VAT treatment in your jurisdiction is your responsibility. Verify with your own accountant before issuing.</p>
+      </div>
+    </div>
+
+    <div class="invoice-guidance">
+      <div class="invoice-guidance-header" id="gh-us" onclick="toggleGuidance('us')">
+        <span>US partners</span>
+        <span class="toggle-icon" id="ti-us">+</span>
+      </div>
+      <div class="invoice-guidance-body" id="gb-us">
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">You are invoicing another US entity. B2B services between US businesses are generally not subject to sales tax. Invoice CK LLC in USD or EUR as agreed in your Service Order.</p>
+        <div class="invoice-example">
+<span class="lk">CLIENT</span><br>
 CK Events Management &amp; Hospitality Group LLC<br>
 EIN: <span class="ph">[XX-XXXXXXX]</span><br>
 30 N. Gould Street, Ste N, Sheridan, WY 82801, USA<br><br>
-<span class="lk">CONCEPTO</span><br>
-Servicios de chef — ejecución culinaria | JoEs TaBLe | <span class="ph">[Fecha del evento]</span> | <span class="ph">[N]</span> comensales<br>
-Cantidad: 1 &nbsp;|&nbsp; Importe: <span class="ph">[EUR X,XXX.00]</span><br><br>
-Base imponible: <span class="ph">[EUR X,XXX.00]</span><br>
-<span class="lk">IVA: 0% — Operación no sujeta, Art. 69 Ley 37/1992. Destinatario establecido fuera de la UE.</span><br>
-<span class="lk">IRPF: No aplicable — cliente no establecido en España.</span><br>
-<span class="lk">TOTAL: <span class="ph">[EUR X,XXX.00]</span></span>
+<span class="lk">SERVICE DESCRIPTION</span><br>
+<span class="ph">[Description of services provided] | JoEs TaBLe | [Event date]</span><br><br>
+Amount: <span class="ph">[USD / EUR X,XXX.00]</span><br>
+Sales tax: Not applicable — B2B professional services<br>
+Total: <span class="ph">[USD / EUR X,XXX.00]</span>
         </div>
-        <p class="guidance-note">Reference only. Verify the correct treatment with your own accountant or tax adviser before issuing any invoice. Your activity classification determines the applicable rule — if your services could be characterised as restauración or catering under Art. 70 Ley 37/1992 (which localises those services where they are materially delivered, not at the recipient's seat), the treatment above may not apply. Consult your accountant if there is any ambiguity.</p>
-        <div style="margin-top:14px;padding:12px 16px;border:1px solid var(--rule);background:var(--paper);font-family:var(--mono);font-size:10px;line-height:1.8;color:var(--ink-soft);">
-          <span style="color:var(--ink);font-weight:500;display:block;margin-bottom:8px;">Official sources</span>
-          <a href="https://sede.agenciatributaria.gob.es/Sede/iva/iva-operaciones-comercio-exterior/prestaciones-servicios.html" target="_blank" style="color:var(--green);display:block;margin-bottom:4px;">AEAT — Prestaciones de servicios: reglas de localización</a>
-          <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740" target="_blank" style="color:var(--green);display:block;margin-bottom:4px;">BOE — Ley 37/1992 del IVA (texto consolidado)</a>
-          <a href="https://taxation-customs.ec.europa.eu/taxation/vat/vat-directive/place-taxation_en" target="_blank" style="color:var(--green);display:block;margin-bottom:4px;">European Commission — VAT Directive: Place of Taxation</a>
-          <a href="https://eur-lex.europa.eu/eli/dir/2006/112/oj/eng" target="_blank" style="color:var(--green);display:block;">EUR-Lex — Directive 2006/112/EC (VAT Directive, consolidated)</a>
-        </div>
+        <p class="guidance-note">The correct tax treatment in your jurisdiction is your responsibility. Verify with your own accountant before issuing.</p>
       </div>
     </div>
 
     <div class="invoice-guidance">
-      <div class="invoice-guidance-header" onclick="toggleGuidance('venue')">
-        <span>Spanish venue operators</span>
-        <span class="toggle-icon" id="ti-venue">+</span>
+      <div class="invoice-guidance-header" id="gh-row" onclick="toggleGuidance('row')">
+        <span>Rest of world</span>
+        <span class="toggle-icon" id="ti-row">+</span>
       </div>
-      <div class="invoice-guidance-body" id="gb-venue">
-        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">Venue hire and associated services in Spain are generally subject to IVA at the rate applicable to your licence type. You invoice CK LLC for your agreed fee. Speak to your accountant about the correct IVA rate and treatment for your specific activity and licence classification.</p>
+      <div class="invoice-guidance-body" id="gb-row">
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">You are invoicing a US entity. In most jurisdictions, B2B services exported to a foreign recipient are not subject to local VAT or sales tax. Invoice CK LLC without local tax where your jurisdiction does not tax services supplied to overseas recipients.</p>
         <div class="invoice-example">
-Alquiler de espacio y servicios de sala | JoEs TaBLe | <span class="ph">[Fecha del evento]</span> | <span class="ph">[N]</span> comensales<br>
-Base imponible: <span class="ph">[EUR X,XXX.00]</span><br>
-IVA: <span class="ph">[Rate per your licence classification]</span><br>
-Total: <span class="ph">[EUR X,XXX.00]</span>
-        </div>
-        <p class="guidance-note">Reference only. Verify the correct IVA rate and treatment with your accountant before issuing.</p>
-      </div>
-    </div>
-
-    <div class="invoice-guidance">
-      <div class="invoice-guidance-header" onclick="toggleGuidance('intl')">
-        <span>Partners outside Spain (EU and non-EU)</span>
-        <span class="toggle-icon" id="ti-intl">+</span>
-      </div>
-      <div class="invoice-guidance-body" id="gb-intl">
-        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;">EU-incorporated entities invoicing CK LLC for B2B services should apply the reverse charge under Art. 44 of Directive 2006/112/EC where applicable. Non-EU entities invoice without local VAT and should apply the treatment applicable in their own jurisdiction for services supplied to a US recipient. CK LLC will provide its EIN on request. Verify the correct treatment with your own tax adviser.</p>
-        <div class="invoice-example">
-<span class="ph">[Service description]</span> | JoEs TaBLe | <span class="ph">[Event date]</span><br>
+<span class="lk">CLIENT</span><br>
+CK Events Management &amp; Hospitality Group LLC<br>
+30 N. Gould Street, Ste N, Sheridan, WY 82801, USA<br><br>
+<span class="lk">SERVICE DESCRIPTION</span><br>
+<span class="ph">[Description of services provided] | JoEs TaBLe | [Event date]</span><br><br>
 Net amount: <span class="ph">[EUR / USD X,XXX.00]</span><br>
-<span class="lk">VAT: 0% — Reverse charge, Art. 44 Directive 2006/112/EC (EU entities)</span><br>
-— or —<br>
-<span class="lk">VAT: Not applicable — services supplied to a US recipient outside EU/local VAT territory</span><br>
+<span class="lk">Tax: Not applicable — exported professional services supplied to a US recipient.</span><br>
 Total: <span class="ph">[EUR / USD X,XXX.00]</span>
         </div>
-        <p class="guidance-note">Reference only. Verify the correct treatment in your jurisdiction with your own tax adviser. For EU-based partners, note that Art. 44 Directive 2006/112/EC sets the general B2B rule (place of supply = recipient's seat), confirmed by the European Commission's official VAT guidance. Art. 196 of the same Directive requires the recipient to self-account for VAT via reverse charge where applicable.</p>
-        <div style="margin-top:14px;padding:12px 16px;border:1px solid var(--rule);background:var(--paper);font-family:var(--mono);font-size:10px;line-height:1.8;color:var(--ink-soft);">
-          <span style="color:var(--ink);font-weight:500;display:block;margin-bottom:8px;">Official sources</span>
-          <a href="https://taxation-customs.ec.europa.eu/taxation/vat/vat-directive/place-taxation_en" target="_blank" style="color:var(--green);display:block;margin-bottom:4px;">European Commission — Place of Taxation (Art. 44 VAT Directive)</a>
-          <a href="https://eur-lex.europa.eu/eli/dir/2006/112/oj/eng" target="_blank" style="color:var(--green);display:block;">EUR-Lex — Directive 2006/112/EC (full VAT Directive text)</a>
-        </div>
+        <p class="guidance-note">The correct tax treatment in your jurisdiction is your responsibility. Verify with your own accountant before issuing.</p>
       </div>
     </div>
 
@@ -641,12 +646,10 @@ function routeAgreements() {
 
 // ── INVOICE GUIDANCE AUTO-OPEN ────────────────────────────────────────────────
 function preOpenGuidance() {
-  const type = document.getElementById('partner-type').value;
-  const map = { chef: 'chef', venue: 'venue', agency: 'intl', catering: 'intl', supplier: 'intl', other: 'intl' };
-  const key = map[type] || 'intl';
-  const body = document.getElementById('gb-' + key);
-  const header = document.getElementById('gh-' + key);
-  const icon = document.getElementById('ti-' + key);
+  // Open EU section by default for all partner types — partners self-select the relevant section
+  const body = document.getElementById('gb-eu');
+  const header = document.getElementById('gh-eu');
+  const icon = document.getElementById('ti-eu');
   if (body) body.classList.add('open');
   if (header) header.classList.add('open');
   if (icon) icon.style.transform = 'rotate(45deg)';
