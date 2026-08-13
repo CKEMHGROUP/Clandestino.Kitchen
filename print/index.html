@@ -6,10 +6,6 @@
 <title>Voucher Token Mask Generator</title>
 <link rel="preconnect" href="https://googleapis.com">
 <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Programmatic PDF Generation Engine Library Dependency Injection -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; font-family: 'Inter', sans-serif; background: #eef0f4; color: #20244a; }
@@ -59,9 +55,10 @@
 
   .action-bar { display: flex; gap: 12px; margin-bottom: 24px; }
   
+  /* Strict mathematical aspect frame mapping boundaries */
   .voucher-container { 
-    width: 1000px !important; 
-    height: 323.5px !important; 
+    width: 1000px; 
+    height: 323.5px; 
     background: #111; 
     box-shadow: 0 8px 30px rgba(0,0,0,0.2); 
     border-radius: 4px; 
@@ -92,13 +89,25 @@
     background: transparent !important;
   }
 
-  /* PIXEL-PERFECT POSITION CHANNELS */
+  /* CANVAS PLACEMENT MARKERS */
   .val-city-country { top: 90px; left: 236px; width: 130px; height: 16px; font-size: 10px; letter-spacing: 0.5px; }
   .val-issued-for { top: 135px; left: 236px; width: 350px; height: 30px; font-size: 15px; letter-spacing: 0.5px; }
   .val-day-month-year { top: 39px; left: 28px; width: 37px; height: 236px; font-size: 16px; letter-spacing: 1.5px; writing-mode: vertical-rl; justify-content: center; text-align: center; }
   .val-voucher-pi { top: 220px; left: 226px; width: 150px; height: 24px; font-size: 10px; letter-spacing: 0.5px; }
   .val-complementary { top: 112px; left: 131px; width: 22px; height: 140px; font-size: 7.5px; letter-spacing: 1px; writing-mode: vertical-rl; justify-content: center; text-align: center; }
   .val-customer-payment-id { top: 32px; left: 975px; width: 16px; height: 258px; font-size: 7.5px; letter-spacing: 0.8px; writing-mode: vertical-rl; transform: rotate(180deg); justify-content: center; text-align: center; }
+
+  @media print { 
+    html, body { background: none !important; margin: 0 !important; padding: 0 !important; }
+    .form-panel, .action-bar { display: none !important; } 
+    .preview-panel { margin-left: 0 !important; padding: 0 !important; display: block !important; }
+    .voucher-container { 
+      box-shadow: none !important; width: 1000pt !important; height: 323.5pt !important; 
+      margin: 0 !important; border-radius: 0 !important; position: absolute !important; top: 0 !important; left: 0 !important;
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+    }
+    @page { size: 1000pt 323.5pt landscape; margin: 0; }
+  }
 </style>
 </head>
 <body>
@@ -108,34 +117,16 @@
     <h2>Template Settings</h2>
     <div class="file-upload-box">
       <label style="font-weight:700; font-size:12px; display:block; margin-bottom:6px;">📁 Select Background Image</label>
-      <input type="file" id="bg-file-input" accept="VOUCHER-MASTER-TOKEN.JPG" class="form-control" onchange="loadLocalImage(event)">
+      <input type="file" id="bg-file-input" accept="image/*" class="form-control" onchange="loadLocalImage(event)">
     </div>
 
     <h2>Mask Input Fields</h2>
-    <div class="form-group">
-      <label>City / Country</label>
-      <input type="text" id="input-city-country" class="form-control" value="BARCELONA / SPAIN" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Issued For</label>
-      <input type="text" id="input-issued-for" class="form-control" value="JOHN DOE" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Voucher Pi</label>
-      <input type="text" id="input-voucher-pi" class="form-control" value="PI_3M82109482" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Day Month Year</label>
-      <input type="text" id="input-day-month-year" class="form-control" value="15 AUG 2026" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Complementary</label>
-      <input type="text" id="input-complementary" class="form-control" value="COMPLEMENTARY" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Customer Payment ID</label>
-      <input type="text" id="input-customer-payment-id" class="form-control" value="PAY-8820391" oninput="updateVoucher()">
-    </div>
+    <div class="form-group"><label>City / Country</label><input type="text" id="input-city-country" class="form-control" value="BARCELONA / SPAIN" oninput="updateVoucher()"></div>
+    <div class="form-group"><label>Issued For</label><input type="text" id="input-issued-for" class="form-control" value="JOHN DOE" oninput="updateVoucher()"></div>
+    <div class="form-group"><label>Voucher Pi</label><input type="text" id="input-voucher-pi" class="form-control" value="PI_3M82109482" oninput="updateVoucher()"></div>
+    <div class="form-group"><label>Day Month Year</label><input type="text" id="input-day-month-year" class="form-control" value="15 AUG 2026" oninput="updateVoucher()"></div>
+    <div class="form-group"><label>Complementary</label><input type="text" id="input-complementary" class="form-control" value="COMPLEMENTARY" oninput="updateVoucher()"></div>
+    <div class="form-group"><label>Customer Payment ID</label><input type="text" id="input-customer-payment-id" class="form-control" value="PAY-8820391" oninput="updateVoucher()"></div>
   </div>
 
   <div class="preview-panel">
@@ -144,7 +135,8 @@
     </div>
 
     <div class="voucher-container" id="voucher-doc">
-      <img id="render-bg" class="voucher-bg" src="VOUCHER-MASTER-TOKEN.jpg" alt="Voucher Master Template">
+      <!-- The source parameter is left blank initially to handle live binary stream loads cleanly -->
+      <img id="render-bg" class="voucher-bg" alt="Voucher Master Template">
       <div id="render-city-country" class="overlay-text val-city-country"></div>
       <div id="render-issued-for" class="overlay-text val-issued-for"></div>
       <div id="render-voucher-pi" class="overlay-text val-voucher-pi"></div>
