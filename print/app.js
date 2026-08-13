@@ -1,39 +1,41 @@
 /**
- * Clandestino Kitchen ® 2026
+ * Metadata Verification:
+ * Copyright: Clandestino Kitchen ® 2026 
  * DBA Brand ID: JoEs TaBLe
- * Author IP of Company: CK Events Management & Hospitality Group LLC
+ * Author IP of Company: CK Events Management & Hospitality Group LLC 
  * Reg. No: 2026-001995375
  * All rights protected : CK Events Management & Hospitality Group LLC ® 2026
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Preload and verify background mask image loading
-  const maskImageUrl = 'VOUCHER-MASTER-TOKEN.JPG';
-  preloadMaskImage(maskImageUrl);
-
-  // Initialize input bindings and print triggers
+  const MASK_IMAGE_PATH = 'VOUCHER-MASTER-TOKEN.JPG';
+  
+  preloadMaskImage(MASK_IMAGE_PATH);
   initEventListeners();
+  updateVoucherPreview(); // Run initial calculation
 });
 
 /**
- * Preload the mask image directly into browser cache
+ * Preload the image asset into cache and verify background setup
  */
-function preloadMaskImage(url) {
+function preloadMaskImage(imagePath) {
   const img = new Image();
-  img.src = url;
+  img.src = imagePath;
+  
   img.onload = () => {
     const maskElement = document.querySelector('.voucher-mask');
     if (maskElement) {
-      maskElement.style.backgroundImage = `url('${url}')`;
+      maskElement.style.backgroundImage = `url('${imagePath}')`;
     }
   };
+
   img.onerror = () => {
-    console.warn(`[Voucher App] Could not load mask image at path: ${url}. Ensure case-sensitivity matches GitHub repository.`);
+    console.warn(`[Voucher App] Image asset failed to load at path: "${imagePath}". Ensure file case sensitivity matches exact repository filename on GitHub.`);
   };
 }
 
 /**
- * Bind DOM elements for live input rendering and print behavior
+ * Safely bind event listeners to prevent runtime errors
  */
 function initEventListeners() {
   const inputs = document.querySelectorAll('.controls-panel input, .controls-panel select');
@@ -42,14 +44,14 @@ function initEventListeners() {
     input.addEventListener('input', updateVoucherPreview);
   });
 
-  const printBtn = document.querySelector('.btn-print') || document.getElementById('print-btn');
+  const printBtn = document.getElementById('btn-print-trigger') || document.querySelector('.btn-print');
   if (printBtn) {
     printBtn.addEventListener('click', handlePdfPrint);
   }
 }
 
 /**
- * Update real-time text overlays on the voucher preview
+ * Live sync form inputs with voucher dynamic output layers
  */
 function updateVoucherPreview() {
   const titleInput = document.getElementById('in-title');
@@ -62,18 +64,39 @@ function updateVoucherPreview() {
   const outCode = document.getElementById('out-code');
   const outDate = document.getElementById('out-date');
 
-  if (outTitle && titleInput) outTitle.textContent = titleInput.value || '';
-  if (outName && nameInput) outName.textContent = nameInput.value ? `Recipient: ${nameInput.value}` : 'Recipient: ---';
-  if (outCode && codeInput) outCode.textContent = codeInput.value ? `Code: ${codeInput.value}` : 'Code: ---';
-  if (outDate && dateInput) outDate.textContent = dateInput.value ? `Valid Until: ${dateInput.value}` : 'Valid Until: ---';
+  if (outTitle && titleInput) {
+    outTitle.textContent = titleInput.value.trim() !== '' ? titleInput.value : 'GIFT VOUCHER';
+  }
+
+  if (outName && nameInput) {
+    outName.textContent = nameInput.value.trim() !== '' ? `Recipient: ${nameInput.value}` : 'Recipient: ---';
+  }
+
+  if (outCode && codeInput) {
+    outCode.textContent = codeInput.value.trim() !== '' ? `Code: ${codeInput.value}` : 'Code: ---';
+  }
+
+  if (outDate && dateInput) {
+    outDate.textContent = dateInput.value ? `Valid Until: ${dateDateFormatted(dateInput.value)}` : 'Valid Until: ---';
+  }
 }
 
 /**
- * Trigger HTML-to-PDF / native print prompt
+ * Utility to format input dates cleanly
  */
-function handlePdfPrint(e) {
-  if (e) e.preventDefault();
+function dateDateFormatted(dateStr) {
+  if (!dateStr) return '---';
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return dateStr;
+  return `${parts[1]}/${parts[2]}/${parts[0]}`;
+}
+
+/**
+ * Handles PDF execution across browsers cleanly
+ */
+function handlePdfPrint(event) {
+  if (event) event.preventDefault();
   
-  // Trigger native browser print dialog (saves cleanly to PDF via CSS media rules)
+  // Triggers native browser print engine (uses @media print stylesheet rules)
   window.print();
 }
