@@ -16,7 +16,7 @@
   <link rel="preload" href="VOUCHER-MASTER-TOKEN.JPG" as="image">
 
   <style>
-    /* Base Page Styling */
+    /* Reset & Base Layout */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -37,7 +37,7 @@
       margin: 0 auto;
     }
 
-    /* Left Control Panel */
+    /* Left Controls Panel */
     .controls-panel {
       flex: 1;
       background: #ffffff;
@@ -91,7 +91,7 @@
       background-color: #333;
     }
 
-    /* Right Preview Stage */
+    /* Voucher Canvas Preview */
     .preview-stage {
       flex: 2;
       display: flex;
@@ -111,7 +111,6 @@
       print-color-adjust: exact;
     }
 
-    /* Voucher Image Mask */
     .voucher-mask {
       position: absolute;
       top: 0;
@@ -124,9 +123,10 @@
       background-repeat: no-repeat;
       z-index: 1;
       pointer-events: none;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
-    /* Text Overlay Dynamic Fields */
     .voucher-content {
       position: absolute;
       top: 0;
@@ -143,46 +143,44 @@
       white-space: nowrap;
     }
 
-    /* Example Default Field Positioning */
     #out-title { top: 40px; left: 50px; font-size: 24px; font-weight: bold; }
     #out-name  { top: 120px; left: 50px; font-size: 18px; }
     #out-code  { top: 180px; left: 50px; font-size: 16px; font-weight: 600; }
     #out-date  { bottom: 30px; left: 50px; font-size: 14px; }
 
-    /* PRINT SPECIFIC STYLES (Fixes PDF Print Issues) */
+    /* HARDENED PRINT TO PDF RULES */
     @media print {
       @page {
-        size: auto;
+        size: landscape;
         margin: 0mm;
       }
 
-      body {
-        background: #ffffff;
-        padding: 0;
-        margin: 0;
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
       }
 
-      /* Hide user interface elements when printing */
       .controls-panel, header, footer {
         display: none !important;
       }
 
-      .app-layout {
-        display: block;
-        margin: 0;
-        padding: 0;
-      }
-
-      .preview-stage {
-        display: block;
-        margin: 0;
+      .app-layout, .preview-stage {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
       }
 
       .voucher-card {
         box-shadow: none !important;
         border: none !important;
-        margin: 0 auto;
-        page-break-inside: avoid;
+        margin: 0 auto !important;
+        page-break-inside: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
       .voucher-mask {
@@ -195,42 +193,40 @@
 <body>
 
   <div class="app-layout">
-    <!-- Sidebar / Inputs -->
+    <!-- Sidebar Inputs -->
     <div class="controls-panel">
       <h2>Template Settings</h2>
       
       <div class="field-group">
         <label for="in-title">Title / Headline</label>
-        <input type="text" id="in-title" value="GIFT VOUCHER" oninput="updateVoucher()">
+        <input type="text" id="in-title" value="GIFT VOUCHER">
       </div>
 
       <h2>Mask Input Fields</h2>
 
       <div class="field-group">
         <label for="in-name">Recipient Name</label>
-        <input type="text" id="in-name" placeholder="John Doe" oninput="updateVoucher()">
+        <input type="text" id="in-name" placeholder="John Doe">
       </div>
 
       <div class="field-group">
         <label for="in-code">Token / Voucher Code</label>
-        <input type="text" id="in-code" placeholder="CK-2026-TOKEN" oninput="updateVoucher()">
+        <input type="text" id="in-code" placeholder="CK-2026-TOKEN">
       </div>
 
       <div class="field-group">
         <label for="in-date">Expiration Date</label>
-        <input type="date" id="in-date" oninput="updateVoucher()">
+        <input type="date" id="in-date">
       </div>
 
-      <button class="btn-print" onclick="executePrint()">Print / Save as PDF</button>
+      <button class="btn-print" id="btn-print-trigger">Print / Save as PDF</button>
     </div>
 
-    <!-- Voucher Canvas Preview -->
+    <!-- Voucher Canvas -->
     <div class="preview-stage">
       <div class="voucher-card" id="printable-voucher">
-        <!-- Preloaded Mask Overlay -->
         <div class="voucher-mask"></div>
 
-        <!-- Rendered Text Overlays -->
         <div class="voucher-content">
           <div id="out-title" class="field-layer">GIFT VOUCHER</div>
           <div id="out-name" class="field-layer">Recipient: ---</div>
@@ -241,24 +237,6 @@
     </div>
   </div>
 
-  <script>
-    // Live update preview elements
-    function updateVoucher() {
-      const titleVal = document.getElementById('in-title').value;
-      const nameVal = document.getElementById('in-name').value;
-      const codeVal = document.getElementById('in-code').value;
-      const dateVal = document.getElementById('in-date').value;
-
-      document.getElementById('out-title').innerText = titleVal || '';
-      document.getElementById('out-name').innerText = nameVal ? `Recipient: ${nameVal}` : 'Recipient: ---';
-      document.getElementById('out-code').innerText = codeVal ? `Code: ${codeVal}` : 'Code: ---';
-      document.getElementById('out-date').innerText = dateVal ? `Valid Until: ${dateVal}` : 'Valid Until: ---';
-    }
-
-    // PDF / Print Trigger
-    function executePrint() {
-      window.print();
-    }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
