@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voucher Token Mask Generator</title>
+<link rel="preconnect" href="https://googleapis.com">
+<link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Programmatic PDF Generation Engine Library Dependency Injection -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', sans-serif; background: #eef0f4; color: #20244a; }
+  
+  .app-container { display: flex; min-height: 100vh; }
+  
+  .form-panel { 
+    width: 380px; 
+    background: #fff; 
+    padding: 24px; 
+    border-right: 1px solid #dcdfe6; 
+    overflow-y: auto; 
+    height: 100vh; 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    z-index: 100; 
+  }
+
+  .preview-panel { 
+    margin-left: 380px; 
+    flex: 1; 
+    padding: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  h2 { font-size: 16px; margin-top: 0; margin-bottom: 16px; color: #20244a; border-bottom: 2px solid #5851ea; padding-bottom: 8px; }
+  
+  .file-upload-box {
+    background: #f4f5f8;
+    border: 2px dashed #5851ea;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 600; color: #606266; margin-bottom: 6px; }
+  .form-control { width: 100%; padding: 8px 12px; font-size: 13px; border: 1px solid #dcdfe6; border-radius: 6px; font-family: inherit; }
+  .form-control:focus { outline: none; border-color: #5851ea; }
+
+  .btn { font-family: inherit; font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 6px; border: none; cursor: pointer; }
+  .btn-action { background: #20244a; color: #fff; padding: 10px 24px; font-size: 14px; }
+  .btn-action:hover { background: #343a6e; }
+
+  .action-bar { display: flex; gap: 12px; margin-bottom: 24px; }
+  
+  .voucher-container { 
+    width: 1000px !important; 
+    height: 323.5px !important; 
+    background: #111; 
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2); 
+    border-radius: 4px; 
+    position: relative; 
+    overflow: hidden;
+  }
+
+  .voucher-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .overlay-text {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    overflow: hidden;
+    line-height: 1;
+    color: #000000;
+    background: transparent !important;
+  }
+
+  /* PIXEL-PERFECT POSITION CHANNELS */
+  .val-city-country { top: 90px; left: 236px; width: 130px; height: 16px; font-size: 10px; letter-spacing: 0.5px; }
+  .val-issued-for { top: 135px; left: 236px; width: 350px; height: 30px; font-size: 15px; letter-spacing: 0.5px; }
+  .val-day-month-year { top: 39px; left: 28px; width: 37px; height: 236px; font-size: 16px; letter-spacing: 1.5px; writing-mode: vertical-rl; justify-content: center; text-align: center; }
+  .val-voucher-pi { top: 220px; left: 226px; width: 150px; height: 24px; font-size: 10px; letter-spacing: 0.5px; }
+  .val-complementary { top: 112px; left: 131px; width: 22px; height: 140px; font-size: 7.5px; letter-spacing: 1px; writing-mode: vertical-rl; justify-content: center; text-align: center; }
+  .val-customer-payment-id { top: 32px; left: 975px; width: 16px; height: 258px; font-size: 7.5px; letter-spacing: 0.8px; writing-mode: vertical-rl; transform: rotate(180deg); justify-content: center; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="app-container">
+  <div class="form-panel">
+    <h2>Template Settings</h2>
+    <div class="file-upload-box">
+      <label style="font-weight:700; font-size:12px; display:block; margin-bottom:6px;">📁 Select Background Image</label>
+      <input type="file" id="bg-file-input" accept="image/*" class="form-control" onchange="loadLocalImage(event)">
+    </div>
+
+    <h2>Mask Input Fields</h2>
+    <div class="form-group">
+      <label>City / Country</label>
+      <input type="text" id="input-city-country" class="form-control" value="BARCELONA / SPAIN" oninput="updateVoucher()">
+    </div>
+    <div class="form-group">
+      <label>Issued For</label>
+      <input type="text" id="input-issued-for" class="form-control" value="JOHN DOE" oninput="updateVoucher()">
+    </div>
+    <div class="form-group">
+      <label>Voucher Pi</label>
+      <input type="text" id="input-voucher-pi" class="form-control" value="PI_3M82109482" oninput="updateVoucher()">
+    </div>
+    <div class="form-group">
+      <label>Day Month Year</label>
+      <input type="text" id="input-day-month-year" class="form-control" value="15 AUG 2026" oninput="updateVoucher()">
+    </div>
+    <div class="form-group">
+      <label>Complementary</label>
+      <input type="text" id="input-complementary" class="form-control" value="COMPLEMENTARY" oninput="updateVoucher()">
+    </div>
+    <div class="form-group">
+      <label>Customer Payment ID</label>
+      <input type="text" id="input-customer-payment-id" class="form-control" value="PAY-8820391" oninput="updateVoucher()">
+    </div>
+  </div>
+
+  <div class="preview-panel">
+    <div class="action-bar">
+      <button class="btn btn-action" onclick="generatePerfectPDF()">Print / Save PDF</button>
+    </div>
+
+    <div class="voucher-container" id="voucher-doc">
+      <img id="render-bg" class="voucher-bg" src="VOUCHER-MASTER-TOKEN.jpg" alt="Voucher Master Template">
+      <div id="render-city-country" class="overlay-text val-city-country"></div>
+      <div id="render-issued-for" class="overlay-text val-issued-for"></div>
+      <div id="render-voucher-pi" class="overlay-text val-voucher-pi"></div>
+      <div id="render-day-month-year" class="overlay-text val-day-month-year"></div>
+      <div id="render-complementary" class="overlay-text val-complementary"></div>
+      <div id="render-customer-payment-id" class="overlay-text val-customer-payment-id"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
