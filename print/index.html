@@ -1,161 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Voucher Token Mask Generator</title>
-<link rel="preconnect" href="https://googleapis.com">
-<link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voucher Master - Print & Generator</title>
 
-<!-- Programmatic PDF Generation Engine Library Dependency Injection -->
-<script src="https://cloudflare.com"></script>
+  <!-- METADATA -->
+  <meta name="copyright" content="Copyright: Clandestino Kitchen ® 2026">
+  <meta name="brand-id" content="DBA Brand ID: JoEs TaBLe">
+  <meta name="author" content="Author IP of Company: CK Events Management & Hospitality Group LLC">
+  <meta name="registration" content="Reg. No: 2026-001995375">
+  <meta name="rights" content="All rights protected : CK Events Management & Hospitality Group LLC ® 2026">
 
-<style>
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Inter', sans-serif; background: #eef0f4; color: #20244a; }
-  
-  .app-container { display: flex; min-height: 100vh; }
-  
-  .form-panel { 
-    width: 380px; 
-    background: #fff; 
-    padding: 24px; 
-    border-right: 1px solid #dcdfe6; 
-    overflow-y: auto; 
-    height: 100vh; 
-    position: fixed; 
-    left: 0; 
-    top: 0; 
-    z-index: 100; 
-  }
+  <!-- PRELOAD MASK IMAGE -->
+  <link rel="preload" href="VOUCHER-MASTER-TOKEN.JPG" as="image">
 
-  .preview-panel { 
-    margin-left: 380px; 
-    flex: 1; 
-    padding: 40px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-  }
+  <style>
+    /* Base Page Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  h2 { font-size: 16px; margin-top: 0; margin-bottom: 16px; color: #20244a; border-bottom: 2px solid #5851ea; padding-bottom: 8px; }
-  
-  .file-upload-box {
-    background: #f4f5f8;
-    border: 2px dashed #5851ea;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f5f7;
+      color: #333;
+      padding: 20px;
+    }
 
-  .form-group { margin-bottom: 14px; }
-  .form-group label { display: block; font-size: 12px; font-weight: 600; color: #606266; margin-bottom: 6px; }
-  .form-control { width: 100%; padding: 8px 12px; font-size: 13px; border: 1px solid #dcdfe6; border-radius: 6px; font-family: inherit; }
-  .form-control:focus { outline: none; border-color: #5851ea; }
+    .app-layout {
+      display: flex;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-  .btn { font-family: inherit; font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 6px; border: none; cursor: pointer; }
-  .btn-action { background: #20244a; color: #fff; padding: 10px 24px; font-size: 14px; }
-  .btn-action:hover { background: #343a6e; }
+    /* Left Control Panel */
+    .controls-panel {
+      flex: 1;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-  .action-bar { display: flex; gap: 12px; margin-bottom: 24px; }
-  
-  /* CRITICAL: Enforcing explicit pixel frames on the target layout elements */
-  .voucher-container { 
-    width: 1000px !important; 
-    height: 323.5px !important; 
-    background: #111; 
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2); 
-    border-radius: 4px; 
-    position: relative; 
-    overflow: hidden;
-  }
+    .controls-panel h2 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eee;
+    }
 
-  .voucher-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-  }
+    .field-group {
+      margin-bottom: 16px;
+    }
 
-  .overlay-text {
-    position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    pointer-events: none;
-    overflow: hidden;
-    line-height: 1;
-    color: #000000;
-    background: transparent !important;
-  }
+    .field-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-  /* PIXEL-PERFECT POSITION CHANNELS */
-  .val-city-country { top: 90px; left: 236px; width: 130px; height: 16px; font-size: 10px; letter-spacing: 0.5px; }
-  .val-issued-for { top: 135px; left: 236px; width: 350px; height: 30px; font-size: 15px; letter-spacing: 0.5px; }
-  .val-day-month-year { top: 39px; left: 28px; width: 37px; height: 236px; font-size: 16px; letter-spacing: 1.5px; writing-mode: vertical-rl; justify-content: center; text-align: center; }
-  .val-voucher-pi { top: 220px; left: 226px; width: 150px; height: 24px; font-size: 10px; letter-spacing: 0.5px; }
-  .val-complementary { top: 112px; left: 131px; width: 22px; height: 140px; font-size: 7.5px; letter-spacing: 1px; writing-mode: vertical-rl; justify-content: center; text-align: center; }
-  .val-customer-payment-id { top: 32px; left: 975px; width: 16px; height: 258px; font-size: 7.5px; letter-spacing: 0.8px; writing-mode: vertical-rl; transform: rotate(180deg); justify-content: center; text-align: center; }
-</style>
+    .field-group input, .field-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .btn-print {
+      width: 100%;
+      padding: 12px;
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-print:hover {
+      background-color: #333;
+    }
+
+    /* Right Preview Stage */
+    .preview-stage {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .voucher-card {
+      position: relative;
+      width: 800px;
+      height: 400px;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Voucher Image Mask */
+    .voucher-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('VOUCHER-MASTER-TOKEN.JPG');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Text Overlay Dynamic Fields */
+    .voucher-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .field-layer {
+      position: absolute;
+      font-family: inherit;
+      color: #000;
+      white-space: nowrap;
+    }
+
+    /* Example Default Field Positioning */
+    #out-title { top: 40px; left: 50px; font-size: 24px; font-weight: bold; }
+    #out-name  { top: 120px; left: 50px; font-size: 18px; }
+    #out-code  { top: 180px; left: 50px; font-size: 16px; font-weight: 600; }
+    #out-date  { bottom: 30px; left: 50px; font-size: 14px; }
+
+    /* PRINT SPECIFIC STYLES (Fixes PDF Print Issues) */
+    @media print {
+      @page {
+        size: auto;
+        margin: 0mm;
+      }
+
+      body {
+        background: #ffffff;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* Hide user interface elements when printing */
+      .controls-panel, header, footer {
+        display: none !important;
+      }
+
+      .app-layout {
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+
+      .preview-stage {
+        display: block;
+        margin: 0;
+      }
+
+      .voucher-card {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 auto;
+        page-break-inside: avoid;
+      }
+
+      .voucher-mask {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="app-container">
-  <div class="form-panel">
-    <h2>Template Settings</h2>
-    <div class="file-upload-box">
-      <label style="font-weight:700; font-size:12px; display:block; margin-bottom:6px;">📁 Select Background Image</label>
-      <input type="file" id="bg-file-input" accept="image/*" class="form-control" onchange="loadLocalImage(event)">
+  <div class="app-layout">
+    <!-- Sidebar / Inputs -->
+    <div class="controls-panel">
+      <h2>Template Settings</h2>
+      
+      <div class="field-group">
+        <label for="in-title">Title / Headline</label>
+        <input type="text" id="in-title" value="GIFT VOUCHER" oninput="updateVoucher()">
+      </div>
+
+      <h2>Mask Input Fields</h2>
+
+      <div class="field-group">
+        <label for="in-name">Recipient Name</label>
+        <input type="text" id="in-name" placeholder="John Doe" oninput="updateVoucher()">
+      </div>
+
+      <div class="field-group">
+        <label for="in-code">Token / Voucher Code</label>
+        <input type="text" id="in-code" placeholder="CK-2026-TOKEN" oninput="updateVoucher()">
+      </div>
+
+      <div class="field-group">
+        <label for="in-date">Expiration Date</label>
+        <input type="date" id="in-date" oninput="updateVoucher()">
+      </div>
+
+      <button class="btn-print" onclick="executePrint()">Print / Save as PDF</button>
     </div>
 
-    <h2>Mask Input Fields</h2>
-    <div class="form-group">
-      <label>City / Country</label>
-      <input type="text" id="input-city-country" class="form-control" value="BARCELONA / SPAIN" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Issued For</label>
-      <input type="text" id="input-issued-for" class="form-control" value="JOHN DOE" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Voucher Pi</label>
-      <input type="text" id="input-voucher-pi" class="form-control" value="PI_3M82109482" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Day Month Year</label>
-      <input type="text" id="input-day-month-year" class="form-control" value="15 AUG 2026" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Complementary</label>
-      <input type="text" id="input-complementary" class="form-control" value="COMPLEMENTARY" oninput="updateVoucher()">
-    </div>
-    <div class="form-group">
-      <label>Customer Payment ID</label>
-      <input type="text" id="input-customer-payment-id" class="form-control" value="PAY-8820391" oninput="updateVoucher()">
+    <!-- Voucher Canvas Preview -->
+    <div class="preview-stage">
+      <div class="voucher-card" id="printable-voucher">
+        <!-- Preloaded Mask Overlay -->
+        <div class="voucher-mask"></div>
+
+        <!-- Rendered Text Overlays -->
+        <div class="voucher-content">
+          <div id="out-title" class="field-layer">GIFT VOUCHER</div>
+          <div id="out-name" class="field-layer">Recipient: ---</div>
+          <div id="out-code" class="field-layer">Code: ---</div>
+          <div id="out-date" class="field-layer">Valid Until: ---</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="preview-panel">
-    <div class="action-bar">
-      <button class="btn btn-action" onclick="generatePerfectPDF()">Print / Save PDF</button>
-    </div>
+  <script>
+    // Live update preview elements
+    function updateVoucher() {
+      const titleVal = document.getElementById('in-title').value;
+      const nameVal = document.getElementById('in-name').value;
+      const codeVal = document.getElementById('in-code').value;
+      const dateVal = document.getElementById('in-date').value;
 
-    <div class="voucher-container" id="voucher-doc">
-      <img id="render-bg" class="voucher-bg" src="VOUCHER-MASTER-TOKEN.jpg" alt="Voucher Master Template">
-      <div id="render-city-country" class="overlay-text val-city-country"></div>
-      <div id="render-issued-for" class="overlay-text val-issued-for"></div>
-      <div id="render-voucher-pi" class="overlay-text val-voucher-pi"></div>
-      <div id="render-day-month-year" class="overlay-text val-day-month-year"></div>
-      <div id="render-complementary" class="overlay-text val-complementary"></div>
-      <div id="render-customer-payment-id" class="overlay-text val-customer-payment-id"></div>
-    </div>
-  </div>
-</div>
+      document.getElementById('out-title').innerText = titleVal || '';
+      document.getElementById('out-name').innerText = nameVal ? `Recipient: ${nameVal}` : 'Recipient: ---';
+      document.getElementById('out-code').innerText = codeVal ? `Code: ${codeVal}` : 'Code: ---';
+      document.getElementById('out-date').innerText = dateVal ? `Valid Until: ${dateVal}` : 'Valid Until: ---';
+    }
 
-<script src="app.js"></script>
+    // PDF / Print Trigger
+    function executePrint() {
+      window.print();
+    }
+  </script>
 </body>
 </html>
