@@ -1,53 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barcelona Partner Ecosystem | Clandestino Kitchen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Metadata -->
+    <title>Barcelona Partner Ecosystem | Clandestino Kitchen & JoEs TaBLe</title>
+    <meta name="title" content="Barcelona Partner Ecosystem | Clandestino Kitchen & JoEs TaBLe">
+    <meta name="description" content="Official onboarding portal for independent venues, autónomo chefs, and MICE agencies partnering with CK Events Management & Hospitality Group LLC in Barcelona.">
+    <meta name="keywords" content="JoEs TaBLe, Clandestino Kitchen, Barcelona private dining, venue monetization Barcelona, chef autónomo Barcelona, MICE experiences Barcelona">
+    <meta name="author" content="CK Events Management & Hospitality Group LLC">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://clandestino.kitchen/barcelona">
+    <meta name="theme-color" content="#08080a">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clandestino.kitchen/barcelona">
+    <meta property="og:title" content="Barcelona Partner Ecosystem | Clandestino Kitchen">
+    <meta property="og:description" content="Conceive. Curate. Direct. Deliver. Join our global single-table dining infrastructure in Barcelona.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:site_name" content="Clandestino Kitchen">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://clandestino.kitchen/barcelona">
+    <meta name="twitter:title" content="Barcelona Partner Ecosystem | Clandestino Kitchen">
+    <meta name="twitter:description" content="Onboarding independent venues, culinary talent, and MICE partners for JoEs TaBLe Barcelona.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2308080a'/><path d='M8 8h16v2H8zm0 7h16v2H8zm0 7h10v2H8z' fill='%23ffffff'/></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://clandestino.kitchen/#organization",
+          "name": "CK Events Management & Hospitality Group LLC",
+          "url": "https://clandestino.kitchen",
+          "logo": "https://clandestino.kitchen/assets/logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "30 N Gould St Ste N",
+            "addressLocality": "Sheridan",
+            "addressRegion": "WY",
+            "postalCode": "82801",
+            "addressCountry": "US"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://clandestino.kitchen/barcelona#webpage",
+          "url": "https://clandestino.kitchen/barcelona",
+          "name": "Barcelona Partner Ecosystem | Clandestino Kitchen",
+          "isPartOf": { "@id": "https://clandestino.kitchen/#organization" },
+          "description": "Onboarding portal for venues, chefs, and agencies for JoEs TaBLe in Barcelona."
+        }
+      ]
+    }
+    </script>
+
     <style>
+        /* ------------------------------------------------------------------
+           CSS DESIGN SYSTEM & RESET (Architectural Dark Mode Standard)
+           ------------------------------------------------------------------ */
         :root {
-            --bg-dark: #08080a;
-            --surface-card: #121217;
+            --bg-base: #08080a;
+            --surface-card: #111116;
+            --surface-elevated: #16161d;
             --surface-input: #0a0a0e;
             --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(255, 255, 255, 0.28);
-            --text-main: #f4f4f6;
-            --text-muted: #8e8e9c;
+            --border-medium: rgba(255, 255, 255, 0.16);
+            --border-active: rgba(255, 255, 255, 0.40);
+            
+            --text-primary: #f4f4f6;
+            --text-secondary: #8e8e9c;
+            --text-tertiary: #5a5a66;
             --accent-white: #ffffff;
-            --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Helvetica Neue", sans-serif;
-            --font-mono: "SF Mono", "Roboto Mono", "Courier New", monospace;
+            
+            --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            --font-mono: "SF Mono", "JetBrains Mono", "Roboto Mono", "Courier New", monospace;
+            
+            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
+        *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
             font-family: var(--font-sans);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
-            padding-bottom: 100px;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            padding-bottom: 120px;
+        }
+
+        /* Focus Ring Accessibility */
+        :focus-visible {
+            outline: 2px solid var(--accent-white);
+            outline-offset: 4px;
         }
 
         .container {
-            max-width: 1240px;
+            width: 100%;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
-        /* Navigation Header */
+        /* ------------------------------------------------------------------
+           NAVIGATION HEADER
+           ------------------------------------------------------------------ */
         header {
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 24px 0;
             position: sticky;
             top: 0;
-            background-color: rgba(8, 8, 10, 0.88);
-            backdrop-filter: blur(12px);
-            z-index: 100;
+            z-index: 1000;
+            background-color: rgba(8, 8, 10, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 20px 0;
         }
 
         .nav-inner {
@@ -57,93 +151,120 @@
         }
 
         .brand-logo {
-            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--text-main);
+            color: var(--text-primary);
             text-decoration: none;
+        }
+
+        .brand-logo svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--text-primary);
         }
 
         .nav-tag {
             font-family: var(--font-mono);
             font-size: 0.72rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
 
-        /* Hero Stage with Background Imagery */
+        /* ------------------------------------------------------------------
+           HERO STAGE (Single Table Architectural Showcase)
+           ------------------------------------------------------------------ */
         .hero-stage {
             position: relative;
+            margin-top: 40px;
             border: 1px solid var(--border-subtle);
             border-radius: 4px;
-            margin-top: 32px;
             overflow: hidden;
-            background-image: linear-gradient(180deg, rgba(8, 8, 10, 0.45) 0%, rgba(8, 8, 10, 0.95) 100%), 
-                              url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            padding: 120px 48px 64px;
+            /* High-resolution contextually accurate interior: Architectural long table under ambient focal light */
+            background: linear-gradient(180deg, rgba(8, 8, 10, 0.35) 0%, rgba(8, 8, 10, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            padding: 120px 56px 64px;
         }
 
-        .badge {
-            display: inline-block;
+        .system-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-family: var(--font-mono);
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #d1d1d6;
-            padding: 6px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+            padding: 6px 16px;
+            border: 1px solid var(--border-medium);
             border-radius: 100px;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(8, 8, 10, 0.6);
             backdrop-filter: blur(8px);
-            margin-bottom: 28px;
+            margin-bottom: 32px;
+        }
+
+        .system-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #34c759;
         }
 
         .hero-stage h1 {
-            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            font-size: clamp(2.5rem, 5.2vw, 4.4rem);
             font-weight: 500;
             letter-spacing: -0.03em;
-            line-height: 1.08;
+            line-height: 1.05;
             color: var(--accent-white);
-            max-width: 900px;
-            margin-bottom: 20px;
+            max-width: 920px;
+            margin-bottom: 24px;
         }
 
         .hero-stage p {
-            font-size: 1.15rem;
+            font-size: 1.18rem;
             color: #b0b0bc;
             max-width: 680px;
             line-height: 1.6;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
+            font-weight: 400;
         }
 
-        .hero-stats {
-            display: flex;
-            gap: 40px;
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
             border-top: 1px solid var(--border-subtle);
-            padding-top: 24px;
+            padding-top: 32px;
+        }
+
+        .metric-item {
             font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 0.08em;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
             text-transform: uppercase;
         }
 
-        .hero-stats span {
-            color: var(--accent-white);
+        .metric-item span {
             display: block;
-            font-size: 1.1rem;
-            margin-top: 4px;
             font-family: var(--font-sans);
+            font-size: 1.25rem;
             font-weight: 500;
+            color: var(--text-primary);
+            margin-top: 6px;
+            letter-spacing: -0.01em;
         }
 
-        /* Section Title Bar */
-        .section-bar {
-            margin: 80px 0 32px;
+        /* ------------------------------------------------------------------
+           SECTION HEADERS
+           ------------------------------------------------------------------ */
+        .section-header {
+            margin: 96px 0 32px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
@@ -151,97 +272,108 @@
             padding-bottom: 16px;
         }
 
-        .section-bar h2 {
-            font-size: 0.85rem;
+        .section-header h2 {
+            font-size: 0.82rem;
             font-weight: 600;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: var(--text-secondary);
         }
 
-        /* Visual Identity Grid (Image Showcase) */
-        .visual-grid {
+        /* ------------------------------------------------------------------
+           SHOWCASE CARDS (Contextual Imagery)
+           ------------------------------------------------------------------ */
+        .card-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
 
-        .visual-card {
+        .card {
             background-color: var(--surface-card);
             border: 1px solid var(--border-subtle);
             border-radius: 4px;
             overflow: hidden;
-            transition: border-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
         }
 
-        .visual-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-3px);
+        .card:hover {
+            border-color: var(--border-active);
+            transform: translateY(-4px);
         }
 
-        .img-container {
+        .card-media {
             width: 100%;
-            height: 240px;
+            height: 260px;
             overflow: hidden;
             position: relative;
+            background-color: #000000;
         }
 
-        .img-container img {
+        .card-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.85) contrast(1.05);
-            transition: transform 0.5s ease;
+            filter: brightness(0.88) contrast(1.08);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .visual-card:hover .img-container img {
-            transform: scale(1.05);
+        .card:hover .card-media img {
+            transform: scale(1.06);
         }
 
-        .card-body {
-            padding: 28px 24px;
+        .card-content {
+            padding: 32px 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .card-tag {
+        .card-meta {
             font-family: var(--font-mono);
             font-size: 0.7rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             letter-spacing: 0.12em;
             text-transform: uppercase;
             margin-bottom: 12px;
             display: block;
         }
 
-        .card-body h3 {
-            font-size: 1.25rem;
+        .card-title {
+            font-size: 1.3rem;
             font-weight: 500;
-            color: var(--accent-white);
-            margin-bottom: 10px;
             letter-spacing: -0.01em;
+            color: var(--accent-white);
+            margin-bottom: 12px;
         }
 
-        .card-body p {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            line-height: 1.55;
+        .card-desc {
+            font-size: 0.94rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
-        /* Application Form Section */
+        /* ------------------------------------------------------------------
+           ONBOARDING FORM SECTION
+           ------------------------------------------------------------------ */
         .form-section {
             background-color: var(--surface-card);
             border: 1px solid var(--border-subtle);
             border-radius: 4px;
-            padding: 56px 48px;
+            padding: 64px 56px;
             margin-top: 40px;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            gap: 28px;
         }
 
-        .form-group-full {
+        .col-span-2 {
             grid-column: span 2;
         }
 
@@ -252,86 +384,123 @@
 
         label {
             font-family: var(--font-mono);
-            font-size: 0.72rem;
-            letter-spacing: 0.12em;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 8px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
         }
 
         input, select, textarea {
             background-color: var(--surface-input);
             border: 1px solid var(--border-subtle);
             border-radius: 2px;
-            padding: 14px 16px;
-            color: var(--text-main);
+            padding: 16px 20px;
+            color: var(--text-primary);
             font-family: var(--font-sans);
             font-size: 0.95rem;
-            transition: border-color 0.2s ease;
+            transition: var(--transition-smooth);
             width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238e8e9c' d='M6 8.825L1.175 4 2.238 2.938 6 6.7 9.763 2.938 10.825 4z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            padding-right: 48px;
+        }
+
+        input:hover, select:hover, textarea:hover {
+            border-color: var(--border-medium);
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--accent-white);
+            background-color: #0f0f14;
         }
 
         ::placeholder {
-            color: #4a4a58;
+            color: var(--text-tertiary);
         }
 
         .btn-submit {
             background-color: var(--accent-white);
             color: #000000;
             border: none;
-            padding: 18px 32px;
+            padding: 20px 40px;
+            font-family: var(--font-sans);
             font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             cursor: pointer;
             border-radius: 2px;
-            transition: opacity 0.2s ease;
+            transition: var(--transition-smooth);
             margin-top: 16px;
             width: 100%;
         }
 
         .btn-submit:hover {
-            opacity: 0.88;
+            background-color: #e2e2e8;
+            transform: translateY(-1px);
         }
 
-        /* Footer */
+        /* ------------------------------------------------------------------
+           FOOTER
+           ------------------------------------------------------------------ */
         footer {
-            margin-top: 80px;
+            margin-top: 96px;
             padding-top: 32px;
             border-top: 1px solid var(--border-subtle);
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
+            font-size: 0.72rem;
+            color: var(--text-secondary);
         }
 
-        @media (max-width: 900px) {
-            .visual-grid {
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ------------------------------------------------------------------
+           RESPONSIVE MEDIA QUERIES
+           ------------------------------------------------------------------ */
+        @media (max-width: 1024px) {
+            .card-grid {
                 grid-template-columns: 1fr;
             }
             .hero-stage {
-                padding: 80px 24px 40px;
+                padding: 80px 32px 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
             }
             .form-grid {
                 grid-template-columns: 1fr;
             }
-            .form-group-full {
+            .col-span-2 {
                 grid-column: span 1;
             }
             .form-section {
-                padding: 32px 20px;
+                padding: 40px 24px;
             }
             footer {
                 flex-direction: column;
-                gap: 12px;
+                gap: 16px;
                 align-items: flex-start;
             }
         }
@@ -339,122 +508,163 @@
 </head>
 <body>
 
-    <div class="container">
-        <!-- Navigation Header -->
-        <header>
+    <!-- Header -->
+    <header role="banner">
+        <div class="container">
             <div class="nav-inner">
-                <a href="https://clandestino.kitchen" class="brand-logo">Clandestino Kitchen</a>
-                <span class="nav-tag">[ BCN Portfolio Expansion 2026 ]</span>
+                <a href="https://clandestino.kitchen" class="brand-logo" aria-label="Clandestino Kitchen Homepage">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <span>Clandestino Kitchen</span>
+                </a>
+                <span class="nav-tag">[ BCN PORTFOLIO EXPANSION 2026 ]</span>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Hero Stage with Imagery -->
-        <section class="hero-stage">
-            <div class="badge">JoEs TaBLe Format // Barcelona Launch</div>
+    <!-- Main Content -->
+    <main class="container" id="main-content" role="main">
+
+        <!-- Hero Stage -->
+        <section class="hero-stage" aria-label="Hero Section">
+            <div class="system-badge">
+                <span class="system-badge-dot" aria-hidden="true"></span>
+                JoEs TaBLe Format // Barcelona Onboarding
+            </div>
             <h1>Where gastronomy meets deliberate architectural space.</h1>
-            <p>We conceive, manage, and scale high-yield group dining experiences globally. We are building a localized ecosystem in Barcelona across Venues, Culinary Partners, and Agencies.</p>
+            <p>We conceive, manage, and scale high-yield single-table group dining events globally. We are building a localized ecosystem in Barcelona across Venues, Culinary Partners, and MICE Distribution Agencies.</p>
             
-            <div class="hero-stats">
-                <div>Capacity <span>12–30 Pax</span></div>
-                <div>Execution <span>100% Turnkey</span></div>
-                <div>Market <span>Barcelona, ES</span></div>
+            <div class="hero-metrics">
+                <div class="metric-item">Format Capacity <span>12–30 Guests</span></div>
+                <div class="metric-item">Operational Model <span>100% Turnkey</span></div>
+                <div class="metric-item">Active Jurisdiction <span>Barcelona, ES</span></div>
             </div>
         </section>
 
-        <!-- Visual Identity Showcase -->
-        <div class="section-bar">
-            <h2>01 / The JoEs TaBLe Visual Standard</h2>
-            <span class="nav-tag">Architectural & Culinary Portfolio</span>
-        </div>
-
-        <div class="visual-grid">
-            <!-- Card 1: Venues -->
-            <div class="visual-card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop" alt="Barcelona Architectural Venue Space">
-                </div>
-                <div class="card-body">
-                    <span class="card-tag">01 / Independent Venues</span>
-                    <h3>Monetize Off-Peak Space</h3>
-                    <p>Industrial lofts in Poblenou, modernist salons in Eixample, and private ateliers. We supply guest acquisition, production, and high-spending clientele.</p>
-                </div>
+        <!-- Section 01: Visual Identity & Verticals -->
+        <section aria-labelledby="section-01-title">
+            <div class="section-header">
+                <h2 id="section-01-title">01 / The JoEs TaBLe Visual Standard</h2>
+                <span class="nav-tag">Portfolio & Architecture</span>
             </div>
 
-            <!-- Card 2: Chefs -->
-            <div class="visual-card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=1200&auto=format&fit=crop" alt="Culinary Partner Fine Dining Plating">
-                </div>
-                <div class="card-body">
-                    <span class="card-tag">02 / Culinary Partners</span>
-                    <h3>Zero Overhead Execution</h3>
-                    <p>Designed for active <i>autónomo</i> chefs and caterers in Barcelona. Deliver narrative multi-course tasting menus without restaurant lease commitments.</p>
-                </div>
+            <div class="card-grid">
+                <!-- Card 1: Venues -->
+                <article class="card">
+                    <div class="card-media">
+                        <!-- Context: Dark minimalist industrial gallery loft in Barcelona -->
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Minimalist architectural studio venue in Poblenou Barcelona" 
+                             loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <span class="card-meta">01 / Independent Venues</span>
+                            <h3 class="card-title">Monetize Off-Peak Space</h3>
+                            <p class="card-desc">Industrial lofts in Poblenou, modernist salons in Eixample, and private ateliers. We supply guest acquisition, production, and high-spending clientele during slow calendar windows.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Culinary -->
+                <article class="card">
+                    <div class="card-media">
+                        <!-- Context: Precision fine dining chef plating under dark focal light -->
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Chef plating fine dining course under ambient lighting" 
+                             loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <span class="card-meta">02 / Culinary Partners</span>
+                            <h3 class="card-title">Zero Overhead Execution</h3>
+                            <p class="card-desc">Tailored for registered <i>autónomo</i> chefs and caterers in Barcelona. Deliver narrative multi-course tasting menus for high-yield corporate groups without brick-and-mortar overhead.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Agencies -->
+                <article class="card">
+                    <div class="card-media">
+                        <!-- Context: Luxury single-table group dining experience -->
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Exclusive corporate group dining experience around a single table" 
+                             loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <span class="card-meta">03 / Agencies & DMCs</span>
+                            <h3 class="card-title">Turnkey MICE Activations</h3>
+                            <p class="card-desc">Direct access to non-public architectural spaces and bespoke chef menus for high-stakes corporate programs. Protected agency commissions (10–15%) and net rates.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 02: Onboarding Form -->
+        <section aria-labelledby="section-02-title">
+            <div class="section-header">
+                <h2 id="section-02-title">02 / Application Intake</h2>
+                <span class="nav-tag">Barcelona 2026 Pipeline</span>
             </div>
 
-            <!-- Card 3: Agencies -->
-            <div class="visual-card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Luxury Corporate Group Dining Experience">
-                </div>
-                <div class="card-body">
-                    <span class="card-tag">03 / Agencies & DMCs</span>
-                    <h3>Turnkey MICE Activations</h3>
-                    <p>Exclusive access to private, non-public architectural spaces and curated chef menus for corporate incentives and VIP concierge fulfillment.</p>
-                </div>
+            <div class="form-section">
+                <form action="#" method="POST" aria-label="Barcelona Partner Application Form">
+                    <div class="form-grid">
+                        <div class="form-group col-span-2">
+                            <label for="profile-type">Primary Profile Type *</label>
+                            <select id="profile-type" name="profile_type" required aria-required="true">
+                                <option value="" disabled selected>Select application pathway...</option>
+                                <option value="venue">Independent Venue / Space Owner (Barcelona)</option>
+                                <option value="chef">Independent Chef / Caterer (Active Autónomo)</option>
+                                <option value="agency">Agency / DMC / Hotel Concierge Desk</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="full-name">Full Name or Primary Contact *</label>
+                            <input type="text" id="full-name" name="full_name" placeholder="e.g. Marc Vila" required aria-required="true" autocomplete="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Corporate Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="m.vila@company.com" required aria-required="true" autocomplete="email">
+                        </div>
+
+                        <div class="form-group col-span-2">
+                            <label for="portfolio">Portfolio URL or Instagram Handle *</label>
+                            <input type="text" id="portfolio" name="portfolio" placeholder="https://instagram.com/yourbrand or website URL" required aria-required="true">
+                        </div>
+
+                        <div class="form-group col-span-2">
+                            <label for="details">Operational Overview & Licensing Status *</label>
+                            <textarea id="details" name="details" rows="5" placeholder="For Venues: seating capacity (12-30 pax), neighborhood, and Licencia C3 status. For Chefs: Autónomo tax status / IAE code. For Agencies: target group size." required aria-required="true"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Barcelona Application</button>
+                </form>
             </div>
-        </div>
+        </section>
 
-        <!-- Onboarding Intake Form -->
-        <div class="section-bar">
-            <h2>02 / Application Intake</h2>
-            <span class="nav-tag">Barcelona 2026 Pipeline</span>
-        </div>
+    </main>
 
-        <div class="form-section">
-            <form action="#" method="POST">
-                <div class="form-grid">
-                    <div class="form-group form-group-full">
-                        <label for="profile-type">Primary Profile Type</label>
-                        <select id="profile-type" name="profile_type" required>
-                            <option value="" disabled selected>Select application pathway...</option>
-                            <option value="venue">Independent Venue / Space Curator (Barcelona)</option>
-                            <option value="chef">Independent Chef / Caterer (Active Autónomo)</option>
-                            <option value="agency">Agency / DMC / Hotel Concierge Desk</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="full-name">Full Name or Contact Person</label>
-                        <input type="text" id="full-name" name="full_name" placeholder="e.g. Marc Vila" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Corporate Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="m.vila@domain.com" required>
-                    </div>
-
-                    <div class="form-group form-group-full">
-                        <label for="portfolio">Portfolio URL or Instagram Handle</label>
-                        <input type="text" id="portfolio" name="portfolio" placeholder="https://instagram.com/yourbrand or website" required>
-                    </div>
-
-                    <div class="form-group form-group-full">
-                        <label for="details">Operational Overview / Capacity / Location</label>
-                        <textarea id="details" name="details" rows="4" placeholder="Specify space capacity (12-30 pax), neighborhood (e.g. Eixample / Poblenou), or active licensing/autónomo status..."></textarea>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-submit">Submit Barcelona Application</button>
-            </form>
-        </div>
-
-        <!-- Footer Bar -->
-        <footer>
+    <!-- Footer -->
+    <footer role="contentinfo" class="container">
+        <div>
             <span>CK Events Management & Hospitality Group LLC</span>
-            <span>https://clandestino.kitchen</span>
-        </footer>
-    </div>
+            <span style="display: block; color: var(--text-tertiary); margin-top: 4px;">Sheridan, WY // Barcelona, ES</span>
+        </div>
+        <div>
+            <a href="https://clandestino.kitchen/terms" target="_blank" rel="noopener">Terms of Service</a>
+            <span style="margin: 0 8px;">|</span>
+            <a href="https://clandestino.kitchen/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+            <span style="margin: 0 8px;">|</span>
+            <span>© 2026 Clandestino Kitchen</span>
+        </div>
+    </footer>
 
 </body>
 </html>
