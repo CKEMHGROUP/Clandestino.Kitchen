@@ -1,6 +1,100 @@
-<iframe 
-  src="https://script.google.com/macros/s/AKfycbwLnhpBQwl070dHFkp9l1RF96H079aho_RzdP79V-MS01gyBEKGJuFUT8BQPHX-C9qqOQ/exec" 
-  width="100%" 
-  height="700px" 
-  style="border:none;">
-</iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Partner Profile Viewer</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 40px; background: #f8f9fa; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; }
+    select { width: 100%; padding: 12px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc; background: #fff; margin-bottom: 20px; }
+    .card { background: #fff; border-radius: 8px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: none; }
+    .card h3 { margin-top: 0; color: #111; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+    .field { margin-bottom: 12px; }
+    .label { font-weight: bold; color: #666; font-size: 13px; text-transform: uppercase; }
+    .value { font-size: 16px; margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Partner Profile Viewer</h2>
+  
+  <select id="partnerSelect" onchange="showPartner()">
+    <option value="">-- Select a Partner --</option>
+  </select>
+
+  <div id="profileCard" class="card">
+    <h3 id="cardTitle">Partner Profile</h3>
+    <div id="cardFields"></div>
+  </div>
+</div>
+
+<script>
+  // REPLACE THIS WITH YOUR GOOGLE SHEET ID (found in your sheet URL between /d/ and /edit)
+  const SHEET_ID = '1_VNkJ0NfeYe9wXsiH8RwhQWBH7xkg6WfY1qAisb8imY';
+  const SHEET_TAB_NAME = 'Form Responses';
+
+  const gVizUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_TAB_NAME)}`;
+
+  let parsedRows = [];
+  let headers = [];
+
+  // Fetch live sheet data directly from GitHub Pages
+  fetch(gVizUrl)
+    .then(res => res.text())
+    .then(text => {
+      // Clean Google's gviz wrapper code to parse raw JSON
+      const json = JSON.parse(text.substring(47, text.length - 2));
+      
+      headers = json.table.cols.map(col => col ? col.label : '');
+      const rawRows = json.table.rows;
+
+      const select = document.getElementById('partnerSelect');
+
+      rawRows.forEach((row, index) => {
+        const rowData = row.c.map(cell => cell ? (cell.v || cell.f || '') : '');
+        parsedRows.push(rowData);
+
+        // Assuming Column B (Index 1) holds Partner Legal Name/NIF
+        const partnerName = rowData[1] || `Partner #${index + 1}`;
+        
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = partnerName;
+        select.appendChild(option);
+      });
+    })
+    .catch(err => console.error("Error loading sheet data:", err));
+
+  function showPartner() {
+    const selectedIndex = document.getElementById('partnerSelect').value;
+    const card = document.getElementById('profileCard');
+    const fieldsDiv = document.getElementById('cardFields');
+    
+    if (selectedIndex === "") {
+      card.style.display = "none";
+      return;
+    }
+
+    const row = parsedRows[selectedIndex];
+    fieldsDiv.innerHTML = "";
+
+    // Loop through columns starting from index 1 (skipping Timestamp in Column A)
+    for (let i = 1; i < row.length; i++) {
+      if (row[i]) {
+        const fieldEl = document.createElement('div');
+        fieldEl.className = 'field';
+        fieldEl.innerHTML = `
+          <div class="label">${headers[i] || 'Field ' + i}</div>
+          <div class="value">${row[i]}</div>
+        `;
+        fieldsDiv.appendChild(fieldEl);
+      }
+    }
+
+    card.style.display = "block";
+  }
+</script>
+
+</body>
+</html>
