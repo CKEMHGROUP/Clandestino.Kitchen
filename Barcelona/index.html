@@ -1,207 +1,1693 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Partner Onboarding Questionnaire</title>
-  <style>
-    :root {
-      --primary: #2563eb;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --border: #cbd5e1;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Metadata -->
+    <title>Barcelona Partner Ecosystem | Clandestino Kitchen & JoEs TaBLe</title>
+    <meta name="title" content="Barcelona Partner Ecosystem | Clandestino Kitchen & JoEs TaBLe">
+    <meta name="description" content="Official onboarding portal and payment details for independent venues, autónomo chefs, and MICE agencies partnering with CK Events Management & Hospitality Group LLC in Barcelona.">
+    <meta name="keywords" content="JoEs TaBLe, Clandestino Kitchen, Barcelona private dining, venue monetization Barcelona, chef autónomo Barcelona, MICE experiences Barcelona">
+    <meta name="author" content="CK Events Management & Hospitality Group LLC">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://clandestino.kitchen/barcelona">
+    <meta name="theme-color" content="#08080a">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clandestino.kitchen/barcelona">
+    <meta property="og:title" content="Barcelona Partner Ecosystem | Clandestino Kitchen">
+    <meta property="og:description" content="Conceive. Curate. Direct. Deliver. Join our global single-table dining infrastructure in Barcelona.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:site_name" content="Clandestino Kitchen">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://clandestino.kitchen/barcelona">
+    <meta name="twitter:title" content="Barcelona Partner Ecosystem | Clandestino Kitchen">
+    <meta name="twitter:description" content="Onboarding independent venues, culinary talent, and MICE partners for JoEs TaBLe Barcelona.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2308080a'/><path d='M8 8h16v2H8zm0 7h16v2H8zm0 7h10v2H8z' fill='%23ffffff'/></svg>">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://clandestino.kitchen/#organization",
+          "name": "CK Events Management & Hospitality Group LLC",
+          "url": "https://clandestino.kitchen",
+          "logo": "https://clandestino.kitchen/assets/logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "30 N Gould St Ste N",
+            "addressLocality": "Sheridan",
+            "addressRegion": "WY",
+            "postalCode": "82801",
+            "addressCountry": "US"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://clandestino.kitchen/barcelona#webpage",
+          "url": "https://clandestino.kitchen/barcelona",
+          "name": "Barcelona Partner Ecosystem | Clandestino Kitchen",
+          "isPartOf": { "@id": "https://clandestino.kitchen/#organization" },
+          "description": "Onboarding portal for venues, chefs, and agencies for JoEs TaBLe in Barcelona."
+        }
+      ]
     }
+    </script>
 
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      display: flex;
-      justify-content: center;
-      padding: 2rem 1rem;
-      margin: 0;
-    }
+    <style>
+        :root {
+            --bg-base: #08080a;
+            --surface-card: #111116;
+            --surface-elevated: #16161d;
+            --surface-input: #0a0a0e;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-medium: rgba(255, 255, 255, 0.16);
+            --border-active: rgba(255, 255, 255, 0.40);
+            
+            --text-primary: #f4f4f6;
+            --text-secondary: #8e8e9c;
+            --text-tertiary: #5a5a66;
+            --accent-white: #ffffff;
+            --gold: #b68e38;
+            --green: #233c2f;
+            --error: #e54d42;
 
-    .container {
-      background: var(--card-bg);
-      max-width: 650px;
-      width: 100%;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-    }
+            --font-sans: "Jost", -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+            --font-serif: "Libre Baskerville", Georgia, serif;
+            --font-mono: "IBM Plex Mono", "SF Mono", "JetBrains Mono", monospace;
+            
+            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-    h1 { margin-top: 0; color: #1e293b; }
-    .subtitle { color: #64748b; margin-bottom: 2rem; font-size: 0.95rem; }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .test-notice {
-      background: #fef3c7;
-      border: 1px solid #f59e0b;
-      color: #92400e;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      margin-bottom: 1.5rem;
-      font-size: 0.875rem;
-    }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            -webkit-text-size-adjust: 100%;
+        }
 
-    .section-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #e2e8f0;
-      color: var(--primary);
-    }
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            padding-bottom: 120px;
+        }
 
-    .form-group {
-      margin-bottom: 1.25rem;
-      display: flex;
-      flex-direction: column;
-    }
+        :focus-visible {
+            outline: 2px solid var(--accent-white);
+            outline-offset: 4px;
+        }
 
-    label {
-      font-weight: 500;
-      font-size: 0.9rem;
-      margin-bottom: 0.4rem;
-    }
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
 
-    input, select, textarea {
-      padding: 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 1rem;
-    }
+        /* NAVIGATION HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(8, 8, 10, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 20px 0;
+        }
 
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-    }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
 
-    button {
-      width: 100%;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.85rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 1.5rem;
-    }
+        .brand-logo svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--text-primary);
+        }
 
-    button:hover { background-color: #1d4ed8; }
-  </style>
+        .nav-tag {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* HERO STAGE */
+        .hero-stage {
+            position: relative;
+            margin-top: 40px;
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(8, 8, 10, 0.35) 0%, rgba(8, 8, 10, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            padding: 120px 56px 64px;
+        }
+
+        .system-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            padding: 6px 16px;
+            border: 1px solid var(--border-medium);
+            border-radius: 100px;
+            background-color: rgba(8, 8, 10, 0.6);
+            backdrop-filter: blur(8px);
+            margin-bottom: 32px;
+        }
+
+        .system-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #34c759;
+        }
+
+        .hero-stage h1 {
+            font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            color: var(--accent-white);
+            max-width: 920px;
+            margin-bottom: 24px;
+        }
+
+        .hero-stage p {
+            font-size: 1.18rem;
+            color: #b0b0bc;
+            max-width: 680px;
+            line-height: 1.6;
+            margin-bottom: 48px;
+            font-weight: 400;
+        }
+
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 32px;
+        }
+
+        .metric-item {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .metric-item span {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-top: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            margin: 96px 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        /* SHOWCASE CARDS */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        .card:hover {
+            border-color: var(--border-active);
+            transform: translateY(-4px);
+        }
+
+        .card-media {
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            position: relative;
+            background-color: #000000;
+        }
+
+        .card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.88) contrast(1.08);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card:hover .card-media img {
+            transform: scale(1.06);
+        }
+
+        .card-content {
+            padding: 32px 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-meta {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--accent-white);
+            margin-bottom: 12px;
+        }
+
+        .card-desc {
+            font-size: 0.94rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* MULTI-STEP ONBOARDING FORM SECTION */
+        .form-section {
+            background-color: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            padding: 64px 56px;
+            margin-top: 40px;
+        }
+
+        .progress-label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .progress-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 48px;
+        }
+
+        .progress-step {
+            flex: 1;
+            height: 3px;
+            background: var(--border-subtle);
+            transition: background 0.3s;
+        }
+
+        .progress-step.active {
+            background: var(--accent-white);
+        }
+
+        .step { display: none; }
+        .step.visible { display: block; }
+
+        .step-overline {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .step h3 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 400;
+            color: var(--accent-white);
+            margin-bottom: 12px;
+        }
+
+        .step-intro {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 36px;
+        }
+
+        legend {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            width: 100%;
+            display: block;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .col-span-2 { grid-column: span 2; }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        label .req { color: var(--gold); margin-left: 2px; }
+        label .opt { color: var(--text-tertiary); text-transform: none; letter-spacing: normal; font-size: 0.8rem; }
+
+        input, select, textarea {
+            background-color: var(--surface-input);
+            border: 1px solid var(--border-subtle);
+            border-radius: 2px;
+            padding: 16px 20px;
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238e8e9c' d='M6 8.825L1.175 4 2.238 2.938 6 6.7 9.763 2.938 10.825 4z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            padding-right: 48px;
+        }
+
+        input:hover, select:hover, textarea:hover { border-color: var(--border-medium); }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent-white); background-color: #0f0f14; }
+
+        .hint { font-size: 0.78rem; color: var(--text-tertiary); margin-top: 6px; }
+        .error-msg { font-size: 0.78rem; color: var(--error); margin-top: 6px; display: none; }
+        .field.has-error input, .field.has-error select, .field.has-error textarea { border-color: var(--error); }
+        .field.has-error .error-msg { display: block; }
+
+        /* AGREEMENTS & GUIDANCE BLOCKS */
+        .agreement-block {
+            background: var(--surface-elevated);
+            border: 1px solid var(--border-subtle);
+            padding: 28px;
+            margin-bottom: 24px;
+            border-radius: 2px;
+        }
+
+        .agreement-block h4 {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--accent-white);
+            margin-bottom: 6px;
+        }
+
+        .agreement-type-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: block;
+        }
+
+        .agreement-scroll {
+            max-height: 260px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding-right: 12px;
+        }
+
+        .agreement-scroll::-webkit-scrollbar { width: 4px; }
+        .agreement-scroll::-webkit-scrollbar-thumb { background: var(--border-medium); }
+
+        .agreement-text {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .agreement-text p { margin-bottom: 12px; }
+
+        .agreement-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-white);
+            text-decoration: none;
+            border: 1px solid var(--border-medium);
+            padding: 8px 16px;
+            margin-bottom: 20px;
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .agreement-download:hover { background: var(--accent-white); color: #000000; }
+
+        .checkbox-field {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .checkbox-field input[type="checkbox"] {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            accent-color: var(--accent-white);
+            cursor: pointer;
+        }
+
+        .checkbox-field label {
+            font-size: 0.9rem;
+            text-transform: none;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            letter-spacing: normal;
+        }
+
+        .checkbox-field label a { color: var(--accent-white); text-decoration: underline; }
+
+        .info-box {
+            background: rgba(182, 142, 56, 0.08);
+            border-left: 2px solid var(--gold);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+
+        .info-box p { font-size: 0.88rem; color: #d0d0dc; line-height: 1.65; margin-bottom: 8px; }
+        .info-box p:last-child { margin-bottom: 0; }
+        .info-box strong { font-weight: 500; color: var(--accent-white); }
+
+        /* INVOICE GUIDANCE ACCORDIONS */
+        .invoice-guidance {
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 16px;
+            background: var(--surface-card);
+        }
+
+        .invoice-guidance-header {
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--surface-elevated);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            border: none;
+            text-align: left;
+        }
+
+        .invoice-guidance-header span {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .toggle-icon { font-size: 1.2rem; color: var(--text-secondary); transition: transform 0.2s; }
+        .invoice-guidance-header.open .toggle-icon { transform: rotate(45deg); }
+
+        .invoice-guidance-body { padding: 20px; display: none; }
+        .invoice-guidance-body.open { display: block; }
+
+        .invoice-example {
+            background: var(--surface-input);
+            border: 1px dashed var(--border-medium);
+            padding: 16px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .invoice-example .ph { color: var(--gold); }
+        .invoice-example .lk { color: var(--accent-white); font-weight: 500; }
+
+        /* BANK & PAYMENT DETAILS COMPONENT */
+        .bank-details-card {
+            background: linear-gradient(135deg, #16161d 0%, #0a0a0e 100%);
+            border: 1px solid var(--border-medium);
+            border-radius: 4px;
+            padding: 32px;
+            margin-top: 24px;
+            margin-bottom: 32px;
+        }
+
+        .bank-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .bank-header h4 {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .bank-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .bank-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bank-item .label {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 4px;
+        }
+
+        .bank-item .value {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            word-break: break-all;
+        }
+
+        /* BUTTONS & FOOTER */
+        .btn-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .btn-submit, .btn-primary {
+            background-color: var(--accent-white);
+            color: #000000;
+            border: none;
+            padding: 18px 36px;
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-submit:hover:not(:disabled), .btn-primary:hover:not(:disabled) {
+            background-color: #e2e2e8;
+            transform: translateY(-1px);
+        }
+
+        .btn-submit:disabled, .btn-primary:disabled {
+            background-color: var(--border-subtle);
+            color: var(--text-tertiary);
+            cursor: not-allowed;
+        }
+
+        .btn-back {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+            padding: 18px 36px;
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-back:hover { border-color: var(--border-active); color: var(--text-primary); }
+
+        .step-counter {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            margin-left: auto;
+        }
+
+        .success-block {
+            text-align: center;
+            padding: 64px 0;
+        }
+
+        .success-icon { font-size: 3rem; color: #34c759; margin-bottom: 16px; }
+
+        footer {
+            margin-top: 96px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+        }
+
+        footer a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text-primary); }
+
+        /* MODALS */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(8, 8, 10, 0.85);
+            z-index: 2000;
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.open { display: flex; }
+
+        .modal-frame {
+            background: var(--surface-card);
+            border: 1px solid var(--border-medium);
+            width: 92%;
+            max-width: 780px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--surface-elevated);
+        }
+
+        .modal-title {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .modal-close {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--accent-white);
+            color: #000;
+            border: none;
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+
+        .modal-body { flex: 1; overflow: hidden; }
+        .modal-body iframe { width: 100%; height: 100%; border: none; }
+
+        @media (max-width: 1024px) {
+            .card-grid { grid-template-columns: 1fr; }
+            .hero-stage { padding: 80px 32px 48px; }
+            .form-section { padding: 40px 24px; }
+            .field-grid, .bank-grid { grid-template-columns: 1fr; }
+            .col-span-2 { grid-column: span 1; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            footer { flex-direction: column; gap: 16px; align-items: flex-start; }
+            .btn-row { flex-direction: column; align-items: stretch; }
+            .step-counter { text-align: center; margin-left: 0; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Partner Onboarding</h1>
-  <p class="subtitle">Please complete your details below to finalize your partner setup.</p>
-  
-  <div class="test-notice">
-    ⚡ <strong>Testing Mode Active:</strong> Entering <code>admin</code> into any field will automatically pass validation for testing.
-  </div>
+    <!-- Header -->
+    <header role="banner">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="https://clandestino.kitchen" class="brand-logo" aria-label="Clandestino Kitchen Homepage">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <span>Clandestino Kitchen</span>
+                </a>
+                <span class="nav-tag">[ BCN PORTFOLIO EXPANSION 2026 ]</span>
+            </div>
+        </div>
+    </header>
 
-  <form id="onboardingForm" onsubmit="handleSubmit(event)">
-    
-    <!-- Partner Contact Info -->
-    <div class="section-title">1. Company & Contact Details</div>
-    
-    <div class="form-group">
-      <label for="companyName">Company / Legal Entity Name *</label>
-      <input type="text" id="companyName" required>
+    <!-- Main Content -->
+    <main class="container" id="main-content" role="main">
+
+        <!-- Hero Stage -->
+        <section class="hero-stage" aria-label="Hero Section">
+            <div class="system-badge">
+                <span class="system-badge-dot" aria-hidden="true"></span>
+                JoEs TaBLe Format // Barcelona Onboarding
+            </div>
+            <h1>Where gastronomy meets deliberate architectural space.</h1>
+            <p>We conceive, manage, and scale high-yield single-table group dining events globally. We are building a localized ecosystem in Barcelona across Venues, Culinary Partners, and MICE Distribution Agencies.</p>
+            
+            <div class="hero-metrics">
+                <div class="metric-item">Format Capacity <span>12–30 Guests</span></div>
+                <div class="metric-item">Operational Model <span>100% Turnkey</span></div>
+                <div class="metric-item">Active Jurisdiction <span>Barcelona, ES</span></div>
+            </div>
+        </section>
+
+        <!-- Section 01: Visual Identity & Verticals -->
+        <section aria-labelledby="section-01-title">
+            <div class="section-header">
+                <h2 id="section-01-title">01 / The JoEs TaBLe Visual Standard</h2>
+                <span class="nav-tag">Portfolio & Architecture</span>
+            </div>
+
+            <div class="card-grid">
+                <!-- Card 1: Venues -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Minimalist architectural studio venue in Poblenou Barcelona" 
+                             loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <span class="card-meta">01 / Independent Venues</span>
+                            <h3 class="card-title">Monetize Off-Peak Space</h3>
+                            <p class="card-desc">Industrial lofts in Poblenou, modernist salons in Eixample, and private ateliers. We supply guest acquisition, production, and high-spending clientele during slow calendar windows.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Culinary -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Chef plating fine dining course under ambient lighting" 
+                             loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <span class="card-meta">02 / Culinary Partners</span>
+                            <h3 class="card-title">Zero Overhead Execution</h3>
+                            <p class="card-desc">Tailored for registered <i>autónomo</i> chefs and caterers in Barcelona. Deliver narrative multi-course tasting menus for high-yield corporate groups without brick-and-mortar overhead.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Agencies -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Exclusive corporate group dining experience around a single table" 
+                             loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <span class="card-meta">03 / Agencies & DMCs</span>
+                            <h3 class="card-title">Turnkey MICE Activations</h3>
+                            <p class="card-desc">Direct access to non-public architectural spaces and bespoke chef menus for high-stakes corporate programs. Protected agency commissions (10–15%) and net rates.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 02: Integrated 4-Step Partner Onboarding Form -->
+        <section aria-labelledby="section-02-title">
+            <div class="section-header">
+                <h2 id="section-02-title">02 / Partner Intake & Agreement Framework</h2>
+                <span class="nav-tag">Barcelona 2026 Pipeline</span>
+            </div>
+
+            <div class="form-section">
+                <p class="progress-label" id="progress-label">Step 1 of 4</p>
+                <div class="progress-bar">
+                    <div class="progress-step active" id="prog-1"></div>
+                    <div class="progress-step" id="prog-2"></div>
+                    <div class="progress-step" id="prog-3"></div>
+                    <div class="progress-step" id="prog-4"></div>
+                </div>
+
+                <form id="onboarding-form" onsubmit="return false;">
+                    <!-- STEP 1: IDENTITY -->
+                    <div class="step visible" id="step-1">
+                        <p class="step-overline">Barcelona Onboarding</p>
+                        <h3>Legal & Entity Details</h3>
+                        <p class="step-intro">We use this information to set up your Barcelona partner file, issue official Service Orders, and ensure all payments are legally compliance-checked. Required fields marked with <span style="color:var(--gold);">*</span>.</p>
+
+                        <fieldset>
+                            <legend>Legal Identity</legend>
+                            <div class="field-grid">
+                                <div class="field" id="f-legal-name">
+                                    <label for="legal-name">Full legal name <span class="req">*</span></label>
+                                    <input type="text" id="legal-name" placeholder="As registered with Agencia Tributaria / Tax Authority">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field">
+                                    <label for="trading-name">Trading name <span class="opt">(if different)</span></label>
+                                    <input type="text" id="trading-name" placeholder="Brand / Commercial Name">
+                                </div>
+                                <div class="field" id="f-nif">
+                                    <label for="nif">Tax identification number (NIF / NIE / VAT) <span class="req">*</span></label>
+                                    <input type="text" id="nif" placeholder="e.g. DNI/NIE (Spain), VAT ID, or EIN">
+                                    <div class="hint">Spanish autónomos: DNI/NIE. EU/UK: VAT ID. US: EIN.</div>
+                                    <div class="error-msg">Required — must appear on all issued invoices</div>
+                                </div>
+                                <div class="field" id="f-legal-form">
+                                    <label for="legal-form">Legal form <span class="req">*</span></label>
+                                    <select id="legal-form">
+                                        <option value="">Select structure...</option>
+                                        <option>Autónomo (Spain)</option>
+                                        <option>Sociedad Limitada — SL (Spain)</option>
+                                        <option>Sole trader (UK)</option>
+                                        <option>Limited company (UK)</option>
+                                        <option>LLC (USA)</option>
+                                        <option>GmbH (Germany)</option>
+                                        <option>SARL (France)</option>
+                                        <option>Other Entity</option>
+                                    </select>
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Registered Address</legend>
+                            <div class="field" id="f-address">
+                                <label for="address">Street address <span class="req">*</span></label>
+                                <input type="text" id="address" placeholder="e.g. Carrer de Pere IV, 120">
+                                <div class="error-msg">Required</div>
+                            </div>
+                            <div class="field-grid">
+                                <div class="field" id="f-city">
+                                    <label for="city">City <span class="req">*</span></label>
+                                    <input type="text" id="city" value="Barcelona">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-postcode">
+                                    <label for="postcode">Postcode <span class="req">*</span></label>
+                                    <input type="text" id="postcode" placeholder="08018">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                            <div class="field" id="f-country">
+                                <label for="country">Country <span class="req">*</span></label>
+                                <input type="text" id="country" value="Spain">
+                                <div class="error-msg">Required</div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Primary Contact</legend>
+                            <div class="field-grid">
+                                <div class="field" id="f-contact-name">
+                                    <label for="contact-name">Contact Person <span class="req">*</span></label>
+                                    <input type="text" id="contact-name" placeholder="Marc Vila">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-email">
+                                    <label for="email">Corporate Email Address <span class="req">*</span></label>
+                                    <input type="email" id="email" placeholder="m.vila@company.com">
+                                    <div class="error-msg">Valid corporate email required</div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="website">Portfolio URL / Website / Instagram <span class="opt">(optional)</span></label>
+                                <input type="url" id="website" placeholder="https://instagram.com/yourbrand">
+                            </div>
+                        </fieldset>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-primary" onclick="goTo(2)">Continue to Capability</button>
+                            <span class="step-counter">1 / 4</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: CAPABILITY -->
+                    <div class="step" id="step-2">
+                        <p class="step-overline">Barcelona Onboarding</p>
+                        <h3>Capability & Operational Profile</h3>
+                        <p class="step-intro">Select your pathway carefully. Your profile type determines which contractual agreement applies to your engagements in Step 3.</p>
+
+                        <fieldset>
+                            <legend>Partner Pathway & Services</legend>
+                            <div class="field" id="f-partner-type">
+                                <label for="partner-type">Primary Partner Profile Type <span class="req">*</span></label>
+                                <select id="partner-type">
+                                    <option value="">Select application pathway...</option>
+                                    <option value="chef">Culinary professional — Independent Chef (Autónomo or equivalent)</option>
+                                    <option value="venue">Independent Venue / Space Owner (Barcelona)</option>
+                                    <option value="agency">Agency / DMC / Event Production Agency</option>
+                                    <option value="catering">Catering & Logistics Operator</option>
+                                    <option value="supplier">Producer / Culinary Supplier</option>
+                                    <option value="other">Other Partner</option>
+                                </select>
+                                <div class="error-msg">Required</div>
+                            </div>
+                            <div class="field" id="f-services">
+                                <label for="services">Operational Description & Scope <span class="req">*</span></label>
+                                <textarea id="services" rows="4" placeholder="For Venues: seating capacity (12-30 pax), neighborhood, and Licencia C3 status. For Chefs: Autónomo tax status / IAE code. For Agencies: target group size."></textarea>
+                                <div class="error-msg">Required (minimum 10 characters)</div>
+                            </div>
+                            <div class="field-grid">
+                                <div class="field" id="f-locations">
+                                    <label for="locations">Locations / Neighborhoods Served <span class="req">*</span></label>
+                                    <input type="text" id="locations" placeholder="e.g. Poblenou, Eixample, Gràcia, Barcelona Metro">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-capacity">
+                                    <label for="capacity">Guest Capacity Range <span class="req">*</span></label>
+                                    <input type="text" id="capacity" placeholder="e.g. 12–30 guests (JoEs TaBLe Standard)">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                            <div class="field" id="f-years">
+                                <label for="years">Years Operating <span class="req">*</span></label>
+                                <select id="years">
+                                    <option value="">Select operational age...</option>
+                                    <option>Less than 1 year</option>
+                                    <option>1–3 years</option>
+                                    <option>3–5 years</option>
+                                    <option>5–10 years</option>
+                                    <option>More than 10 years</option>
+                                </select>
+                                <div class="error-msg">Required</div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Compliance & Insurance</legend>
+                            <div class="field" id="f-licenses">
+                                <label for="licenses">Do you hold all required licenses for your jurisdiction? <span class="req">*</span></label>
+                                <select id="licenses">
+                                    <option value="">Select status...</option>
+                                    <option value="yes">Yes — all licenses current (e.g., Licencia C3, Manipulador de Alimentos)</option>
+                                    <option value="no">No</option>
+                                </select>
+                                <div class="hint">Venues: Licencia de Actividad. Chefs: Carnet de Manipulad@r de Alimentos.</div>
+                                <div class="error-msg">Required</div>
+                            </div>
+                            <div class="field" id="f-insurance">
+                                <label for="insurance">Public Liability Insurance Status <span class="req">*</span></label>
+                                <select id="insurance">
+                                    <option value="">Select status...</option>
+                                    <option value="yes">Yes — Active policy in force</option>
+                                    <option value="no">No</option>
+                                </select>
+                                <div class="error-msg">Required</div>
+                            </div>
+                            <div class="field">
+                                <label for="coverage">Coverage Amount <span class="opt">(if applicable)</span></label>
+                                <input type="text" id="coverage" placeholder="e.g. EUR 300,000 per occurrence">
+                            </div>
+                        </fieldset>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-back" onclick="goTo(1)">Back</button>
+                            <button type="button" class="btn-primary" onclick="goTo(3)">Continue to Agreements</button>
+                            <span class="step-counter">2 / 4</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: AGREEMENTS (Dynamic) -->
+                    <div class="step" id="step-3">
+                        <p class="step-overline">Barcelona Onboarding</p>
+                        <h3>Framework Agreements</h3>
+                        <p class="step-intro">Review the applicable legal framework. The Continue button activates only after accepting both your specific pathway agreement and the Master Terms.</p>
+
+                        <!-- CHEF AGREEMENT -->
+                        <div id="agreement-chef" class="agreement-section" style="display:none;">
+                            <div class="agreement-block">
+                                <h4>Chef Services Agreement — Type A</h4>
+                                <span class="agreement-type-tag">Applies to: Independent Culinary Professionals (Autónomos)</span>
+                                <div class="agreement-scroll">
+                                    <div class="agreement-text">
+                                        <p><strong>GLOBAL MASTER CHEF SERVICES AGREEMENT (TYPE A) — VERSION 3.1</strong></p>
+                                        <p><em>Ref: GCSA-2026-GLOBAL &middot; Electronic Onboarding Click-Through Agreement</em></p><br>
+                                        <p>This Global Master Chef Services Agreement establishes a binding framework between <strong>CK Events Management & Hospitality Group LLC</strong> (trading as <strong>Clandestino Kitchen</strong> and <strong>JoEs TaBLe</strong>) and the independent contractor identified in Step 1. By accepting below, you agree to these terms for all future Service Orders.</p>
+                                        <p><strong>1. INDEPENDENT ENGAGEMENT:</strong> You operate as a B2B contractor. CK LLC does not own or operate kitchen facilities in Barcelona; you remain 100% responsible for licensed production space, food safety, HACCP/APPCC compliance, and allergen disclosures under EU Regulation 1169/2011.</p>
+                                        <p><strong>2. LIABILITY & INDEMNITY:</strong> You retain exclusive legal and civil liability for food safety, allergens, and kitchen sanitation. You shall indemnify CK LLC against claims arising from culinary execution.</p>
+                                        <p><strong>3. CROSS-BORDER INVOICING:</strong> CK LLC is a US entity (Wyoming). You will invoice CK LLC as a US recipient according to your local tax rules (Spanish Autónomo rules for B2B cross-border services).</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="agreement-download" onclick="openModal('modal-csa','modal-csa-frame','/GCSA_Type_A.html')">↗ View Full Chef Agreement</button>
+                                <div class="checkbox-field">
+                                    <input type="checkbox" id="accept-primary" onchange="checkAcceptance()">
+                                    <label for="accept-primary">I have read the Chef Services Agreement — Type A (v3.1) in full and accept its terms.</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- VENUE AGREEMENT -->
+                        <div id="agreement-venue" class="agreement-section" style="display:none;">
+                            <div class="agreement-block">
+                                <h4>Venue Partnership Agreement</h4>
+                                <span class="agreement-type-tag">Applies to: Independently Licensed Barcelona Venues</span>
+                                <div class="agreement-scroll">
+                                    <div class="agreement-text">
+                                        <p>This Venue Partnership Agreement is between CK Events Management & Hospitality Group LLC and the Venue Partner. You make your licensed space available exclusively for confirmed JoEs TaBLe events.</p>
+                                        <p>You warrant that your premises maintain all local licenses (e.g. Licencia de Actividad / C3) and meet fire and safety standards. Client relationships remain the exclusive property of CK LLC; non-solicitation applies for 12 months following any engagement.</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="agreement-download" onclick="openModal('modal-vpa','modal-vpa-frame','/VPA.html')">↗ View Full Venue Agreement</button>
+                                <div class="checkbox-field">
+                                    <input type="checkbox" id="accept-primary-venue" onchange="checkAcceptance()">
+                                    <label for="accept-primary-venue">I have read the Venue Partnership Agreement in full and accept its terms.</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GENERAL AGREEMENT -->
+                        <div id="agreement-general" class="agreement-section" style="display:none;">
+                            <div class="agreement-block">
+                                <h4>Independent Partner Agreement</h4>
+                                <span class="agreement-type-tag">Applies to: Agencies, Catering, Suppliers & Other Partners</span>
+                                <div class="agreement-scroll">
+                                    <div class="agreement-text">
+                                        <p>This framework governs agency, catering, and supplier engagements with CK Events Management & Hospitality Group LLC. All work is conducted on a B2B independent contractor basis under explicit Service Orders.</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-field">
+                                    <input type="checkbox" id="accept-primary-gen" onchange="checkAcceptance()">
+                                    <label for="accept-primary-gen">I have read the Independent Partner Agreement in full and accept its terms.</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MASTER TERMS -->
+                        <div class="agreement-block">
+                            <h4>CK Master Terms and Conditions</h4>
+                            <span class="agreement-type-tag">Applies to: All Global Partners</span>
+                            <div class="agreement-scroll">
+                                <div class="agreement-text">
+                                    <p>The CK Master Terms govern all partner relationships across JoEs TaBLe and Clandestino Kitchen. Partners acknowledge independent status, sole tax and license responsibility in their jurisdiction, and 12-month client non-solicitation.</p>
+                                </div>
+                            </div>
+                            <a href="https://clandestino.kitchen/terms" class="agreement-download" target="_blank" rel="noopener">↗ Read Full Master T&Cs</a>
+                            <div class="checkbox-field">
+                                <input type="checkbox" id="accept-tcs" onchange="checkAcceptance()">
+                                <label for="accept-tcs">I have read the CK Master Terms and Conditions and accept their terms.</label>
+                            </div>
+                        </div>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-back" onclick="goTo(2)">Back</button>
+                            <button type="button" class="btn-primary" id="btn-step3" onclick="goTo(4)" disabled>Continue to Payment Guidance & Bank Details</button>
+                            <span class="step-counter">3 / 4</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4: BANKING DETAILS, INVOICING & FINAL CONSENT -->
+                    <div class="step" id="step-4">
+                        <p class="step-overline">Barcelona Onboarding</p>
+                        <h3>Partner Bank Details, Invoicing & Final Consent</h3>
+                        <p class="step-intro">Provide your beneficiary bank information to facilitate direct wire / SEPA payouts for executed engagements, and review invoicing instructions for CK LLC.</p>
+
+                        <!-- PARTNER BANK DETAILS INPUT FIELDS -->
+                        <fieldset>
+                            <legend>Partner Remittance & Bank Details</legend>
+                            <div class="field" id="f-partner-account-holder">
+                                <label for="partner-account-holder">Account Holder Name <span class="req">*</span></label>
+                                <input type="text" id="partner-account-holder" placeholder="Exact name registered on bank account">
+                                <div class="error-msg">Required</div>
+                            </div>
+                            <div class="field-grid">
+                                <div class="field" id="f-partner-bank-name">
+                                    <label for="partner-bank-name">Bank Name <span class="req">*</span></label>
+                                    <input type="text" id="partner-bank-name" placeholder="e.g. BBVA, CaixaBank, Santander, Revolut">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-partner-account-type">
+                                    <label for="partner-account-type">Account Type <span class="req">*</span></label>
+                                    <select id="partner-account-type">
+                                        <option value="">Select account type...</option>
+                                        <option value="business">Business / Commercial Account</option>
+                                        <option value="checking">Checking / Current Account</option>
+                                        <option value="savings">Savings Account</option>
+                                    </select>
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                            <div class="field-grid">
+                                <div class="field" id="f-partner-iban">
+                                    <label for="partner-iban">IBAN / Account Number <span class="req">*</span></label>
+                                    <input type="text" id="partner-iban" placeholder="e.g. ES91 0000 0000 0000 0000 0000">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-partner-bic">
+                                    <label for="partner-bic">BIC / SWIFT Code / Sort Code <span class="req">*</span></label>
+                                    <input type="text" id="partner-bic" placeholder="e.g. BBVAESMMXXX or Routing Number">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="info-box">
+                            <p><strong>CK Events Management & Hospitality Group LLC is a US Corporate Entity</strong></p>
+                            <p>Incorporated in Wyoming, USA (EIN: 30-1496817). When issuing invoices to CK LLC, you are supplying services to a non-EU recipient.</p>
+                        </div>
+
+                        <!-- CK LLC Bank Details Display -->
+                        <div class="bank-details-card">
+                            <div class="bank-header">
+                                <h4>CK LLC Payment Processing Bank Details</h4>
+                                <span class="nav-tag">Official Direct Wire / SEPA Info</span>
+                            </div>
+                            <div class="bank-grid">
+                                <div class="bank-item">
+                                    <span class="label">Account Holder</span>
+                                    <span class="value">CK Events Management & Hospitality Group LLC</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Corporate Registration Address</span>
+                                    <span class="value">30 N Gould St Ste N, Sheridan, WY 82801, USA</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Primary US Tax Identifier (EIN)</span>
+                                    <span class="value">30-1496817</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Payment Processing Rail</span>
+                                    <span class="value">Stripe, Inc. B2B Direct Invoicing & Wire Transfer</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Official Inquiry / Compliance Email</span>
+                                    <span class="value">compliance@clandestino.kitchen</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Settlement Currencies Supported</span>
+                                    <span class="value">EUR (€), USD ($), GBP (£)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Invoicing Accordions -->
+                        <div class="invoice-guidance">
+                            <button type="button" class="invoice-guidance-header" id="gh-eu" aria-expanded="true" onclick="toggleGuidance('eu')">
+                                <span>EU / Spanish Autonomous Partners (Reverse Charge B2B)</span>
+                                <span class="toggle-icon" id="ti-eu">+</span>
+                            </button>
+                            <div class="invoice-guidance-body" id="gb-eu">
+                                <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">For B2B services rendered to a US recipient outside the EU, VAT reverse charge rules apply. Spanish autónomos/SLs issue invoices without IVA (0% Operación no sujeta a IVA / Reverse Charge).</p>
+                                <div class="invoice-example">
+                                    <span class="lk">CLIENT BILL TO:</span><br>
+                                    CK Events Management & Hospitality Group LLC<br>
+                                    30 N Gould St Ste N, Sheridan, WY 82801, USA<br>
+                                    US EIN: 30-1496817<br><br>
+                                    <span class="lk">SERVICE DESCRIPTION:</span><br>
+                                    <span class="ph">[Culinary / Venue Execution] | JoEs TaBLe Barcelona | [Event Date]</span><br><br>
+                                    Net Amount: <span class="ph">[EUR X,XXX.00]</span><br>
+                                    <span class="lk">VAT/IVA: 0% — B2B supply to a non-EU recipient (Reverse charge / Operación no sujeta a IVA).</span><br>
+                                    Total: <span class="ph">[EUR X,XXX.00]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="invoice-guidance">
+                            <button type="button" class="invoice-guidance-header" id="gh-uk" aria-expanded="false" onclick="toggleGuidance('uk')">
+                                <span>UK & International Partners</span>
+                                <span class="toggle-icon" id="ti-uk">+</span>
+                            </button>
+                            <div class="invoice-guidance-body" id="gb-uk">
+                                <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">Services supplied outside your local jurisdiction to a US business entity are typically zero-rated or outside the scope of local VAT.</p>
+                                <div class="invoice-example">
+                                    <span class="lk">CLIENT BILL TO:</span><br>
+                                    CK Events Management & Hospitality Group LLC (EIN: 30-1496817)<br>
+                                    30 N Gould St Ste N, Sheridan, WY 82801, USA<br><br>
+                                    <span class="lk">VAT: 0% — Exported B2B Professional Services.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 32px;">
+                            <div class="checkbox-field">
+                                <input type="checkbox" id="confirm-invoice" onchange="checkFinalStep()">
+                                <label for="confirm-invoice">I confirm I have reviewed the invoicing guidance and bank details above and accept responsibility for invoice tax compliance.</label>
+                            </div>
+                            <div class="checkbox-field">
+                                <input type="checkbox" id="confirm-gdpr" onchange="checkFinalStep()">
+                                <label for="confirm-gdpr">I consent to CK Events Management & Hospitality Group LLC processing my data for partner network management under the <a href="https://clandestino.kitchen/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</label>
+                            </div>
+                            <div class="checkbox-field">
+                                <input type="checkbox" id="confirm-engagement" onchange="checkFinalStep()">
+                                <label for="confirm-engagement">I understand this onboarding submission is an introduction only. Commercial engagement takes effect only upon a signed Service Order.</label>
+                            </div>
+                        </div>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-back" onclick="goTo(3)">Back</button>
+                            <button type="button" class="btn-submit" id="btn-submit" onclick="submitForm()" disabled>Submit Barcelona Onboarding</button>
+                            <span class="step-counter">4 / 4</span>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- SUCCESS DISPLAY -->
+                <div class="step" id="step-success">
+                    <div class="success-block">
+                        <div class="success-icon">✓</div>
+                        <h3>Application & Onboarding Complete</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 16px;">Your Barcelona partner profile, legal acceptances, and remittance bank details are on record with CK Events Management & Hospitality Group LLC.</p>
+                        <p style="color: var(--text-tertiary); font-size: 0.85rem;">Our curation team will review your application. Active execution requires a mutually signed Service Order.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="container">
+        <div>
+            <span>CK Events Management & Hospitality Group LLC</span>
+            <span style="display: block; color: var(--text-tertiary); margin-top: 8px;">30 N Gould St Ste N, Sheridan, WY 82801 USA</span>
+        </div>
+        <div>
+            <a href="https://clandestino.kitchen/terms" target="_blank" rel="noopener">Terms of Service</a>
+            <span style="margin: 0 8px;">|</span>
+            <a href="https://clandestino.kitchen/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>
+            <span style="margin: 0 8px;">|</span>
+            <span>© 2026 Clandestino Kitchen</span>
+        </div>
+    </footer>
+
+    <!-- Modals for Full Text Terms -->
+    <div class="modal-overlay" id="modal-csa">
+        <div class="modal-frame">
+            <div class="modal-header">
+                <span class="modal-title">Chef Services Agreement — Type A</span>
+                <button type="button" class="modal-close" onclick="closeModal('modal-csa')">✕ Close</button>
+            </div>
+            <div class="modal-body"><iframe id="modal-csa-frame" src="" title="Chef Services Agreement Type A"></iframe></div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-vpa">
+        <div class="modal-frame">
+            <div class="modal-header">
+                <span class="modal-title">Venue Partnership Agreement</span>
+                <button type="button" class="modal-close" onclick="closeModal('modal-vpa')">✕ Close</button>
+            </div>
+            <div class="modal-body"><iframe id="modal-vpa-frame" src="" title="Venue Partnership Agreement"></iframe></div>
+        </div>
     </div>
 
-    <div class="grid-2">
-      <div class="form-group">
-        <label for="contactName">Primary Contact Name *</label>
-        <input type="text" id="contactName" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Business Email *</label>
-        <input type="text" id="email" required>
-      </div>
-    </div>
+    <script>
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcQRD92uTmAo7IIiL7l03sh1ZntpVCee2tddH-2oYzug3BarSuhs9K-SUqaonJRo3kXw/exec';
+        const state = { current: 1 };
 
-    <div class="form-group">
-      <label for="taxId">Tax ID / VAT / EIN Number *</label>
-      <input type="text" id="taxId" required>
-    </div>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input, select, textarea').forEach(input => {
+                const handler = () => {
+                    const field = input.closest('.field');
+                    if (field) field.classList.remove('has-error');
+                    
+                    // Admin magic word check on change to instantly unlock steps
+                    if (input.value.trim().toLowerCase() === 'admin') {
+                        if (state.current === 3) checkAcceptance();
+                        if (state.current === 4) checkFinalStep();
+                    }
+                };
+                input.addEventListener('input', handler);
+                input.addEventListener('change', handler);
+            });
+        });
 
-    <!-- Payout & Banking Details -->
-    <div class="section-title">2. Payment & Banking Information</div>
-    
-    <div class="form-group">
-      <label for="accountHolder">Account Holder Name *</label>
-      <input type="text" id="accountHolder" required>
-    </div>
+        function goTo(n) {
+            if (typeof n === 'number' && n > state.current && !validateStep(state.current)) return;
+            const cur = document.getElementById('step-' + state.current);
+            if (cur) cur.classList.remove('visible');
+            
+            if (n === 'success') {
+                document.getElementById('step-success').classList.add('visible');
+                updateProgress(5);
+                return;
+            }
+            
+            state.current = n;
+            if (n === 3) routeAgreements();
+            if (n === 4) preOpenGuidance();
+            
+            const next = document.getElementById('step-' + n);
+            if (next) next.classList.add('visible');
+            updateProgress(n);
+            
+            const anchor = document.getElementById('section-02-title');
+            if (anchor) {
+                window.scrollTo({ top: anchor.offsetTop - 100, behavior: 'smooth' });
+            }
+        }
 
-    <div class="grid-2">
-      <div class="form-group">
-        <label for="bankName">Bank Name *</label>
-        <input type="text" id="bankName" required>
-      </div>
-      <div class="form-group">
-        <label for="accountType">Account Type *</label>
-        <select id="accountType" required>
-          <option value="">Select type...</option>
-          <option value="checking">Checking / Business Current</option>
-          <option value="savings">Savings</option>
-          <option value="admin">Admin Override</option>
-        </select>
-      </div>
-    </div>
+        function updateProgress(n) {
+            document.getElementById('progress-label').textContent = n <= 4 ? 'Step ' + n + ' of 4' : 'Complete';
+            for (let i = 1; i <= 4; i++) {
+                const el = document.getElementById('prog-' + i);
+                if (el) el.classList.toggle('active', i <= n);
+            }
+        }
 
-    <div class="grid-2">
-      <div class="form-group">
-        <label for="routingNumber">Routing / ABA / Sort Code *</label>
-        <input type="text" id="routingNumber" required>
-      </div>
-      <div class="form-group">
-        <label for="accountNumber">Account Number / IBAN *</label>
-        <input type="text" id="accountNumber" required>
-      </div>
-    </div>
+        function routeAgreements() {
+            const type = document.getElementById('partner-type').value;
+            document.querySelectorAll('.agreement-section').forEach(el => el.style.display = 'none');
+            
+            ['accept-primary', 'accept-primary-venue', 'accept-primary-gen'].forEach(id => {
+                const cb = document.getElementById(id);
+                if (cb) cb.checked = false;
+            });
+            
+            if (type === 'chef') {
+                document.getElementById('agreement-chef').style.display = 'block';
+            } else if (type === 'venue') {
+                document.getElementById('agreement-venue').style.display = 'block';
+            } else {
+                document.getElementById('agreement-general').style.display = 'block';
+            }
+            checkAcceptance();
+        }
 
-    <div class="form-group">
-      <label for="swiftCode">SWIFT / BIC Code (for international wires)</label>
-      <input type="text" id="swiftCode">
-    </div>
+        function preOpenGuidance() {
+            const body = document.getElementById('gb-eu');
+            const header = document.getElementById('gh-eu');
+            const icon = document.getElementById('ti-eu');
+            if (body) body.classList.add('open');
+            if (header) {
+                header.classList.add('open');
+                header.setAttribute('aria-expanded', 'true');
+            }
+            if (icon) icon.style.transform = 'rotate(45deg)';
+            checkFinalStep();
+        }
 
-    <button type="submit">Submit Partner Onboarding</button>
-  </form>
-</div>
+        function toggleGuidance(key) {
+            const body = document.getElementById('gb-' + key);
+            const header = document.getElementById('gh-' + key);
+            const icon = document.getElementById('ti-' + key);
+            if (!body) return;
+            const open = body.classList.toggle('open');
+            if (header) {
+                header.classList.toggle('open', open);
+                header.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+            if (icon) icon.style.transform = open ? 'rotate(45deg)' : 'rotate(0deg)';
+        }
 
-<script>
-function handleSubmit(event) {
-  event.preventDefault();
+        function validateStep(n) {
+            let ok = true;
+            
+            // ADMIN MAGIC WORD OVERRIDE FOR TESTING
+            // If any text or selection field in the current step contains "admin", step validation passes automatically
+            const currentStepEl = document.getElementById('step-' + n);
+            if (currentStepEl) {
+                const stepInputs = currentStepEl.querySelectorAll('input[type="text"], input[type="email"], input[type="url"], select, textarea');
+                for (let input of stepInputs) {
+                    if (input.value.trim().toLowerCase() === 'admin') {
+                        return true;
+                    }
+                }
+            }
 
-  const inputs = document.querySelectorAll('#onboardingForm input, #onboardingForm select');
-  let data = {};
+            const rules = {
+                1: [
+                    { id: 'legal-name', fid: 'f-legal-name', test: v => v.length > 1 },
+                    { id: 'nif', fid: 'f-nif', test: v => v.length > 3 },
+                    { id: 'legal-form', fid: 'f-legal-form', test: v => v !== '' },
+                    { id: 'address', fid: 'f-address', test: v => v.length > 3 },
+                    { id: 'city', fid: 'f-city', test: v => v.length > 1 },
+                    { id: 'postcode', fid: 'f-postcode', test: v => v.length > 1 },
+                    { id: 'country', fid: 'f-country', test: v => v.length > 1 },
+                    { id: 'contact-name', fid: 'f-contact-name', test: v => v.length > 1 },
+                    { id: 'email', fid: 'f-email', test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) }
+                ],
+                2: [
+                    { id: 'partner-type', fid: 'f-partner-type', test: v => v !== '' },
+                    { id: 'services', fid: 'f-services', test: v => v.length >= 10 },
+                    { id: 'locations', fid: 'f-locations', test: v => v.length > 1 },
+                    { id: 'capacity', fid: 'f-capacity', test: v => v.length > 1 },
+                    { id: 'years', fid: 'f-years', test: v => v !== '' },
+                    { id: 'licenses', fid: 'f-licenses', test: v => v !== '' },
+                    { id: 'insurance', fid: 'f-insurance', test: v => v !== '' }
+                ],
+                4: [
+                    { id: 'partner-account-holder', fid: 'f-partner-account-holder', test: v => v.length > 1 },
+                    { id: 'partner-bank-name', fid: 'f-partner-bank-name', test: v => v.length > 1 },
+                    { id: 'partner-account-type', fid: 'f-partner-account-type', test: v => v !== '' },
+                    { id: 'partner-iban', fid: 'f-partner-iban', test: v => v.length > 4 },
+                    { id: 'partner-bic', fid: 'f-partner-bic', test: v => v.length > 3 }
+                ]
+            };
 
-  inputs.forEach(input => {
-    // Magic word check: if value is "admin", it passes automatically regardless of field format
-    if (input.value.trim().toLowerCase() === 'admin') {
-      data[input.id] = '[ADMIN TEST PASSED]';
-    } else {
-      data[input.id] = input.value;
-    }
-  });
+            if (!rules[n]) return true;
+            rules[n].forEach(r => {
+                const el = document.getElementById(r.id);
+                const field = document.getElementById(r.fid);
+                const pass = el && r.test(el.value.trim());
+                if (field) field.classList.toggle('has-error', !pass);
+                if (!pass) ok = false;
+            });
+            return ok;
+        }
 
-  alert('Form submitted successfully! Check browser console to view submitted payload.');
-  console.log('Submitted Payload:', data);
-}
-</script>
+        function checkAcceptance() {
+            // Check for admin magic word override
+            const inputs = document.querySelectorAll('input, select, textarea');
+            for (let input of inputs) {
+                if (input.value.trim().toLowerCase() === 'admin') {
+                    const btn = document.getElementById('btn-step3');
+                    if (btn) btn.disabled = false;
+                    return;
+                }
+            }
 
+            const tcs = document.getElementById('accept-tcs');
+            const type = document.getElementById('partner-type').value;
+            let primaryChecked = false;
+
+            if (type === 'chef') {
+                const cb = document.getElementById('accept-primary');
+                primaryChecked = cb && cb.checked;
+            } else if (type === 'venue') {
+                const cb = document.getElementById('accept-primary-venue');
+                primaryChecked = cb && cb.checked;
+            } else {
+                const cb = document.getElementById('accept-primary-gen');
+                primaryChecked = cb && cb.checked;
+            }
+
+            const btn = document.getElementById('btn-step3');
+            if (btn) btn.disabled = !(primaryChecked && tcs && tcs.checked);
+        }
+
+        function checkFinalStep() {
+            // Check for admin magic word override
+            const inputs = document.querySelectorAll('input, select, textarea');
+            for (let input of inputs) {
+                if (input.value.trim().toLowerCase() === 'admin') {
+                    const btn = document.getElementById('btn-submit');
+                    if (btn) btn.disabled = false;
+                    return;
+                }
+            }
+
+            const bankValid = validateStep(4);
+            const checkboxesChecked = ['confirm-invoice', 'confirm-gdpr', 'confirm-engagement']
+                .every(id => document.getElementById(id) && document.getElementById(id).checked);
+
+            const btn = document.getElementById('btn-submit');
+            if (btn) btn.disabled = !(bankValid && checkboxesChecked);
+        }
+
+        async function submitForm() {
+            const btn = document.getElementById('btn-submit');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            const payload = {
+                timestamp: new Date().toISOString(),
+                jurisdiction: 'Barcelona, ES',
+                legalName: document.getElementById('legal-name').value,
+                tradingName: document.getElementById('trading-name').value,
+                taxId: document.getElementById('nif').value,
+                legalForm: document.getElementById('legal-form').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                postcode: document.getElementById('postcode').value,
+                country: document.getElementById('country').value,
+                contactName: document.getElementById('contact-name').value,
+                email: document.getElementById('email').value,
+                website: document.getElementById('website').value,
+                partnerType: document.getElementById('partner-type').value,
+                services: document.getElementById('services').value,
+                locations: document.getElementById('locations').value,
+                capacity: document.getElementById('capacity').value,
+                yearsOperating: document.getElementById('years').value,
+                licensesConfirmed: document.getElementById('licenses').value,
+                insuranceConfirmed: document.getElementById('insurance').value,
+                coverageAmount: document.getElementById('coverage').value,
+                
+                // Partner Bank Details Payload
+                partnerAccountHolder: document.getElementById('partner-account-holder').value,
+                partnerBankName: document.getElementById('partner-bank-name').value,
+                partnerAccountType: document.getElementById('partner-account-type').value,
+                partnerIban: document.getElementById('partner-iban').value,
+                partnerBic: document.getElementById('partner-bic').value,
+
+                acceptedMasterTCs: document.getElementById('accept-tcs').checked,
+                confirmedInvoiceNote: document.getElementById('confirm-invoice').checked,
+                gdprConsent: document.getElementById('confirm-gdpr').checked,
+                engagementNotice: document.getElementById('confirm-engagement').checked
+            };
+
+            try {
+                if (APPS_SCRIPT_URL) {
+                    await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                }
+            } catch (e) {
+                console.error('Submission error:', e);
+            }
+
+            goTo('success');
+        }
+
+        function openModal(overlayId, frameId, url) {
+            document.getElementById(frameId).src = url;
+            document.getElementById(overlayId).classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(overlayId) {
+            document.getElementById(overlayId).classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 </html>
