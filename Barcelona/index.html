@@ -552,20 +552,46 @@
 
         .agreement-download:hover { background: var(--accent-white); color: #000000; }
 
+        /* ENHANCED CUSTOM CHECKBOX WITH CLEAR VISUAL TICK FOR CORRECTION 1 */
         .checkbox-field {
             display: flex;
-            gap: 12px;
+            gap: 14px;
             align-items: flex-start;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
+            position: relative;
         }
 
         .checkbox-field input[type="checkbox"] {
-            flex-shrink: 0;
-            width: 18px;
-            height: 18px;
-            margin-top: 3px;
-            accent-color: var(--accent-white);
+            appearance: none;
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 1px solid var(--border-medium);
+            border-radius: 3px;
+            background-color: var(--surface-input);
             cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: var(--transition-smooth);
+            display: grid;
+            place-content: center;
+        }
+
+        .checkbox-field input[type="checkbox"]:hover {
+            border-color: var(--border-active);
+        }
+
+        .checkbox-field input[type="checkbox"]:checked {
+            background-color: var(--accent-white);
+            border-color: var(--accent-white);
+        }
+
+        .checkbox-field input[type="checkbox"]:checked::before {
+            content: "✓";
+            font-size: 14px;
+            font-weight: 800;
+            color: #000000;
+            line-height: 1;
         }
 
         .checkbox-field label {
@@ -576,6 +602,7 @@
             cursor: pointer;
             font-family: var(--font-sans);
             letter-spacing: normal;
+            user-select: none;
         }
 
         .checkbox-field label a { color: var(--accent-white); text-decoration: underline; }
@@ -645,7 +672,7 @@
             border: 1px solid var(--border-medium);
             border-radius: 4px;
             padding: 32px;
-            margin-top: 24px;
+            margin-top: 16px;
             margin-bottom: 32px;
         }
 
@@ -691,6 +718,13 @@
             font-size: 0.9rem;
             color: var(--text-primary);
             word-break: break-all;
+        }
+
+        /* SEPARATOR FOR CORRECTION 2 */
+        .section-divider {
+            margin: 48px 0;
+            border: 0;
+            border-top: 1px solid var(--border-medium);
         }
 
         /* BUTTONS & FOOTER */
@@ -1223,86 +1257,40 @@
                         </div>
                     </div>
 
-                    <!-- STEP 4: BANKING DETAILS, INVOICING & FINAL CONSENT -->
+                    <!-- STEP 4: INVOICING GUIDANCE FIRST, THEN PARTNER BANK DETAILS (CORRECTION 2) -->
                     <div class="step" id="step-4">
                         <p class="step-overline">Barcelona Onboarding</p>
-                        <h3>Partner Bank Details, Invoicing & Final Consent</h3>
-                        <p class="step-intro">Provide your beneficiary bank information to facilitate direct wire / SEPA payouts for executed engagements, and review invoicing instructions for CK LLC.</p>
+                        <h3>Invoicing Guidance & Remittance Details</h3>
+                        <p class="step-intro">First, review how to issue compliance-checked invoices to CK LLC. Next, provide your direct bank remittance info so we can execute wire payouts for your rendered services.</p>
 
-                        <!-- PARTNER BANK DETAILS INPUT FIELDS -->
-                        <fieldset>
-                            <legend>Partner Remittance & Bank Details</legend>
-                            <div class="field" id="f-partner-account-holder">
-                                <label for="partner-account-holder">Account Holder Name <span class="req">*</span></label>
-                                <input type="text" id="partner-account-holder" placeholder="Exact name registered on bank account">
-                                <div class="error-msg">Required</div>
-                            </div>
-                            <div class="field-grid">
-                                <div class="field" id="f-partner-bank-name">
-                                    <label for="partner-bank-name">Bank Name <span class="req">*</span></label>
-                                    <input type="text" id="partner-bank-name" placeholder="e.g. BBVA, CaixaBank, Santander, Revolut">
-                                    <div class="error-msg">Required</div>
-                                </div>
-                                <div class="field" id="f-partner-account-type">
-                                    <label for="partner-account-type">Account Type <span class="req">*</span></label>
-                                    <select id="partner-account-type">
-                                        <option value="">Select account type...</option>
-                                        <option value="business">Business / Commercial Account</option>
-                                        <option value="checking">Checking / Current Account</option>
-                                        <option value="savings">Savings Account</option>
-                                    </select>
-                                    <div class="error-msg">Required</div>
-                                </div>
-                            </div>
-                            <div class="field-grid">
-                                <div class="field" id="f-partner-iban">
-                                    <label for="partner-iban">IBAN / Account Number <span class="req">*</span></label>
-                                    <input type="text" id="partner-iban" placeholder="e.g. ES91 0000 0000 0000 0000 0000">
-                                    <div class="error-msg">Required</div>
-                                </div>
-                                <div class="field" id="f-partner-bic">
-                                    <label for="partner-bic">BIC / SWIFT Code / Sort Code <span class="req">*</span></label>
-                                    <input type="text" id="partner-bic" placeholder="e.g. BBVAESMMXXX or Routing Number">
-                                    <div class="error-msg">Required</div>
-                                </div>
-                            </div>
-                        </fieldset>
-
+                        <!-- PART 1: INVOICING US & CK LLC LEGAL ENTITY INFO -->
                         <div class="info-box">
-                            <p><strong>CK Events Management & Hospitality Group LLC is a US Corporate Entity</strong></p>
-                            <p>Incorporated in Wyoming, USA (EIN: 30-1496817). When issuing invoices to CK LLC, you are supplying services to a non-EU recipient.</p>
+                            <p><strong>1. INVOICING CK EVENTS MANAGEMENT & HOSPITALITY GROUP LLC</strong></p>
+                            <p>CK LLC is incorporated in Wyoming, USA (EIN: 30-1496817). When billing us from Spain or the EU, you supply professional B2B services to a non-EU entity.</p>
                         </div>
 
-                        <!-- CK LLC Bank Details Display -->
+                        <!-- CK LLC Entity Details Display -->
                         <div class="bank-details-card">
                             <div class="bank-header">
-                                <h4>CK LLC Payment Processing Bank Details</h4>
-                                <span class="nav-tag">Official Direct Wire / SEPA Info</span>
+                                <h4>Our Billing & Legal Details (Use for Invoicing Us)</h4>
+                                <span class="nav-tag">Corporate Entity</span>
                             </div>
                             <div class="bank-grid">
                                 <div class="bank-item">
-                                    <span class="label">Account Holder</span>
+                                    <span class="label">Legal Company Name</span>
                                     <span class="value">CK Events Management & Hospitality Group LLC</span>
                                 </div>
                                 <div class="bank-item">
-                                    <span class="label">Corporate Registration Address</span>
+                                    <span class="label">Registered Address</span>
                                     <span class="value">30 N Gould St Ste N, Sheridan, WY 82801, USA</span>
                                 </div>
                                 <div class="bank-item">
-                                    <span class="label">Primary US Tax Identifier (EIN)</span>
+                                    <span class="label">Tax Identifier / EIN</span>
                                     <span class="value">30-1496817</span>
                                 </div>
                                 <div class="bank-item">
-                                    <span class="label">Payment Processing Rail</span>
-                                    <span class="value">Stripe, Inc. B2B Direct Invoicing & Wire Transfer</span>
-                                </div>
-                                <div class="bank-item">
-                                    <span class="label">Official Inquiry / Compliance Email</span>
+                                    <span class="label">Official Compliance Email</span>
                                     <span class="value">compliance@clandestino.kitchen</span>
-                                </div>
-                                <div class="bank-item">
-                                    <span class="label">Settlement Currencies Supported</span>
-                                    <span class="value">EUR (€), USD ($), GBP (£)</span>
                                 </div>
                             </div>
                         </div>
@@ -1345,10 +1333,54 @@
                             </div>
                         </div>
 
+                        <!-- VISUAL SEPARATOR (CORRECTION 2) -->
+                        <hr class="section-divider">
+
+                        <!-- PART 2: YOUR REMITTANCE & BANK DETAILS -->
+                        <fieldset>
+                            <legend>2. Your Bank Remittance Details (For Payouts to You)</legend>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 24px;">Please provide the account details where payouts for executed service contracts should be transferred.</p>
+                            
+                            <div class="field" id="f-partner-account-holder">
+                                <label for="partner-account-holder">Account Holder Name <span class="req">*</span></label>
+                                <input type="text" id="partner-account-holder" placeholder="Exact name registered on bank account">
+                                <div class="error-msg">Required</div>
+                            </div>
+                            <div class="field-grid">
+                                <div class="field" id="f-partner-bank-name">
+                                    <label for="partner-bank-name">Bank Name <span class="req">*</span></label>
+                                    <input type="text" id="partner-bank-name" placeholder="e.g. BBVA, CaixaBank, Santander, Revolut">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-partner-account-type">
+                                    <label for="partner-account-type">Account Type <span class="req">*</span></label>
+                                    <select id="partner-account-type">
+                                        <option value="">Select account type...</option>
+                                        <option value="business">Business / Commercial Account</option>
+                                        <option value="checking">Checking / Current Account</option>
+                                        <option value="savings">Savings Account</option>
+                                    </select>
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                            <div class="field-grid">
+                                <div class="field" id="f-partner-iban">
+                                    <label for="partner-iban">IBAN / Account Number <span class="req">*</span></label>
+                                    <input type="text" id="partner-iban" placeholder="e.g. ES91 0000 0000 0000 0000 0000">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-partner-bic">
+                                    <label for="partner-bic">BIC / SWIFT Code / Sort Code <span class="req">*</span></label>
+                                    <input type="text" id="partner-bic" placeholder="e.g. BBVAESMMXXX or Routing Number">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                        </fieldset>
+
                         <div style="margin-top: 32px;">
                             <div class="checkbox-field">
                                 <input type="checkbox" id="confirm-invoice" onchange="checkFinalStep()">
-                                <label for="confirm-invoice">I confirm I have reviewed the invoicing guidance and bank details above and accept responsibility for invoice tax compliance.</label>
+                                <label for="confirm-invoice">I confirm I have reviewed the invoicing guidance above and accept responsibility for invoice tax compliance.</label>
                             </div>
                             <div class="checkbox-field">
                                 <input type="checkbox" id="confirm-gdpr" onchange="checkFinalStep()">
@@ -1428,7 +1460,7 @@
                     const field = input.closest('.field');
                     if (field) field.classList.remove('has-error');
                     
-                    // Admin magic word check on change to instantly unlock steps
+                    // Admin testing magic override
                     if (input.value.trim().toLowerCase() === 'admin') {
                         if (state.current === 3) checkAcceptance();
                         if (state.current === 4) checkFinalStep();
@@ -1520,8 +1552,7 @@
         function validateStep(n) {
             let ok = true;
             
-            // ADMIN MAGIC WORD OVERRIDE FOR TESTING
-            // If any text or selection field in the current step contains "admin", step validation passes automatically
+            // ADMIN OVERRIDE FOR TESTING
             const currentStepEl = document.getElementById('step-' + n);
             if (currentStepEl) {
                 const stepInputs = currentStepEl.querySelectorAll('input[type="text"], input[type="email"], input[type="url"], select, textarea');
@@ -1574,7 +1605,6 @@
         }
 
         function checkAcceptance() {
-            // Check for admin magic word override
             const inputs = document.querySelectorAll('input, select, textarea');
             for (let input of inputs) {
                 if (input.value.trim().toLowerCase() === 'admin') {
@@ -1604,7 +1634,6 @@
         }
 
         function checkFinalStep() {
-            // Check for admin magic word override
             const inputs = document.querySelectorAll('input, select, textarea');
             for (let input of inputs) {
                 if (input.value.trim().toLowerCase() === 'admin') {
@@ -1650,7 +1679,7 @@
                 insuranceConfirmed: document.getElementById('insurance').value,
                 coverageAmount: document.getElementById('coverage').value,
                 
-                // Partner Bank Details Payload
+                // Complete Bank Remittance Data Payload
                 partnerAccountHolder: document.getElementById('partner-account-holder').value,
                 partnerBankName: document.getElementById('partner-bank-name').value,
                 partnerAccountType: document.getElementById('partner-account-type').value,
