@@ -599,6 +599,7 @@
         }
 
         .invoice-guidance-header {
+            width: 100%;
             padding: 16px 20px;
             background: var(--surface-elevated);
             display: flex;
@@ -606,6 +607,8 @@
             align-items: center;
             cursor: pointer;
             user-select: none;
+            border: none;
+            text-align: left;
         }
 
         .invoice-guidance-header span {
@@ -951,378 +954,380 @@
                     <div class="progress-step" id="prog-4"></div>
                 </div>
 
-                <!-- STEP 1: IDENTITY -->
-                <div class="step visible" id="step-1">
-                    <p class="step-overline">Barcelona Onboarding</p>
-                    <h3>Legal & Entity Details</h3>
-                    <p class="step-intro">We use this information to set up your Barcelona partner file, issue official Service Orders, and ensure all payments are legally compliance-checked. Required fields marked with <span style="color:var(--gold);">*</span>.</p>
+                <form id="onboarding-form" onsubmit="return false;">
+                    <!-- STEP 1: IDENTITY -->
+                    <div class="step visible" id="step-1">
+                        <p class="step-overline">Barcelona Onboarding</p>
+                        <h3>Legal & Entity Details</h3>
+                        <p class="step-intro">We use this information to set up your Barcelona partner file, issue official Service Orders, and ensure all payments are legally compliance-checked. Required fields marked with <span style="color:var(--gold);">*</span>.</p>
 
-                    <fieldset>
-                        <legend>Legal Identity</legend>
-                        <div class="field-grid">
-                            <div class="field" id="f-legal-name">
-                                <label for="legal-name">Full legal name <span class="req">*</span></label>
-                                <input type="text" id="legal-name" placeholder="As registered with Agencia Tributaria / Tax Authority">
+                        <fieldset>
+                            <legend>Legal Identity</legend>
+                            <div class="field-grid">
+                                <div class="field" id="f-legal-name">
+                                    <label for="legal-name">Full legal name <span class="req">*</span></label>
+                                    <input type="text" id="legal-name" placeholder="As registered with Agencia Tributaria / Tax Authority">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field">
+                                    <label for="trading-name">Trading name <span class="opt">(if different)</span></label>
+                                    <input type="text" id="trading-name" placeholder="Brand / Commercial Name">
+                                </div>
+                                <div class="field" id="f-nif">
+                                    <label for="nif">Tax identification number (NIF / NIE / VAT) <span class="req">*</span></label>
+                                    <input type="text" id="nif" placeholder="e.g. DNI/NIE (Spain), VAT ID, or EIN">
+                                    <div class="hint">Spanish autónomos: DNI/NIE. EU/UK: VAT ID. US: EIN.</div>
+                                    <div class="error-msg">Required — must appear on all issued invoices</div>
+                                </div>
+                                <div class="field" id="f-legal-form">
+                                    <label for="legal-form">Legal form <span class="req">*</span></label>
+                                    <select id="legal-form">
+                                        <option value="">Select structure...</option>
+                                        <option>Autónomo (Spain)</option>
+                                        <option>Sociedad Limitada — SL (Spain)</option>
+                                        <option>Sole trader (UK)</option>
+                                        <option>Limited company (UK)</option>
+                                        <option>LLC (USA)</option>
+                                        <option>GmbH (Germany)</option>
+                                        <option>SARL (France)</option>
+                                        <option>Other Entity</option>
+                                    </select>
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Registered Address</legend>
+                            <div class="field" id="f-address">
+                                <label for="address">Street address <span class="req">*</span></label>
+                                <input type="text" id="address" placeholder="e.g. Carrer de Pere IV, 120">
                                 <div class="error-msg">Required</div>
                             </div>
+                            <div class="field-grid">
+                                <div class="field" id="f-city">
+                                    <label for="city">City <span class="req">*</span></label>
+                                    <input type="text" id="city" value="Barcelona">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-postcode">
+                                    <label for="postcode">Postcode <span class="req">*</span></label>
+                                    <input type="text" id="postcode" placeholder="08018">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                            </div>
+                            <div class="field" id="f-country">
+                                <label for="country">Country <span class="req">*</span></label>
+                                <input type="text" id="country" value="Spain">
+                                <div class="error-msg">Required</div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Primary Contact</legend>
+                            <div class="field-grid">
+                                <div class="field" id="f-contact-name">
+                                    <label for="contact-name">Contact Person <span class="req">*</span></label>
+                                    <input type="text" id="contact-name" placeholder="Marc Vila">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-email">
+                                    <label for="email">Corporate Email Address <span class="req">*</span></label>
+                                    <input type="email" id="email" placeholder="m.vila@company.com">
+                                    <div class="error-msg">Valid corporate email required</div>
+                                </div>
+                            </div>
                             <div class="field">
-                                <label for="trading-name">Trading name <span class="opt">(if different)</span></label>
-                                <input type="text" id="trading-name" placeholder="Brand / Commercial Name">
+                                <label for="website">Portfolio URL / Website / Instagram <span class="opt">(optional)</span></label>
+                                <input type="url" id="website" placeholder="https://instagram.com/yourbrand">
                             </div>
-                            <div class="field" id="f-nif">
-                                <label for="nif">Tax identification number (NIF / NIE / VAT) <span class="req">*</span></label>
-                                <input type="text" id="nif" placeholder="e.g. DNI/NIE (Spain), VAT ID, or EIN">
-                                <div class="hint">Spanish autónomos: DNI/NIE. EU/UK: VAT ID. US: EIN.</div>
-                                <div class="error-msg">Required — must appear on all issued invoices</div>
-                            </div>
-                            <div class="field" id="f-legal-form">
-                                <label for="legal-form">Legal form <span class="req">*</span></label>
-                                <select id="legal-form">
-                                    <option value="">Select structure...</option>
-                                    <option>Autónomo (Spain)</option>
-                                    <option>Sociedad Limitada — SL (Spain)</option>
-                                    <option>Sole trader (UK)</option>
-                                    <option>Limited company (UK)</option>
-                                    <option>LLC (USA)</option>
-                                    <option>GmbH (Germany)</option>
-                                    <option>SARL (France)</option>
-                                    <option>Other Entity</option>
+                        </fieldset>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-primary" onclick="goTo(2)">Continue to Capability</button>
+                            <span class="step-counter">1 / 4</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: CAPABILITY -->
+                    <div class="step" id="step-2">
+                        <p class="step-overline">Barcelona Onboarding</p>
+                        <h3>Capability & Operational Profile</h3>
+                        <p class="step-intro">Select your pathway carefully. Your profile type determines which contractual agreement applies to your engagements in Step 3.</p>
+
+                        <fieldset>
+                            <legend>Partner Pathway & Services</legend>
+                            <div class="field" id="f-partner-type">
+                                <label for="partner-type">Primary Partner Profile Type <span class="req">*</span></label>
+                                <select id="partner-type">
+                                    <option value="">Select application pathway...</option>
+                                    <option value="chef">Culinary professional — Independent Chef (Autónomo or equivalent)</option>
+                                    <option value="venue">Independent Venue / Space Owner (Barcelona)</option>
+                                    <option value="agency">Agency / DMC / Event Production Agency</option>
+                                    <option value="catering">Catering & Logistics Operator</option>
+                                    <option value="supplier">Producer / Culinary Supplier</option>
+                                    <option value="other">Other Partner</option>
                                 </select>
                                 <div class="error-msg">Required</div>
                             </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Registered Address</legend>
-                        <div class="field" id="f-address">
-                            <label for="address">Street address <span class="req">*</span></label>
-                            <input type="text" id="address" placeholder="e.g. Carrer de Pere IV, 120">
-                            <div class="error-msg">Required</div>
-                        </div>
-                        <div class="field-grid">
-                            <div class="field" id="f-city">
-                                <label for="city">City <span class="req">*</span></label>
-                                <input type="text" id="city" value="Barcelona">
-                                <div class="error-msg">Required</div>
+                            <div class="field" id="f-services">
+                                <label for="services">Operational Description & Scope <span class="req">*</span></label>
+                                <textarea id="services" rows="4" placeholder="For Venues: seating capacity (12-30 pax), neighborhood, and Licencia C3 status. For Chefs: Autónomo tax status / IAE code. For Agencies: target group size."></textarea>
+                                <div class="error-msg">Required (minimum 10 characters)</div>
                             </div>
-                            <div class="field" id="f-postcode">
-                                <label for="postcode">Postcode <span class="req">*</span></label>
-                                <input type="text" id="postcode" placeholder="08018">
-                                <div class="error-msg">Required</div>
-                            </div>
-                        </div>
-                        <div class="field" id="f-country">
-                            <label for="country">Country <span class="req">*</span></label>
-                            <input type="text" id="country" value="Spain">
-                            <div class="error-msg">Required</div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Primary Contact</legend>
-                        <div class="field-grid">
-                            <div class="field" id="f-contact-name">
-                                <label for="contact-name">Contact Person <span class="req">*</span></label>
-                                <input type="text" id="contact-name" placeholder="Marc Vila">
-                                <div class="error-msg">Required</div>
-                            </div>
-                            <div class="field" id="f-email">
-                                <label for="email">Corporate Email Address <span class="req">*</span></label>
-                                <input type="email" id="email" placeholder="m.vila@company.com">
-                                <div class="error-msg">Valid corporate email required</div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label for="website">Portfolio URL / Website / Instagram <span class="opt">(optional)</span></label>
-                            <input type="url" id="website" placeholder="https://instagram.com/yourbrand">
-                        </div>
-                    </fieldset>
-
-                    <div class="btn-row">
-                        <button class="btn-primary" onclick="goTo(2)">Continue to Capability</button>
-                        <span class="step-counter">1 / 4</span>
-                    </div>
-                </div>
-
-                <!-- STEP 2: CAPABILITY -->
-                <div class="step" id="step-2">
-                    <p class="step-overline">Barcelona Onboarding</p>
-                    <h3>Capability & Operational Profile</h3>
-                    <p class="step-intro">Select your pathway carefully. Your profile type determines which contractual agreement applies to your engagements in Step 3.</p>
-
-                    <fieldset>
-                        <legend>Partner Pathway & Services</legend>
-                        <div class="field" id="f-partner-type">
-                            <label for="partner-type">Primary Partner Profile Type <span class="req">*</span></label>
-                            <select id="partner-type">
-                                <option value="">Select application pathway...</option>
-                                <option value="chef">Culinary professional — Independent Chef (Autónomo or equivalent)</option>
-                                <option value="venue">Independent Venue / Space Owner (Barcelona)</option>
-                                <option value="agency">Agency / DMC / Event Production Agency</option>
-                                <option value="catering">Catering & Logistics Operator</option>
-                                <option value="supplier">Producer / Culinary Supplier</option>
-                                <option value="other">Other Partner</option>
-                            </select>
-                            <div class="error-msg">Required</div>
-                        </div>
-                        <div class="field" id="f-services">
-                            <label for="services">Operational Description & Scope <span class="req">*</span></label>
-                            <textarea id="services" rows="4" placeholder="For Venues: seating capacity (12-30 pax), neighborhood, and Licencia C3 status. For Chefs: Autónomo tax status / IAE code. For Agencies: target group size."></textarea>
-                            <div class="error-msg">Required (minimum 10 characters)</div>
-                        </div>
-                        <div class="field-grid">
-                            <div class="field" id="f-locations">
-                                <label for="locations">Locations / Neighborhoods Served <span class="req">*</span></label>
-                                <input type="text" id="locations" placeholder="e.g. Poblenou, Eixample, Gràcia, Barcelona Metro">
-                                <div class="error-msg">Required</div>
-                            </div>
-                            <div class="field" id="f-capacity">
-                                <label for="capacity">Guest Capacity Range <span class="req">*</span></label>
-                                <input type="text" id="capacity" placeholder="e.g. 12–30 guests (JoEs TaBLe Standard)">
-                                <div class="error-msg">Required</div>
-                            </div>
-                        </div>
-                        <div class="field" id="f-years">
-                            <label for="years">Years Operating <span class="req">*</span></label>
-                            <select id="years">
-                                <option value="">Select operational age...</option>
-                                <option>Less than 1 year</option>
-                                <option>1–3 years</option>
-                                <option>3–5 years</option>
-                                <option>5–10 years</option>
-                                <option>More than 10 years</option>
-                            </select>
-                            <div class="error-msg">Required</div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Compliance & Insurance</legend>
-                        <div class="field" id="f-licenses">
-                            <label for="licenses">Do you hold all required licenses for your jurisdiction? <span class="req">*</span></label>
-                            <select id="licenses">
-                                <option value="">Select status...</option>
-                                <option value="yes">Yes — all licenses current (e.g., Licencia C3, Manipulador de Alimentos)</option>
-                                <option value="no">No</option>
-                            </select>
-                            <div class="hint">Venues: Licencia de Actividad. Chefs: Carnet de Manipulad@r de Alimentos.</div>
-                            <div class="error-msg">Required</div>
-                        </div>
-                        <div class="field" id="f-insurance">
-                            <label for="insurance">Public Liability Insurance Status <span class="req">*</span></label>
-                            <select id="insurance">
-                                <option value="">Select status...</option>
-                                <option value="yes">Yes — Active policy in force</option>
-                                <option value="no">No</option>
-                            </select>
-                            <div class="error-msg">Required</div>
-                        </div>
-                        <div class="field">
-                            <label for="coverage">Coverage Amount <span class="opt">(if applicable)</span></label>
-                            <input type="text" id="coverage" placeholder="e.g. EUR 300,000 per occurrence">
-                        </div>
-                    </fieldset>
-
-                    <div class="btn-row">
-                        <button class="btn-back" onclick="goTo(1)">Back</button>
-                        <button class="btn-primary" onclick="goTo(3)">Continue to Agreements</button>
-                        <span class="step-counter">2 / 4</span>
-                    </div>
-                </div>
-
-                <!-- STEP 3: AGREEMENTS (Dynamic) -->
-                <div class="step" id="step-3">
-                    <p class="step-overline">Barcelona Onboarding</p>
-                    <h3>Framework Agreements</h3>
-                    <p class="step-intro">Review the applicable legal framework. The Continue button activates only after accepting both your specific pathway agreement and the Master Terms.</p>
-
-                    <!-- CHEF AGREEMENT -->
-                    <div id="agreement-chef" class="agreement-section" style="display:none;">
-                        <div class="agreement-block">
-                            <h4>Chef Services Agreement — Type A</h4>
-                            <span class="agreement-type-tag">Applies to: Independent Culinary Professionals (Autónomos)</span>
-                            <div class="agreement-scroll">
-                                <div class="agreement-text">
-                                    <p><strong>GLOBAL MASTER CHEF SERVICES AGREEMENT (TYPE A) — VERSION 3.1</strong></p>
-                                    <p><em>Ref: GCSA-2026-GLOBAL &middot; Electronic Onboarding Click-Through Agreement</em></p><br>
-                                    <p>This Global Master Chef Services Agreement establishes a binding framework between <strong>CK Events Management & Hospitality Group LLC</strong> (trading as <strong>Clandestino Kitchen</strong> and <strong>JoEs TaBLe</strong>) and the independent contractor identified in Step 1. By accepting below, you agree to these terms for all future Service Orders.</p>
-                                    <p><strong>1. INDEPENDENT ENGAGEMENT:</strong> You operate as a B2B contractor. CK LLC does not own or operate kitchen facilities in Barcelona; you remain 100% responsible for licensed production space, food safety, HACCP/APPCC compliance, and allergen disclosures under EU Regulation 1169/2011.</p>
-                                    <p><strong>2. LIABILITY & INDEMNITY:</strong> You retain exclusive legal and civil liability for food safety, allergens, and kitchen sanitation. You shall indemnify CK LLC against claims arising from culinary execution.</p>
-                                    <p><strong>3. CROSS-BORDER INVOICING:</strong> CK LLC is a US entity (Wyoming). You will invoice CK LLC as a US recipient according to your local tax rules (Spanish Autónomo rules for B2B cross-border services).</p>
+                            <div class="field-grid">
+                                <div class="field" id="f-locations">
+                                    <label for="locations">Locations / Neighborhoods Served <span class="req">*</span></label>
+                                    <input type="text" id="locations" placeholder="e.g. Poblenou, Eixample, Gràcia, Barcelona Metro">
+                                    <div class="error-msg">Required</div>
+                                </div>
+                                <div class="field" id="f-capacity">
+                                    <label for="capacity">Guest Capacity Range <span class="req">*</span></label>
+                                    <input type="text" id="capacity" placeholder="e.g. 12–30 guests (JoEs TaBLe Standard)">
+                                    <div class="error-msg">Required</div>
                                 </div>
                             </div>
-                            <button class="agreement-download" onclick="openModal('modal-csa','modal-csa-frame','/GCSA_Type_A.html')">↗ View Full Chef Agreement</button>
-                            <div class="checkbox-field">
-                                <input type="checkbox" id="accept-primary" onchange="checkAcceptance()">
-                                <label for="accept-primary">I have read the Chef Services Agreement — Type A (v3.1) in full and accept its terms.</label>
+                            <div class="field" id="f-years">
+                                <label for="years">Years Operating <span class="req">*</span></label>
+                                <select id="years">
+                                    <option value="">Select operational age...</option>
+                                    <option>Less than 1 year</option>
+                                    <option>1–3 years</option>
+                                    <option>3–5 years</option>
+                                    <option>5–10 years</option>
+                                    <option>More than 10 years</option>
+                                </select>
+                                <div class="error-msg">Required</div>
                             </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Compliance & Insurance</legend>
+                            <div class="field" id="f-licenses">
+                                <label for="licenses">Do you hold all required licenses for your jurisdiction? <span class="req">*</span></label>
+                                <select id="licenses">
+                                    <option value="">Select status...</option>
+                                    <option value="yes">Yes — all licenses current (e.g., Licencia C3, Manipulador de Alimentos)</option>
+                                    <option value="no">No</option>
+                                </select>
+                                <div class="hint">Venues: Licencia de Actividad. Chefs: Carnet de Manipulad@r de Alimentos.</div>
+                                <div class="error-msg">Required</div>
+                            </div>
+                            <div class="field" id="f-insurance">
+                                <label for="insurance">Public Liability Insurance Status <span class="req">*</span></label>
+                                <select id="insurance">
+                                    <option value="">Select status...</option>
+                                    <option value="yes">Yes — Active policy in force</option>
+                                    <option value="no">No</option>
+                                </select>
+                                <div class="error-msg">Required</div>
+                            </div>
+                            <div class="field">
+                                <label for="coverage">Coverage Amount <span class="opt">(if applicable)</span></label>
+                                <input type="text" id="coverage" placeholder="e.g. EUR 300,000 per occurrence">
+                            </div>
+                        </fieldset>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-back" onclick="goTo(1)">Back</button>
+                            <button type="button" class="btn-primary" onclick="goTo(3)">Continue to Agreements</button>
+                            <span class="step-counter">2 / 4</span>
                         </div>
                     </div>
 
-                    <!-- VENUE AGREEMENT -->
-                    <div id="agreement-venue" class="agreement-section" style="display:none;">
-                        <div class="agreement-block">
-                            <h4>Venue Partnership Agreement</h4>
-                            <span class="agreement-type-tag">Applies to: Independently Licensed Barcelona Venues</span>
-                            <div class="agreement-scroll">
-                                <div class="agreement-text">
-                                    <p>This Venue Partnership Agreement is between CK Events Management & Hospitality Group LLC and the Venue Partner. You make your licensed space available exclusively for confirmed JoEs TaBLe events.</p>
-                                    <p>You warrant that your premises maintain all local licenses (e.g. Licencia de Actividad / C3) and meet fire and safety standards. Client relationships remain the exclusive property of CK LLC; non-solicitation applies for 12 months following any engagement.</p>
+                    <!-- STEP 3: AGREEMENTS (Dynamic) -->
+                    <div class="step" id="step-3">
+                        <p class="step-overline">Barcelona Onboarding</p>
+                        <h3>Framework Agreements</h3>
+                        <p class="step-intro">Review the applicable legal framework. The Continue button activates only after accepting both your specific pathway agreement and the Master Terms.</p>
+
+                        <!-- CHEF AGREEMENT -->
+                        <div id="agreement-chef" class="agreement-section" style="display:none;">
+                            <div class="agreement-block">
+                                <h4>Chef Services Agreement — Type A</h4>
+                                <span class="agreement-type-tag">Applies to: Independent Culinary Professionals (Autónomos)</span>
+                                <div class="agreement-scroll">
+                                    <div class="agreement-text">
+                                        <p><strong>GLOBAL MASTER CHEF SERVICES AGREEMENT (TYPE A) — VERSION 3.1</strong></p>
+                                        <p><em>Ref: GCSA-2026-GLOBAL &middot; Electronic Onboarding Click-Through Agreement</em></p><br>
+                                        <p>This Global Master Chef Services Agreement establishes a binding framework between <strong>CK Events Management & Hospitality Group LLC</strong> (trading as <strong>Clandestino Kitchen</strong> and <strong>JoEs TaBLe</strong>) and the independent contractor identified in Step 1. By accepting below, you agree to these terms for all future Service Orders.</p>
+                                        <p><strong>1. INDEPENDENT ENGAGEMENT:</strong> You operate as a B2B contractor. CK LLC does not own or operate kitchen facilities in Barcelona; you remain 100% responsible for licensed production space, food safety, HACCP/APPCC compliance, and allergen disclosures under EU Regulation 1169/2011.</p>
+                                        <p><strong>2. LIABILITY & INDEMNITY:</strong> You retain exclusive legal and civil liability for food safety, allergens, and kitchen sanitation. You shall indemnify CK LLC against claims arising from culinary execution.</p>
+                                        <p><strong>3. CROSS-BORDER INVOICING:</strong> CK LLC is a US entity (Wyoming). You will invoice CK LLC as a US recipient according to your local tax rules (Spanish Autónomo rules for B2B cross-border services).</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="agreement-download" onclick="openModal('modal-csa','modal-csa-frame','/GCSA_Type_A.html')">↗ View Full Chef Agreement</button>
+                                <div class="checkbox-field">
+                                    <input type="checkbox" id="accept-primary" onchange="checkAcceptance()">
+                                    <label for="accept-primary">I have read the Chef Services Agreement — Type A (v3.1) in full and accept its terms.</label>
                                 </div>
                             </div>
-                            <button class="agreement-download" onclick="openModal('modal-vpa','modal-vpa-frame','/VPA.html')">↗ View Full Venue Agreement</button>
-                            <div class="checkbox-field">
-                                <input type="checkbox" id="accept-primary-venue" onchange="checkAcceptance()">
-                                <label for="accept-primary-venue">I have read the Venue Partnership Agreement in full and accept its terms.</label>
-                            </div>
                         </div>
-                    </div>
 
-                    <!-- GENERAL AGREEMENT -->
-                    <div id="agreement-general" class="agreement-section" style="display:none;">
-                        <div class="agreement-block">
-                            <h4>Independent Partner Agreement</h4>
-                            <span class="agreement-type-tag">Applies to: Agencies, Catering, Suppliers & Other Partners</span>
-                            <div class="agreement-scroll">
-                                <div class="agreement-text">
-                                    <p>This framework governs agency, catering, and supplier engagements with CK Events Management & Hospitality Group LLC. All work is conducted on a B2B independent contractor basis under explicit Service Orders.</p>
+                        <!-- VENUE AGREEMENT -->
+                        <div id="agreement-venue" class="agreement-section" style="display:none;">
+                            <div class="agreement-block">
+                                <h4>Venue Partnership Agreement</h4>
+                                <span class="agreement-type-tag">Applies to: Independently Licensed Barcelona Venues</span>
+                                <div class="agreement-scroll">
+                                    <div class="agreement-text">
+                                        <p>This Venue Partnership Agreement is between CK Events Management & Hospitality Group LLC and the Venue Partner. You make your licensed space available exclusively for confirmed JoEs TaBLe events.</p>
+                                        <p>You warrant that your premises maintain all local licenses (e.g. Licencia de Actividad / C3) and meet fire and safety standards. Client relationships remain the exclusive property of CK LLC; non-solicitation applies for 12 months following any engagement.</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="agreement-download" onclick="openModal('modal-vpa','modal-vpa-frame','/VPA.html')">↗ View Full Venue Agreement</button>
+                                <div class="checkbox-field">
+                                    <input type="checkbox" id="accept-primary-venue" onchange="checkAcceptance()">
+                                    <label for="accept-primary-venue">I have read the Venue Partnership Agreement in full and accept its terms.</label>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- GENERAL AGREEMENT -->
+                        <div id="agreement-general" class="agreement-section" style="display:none;">
+                            <div class="agreement-block">
+                                <h4>Independent Partner Agreement</h4>
+                                <span class="agreement-type-tag">Applies to: Agencies, Catering, Suppliers & Other Partners</span>
+                                <div class="agreement-scroll">
+                                    <div class="agreement-text">
+                                        <p>This framework governs agency, catering, and supplier engagements with CK Events Management & Hospitality Group LLC. All work is conducted on a B2B independent contractor basis under explicit Service Orders.</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-field">
+                                    <input type="checkbox" id="accept-primary-gen" onchange="checkAcceptance()">
+                                    <label for="accept-primary-gen">I have read the Independent Partner Agreement in full and accept its terms.</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MASTER TERMS -->
+                        <div class="agreement-block">
+                            <h4>CK Master Terms and Conditions</h4>
+                            <span class="agreement-type-tag">Applies to: All Global Partners</span>
+                            <div class="agreement-scroll">
+                                <div class="agreement-text">
+                                    <p>The CK Master Terms govern all partner relationships across JoEs TaBLe and Clandestino Kitchen. Partners acknowledge independent status, sole tax and license responsibility in their jurisdiction, and 12-month client non-solicitation.</p>
+                                </div>
+                            </div>
+                            <a href="https://clandestino.kitchen/terms" class="agreement-download" target="_blank" rel="noopener">↗ Read Full Master T&Cs</a>
                             <div class="checkbox-field">
-                                <input type="checkbox" id="accept-primary-gen" onchange="checkAcceptance()">
-                                <label for="accept-primary-gen">I have read the Independent Partner Agreement in full and accept its terms.</label>
+                                <input type="checkbox" id="accept-tcs" onchange="checkAcceptance()">
+                                <label for="accept-tcs">I have read the CK Master Terms and Conditions and accept their terms.</label>
                             </div>
+                        </div>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-back" onclick="goTo(2)">Back</button>
+                            <button type="button" class="btn-primary" id="btn-step3" onclick="goTo(4)" disabled>Continue to Payment Guidance</button>
+                            <span class="step-counter">3 / 4</span>
                         </div>
                     </div>
 
-                    <!-- MASTER TERMS -->
-                    <div class="agreement-block">
-                        <h4>CK Master Terms and Conditions</h4>
-                        <span class="agreement-type-tag">Applies to: All Global Partners</span>
-                        <div class="agreement-scroll">
-                            <div class="agreement-text">
-                                <p>The CK Master Terms govern all partner relationships across JoEs TaBLe and Clandestino Kitchen. Partners acknowledge independent status, sole tax and license responsibility in their jurisdiction, and 12-month client non-solicitation.</p>
+                    <!-- STEP 4: INVOICING, BANK DETAILS & CONSENT -->
+                    <div class="step" id="step-4">
+                        <p class="step-overline">Barcelona Onboarding</p>
+                        <h3>Invoicing Guidance, Bank Details & Final Consent</h3>
+                        <p class="step-intro">Review how to invoice CK LLC (a US entity) and access our official banking details for processing partner payments.</p>
+
+                        <div class="info-box">
+                            <p><strong>CK Events Management & Hospitality Group LLC is a US Corporate Entity</strong></p>
+                            <p>Incorporated in Wyoming, USA (EIN: 30-1496817). When issuing invoices to CK LLC, you are supplying services to a non-EU recipient.</p>
+                        </div>
+
+                        <!-- Bank Details Display -->
+                        <div class="bank-details-card">
+                            <div class="bank-header">
+                                <h4>CK LLC Payment Processing Bank Details</h4>
+                                <span class="nav-tag">Official Direct Wire / SEPA Info</span>
+                            </div>
+                            <div class="bank-grid">
+                                <div class="bank-item">
+                                    <span class="label">Account Holder</span>
+                                    <span class="value">CK Events Management & Hospitality Group LLC</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Corporate Registration Address</span>
+                                    <span class="value">30 N Gould St Ste N, Sheridan, WY 82801, USA</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Primary US Tax Identifier (EIN)</span>
+                                    <span class="value">30-1496817</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Payment Processing Rail</span>
+                                    <span class="value">Stripe, Inc. B2B Direct Invoicing & Wire Transfer</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Official Inquiry / Compliance Email</span>
+                                    <span class="value">compliance@clandestino.kitchen</span>
+                                </div>
+                                <div class="bank-item">
+                                    <span class="label">Settlement Currencies Supported</span>
+                                    <span class="value">EUR (€), USD ($), GBP (£)</span>
+                                </div>
                             </div>
                         </div>
-                        <a href="https://clandestino.kitchen/terms" class="agreement-download" target="_blank" rel="noopener">↗ Read Full Master T&Cs</a>
-                        <div class="checkbox-field">
-                            <input type="checkbox" id="accept-tcs" onchange="checkAcceptance()">
-                            <label for="accept-tcs">I have read the CK Master Terms and Conditions and accept their terms.</label>
+
+                        <!-- Invoicing Accordions -->
+                        <div class="invoice-guidance">
+                            <button type="button" class="invoice-guidance-header" id="gh-eu" aria-expanded="true" onclick="toggleGuidance('eu')">
+                                <span>EU / Spanish Autonomous Partners (Reverse Charge B2B)</span>
+                                <span class="toggle-icon" id="ti-eu">+</span>
+                            </button>
+                            <div class="invoice-guidance-body" id="gb-eu">
+                                <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">For B2B services rendered to a US recipient outside the EU, VAT reverse charge rules apply. Spanish autónomos/SLs issue invoices without IVA (0% Operación no sujeta a IVA / Reverse Charge).</p>
+                                <div class="invoice-example">
+                                    <span class="lk">CLIENT BILL TO:</span><br>
+                                    CK Events Management & Hospitality Group LLC<br>
+                                    30 N Gould St Ste N, Sheridan, WY 82801, USA<br>
+                                    US EIN: 30-1496817<br><br>
+                                    <span class="lk">SERVICE DESCRIPTION:</span><br>
+                                    <span class="ph">[Culinary / Venue Execution] | JoEs TaBLe Barcelona | [Event Date]</span><br><br>
+                                    Net Amount: <span class="ph">[EUR X,XXX.00]</span><br>
+                                    <span class="lk">VAT/IVA: 0% — B2B supply to a non-EU recipient (Reverse charge / Operación no sujeta a IVA).</span><br>
+                                    Total: <span class="ph">[EUR X,XXX.00]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="invoice-guidance">
+                            <button type="button" class="invoice-guidance-header" id="gh-uk" aria-expanded="false" onclick="toggleGuidance('uk')">
+                                <span>UK & International Partners</span>
+                                <span class="toggle-icon" id="ti-uk">+</span>
+                            </button>
+                            <div class="invoice-guidance-body" id="gb-uk">
+                                <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">Services supplied outside your local jurisdiction to a US business entity are typically zero-rated or outside the scope of local VAT.</p>
+                                <div class="invoice-example">
+                                    <span class="lk">CLIENT BILL TO:</span><br>
+                                    CK Events Management & Hospitality Group LLC (EIN: 30-1496817)<br>
+                                    30 N Gould St Ste N, Sheridan, WY 82801, USA<br><br>
+                                    <span class="lk">VAT: 0% — Exported B2B Professional Services.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 32px;">
+                            <div class="checkbox-field">
+                                <input type="checkbox" id="confirm-invoice" onchange="checkFinalStep()">
+                                <label for="confirm-invoice">I confirm I have reviewed the invoicing guidance and bank details above and accept responsibility for invoice tax compliance.</label>
+                            </div>
+                            <div class="checkbox-field">
+                                <input type="checkbox" id="confirm-gdpr" onchange="checkFinalStep()">
+                                <label for="confirm-gdpr">I consent to CK Events Management & Hospitality Group LLC processing my data for partner network management under the <a href="https://clandestino.kitchen/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</label>
+                            </div>
+                            <div class="checkbox-field">
+                                <input type="checkbox" id="confirm-engagement" onchange="checkFinalStep()">
+                                <label for="confirm-engagement">I understand this onboarding submission is an introduction only. Commercial engagement takes effect only upon a signed Service Order.</label>
+                            </div>
+                        </div>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-back" onclick="goTo(3)">Back</button>
+                            <button type="button" class="btn-submit" id="btn-submit" onclick="submitForm()" disabled>Submit Barcelona Onboarding</button>
+                            <span class="step-counter">4 / 4</span>
                         </div>
                     </div>
-
-                    <div class="btn-row">
-                        <button class="btn-back" onclick="goTo(2)">Back</button>
-                        <button class="btn-primary" id="btn-step3" onclick="goTo(4)" disabled>Continue to Payment Guidance</button>
-                        <span class="step-counter">3 / 4</span>
-                    </div>
-                </div>
-
-                <!-- STEP 4: INVOICING, BANK DETAILS & CONSENT -->
-                <div class="step" id="step-4">
-                    <p class="step-overline">Barcelona Onboarding</p>
-                    <h3>Invoicing Guidance, Bank Details & Final Consent</h3>
-                    <p class="step-intro">Review how to invoice CK LLC (a US entity) and access our official banking details for processing partner payments.</p>
-
-                    <div class="info-box">
-                        <p><strong>CK Events Management & Hospitality Group LLC is a US Corporate Entity</strong></p>
-                        <p>Incorporated in Wyoming, USA (EIN: 30-1496817). When issuing invoices to CK LLC, you are supplying services to a non-EU recipient.</p>
-                    </div>
-
-                    <!-- Bank Details Display -->
-                    <div class="bank-details-card">
-                        <div class="bank-header">
-                            <h4>CK LLC Payment Processing Bank Details</h4>
-                            <span class="nav-tag">Official Direct Wire / SEPA Info</span>
-                        </div>
-                        <div class="bank-grid">
-                            <div class="bank-item">
-                                <span class="label">Account Holder</span>
-                                <span class="value">CK Events Management & Hospitality Group LLC</span>
-                            </div>
-                            <div class="bank-item">
-                                <span class="label">Corporate Registration Address</span>
-                                <span class="value">30 N Gould St Ste N, Sheridan, WY 82801, USA</span>
-                            </div>
-                            <div class="bank-item">
-                                <span class="label">Primary US Tax Identifier (EIN)</span>
-                                <span class="value">30-1496817</span>
-                            </div>
-                            <div class="bank-item">
-                                <span class="label">Payment Processing Rail</span>
-                                <span class="value">Stripe, Inc. B2B Direct Invoicing & Wire Transfer</span>
-                            </div>
-                            <div class="bank-item">
-                                <span class="label">Official Inquiry / Compliance Email</span>
-                                <span class="value">compliance@clandestino.kitchen</span>
-                            </div>
-                            <div class="bank-item">
-                                <span class="label">Settlement Currencies Supported</span>
-                                <span class="value">EUR (€), USD ($), GBP (£)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Invoicing Accordions -->
-                    <div class="invoice-guidance">
-                        <div class="invoice-guidance-header" id="gh-eu" onclick="toggleGuidance('eu')">
-                            <span>EU / Spanish Autonomous Partners (Reverse Charge B2B)</span>
-                            <span class="toggle-icon" id="ti-eu">+</span>
-                        </div>
-                        <div class="invoice-guidance-body" id="gb-eu">
-                            <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">For B2B services rendered to a US recipient outside the EU, VAT reverse charge rules apply. Spanish autónomos/SLs issue invoices without IVA (0% Operación no sujeta a IVA / Reverse Charge).</p>
-                            <div class="invoice-example">
-                                <span class="lk">CLIENT BILL TO:</span><br>
-                                CK Events Management & Hospitality Group LLC<br>
-                                30 N Gould St Ste N, Sheridan, WY 82801, USA<br>
-                                US EIN: 30-1496817<br><br>
-                                <span class="lk">SERVICE DESCRIPTION:</span><br>
-                                <span class="ph">[Culinary / Venue Execution] | JoEs TaBLe Barcelona | [Event Date]</span><br><br>
-                                Net Amount: <span class="ph">[EUR X,XXX.00]</span><br>
-                                <span class="lk">VAT/IVA: 0% — B2B supply to a non-EU recipient (Reverse charge / Operación no sujeta a IVA).</span><br>
-                                Total: <span class="ph">[EUR X,XXX.00]</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="invoice-guidance">
-                        <div class="invoice-guidance-header" id="gh-uk" onclick="toggleGuidance('uk')">
-                            <span>UK & International Partners</span>
-                            <span class="toggle-icon" id="ti-uk">+</span>
-                        </div>
-                        <div class="invoice-guidance-body" id="gb-uk">
-                            <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">Services supplied outside your local jurisdiction to a US business entity are typically zero-rated or outside the scope of local VAT.</p>
-                            <div class="invoice-example">
-                                <span class="lk">CLIENT BILL TO:</span><br>
-                                CK Events Management & Hospitality Group LLC (EIN: 30-1496817)<br>
-                                30 N Gould St Ste N, Sheridan, WY 82801, USA<br><br>
-                                <span class="lk">VAT: 0% — Exported B2B Professional Services.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 32px;">
-                        <div class="checkbox-field">
-                            <input type="checkbox" id="confirm-invoice" onchange="checkFinalStep()">
-                            <label for="confirm-invoice">I confirm I have reviewed the invoicing guidance and bank details above and accept responsibility for invoice tax compliance.</label>
-                        </div>
-                        <div class="checkbox-field">
-                            <input type="checkbox" id="confirm-gdpr" onchange="checkFinalStep()">
-                            <label for="confirm-gdpr">I consent to CK Events Management & Hospitality Group LLC processing my data for partner network management under the <a href="https://clandestino.kitchen/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</label>
-                        </div>
-                        <div class="checkbox-field">
-                            <input type="checkbox" id="confirm-engagement" onchange="checkFinalStep()">
-                            <label for="confirm-engagement">I understand this onboarding submission is an introduction only. Commercial engagement takes effect only upon a signed Service Order.</label>
-                        </div>
-                    </div>
-
-                    <div class="btn-row">
-                        <button class="btn-back" onclick="goTo(3)">Back</button>
-                        <button class="btn-submit" id="btn-submit" onclick="submitForm()" disabled>Submit Barcelona Onboarding</button>
-                        <span class="step-counter">4 / 4</span>
-                    </div>
-                </div>
+                </form>
 
                 <!-- SUCCESS DISPLAY -->
                 <div class="step" id="step-success">
@@ -1359,7 +1364,7 @@
         <div class="modal-frame">
             <div class="modal-header">
                 <span class="modal-title">Chef Services Agreement — Type A</span>
-                <button class="modal-close" onclick="closeModal('modal-csa')">✕ Close</button>
+                <button type="button" class="modal-close" onclick="closeModal('modal-csa')">✕ Close</button>
             </div>
             <div class="modal-body"><iframe id="modal-csa-frame" src="" title="Chef Services Agreement Type A"></iframe></div>
         </div>
@@ -1368,7 +1373,7 @@
         <div class="modal-frame">
             <div class="modal-header">
                 <span class="modal-title">Venue Partnership Agreement</span>
-                <button class="modal-close" onclick="closeModal('modal-vpa')">✕ Close</button>
+                <button type="button" class="modal-close" onclick="closeModal('modal-vpa')">✕ Close</button>
             </div>
             <div class="modal-body"><iframe id="modal-vpa-frame" src="" title="Venue Partnership Agreement"></iframe></div>
         </div>
@@ -1377,6 +1382,17 @@
     <script>
         const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcQRD92uTmAo7IIiL7l03sh1ZntpVCee2tddH-2oYzug3BarSuhs9K-SUqaonJRo3kXw/exec';
         const state = { current: 1 };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input, select, textarea').forEach(input => {
+                const handler = () => {
+                    const field = input.closest('.field');
+                    if (field) field.classList.remove('has-error');
+                };
+                input.addEventListener('input', handler);
+                input.addEventListener('change', handler);
+            });
+        });
 
         function goTo(n) {
             if (typeof n === 'number' && n > state.current && !validateStep(state.current)) return;
@@ -1396,7 +1412,11 @@
             const next = document.getElementById('step-' + n);
             if (next) next.classList.add('visible');
             updateProgress(n);
-            window.scrollTo({ top: document.getElementById('section-02-title').offsetTop - 100, behavior: 'smooth' });
+            
+            const anchor = document.getElementById('section-02-title');
+            if (anchor) {
+                window.scrollTo({ top: anchor.offsetTop - 100, behavior: 'smooth' });
+            }
         }
 
         function updateProgress(n) {
@@ -1410,6 +1430,11 @@
         function routeAgreements() {
             const type = document.getElementById('partner-type').value;
             document.querySelectorAll('.agreement-section').forEach(el => el.style.display = 'none');
+            
+            ['accept-primary', 'accept-primary-venue', 'accept-primary-gen'].forEach(id => {
+                const cb = document.getElementById(id);
+                if (cb) cb.checked = false;
+            });
             
             if (type === 'chef') {
                 document.getElementById('agreement-chef').style.display = 'block';
@@ -1426,7 +1451,10 @@
             const header = document.getElementById('gh-eu');
             const icon = document.getElementById('ti-eu');
             if (body) body.classList.add('open');
-            if (header) header.classList.add('open');
+            if (header) {
+                header.classList.add('open');
+                header.setAttribute('aria-expanded', 'true');
+            }
             if (icon) icon.style.transform = 'rotate(45deg)';
         }
 
@@ -1436,7 +1464,10 @@
             const icon = document.getElementById('ti-' + key);
             if (!body) return;
             const open = body.classList.toggle('open');
-            if (header) header.classList.toggle('open', open);
+            if (header) {
+                header.classList.toggle('open', open);
+                header.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
             if (icon) icon.style.transform = open ? 'rotate(45deg)' : 'rotate(0deg)';
         }
 
