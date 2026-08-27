@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Clandestino Kitchen | CK Events Management &amp; Hospitality Group LLC</title>
+<meta name="description" content="Clandestino Kitchen designs and manages premium culinary events and corporate dining experiences worldwide through a curated network of venue and hospitality partners.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clandestino.kitchen/">
+<meta property="og:title" content="Clandestino Kitchen">
+<meta property="og:description" content="A portfolio of brands at the intersection of gastronomy, culture, and hospitality.">
+<meta property="og:image" content="img/og-image.jpg">
+<meta property="og:site_name" content="Clandestino Kitchen">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#060504">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+img{display:block;max-width:100%;height:auto;}
+:root{
+  --bg:#f7f4ef;
+  --ink:#f0ece4;
+  --white:#ffffff;
+  --dark:#0d0b09;
+  --black:#060504;
+  --text:#0f0e0d;
+  --mid:#5a5248;
+  --dim:#9a9088;
+  --gold:#b89a5e;
+  --F:'Raleway','Helvetica Neue',Arial,sans-serif;
+  --M:'Inter','Helvetica Neue',Arial,sans-serif;
+}
+html{background:var(--white);-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{background:var(--white);color:var(--text);font-family:var(--F);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.ver{position:fixed;bottom:12px;right:16px;z-index:50;font-family:var(--M);font-size:8px;letter-spacing:.08em;color:rgba(15,14,13,.35);pointer-events:none;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;inset:0 0 auto;z-index:400;
+  height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+  border-bottom:1px solid transparent;
+  transition:background .35s,border-color .35s;
+}
+nav.solid{
+  background:rgba(255,255,255,.95);
+  border-bottom-color:rgba(15,14,13,.07);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.n-logo{
+  font-family:var(--F);font-size:12px;font-weight:400;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(240,236,228,.88);text-decoration:none;
+  transition:color .3s;white-space:nowrap;
+}
+nav.solid .n-logo{color:var(--text);}
+.n-links{list-style:none;display:flex;gap:32px;align-items:center;}
+.n-links a{
+  font-family:var(--M);font-size:10px;font-weight:400;
+  letter-spacing:.08em;
+  color:rgba(240,236,228,.55);text-decoration:none;
+  transition:color .2s;min-height:44px;display:flex;align-items:center;
+}
+nav.solid .n-links a{color:var(--mid);}
+.n-links a:hover{color:rgba(240,236,228,.9);}
+nav.solid .n-links a:hover{color:var(--text);}
+.n-contact{
+  font-family:var(--M);font-size:10px;font-weight:400;letter-spacing:.06em;
+  color:rgba(240,236,228,.55);text-decoration:none;
+  border-bottom:1px solid rgba(240,236,228,.25);padding-bottom:1px;
+  transition:all .2s;
+}
+nav.solid .n-contact{color:var(--mid);border-bottom-color:rgba(90,82,72,.3);}
+.n-contact:hover{color:rgba(240,236,228,.9);border-bottom-color:rgba(240,236,228,.6);}
+nav.solid .n-contact:hover{color:var(--text);border-bottom-color:var(--text);}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;min-width:44px;min-height:44px;justify-content:center;}
+.burger span{display:block;width:20px;height:1px;background:rgba(240,236,228,.75);transition:background .3s;}
+nav.solid .burger span{background:var(--text);}
+
+/* ── HERO ── */
+.hero{
+  position:relative;height:100svh;height:100dvh;min-height:620px;
+  background:var(--black);overflow:hidden;
+}
+.bg-slides{position:absolute;inset:0;}
+.bg-slide{
+  position:absolute;inset:0;opacity:0;
+  transition:opacity 2s ease;
+  background-size:cover;background-position:center;
+}
+.bg-slide.active{opacity:1;}
+.bg-slide::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    rgba(6,5,4,.25) 0%,
+    rgba(6,5,4,.2) 35%,
+    rgba(6,5,4,.65) 72%,
+    rgba(6,5,4,.95) 100%);
+}
+
+.hero-id{
+  position:absolute;top:0;left:0;right:0;z-index:3;
+  padding:68px 40px 0;
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(240,236,228,.55);
+}
+
+.hero-copy{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  padding:0 40px 52px;
+}
+.hero-h{
+  font-family:var(--F);
+  font-size:clamp(48px,8vw,120px);
+  font-weight:200;
+  line-height:.92;
+  letter-spacing:-.03em;
+  color:var(--ink);
+  margin-bottom:20px;
+  max-width:900px;
+}
+.hero-h em{font-style:italic;color:rgba(240,236,228,.5);}
+.hero-entity-sub{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(240,236,228,.55);margin-bottom:14px;
+}
+.hero-sub{
+  font-family:var(--M);font-size:11px;font-weight:300;
+  letter-spacing:.04em;line-height:1.75;
+  color:rgba(240,236,228,.65);
+  max-width:440px;margin-bottom:32px;
+}
+.hero-actions{display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
+.hero-cta{
+  font-family:var(--M);font-size:10px;font-weight:400;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(240,236,228,.75);text-decoration:none;
+  border-bottom:1px solid rgba(240,236,228,.35);
+  padding-bottom:2px;transition:all .2s;
+}
+.hero-cta:hover{color:var(--ink);border-bottom-color:var(--ink);}
+.hero-cta.gold{color:var(--gold);border-bottom-color:rgba(184,154,94,.4);}
+.hero-cta.gold:hover{color:#ccaa66;border-bottom-color:#ccaa66;}
+
+.hero-indicator{
+  position:absolute;right:24px;top:50%;transform:translateY(-50%);
+  z-index:3;display:flex;flex-direction:column;gap:6px;
+}
+.hi-dot{
+  width:2px;height:16px;background:rgba(240,236,228,.2);
+  border:none;cursor:pointer;padding:0;transition:background .35s,height .3s;
+}
+.hi-dot.active{background:var(--gold);height:28px;}
+
+/* ── EDITORIAL SECTION ── */
+.editorial{background:var(--white);padding:96px 40px;}
+.ed-inner{max-width:1200px;margin:0 auto;}
+.ed-h{
+  font-family:var(--F);
+  font-size:clamp(36px,6vw,88px);
+  font-weight:200;line-height:.94;
+  letter-spacing:-.025em;
+  color:var(--text);margin-bottom:40px;
+}
+.ed-h em{font-style:italic;color:var(--dim);}
+.ed-body{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;align-items:start;
+  padding-top:32px;
+  border-top:1px solid rgba(15,14,13,.08);
+}
+.ed-p{
+  font-family:var(--M);font-size:12px;font-weight:300;
+  letter-spacing:.02em;line-height:1.85;color:var(--mid);
+}
+.ed-aside{
+  display:flex;flex-direction:column;gap:0;
+  padding-top:0;
+}
+.ed-aside-img{
+  position:relative;overflow:hidden;
+  width:100%;aspect-ratio:4/3;
+  background:#0a0908;margin-bottom:28px;
+}
+.ed-aside-img img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;filter:brightness(.72) saturate(.85);
+  transition:filter .8s ease;
+}
+.ed-aside-img:hover img{filter:brightness(.85) saturate(1);}
+.ed-aside-label{
+  font-family:var(--M);font-size:9px;font-weight:400;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  display:block;margin-bottom:4px;opacity:.8;
+}
+.ed-aside-val{
+  font-family:var(--F);font-size:22px;font-weight:300;
+  letter-spacing:-.01em;color:var(--text);line-height:1.1;
+}
+.ed-aside-row{padding:16px 0;border-bottom:1px solid rgba(15,14,13,.08);}
+.ed-aside-row:first-child{border-top:1px solid rgba(15,14,13,.08);}
+
+/* ── METHODOLOGY ── */
+.meth{background:var(--bg);}
+.meth-grid{
+  display:grid;
+  grid-template-columns:3fr 2fr;
+  min-height:640px;
+}
+.meth-img{
+  position:relative;overflow:hidden;background:var(--dark);
+}
+.meth-img-collage{
+  display:grid;grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;height:100%;gap:2px;
+}
+.mc{position:relative;overflow:hidden;}
+.mc img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(.6) saturate(.85);
+  transition:filter .7s ease,transform 1.2s ease;
+}
+.mc:hover img{filter:brightness(.78) saturate(1);transform:scale(1.04);}
+.mc-lbl{
+  position:absolute;bottom:14px;left:16px;z-index:2;
+  font-family:var(--M);font-size:8px;font-weight:400;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(240,236,228,.65);
+}
+
+.meth-body{
+  background:var(--white);
+  padding:64px 52px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.meth-tag{
+  font-family:var(--M);font-size:9px;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:24px;opacity:.85;
+}
+.meth-h{
+  font-family:var(--F);
+  font-size:clamp(28px,3vw,44px);
+  font-weight:200;line-height:1.04;
+  letter-spacing:-.016em;
+  color:var(--text);margin-bottom:12px;
+}
+.meth-h em{font-style:italic;color:var(--dim);}
+.meth-tagline{
+  font-family:var(--M);font-size:11px;font-weight:300;
+  letter-spacing:.03em;line-height:1.8;
+  color:var(--mid);margin-bottom:40px;max-width:300px;
+}
+.meth-steps{display:flex;flex-direction:column;}
+.ms{
+  display:flex;align-items:baseline;gap:18px;
+  padding:16px 0;
+  border-bottom:1px solid rgba(15,14,13,.07);
+}
+.ms:first-child{border-top:1px solid rgba(15,14,13,.07);}
+.ms-n{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.1em;color:var(--gold);opacity:.7;
+  flex-shrink:0;width:22px;
+}
+.ms-w{
+  font-family:var(--F);font-size:20px;font-weight:300;
+  color:var(--text);letter-spacing:-.01em;
+}
+
+/* ── WORK/BRAND ── */
+.work{background:var(--white);}
+.work-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
+.work-header{
+  padding:96px 0 56px;
+  border-bottom:1px solid rgba(15,14,13,.08);
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;
+}
+.work-h{
+  font-family:var(--F);font-size:clamp(28px,4.5vw,60px);
+  font-weight:200;line-height:.94;letter-spacing:-.022em;color:var(--text);
+}
+.work-link{
+  font-family:var(--M);font-size:10px;font-weight:400;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mid);text-decoration:none;
+  border-bottom:1px solid rgba(90,82,72,.3);padding-bottom:2px;
+  white-space:nowrap;transition:all .2s;flex-shrink:0;
+}
+.work-link:hover{color:var(--text);border-bottom-color:var(--text);}
+
+.work-feature{
+  padding:56px 0;border-bottom:1px solid rgba(15,14,13,.08);
+}
+.wf-img{
+  position:relative;overflow:hidden;
+  width:100%;aspect-ratio:16/8;background:var(--dark);
+  margin-bottom:24px;
+}
+.wf-img img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  transition:transform 1.2s ease;
+}
+.work-feature:hover .wf-img img{transform:scale(1.025);}
+.wf-client{
+  font-family:var(--M);font-size:9px;font-weight:400;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);opacity:.8;display:block;margin-bottom:10px;
+}
+.wf-title{
+  font-family:var(--F);font-size:clamp(24px,3.5vw,46px);
+  font-weight:200;line-height:1.02;letter-spacing:-.018em;
+  color:var(--text);margin-bottom:14px;max-width:760px;
+}
+.wf-desc{
+  font-family:var(--M);font-size:11px;font-weight:300;
+  letter-spacing:.02em;line-height:1.8;color:var(--mid);
+  max-width:600px;margin-bottom:18px;
+}
+.wf-tags{display:flex;gap:16px;flex-wrap:wrap;}
+.wf-tag{
+  font-family:var(--M);font-size:9px;font-weight:400;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+}
+
+.work-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(15,14,13,.08);}
+.wg-item{padding:48px 0;}
+.wg-item:first-child{padding-right:40px;border-right:1px solid rgba(15,14,13,.08);}
+.wg-item:last-child{padding-left:40px;}
+.wg-img{
+  position:relative;overflow:hidden;
+  width:100%;aspect-ratio:4/3;background:var(--dark);
+  margin-bottom:20px;
+}
+.wg-img img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:transform 1.1s ease;
+}
+.wg-item:hover .wg-img img{transform:scale(1.03);}
+.wg-client{
+  font-family:var(--M);font-size:9px;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);opacity:.8;display:block;margin-bottom:8px;
+}
+.wg-title{
+  font-family:var(--F);font-size:clamp(20px,2.4vw,30px);
+  font-weight:300;line-height:1.06;letter-spacing:-.012em;
+  color:var(--text);margin-bottom:12px;
+}
+.wg-desc{
+  font-family:var(--M);font-size:10px;font-weight:300;
+  letter-spacing:.02em;line-height:1.8;color:var(--mid);margin-bottom:14px;
+}
+.wg-tags{display:flex;gap:12px;flex-wrap:wrap;}
+.wg-tag{
+  font-family:var(--M);font-size:8px;font-weight:400;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+}
+
+/* ── WHAT WE DO ── */
+.wwd{background:var(--bg);padding:96px 40px;}
+.wwd-inner{max-width:1200px;margin:0 auto;}
+.wwd-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:0;margin-top:56px;
+  border-top:1px solid rgba(15,14,13,.08);
+}
+.wwd-item{
+  padding:40px 40px 40px 0;
+  border-bottom:1px solid rgba(15,14,13,.08);
+}
+.wwd-item:not(:last-child){
+  border-right:1px solid rgba(15,14,13,.08);
+  padding-right:40px;
+}
+.wwd-item:not(:first-child){padding-left:40px;}
+.wwd-n{
+  font-family:var(--M);font-size:9px;font-weight:400;
+  letter-spacing:.14em;color:var(--gold);opacity:.75;
+  display:block;margin-bottom:16px;
+}
+.wwd-title{
+  font-family:var(--F);font-size:22px;font-weight:300;
+  letter-spacing:-.01em;color:var(--text);
+  margin-bottom:14px;line-height:1.1;
+}
+.wwd-desc{
+  font-family:var(--M);font-size:10px;font-weight:300;
+  letter-spacing:.025em;line-height:1.82;color:var(--mid);
+}
+
+/* ── VISION ── */
+.vision{background:var(--black);padding:96px 40px;}
+.vision-inner{max-width:1200px;margin:0 auto;}
+.vision-h{
+  font-family:var(--F);font-size:clamp(32px,5.5vw,76px);
+  font-weight:200;line-height:.94;letter-spacing:-.025em;
+  color:var(--ink);margin-bottom:56px;
+}
+.vision-h em{font-style:italic;color:rgba(240,236,228,.3);}
+.vis-rows{display:flex;flex-direction:column;}
+.vis-row{
+  display:grid;grid-template-columns:160px 1fr;
+  padding:28px 0;border-bottom:1px solid rgba(240,236,228,.07);
+  gap:32px;
+}
+.vis-row:first-child{border-top:1px solid rgba(240,236,228,.07);}
+.vis-phase{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);opacity:.78;line-height:1.7;padding-top:4px;
+}
+.vis-title{
+  font-family:var(--F);font-size:20px;font-weight:300;
+  color:rgba(240,236,228,.7);margin-bottom:8px;letter-spacing:-.008em;
+}
+.vis-desc{
+  font-family:var(--M);font-size:10px;font-weight:300;
+  letter-spacing:.025em;line-height:1.82;color:rgba(240,236,228,.4);
+}
+
+/* ── CONTACT CTA ── */
+.cta-band{
+  background:var(--bg);padding:120px 40px;
+  border-top:1px solid rgba(15,14,13,.07);
+  text-align:center;
+}
+.cta-band h2{
+  font-family:var(--F);font-size:clamp(32px,5vw,72px);
+  font-weight:200;line-height:.96;letter-spacing:-.024em;
+  color:var(--text);margin-bottom:32px;
+}
+.cta-band h2 em{font-style:italic;color:var(--dim);}
+.cta-band p{
+  font-family:var(--M);font-size:12px;font-weight:300;
+  letter-spacing:.03em;line-height:1.75;color:var(--mid);
+  max-width:480px;margin:0 auto 36px;
+}
+.cta-main{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--M);font-size:10px;font-weight:400;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text);text-decoration:none;
+  border-bottom:1px solid rgba(15,14,13,.25);padding-bottom:3px;
+  transition:all .2s;
+}
+.cta-main:hover{color:var(--gold);border-bottom-color:var(--gold);}
+.cta-main-arr{
+  width:14px;height:14px;
+  border-right:1px solid currentColor;
+  border-bottom:1px solid currentColor;
+  transform:rotate(-45deg);
+  transition:transform .2s;
+}
+.cta-main:hover .cta-main-arr{transform:rotate(-45deg) translate(2px,2px);}
+
+/* ── CONTACT SECTION ── */
+.contact{background:var(--black);padding:88px 40px;}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.co-tag{
+  font-family:var(--M);font-size:9px;font-weight:400;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(240,236,228,.45);display:block;margin-bottom:20px;
+}
+.co-h{
+  font-family:var(--F);font-size:clamp(28px,4vw,52px);
+  font-weight:200;line-height:.98;letter-spacing:-.018em;
+  color:var(--ink);margin-bottom:20px;
+}
+.co-h em{font-style:italic;color:rgba(240,236,228,.3);}
+.co-sub{
+  font-family:var(--M);font-size:11px;font-weight:300;
+  letter-spacing:.03em;line-height:1.8;
+  color:rgba(240,236,228,.45);margin-bottom:36px;
+}
+.co-details{display:flex;flex-direction:column;}
+.co-row{
+  display:grid;grid-template-columns:88px 1fr;
+  padding:13px 0;border-bottom:1px solid rgba(240,236,228,.07);
+}
+.co-row:first-child{border-top:1px solid rgba(240,236,228,.07);}
+.co-lbl{
+  font-family:var(--M);font-size:8px;font-weight:300;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(240,236,228,.38);padding-top:2px;
+}
+.co-val{
+  font-family:var(--M);font-size:10px;font-weight:300;
+  letter-spacing:.025em;color:rgba(240,236,228,.6);line-height:1.6;
+}
+.co-val a{color:inherit;text-decoration:none;transition:color .2s;}
+.co-val a:hover{color:var(--gold);}
+
+.fg{margin-bottom:18px;}
+.fg label{
+  font-family:var(--M);font-size:8px;font-weight:300;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(240,236,228,.4);display:block;margin-bottom:6px;
+}
+.fg input,.fg textarea{
+  width:100%;font-family:var(--M);font-size:11px;font-weight:300;
+  color:rgba(240,236,228,.82);background:transparent;
+  border:none;border-bottom:1px solid rgba(240,236,228,.1);
+  padding:9px 0;outline:none;transition:border-color .2s;
+  letter-spacing:.025em;
+}
+.fg input:focus,.fg textarea:focus{border-bottom-color:var(--gold);}
+.fg textarea{resize:none;height:72px;}
+.f-submit{
+  font-family:var(--M);font-size:10px;font-weight:400;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--black);background:var(--gold);
+  border:none;padding:0 32px;min-height:48px;
+  cursor:pointer;width:100%;transition:background .2s;margin-top:6px;
+}
+.f-submit:hover{background:#ccaa66;}
+.f-note{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  color:rgba(240,236,228,.35);margin-top:10px;letter-spacing:.03em;
+  text-align:center;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--black);
+  border-top:1px solid rgba(240,236,228,.07);
+  padding:56px 40px 28px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+}
+.f-name{
+  font-family:var(--F);font-size:13px;font-weight:300;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(240,236,228,.58);display:block;margin-bottom:4px;
+}
+.f-slogan{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(184,154,94,.55);display:block;margin-bottom:14px;
+}
+.f-entity{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.025em;color:rgba(240,236,228,.35);
+  line-height:1.85;
+}
+.f-col h4{
+  font-family:var(--M);font-size:8px;font-weight:400;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(184,154,94,.45);margin-bottom:18px;
+}
+.f-col ul{list-style:none;}
+.f-col li{margin-bottom:8px;}
+.f-col a, .f-col span.f-disabled{
+  font-family:var(--M);font-size:10px;font-weight:300;
+  color:rgba(240,236,228,.38);text-decoration:none;
+  letter-spacing:.02em;transition:color .2s;
+  min-height:40px;display:inline-flex;align-items:center;
+}
+.f-col a:hover{color:rgba(240,236,228,.8);}
+.f-col span.f-disabled{opacity:.4;cursor:default;}
+.f-base{
+  background:var(--black);padding:14px 40px 22px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:10px;
+  border-top:1px solid rgba(240,236,228,.04);
+}
+.f-copy{
+  font-family:var(--M);font-size:9px;font-weight:300;
+  letter-spacing:.04em;color:rgba(240,236,228,.35);
+}
+
+/* ── SCROLL REVEAL ── */
+@media (scripting: enabled) {
+  .r{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+  .r.on{opacity:1;transform:none;}
+}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* ── MOBILE ── */
+@media(max-width:960px){
+  nav{padding:0 20px;}
+  .n-links{display:none;}
+  .n-contact{display:none;}
+  .burger{display:flex;}
+  .n-links.open{
+    display:flex;flex-direction:column;
+    position:fixed;inset:0;
+    background:rgba(6,5,4,.97);
+    justify-content:center;align-items:center;
+    gap:28px;z-index:399;
+  }
+  .n-links.open a{font-size:16px;letter-spacing:.1em;color:rgba(240,236,228,.75);}
+  .hero-id{padding:68px 20px 0;}
+  .hero-copy{padding:0 20px 44px;}
+  .hero-h{font-size:clamp(44px,11vw,72px);}
+  .hero-indicator{display:none;}
+  .editorial,.wwd,.vision,.cta-band,.contact{padding:64px 20px;}
+  .ed-body{grid-template-columns:1fr;gap:36px;}
+  .meth-grid{grid-template-columns:1fr;}
+  .meth-img{min-height:320px;}
+  .meth-body{padding:48px 20px;}
+  .work-inner{padding:0 20px;}
+  .work-header{padding:64px 0 40px;flex-direction:column;align-items:flex-start;gap:16px;}
+  .work-grid{grid-template-columns:1fr;}
+  .wg-item:first-child{padding-right:0;border-right:none;border-bottom:1px solid rgba(15,14,13,.08);}
+  .wg-item:last-child{padding-left:0;}
+  .wwd-grid{grid-template-columns:1fr;}
+  .wwd-item{border-right:none !important;padding-left:0 !important;padding-right:0 !important;}
+  .vis-row{grid-template-columns:1fr;gap:6px;}
+  .contact-inner{grid-template-columns:1fr;gap:44px;}
+  footer{padding:44px 20px;grid-template-columns:1fr 1fr;gap:28px;}
+  .f-base{padding:12px 20px;}
+}
+@media(max-width:480px){
+  .hero-h{font-size:clamp(40px,12vw,60px);}
+  .ed-h{font-size:clamp(32px,9vw,52px);}
+  footer{grid-template-columns:1fr;}
+}
+</style>
+<link rel="canonical" href="https://clandestino.kitchen/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Clandestino Kitchen",
+  "legalName": "CK Events Management & Hospitality Group LLC",
+  "url": "https://clandestino.kitchen/",
+  "logo": "https://clandestino.kitchen/img/favicon-96x96.png",
+  "description": "Premium culinary event management and corporate dining experiences worldwide.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "30 N Gould St Ste N",
+    "addressLocality": "Sheridan",
+    "addressRegion": "WY",
+    "postalCode": "82801",
+    "addressCountry": "US"
+  },
+  "sameAs": ["https://www.linkedin.com/company/clandestinokitchen"]
+}
+</script>
+</head>
+<body>
+<div class="ver">CK v23</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#top" class="n-logo">Clandestino Kitchen</a>
+  <ul class="n-links" id="nLinks">
+    <li><a href="#about">The group</a></li>
+    <li><a href="#brand">Brand</a></li>
+    <li><a href="#vision">Vision</a></li>
+  </ul>
+  <a href="https://clandestino.kitchen/partner-onboarding.html" class="n-contact n-gold" target="_blank" rel="noopener">Partner with us</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="bg-slides">
+    <div class="bg-slide active" style="background-image:url('img/bg1.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/1.1.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg2.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/2.1.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg3.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/3.1.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg4.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/4.1.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/bg6.webp');"></div>
+    <div class="bg-slide" style="background-image:url('img/6.1.webp');"></div>
+  </div>
+
+  <div class="hero-indicator" id="heroIndicator">
+    <button class="hi-dot active" aria-label="Slide 1"></button>
+    <button class="hi-dot" aria-label="Slide 2"></button>
+    <button class="hi-dot" aria-label="Slide 3"></button>
+    <button class="hi-dot" aria-label="Slide 4"></button>
+    <button class="hi-dot" aria-label="Slide 5"></button>
+    <button class="hi-dot" aria-label="Slide 6"></button>
+    <button class="hi-dot" aria-label="Slide 7"></button>
+    <button class="hi-dot" aria-label="Slide 8"></button>
+    <button class="hi-dot" aria-label="Slide 9"></button>
+    <button class="hi-dot" aria-label="Slide 10"></button>
+  </div>
+  <div class="hero-copy">
+    <h1 class="hero-h">Where<br><em>gastronomy</em><br>becomes<br>an event.</h1>
+    <p class="hero-entity-sub">CK Events Management &amp; Hospitality Group LLC</p>
+    <p class="hero-sub">We build the concepts, the networks, and the standards that carry extraordinary hospitality anywhere in the world.</p>
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="editorial r" id="about">
+  <div class="ed-inner">
+    <h2 class="ed-h">The definitive<br>culinary <em>experience</em><br>group.</h2>
+
+    <div style="position:relative;overflow:hidden;width:100%;aspect-ratio:21/9;margin-bottom:48px;background:#0a0908;">
+      <img src="img/hero-event-table.webp" alt="CK Events Management" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.68);">
+    </div>
+
+    <div class="ed-body">
+      <p class="ed-p">
+        CK Events Management &amp; Hospitality Group LLC operates as the holding architecture behind a portfolio of specialized event and hospitality brands. We work at the intersection of concept-driven event production, corporate hospitality management, and international logistics, operating on the principle that a well-designed event concept functions as a standalone, repeatable product.
+        <br><br>
+        Our event formats are built for geographic portability. The same operational standard applies regardless of where an event is executed, ensuring consistent delivery across markets without local adaptation costs or quality variance. We design and manage premium corporate events and private engagements, coordinating the full production chain from concept through execution. Our logistics function covers multi-location corporate dining, international delegate events, and high-volume private bookings across major urban markets. Execution is delivered through a structured network of independently contracted venue partners, culinary operators, and production specialists, each selected against defined compliance, insurance, and operational criteria.
+      </p>
+      <div class="ed-aside">
+        <div class="ed-aside-row">
+          <span class="ed-aside-label">Entity</span>
+          <div class="ed-aside-val">CK Events Management &amp; Hospitality Group LLC</div>
+        </div>
+        <div class="ed-aside-row">
+          <span class="ed-aside-label">Corp ID</span>
+          <div class="ed-aside-val">Clandestino Kitchen</div>
+        </div>
+        <div class="ed-aside-row">
+          <span class="ed-aside-label">Brand Concept</span>
+          <div class="ed-aside-val">JoEs TaBLe</div>
+        </div>
+        <div class="ed-aside-row">
+          <span class="ed-aside-label">Worldwide</span>
+          <div class="ed-aside-val">Global operations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<div class="meth r">
+  <div class="meth-grid">
+    <div class="meth-img">
+      <div class="meth-img-collage">
+        <div class="mc">
+          <img src="img/conceive.webp" alt="Conceive phase">
+          <span class="mc-lbl">Conceive</span>
+        </div>
+        <div class="mc">
+          <img src="img/curate.webp" alt="Curate phase">
+          <span class="mc-lbl">Curate</span>
+        </div>
+        <div class="mc">
+          <img src="img/direct.webp" alt="Direct phase">
+          <span class="mc-lbl">Direct</span>
+        </div>
+        <div class="mc">
+          <img src="img/deliver.webp" alt="Deliver phase">
+          <span class="mc-lbl">Deliver</span>
+        </div>
+      </div>
+    </div>
+    <div class="meth-body">
+      <span class="meth-tag">How we work</span>
+      <h2 class="meth-h">Conceive. Curate.<br>Direct. <em>Deliver.</em></h2>
+      <p class="meth-tagline">Every engagement runs on this sequence. Every time.</p>
+      <div class="meth-steps">
+        <div class="ms"><span class="ms-n">01</span><span class="ms-w">Conceive</span></div>
+        <div class="ms"><span class="ms-n">02</span><span class="ms-w">Curate</span></div>
+        <div class="ms"><span class="ms-n">03</span><span class="ms-w">Direct</span></div>
+        <div class="ms"><span class="ms-n">04</span><span class="ms-w">Deliver</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND -->
+<section class="work r" id="brand">
+  <div class="work-inner">
+    <div class="work-header">
+      <h2 class="work-h">Our brand</h2>
+      <a href="https://joestable.clandestino.kitchen/enter/" target="_blank" rel="noopener" class="work-link">Visit JoEs TaBLe ↗</a>
+    </div>
+
+    <div class="work-feature">
+      <div class="wf-img">
+        <img src="img/brand-joestable.webp" alt="JoEs TaBLe Experience">
+      </div>
+      <span class="wf-client">Clandestino Kitchen is the corporate identity behind everything we build.</span>
+      <h3 class="wf-title">JoEs TaBLe is the brand we built it for.</h3>
+      <p class="wf-desc">Culinary experiences that build relationships and signal intent. A single-table format staged at hand-selected locations worldwide. Chef-led tasting menus built on food culture, personal history, and the stories behind every ingredient. Conceived and directed by CK. Executed through a curated global network of independent venue partners and culinary professionals.</p>
+      <div class="wf-tags">
+        <span class="wf-tag">Culinary concept</span>
+        <span class="wf-tag">Corporate &amp; Private</span>
+        <span class="wf-tag">Global</span>
+        <span class="wf-tag">Top51 Discovery</span>
+      </div>
+    </div>
+
+    <div class="work-grid">
+      <div class="wg-item">
+        <div class="wg-img">
+          <img src="img/hero-event-table.webp" alt="Corporate dining setting">
+        </div>
+        <span class="wg-client">JoEs TaBLe</span>
+        <h3 class="wg-title">Corporate dining that closes relationships.</h3>
+        <p class="wg-desc">Available to corporate clients requiring high-stakes dining experiences. Zero overhead. One point of contact. Delivered flawlessly anywhere our network operates.</p>
+        <div class="wg-tags">
+          <span class="wg-tag">Corporate</span>
+          <span class="wg-tag">Event management</span>
+        </div>
+      </div>
+      <div class="wg-item">
+        <div class="wg-img">
+          <img src="img/brand-clandestino.webp" alt="Private guest experience">
+        </div>
+        <span class="wg-client">JoEs TaBLe</span>
+        <h3 class="wg-title">By reservation only.</h3>
+        <p class="wg-desc">For discerning private guests. A single table. A chef selected for the occasion. A menu that tells a story. Available to those who know how to find it.</p>
+        <div class="wg-tags">
+          <span class="wg-tag">Private</span>
+          <span class="wg-tag">By reservation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="wwd r" id="wwd">
+  <div class="wwd-inner">
+    <h2 class="ed-h" style="max-width:700px;">Three disciplines.<br><em>One standard.</em></h2>
+    <div class="wwd-grid">
+      <div class="wwd-item">
+        <span class="wwd-n">01</span>
+        <div class="wwd-title">Culinary event management</div>
+        <p class="wwd-desc">The complete architecture of a high-end dining experience. Concept, partner selection, creative direction, and on-the-ground execution. Zero overhead for the client.</p>
+      </div>
+      <div class="wwd-item">
+        <span class="wwd-n">02</span>
+        <div class="wwd-title">Hospitality consultancy</div>
+        <p class="wwd-desc">Concept, strategy, and brand architecture for operators building for longevity. We work at the level where decisions compound.</p>
+      </div>
+      <div class="wwd-item">
+        <span class="wwd-n">03</span>
+        <div class="wwd-title">Brand and concept licensing</div>
+        <p class="wwd-desc">A proven format, ready to travel. Independent operators. CK's standards. Your market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision r" id="vision">
+  <div class="vision-inner">
+    <h2 class="vision-h">Building the global<br><em>gastronomic<br>experience company.</em></h2>
+    <div class="vis-rows">
+      <div class="vis-row">
+        <span class="vis-phase">Foundation / Now</span>
+        <div class="vis-content">
+          <div class="vis-title">Infrastructure established</div>
+          <p class="vis-desc">Corporate infrastructure established. Brand portfolio active. Partner network operational across Europe. Corporate and private client engagement underway.</p>
+        </div>
+      </div>
+      <div class="vis-row">
+        <span class="vis-phase">Expansion / 2026</span>
+        <div class="vis-content">
+          <div class="vis-title">Footprint extended</div>
+          <p class="vis-desc">Geographic footprint extended across multiple markets globally. EU corporate vehicle activated. Consultancy and editorial revenue streams contributing alongside event operations.</p>
+        </div>
+      </div>
+      <div class="vis-row">
+        <span class="vis-phase">Maturity / 2027</span>
+        <div class="vis-content">
+          <div class="vis-title">Portfolio at scale</div>
+          <p class="vis-desc">Multi-brand portfolio at scale. Gastronomic culture editorial platform established across key global markets. Proprietary technology infrastructure fully deployed.</p>
+        </div>
+      </div>
+      <div class="vis-row">
+        <span class="vis-phase">Scale / 2028+</span>
+        <div class="vis-content">
+          <div class="vis-title">Global presence</div>
+          <p class="vis-desc">Group presence across multiple continents. Portfolio expanded through organic development and strategic brand acquisition. CK recognised as a leading name in premium hospitality and gastronomic culture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER BAND -->
+<div class="cta-band r">
+  <h2>Let's make<br><em>something exceptional.</em></h2>
+  <h3 class="wg-title"><em>Join our partner network.</em></h3>
+  <p>We build our events through a curated network of independent venues, culinary professionals, and production partners. If your standard matches ours, introduce your company.</p>
+  <a href="https://clandestino.kitchen/partner-onboarding.html" target="_blank" rel="noopener" class="cta-main"> Become a partner <span class="cta-main-arr"></span></a>
+</div>
+
+<!-- CONTACT -->
+<section class="contact r" id="contact">
+  <div class="contact-inner">
+    <div class="co-left">
+      <span class="co-tag">Contact</span>
+      <h2 class="co-h">Let's talk<br><em>business.</em></h2>
+      <p class="co-sub">For corporate event inquiries and partnerships.</p>
+      <div class="co-details">
+        <div class="co-row"><span class="co-lbl">Entity</span><span class="co-val">CK Events Management &amp; Hospitality Group LLC</span></div>
+        <div class="co-row"><span class="co-lbl">Address</span><span class="co-val">30 N Gould St Ste N<br>Sheridan, WY 82801, USA</span></div>
+        <div class="co-row"><span class="co-lbl">LinkedIn</span><span class="co-val"><a href="https://www.linkedin.com/company/clandestinokitchen" target="_blank" rel="noopener">Clandestino Kitchen</a></span></div>
+      </div>
+    </div>
+    <div class="co-form">
+      <form id="contactForm" action="#" method="POST">
+        <div class="fg"><label for="cf-name">Full name</label><input type="text" id="cf-name" name="name" required placeholder="Your name"></div>
+        <div class="fg"><label for="cf-email">Email address</label><input type="email" id="cf-email" name="email" required placeholder="your@company.com"></div>
+        <div class="fg"><label for="cf-co">Company</label><input type="text" id="cf-co" name="company" placeholder="Optional"></div>
+        <div class="fg"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" required placeholder="Tell us about your enquiry"></textarea></div>
+        <button type="submit" class="f-submit">Send enquiry</button>
+        <p class="f-note">We respond within 24 hours</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-col-brand">
+    <span class="f-name">Clandestino Kitchen</span>
+    <span class="f-slogan">Eat. Connect. Experience.</span>
+    <p class="f-entity">CK Events Management &amp; Hospitality Group LLC<br>Established in Sheridan, Wyoming, USA<br>Company Reg. No.: 2026-001995375</p>
+  </div>
+  <div class="f-col">
+    <h4>The group</h4>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#wwd">What we do</a></li>
+      <li><a href="#vision">Vision</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Brand</h4>
+    <ul>
+      <li><a href="https://joestable.clandestino.kitchen/enter/" target="_blank" rel="noopener">JoEs TaBLe</a></li>
+      <li><span class="f-disabled">Clandestino Kitchen</span></li>
+      <li><span class="f-disabled">TOP51 Discovery</span></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Legal</h4>
+    <ul>
+      <li><a href="terms.html">Terms of use</a></li>
+      <li><a href="privacy-policy.html">Privacy policy</a></li>
+      <li><a href="cookie-policy.html">Cookie policy</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="f-base">
+  <p class="f-copy">&copy; 2026 CK Events Management &amp; Hospitality Group LLC</p>
+</div>
+
+<script>
+/* NAV */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('solid',window.scrollY>window.innerHeight*.75);
+},{passive:true});
+const burger=document.getElementById('burger'),nLinks=document.getElementById('nLinks');
+burger.addEventListener('click',()=>{const o=nLinks.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
+nLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nLinks.classList.remove('open')));
+
+/* HERO */
+const slides=document.querySelectorAll('.bg-slide');
+const dots=document.querySelectorAll('.hi-dot');
+let cur=0,total=slides.length;
+function goTo(n){
+  slides[cur].classList.remove('active');dots[cur].classList.remove('active');
+  cur=n%total;
+  slides[cur].classList.add('active');dots[cur].classList.add('active');
+}
+let timer=setInterval(()=>goTo(cur+1),4000);
+dots.forEach((d,i)=>d.addEventListener('click',()=>{clearInterval(timer);goTo(i);timer=setInterval(()=>goTo(cur+1),4000);}));
+
+/* SCROLL REVEAL */
+const io=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}});
+},{threshold:.04,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
+
+/* CONTACT FORM */
+const CONTACT_WORKER_URL='https://ck-partner-intake.mr-charly-brown.workers.dev';
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const form=this;
+  const btn=form.querySelector('.f-submit');
+  
+  const payload = {
+    formType: 'contact',
+    contactName: form.elements['name'] ? form.elements['name'].value : '',
+    contactEmail: form.elements['email'] ? form.elements['email'].value : '',
+    company: form.elements['company'] ? form.elements['company'].value : '',
+    message: form.elements['message'] ? form.elements['message'].value : ''
+  };
+
+  btn.textContent='Sending...';btn.disabled=true;
+  let statusEl=form.querySelector('.f-error');
+  if(statusEl)statusEl.remove();
+
+  try{
+    const res=await fetch(CONTACT_WORKER_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||data.success===false)throw new Error(data.error||'Request failed');
+    form.innerHTML='<p style="font-family:var(--M);font-size:10px;font-weight:300;letter-spacing:.04em;color:rgba(240,236,228,.5);text-align:center;padding:20px 0;">Enquiry sent. We will respond within 24 hours.</p>';
+  }catch(err){
+    const p=document.createElement('p');
+    p.className='f-error';
+    p.style.cssText='font-family:var(--M);font-size:9px;font-weight:300;letter-spacing:.03em;color:#d98c6b;margin-top:10px;text-align:center;';
+    p.textContent='Could not send your enquiry. Please email hello@clandestino.kitchen directly.';
+    form.appendChild(p);
+    btn.textContent='Send enquiry';btn.disabled=false;
+  }
+});
+</script>
+
+<script>
+(function(){
+  var KEY='ck_cookie_consent',P='cookie-policy.html';
+  if(localStorage.getItem(KEY))return;
+  var b=document.createElement('div'),s=document.createElement('style');
+  s.textContent='#ckcb{position:fixed;bottom:0;left:0;right:0;z-index:9999;animation:ckup .4s cubic-bezier(.16,1,.3,1) forwards;}@keyframes ckup{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}.cki{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:14px 40px;background:#0d0b09;border-top:1px solid rgba(184,154,94,.14);}.ckt{font-family:"Inter",sans-serif;font-size:11px;font-weight:300;color:rgba(240,236,228,.45);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}.ckt strong{color:rgba(240,236,228,.78);font-weight:400;font-family:"Raleway",sans-serif;font-size:12px;white-space:nowrap;}.ckt a{color:rgba(184,154,94,.7);text-decoration:none;border-bottom:1px solid rgba(184,154,94,.22);}.cka{display:flex;gap:8px;flex-shrink:0;}.ckb{font-family:"Inter",sans-serif;font-size:9px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;border:none;cursor:pointer;padding:0 18px;min-height:36px;transition:all .2s;}.ckok{background:#b89a5e;color:#0d0b09;}.ckok:hover{background:#ccaa66;}.ckno{background:transparent;color:rgba(240,236,228,.25);border:1px solid rgba(240,236,228,.1);}.ckno:hover{color:rgba(240,236,228,.55);border-color:rgba(240,236,228,.28);}@media(max-width:640px){.cki{padding:14px 20px;flex-direction:column;align-items:flex-start;gap:12px;}.cka{width:100%;justify-content:flex-end;}}';
+  b.id='ckcb';
+  b.innerHTML='<div class="cki"><div class="ckt"><strong>We use cookies</strong><span>Essential cookies only. <a href="'+P+'">Cookie Policy</a>.</span></div><div class="cka"><button class="ckb ckok" id="ckok">Accept</button><button class="ckb ckno" id="ckno">Decline</button></div></div>';
+  function dismiss(v){localStorage.setItem(KEY,v);b.style.transition='transform .3s ease,opacity .3s ease';b.style.transform='translateY(100%)';b.style.opacity='0';setTimeout(function(){b.remove();s.remove();},320);}
+  document.head.appendChild(s);document.body.appendChild(b);
+  document.getElementById('ckok').addEventListener('click',function(){dismiss('accepted');});
+  document.getElementById('ckno').addEventListener('click',function(){dismiss('declined');});
+})();
+</script>
+</body>
+</html>
