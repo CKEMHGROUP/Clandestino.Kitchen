@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner Onboarding — Spain | CK Group</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 40px 20px; background: #f8f9fa; color: #111; margin: 0; }
+    .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    h1 { font-size: 26px; margin-bottom: 8px; }
+    p.subtitle { color: #666; font-size: 15px; margin-bottom: 30px; }
+    .form-group { margin-bottom: 20px; text-align: left; }
+    label { font-size: 13px; font-weight: 600; text-transform: uppercase; color: #444; display: block; margin-bottom: 6px; }
+    input, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 15px; }
+    .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-top: 15px; font-size: 13px; color: #444; }
+    .checkbox-group input { width: auto; margin-top: 3px; }
+    button { width: 100%; background: #111; color: #fff; padding: 15px; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 25px; }
+    button:hover { background: #333; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Partner Onboarding — Spain</h1>
+    <p class="subtitle">Accreditation for service providers and venue operators operating in Spain.</p>
+
+    <form id="onboardingForm">
+      <div class="form-group">
+        <label>Legal Entity Name (Razón Social)</label>
+        <input type="text" id="legalName" required placeholder="e.g. Hostelería Ibérica S.L.">
+      </div>
+
+      <div class="form-group">
+        <label>Trading Name (Nombre Comercial)</label>
+        <input type="text" id="tradingName" placeholder="e.g. Clandestino Events">
+      </div>
+
+      <div class="form-group">
+        <label>Tax ID (NIF / CIF / NIE)</label>
+        <input type="text" id="taxId" required placeholder="B12345678 or 12345678Z">
+      </div>
+
+      <div class="form-group">
+        <label>Legal Form (Forma Jurídica)</label>
+        <select id="legalForm" required>
+          <option value="">-- Select --</option>
+          <option value="SL">Sociedad de Responsabilidad Limitada (S.L.)</option>
+          <option value="SA">Sociedad Anónima (S.A.)</option>
+          <option value="Autonomo">Empresario Individual / Autónomo</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>IBAN / SWIFT (Spanish or EU Bank Account)</label>
+        <input type="text" id="ibanSwift" required placeholder="ES91 0000 0000 0000 0000 0000 | SWIFT: XXXXESXX">
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="acceptedFrameworkAgreement" required>
+        <label for="acceptedFrameworkAgreement">I confirm compliance with Spanish commercial legislation and civil liability regulations.</label>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="gdprConsent" required>
+        <label for="gdprConsent">I consent to the processing of corporate data under Spanish LOPDGDD and EU GDPR regulations.</label>
+      </div>
+
+      <button type="submit">Submit Accreditation Request</button>
+    </form>
+  </div>
+
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
+
+    document.getElementById('onboardingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const payload = {
+        country: 'Spain',
+        legalName: document.getElementById('legalName').value,
+        tradingName: document.getElementById('tradingName').value,
+        taxId: document.getElementById('taxId').value,
+        legalForm: document.getElementById('legalForm').value,
+        ibanSwift: document.getElementById('ibanSwift').value,
+        acceptedFrameworkAgreement: document.getElementById('acceptedFrameworkAgreement').checked,
+        gdprConsent: document.getElementById('gdprConsent').checked,
+        timestamp: new Date().toISOString()
+      };
+
+      fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(payload) })
+        .then(res => res.json())
+        .then(data => alert('Application submitted successfully!'))
+        .catch(err => alert('Error submitting form. Please try again.'));
+    });
+  </script>
+</body>
+</html>
