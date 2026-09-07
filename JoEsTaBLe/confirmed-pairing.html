@@ -269,17 +269,34 @@
     </div>
   </section>
 
-  <!-- SOMMELIER CONTACT BOX -->
-  <section class="bg-white border border-[#e8e6e1] p-6 sm:p-8 rounded-sm text-center my-6">
-    <h4 class="font-serif-custom text-xl text-[#111111] mb-2 font-normal">Special Requests or Dietary Preferences?</h4>
-    <p class="text-xs sm:text-sm text-[#666666] max-w-xl mx-auto mb-4 font-light">
-      Should you have any preferences on a certain wine or specific dietary inquiries, please let us know in advance and we will do our best to arrange it for you.
-    </p>
+  <!-- CONTACT BOX -->
+<section class="bg-white border border-[#e8e6e1] p-6 sm:p-8 rounded-sm text-center my-6">
+  <h4 class="font-serif-custom text-xl text-[#111111] mb-2 font-normal">Special Requests or Dietary Preferences?</h4>
+  <p class="text-xs sm:text-sm text-[#666666] max-w-xl mx-auto mb-6 font-light">
+    Should you have any preferences on a certain wine or specific dietary inquiries, please let us know in advance and we will do our best to arrange it for you.
+  </p>
+  
+  <!-- Contact Options Flex Container -->
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
+    <!-- Email Option -->
     <a href="mailto:booking@josestable.com?subject=Wine%20Pairing%20Special%20Request" 
        class="inline-block border-b border-[#c5a059] text-xs uppercase tracking-ultra text-[#111111] hover:text-[#c5a059] transition-colors pb-1 font-medium">
-      Contact our team →
+      Email our team →
     </a>
-  </section>
+
+    <!-- WhatsApp Option -->
+    <a href="https://wa.me/+447818727657" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="inline-flex items-center gap-1.5 border-b border-[#25D366] text-xs uppercase tracking-ultra text-[#111111] hover:text-[#25D366] transition-colors pb-1 font-medium">
+      <svg class="w-3.5 h-3.5 fill-[#25D366]" viewBox="0 0 24 24" xmlns="http://w3.org">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.832.002-2.623-1.023-5.09-2.885-6.951C16.58 1.96 14.11 1.937 12.01 1.937c-5.437 0-9.863 4.414-9.866 9.835-.001 1.714.457 3.39 1.323 4.894L2.456 21.56l4.191-1.406zm12.31-6.126c-.304-.152-1.8-.886-2.077-.987-.278-.101-.48-.152-.68.152-.201.304-.777.987-.95 1.19-.174.202-.347.228-.652.076-.304-.152-1.284-.474-2.446-1.512-.903-.806-1.512-1.802-1.69-2.105-.177-.304-.019-.468.133-.619.136-.136.304-.354.456-.532.152-.177.202-.304.304-.506.101-.203.051-.38-.025-.532-.076-.152-.68-1.64-.933-2.25-.247-.594-.499-.513-.68-.523-.176-.01-.377-.011-.578-.011-.201 0-.527.076-.803.38-.278.304-1.062 1.039-1.062 2.532s1.088 2.939 1.24 3.141c.152.202 2.144 3.275 5.193 4.59.724.313 1.29.5 1.734.641.729.231 1.391.198 1.915.12.584-.087 1.8-.735 2.052-1.44.253-.704.253-1.314.177-1.44-.077-.127-.278-.203-.583-.355z"/>
+      </svg>
+      Or Chat via WhatsApp →
+    </a>
+  </div>
+</section>
+
 
   <!-- MODAL FOR STRIPE REDIRECT & TICKET NOTICE -->
   <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
@@ -316,6 +333,7 @@
           </div>
         </div>
       </div>
+
 
 <!-- Action Buttons -->
 <div class="flex flex-col sm:flex-row gap-3">
