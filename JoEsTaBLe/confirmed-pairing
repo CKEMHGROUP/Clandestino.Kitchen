@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pairing added | JoEs TaBLe</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    :root {
+      --bg-page: #fbfaf8;
+      --bg-card: #ffffff;
+      --border-subtle: #e8e6e1;
+      --accent-gold: #c5a059;
+      --accent-gold-hover: #b08c46;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: #111111;
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-serif-custom {
+      font-family: var(--font-serif);
+    }
+
+    .tracking-ultra {
+      letter-spacing: 0.25em;
+    }
+
+    .card-luxury {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-luxury:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    .btn-dark {
+      background-color: #111111;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .btn-dark:hover {
+      background-color: var(--accent-gold);
+      color: #ffffff;
+    }
+
+    .btn-outline-gold {
+      border: 1px solid var(--accent-gold);
+      color: #111111;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-gold:hover {
+      background-color: var(--accent-gold);
+      color: #ffffff;
+    }
+
+    .modal-backdrop {
+      background: rgba(17, 17, 17, 0.65);
+      backdrop-filter: blur(4px);
+    }
+
+    @keyframes checkPulse {
+      0% { transform: scale(0.9); opacity: 0; }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .animate-check {
+      animation: checkPulse 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+  </style>
+</head>
+<body class="py-8 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+
+  <!-- CONFIRMATION HERO WITH ATMOSPHERIC BACKGROUND IMAGE -->
+  <section class="relative rounded-sm overflow-hidden mb-10 text-center shadow-lg">
+    <!-- Atmospheric Fine Dining Image -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://res.cloudinary.com/djzg1ulup/image/upload/v1788767672/Pairing_added_hh0ry3.webp?auto=format&fit=crop&w=1600&q=80" 
+        alt="JoEs TaBLe Ambiance" 
+        class="w-full h-full object-cover"
+      />
+      <!-- Dark overlay ensuring contrast for gold/white typography -->
+      <div class="absolute inset-0 bg-black/65 backdrop-brightness-90"></div>
+    </div>
+
+    <!-- Content Overlay -->
+    <div class="relative z-10 py-12 md:py-16 px-6 text-white max-w-3xl mx-auto">
+      
+      <!-- Success Badge -->
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#c5a059]/20 text-[#c5a059] border border-[#c5a059] mb-5 animate-check backdrop-blur-sm">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <p class="text-xs font-semibold tracking-ultra uppercase text-[#c5a059] mb-2">eat · connect · experience</p>
+      <h1 class="font-serif-custom text-3xl sm:text-4xl md:text-5xl font-light tracking-wide uppercase mb-4 text-white">
+        Reservation Confirmed
+      </h1>
+      
+      <p class="text-sm sm:text-base text-gray-200 font-light leading-relaxed mb-8 max-w-xl mx-auto">
+        Thank you for booking with us. We have received your seat reservation and look forward to hosting you for an extraordinary culinary journey.
+      </p>
+
+      <!-- Reservation Summary Box -->
+      <div class="inline-block bg-black/40 backdrop-blur-md border border-[#c5a059]/40 px-6 sm:px-10 py-4 rounded-sm text-center">
+        <span class="block text-[10px] font-medium tracking-ultra uppercase text-gray-300 mb-1">Pairing successfully added</span>
+        <h2 class="font-serif-custom text-xl sm:text-2xl text-white font-normal">
+          <span class="italic text-[#c5a059]">A Culinary Journey</span>
+        </h2>
+        <p class="text-[11px] text-gray-300 mt-1 font-light tracking-wider">a new way of fine dining</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHEF JULIAN SLOWIK QUOTE SECTION -->
+  <section class="py-8 text-center border-y border-[#e8e6e1] bg-white my-8 px-6 rounded-sm">
+    <p class="font-serif-custom italic text-xl sm:text-2xl text-[#222222] max-w-2xl mx-auto leading-relaxed">
+      "Do not simply eat. Taste! Savor! Relish! Be mindful. <br> But please do not simply eat."
+    </p>
+    <span class="block text-xs tracking-ultra uppercase text-[#a09070] mt-3 font-medium">— Julian Slowik</span>
+  </section>
+
+  <!-- WINE PAIRINGS SECTION -->
+  <section class="py-6">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-xs font-semibold tracking-ultra uppercase text-[#c5a059] block mb-2">Elevate Your Experience</span>
+      <h2 class="font-serif-custom text-3xl sm:text-4xl font-light uppercase tracking-wide text-[#111111] mb-4">
+        Curated Wine Pairings
+      </h2>
+      <p class="font-serif-custom italic text-lg sm:text-xl text-[#555555] leading-relaxed">
+        "Great wine needs time and preparation in advance. The right temperature and proper decanting is key to enjoy it at its best."
+      </p>
+    </div>
+
+    <!-- PAIRING CARDS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      
+      <!-- CARD 1: SELECCIÓN -->
+      <div class="card-luxury rounded-sm overflow-hidden flex flex-col justify-between">
+        <div class="p-6 sm:p-8">
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-serif-custom text-2xl font-normal text-[#111111]">
+              Selección 🍇
+            </h3>
+            <div class="text-right">
+              <span class="font-serif-custom text-2xl text-[#c5a059] font-medium">€50.00</span>
+              <span class="text-[11px] text-[#888888] block uppercase tracking-wider">/ guest</span>
+            </div>
+          </div>
+          <div class="w-10 h-[1px] bg-[#c5a059] mb-4 opacity-60"></div>
+          <p class="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
+            Entry-level pairings offering excellent value from smaller, highly passionate producers piquing curiosity and encouraging wine exploration.
+          </p>
+        </div>
+        <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+          <button 
+            onclick="openPairingModal('Selección', 50, 'https://buy.stripe.com/test_seleccion')"
+            class="btn-dark w-full py-3 text-xs tracking-ultra uppercase font-medium rounded-sm shadow-sm">
+            Add Selección Pairing €50
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD 2: LUSITANO -->
+      <div class="card-luxury rounded-sm overflow-hidden flex flex-col justify-between">
+        <div class="p-6 sm:p-8">
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-serif-custom text-2xl font-normal text-[#111111]">
+              Lusitano 🇵🇹
+            </h3>
+            <div class="text-right">
+              <span class="font-serif-custom text-2xl text-[#c5a059] font-medium">€75.00</span>
+              <span class="text-[11px] text-[#888888] block uppercase tracking-wider">/ guest</span>
+            </div>
+          </div>
+          <div class="w-10 h-[1px] bg-[#c5a059] mb-4 opacity-60"></div>
+          <p class="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
+            Centred on unique Portuguese autochthonous wines. An overseen modern treasure with ancient roots that showcase rich terroirs.
+          </p>
+        </div>
+        <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+          <button 
+            onclick="openPairingModal('Lusitano', 75, 'https://buy.stripe.com/test_lusitano')"
+            class="btn-dark w-full py-3 text-xs tracking-ultra uppercase font-medium rounded-sm shadow-sm">
+            Add Lusitano Pairing €75
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD 3: IBERICO -->
+      <div class="card-luxury rounded-sm overflow-hidden flex flex-col justify-between">
+        <div class="p-6 sm:p-8">
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-serif-custom text-2xl font-normal text-[#111111]">
+              Iberico 🇪🇸
+            </h3>
+            <div class="text-right">
+              <span class="font-serif-custom text-2xl text-[#c5a059] font-medium">€85.00</span>
+              <span class="text-[11px] text-[#888888] block uppercase tracking-wider">/ guest</span>
+            </div>
+          </div>
+          <div class="w-10 h-[1px] bg-[#c5a059] mb-4 opacity-60"></div>
+          <p class="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
+            Selection of old and new approaches of Spain's finest wines including iconic Rioja, Ribera del Duero, Priorat, Manchuela, and Andalucia.
+          </p>
+        </div>
+        <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+          <button 
+            onclick="openPairingModal('Iberico', 85, 'https://buy.stripe.com/test_iberico')"
+            class="btn-dark w-full py-3 text-xs tracking-ultra uppercase font-medium rounded-sm shadow-sm">
+            Add Iberico Pairing €85
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD 4: TRICOLORE -->
+      <div class="card-luxury rounded-sm overflow-hidden flex flex-col justify-between">
+        <div class="p-6 sm:p-8">
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-serif-custom text-2xl font-normal text-[#111111]">
+              Tricolore 🇫🇷
+            </h3>
+            <div class="text-right">
+              <span class="font-serif-custom text-2xl text-[#c5a059] font-medium">€95.00</span>
+              <span class="text-[11px] text-[#888888] block uppercase tracking-wider">/ guest</span>
+            </div>
+          </div>
+          <div class="w-10 h-[1px] bg-[#c5a059] mb-4 opacity-60"></div>
+          <p class="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
+            Singular French wines blending classical terroirs with groundbreaking new projects from the latest generation of winemakers in France.
+          </p>
+        </div>
+        <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+          <button 
+            onclick="openPairingModal('Tricolore', 95, 'https://buy.stripe.com/test_tricolore')"
+            class="btn-dark w-full py-3 text-xs tracking-ultra uppercase font-medium rounded-sm shadow-sm">
+            Add Tricolore Pairing €95
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOMMELIER CONTACT BOX -->
+  <section class="bg-white border border-[#e8e6e1] p-6 sm:p-8 rounded-sm text-center my-6">
+    <h4 class="font-serif-custom text-xl text-[#111111] mb-2 font-normal">Special Requests or Dietary Preferences?</h4>
+    <p class="text-xs sm:text-sm text-[#666666] max-w-xl mx-auto mb-4 font-light">
+      Should you have any preferences on a certain wine or specific dietary inquiries, please let us know in advance and we will do our best to arrange it for you.
+    </p>
+    <a href="mailto:booking@josestable.com?subject=Wine%20Pairing%20Special%20Request" 
+       class="inline-block border-b border-[#c5a059] text-xs uppercase tracking-ultra text-[#111111] hover:text-[#c5a059] transition-colors pb-1 font-medium">
+      Contact our team →
+    </a>
+  </section>
+
+  <!-- MODAL FOR STRIPE REDIRECT & TICKET NOTICE -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <!-- Backdrop -->
+    <div class="fixed inset-0 modal-backdrop" onclick="closePairingModal()"></div>
+
+    <!-- Modal Content Box -->
+    <div class="relative bg-white border border-[#e8e6e1] rounded-sm max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10 text-center">
+      
+      <!-- Close Button -->
+      <button onclick="closePairingModal()" class="absolute top-4 right-4 text-[#888888] hover:text-[#111111] p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <span class="text-[10px] font-semibold tracking-ultra uppercase text-[#c5a059] block mb-2">Selected Pairing</span>
+      <h3 id="modalPairingTitle" class="font-serif-custom text-2xl sm:text-3xl text-[#111111] mb-1 font-normal">
+        Selección Pairing
+      </h3>
+      <p id="modalPairingPrice" class="text-sm font-medium text-[#c5a059] mb-4">€50.00 per guest ticket</p>
+
+      <div class="w-12 h-[1px] bg-[#e8e6e1] mx-auto mb-6"></div>
+
+      <!-- Explanation Notice regarding Stripe -->
+      <div class="bg-[#fcfbf9] border border-[#f0ede6] p-4 rounded-sm text-left mb-6">
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-[#c5a059] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div class="text-xs text-[#555555] leading-relaxed">
+            <p class="font-medium text-[#111111] mb-1">Quantity Selection on Checkout:</p>
+            You will be redirected to secure Stripe Checkout. Please select the number of guests/tickets for your pairing directly on the Stripe checkout screen.
+          </div>
+        </div>
+      </div>
+
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-3">
+  <button onclick="closePairingModal()" class="btn-outline-gold sm:w-1/3 py-3 text-xs tracking-ultra uppercase font-medium rounded-sm">
+    Back
+  </button>
+  <button id="modalProceedBtn" onclick="redirectToStripe()" class="btn-dark sm:w-2/3 py-3 text-xs tracking-ultra uppercase font-medium rounded-sm">
+    Proceed to Checkout →
+  </button>
+</div>
+
+</div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  // Configurable Stripe Payment Links
+  const stripeConfig = {
+    'Selección': 'https://book.stripe.com/14A28rbuCbLlaeN7nFbV609',
+    'Lusitano': 'https://book.stripe.com/5kQcN542a2aLev37nFbV60a',
+    'Iberico': 'https://book.stripe.com/fZubJ12Y64iT9aJgYfbV60b',
+    'Tricolore': 'https://book.stripe.com/aFa6oHeGObLlcmV6jBbV60c'
+  };
+
+  let currentSelectedPairing = '';
+  let currentTargetUrl = '';
+
+  function openPairingModal(pairingName, price, fallbackUrl) {
+    currentSelectedPairing = pairingName;
+    currentTargetUrl = stripeConfig[pairingName] || fallbackUrl;
+
+    document.getElementById('modalPairingTitle').innerText = pairingName + ' Pairing';
+    document.getElementById('modalPairingPrice').innerText = '€' + price + '.00 per guest ticket';
+
+    document.getElementById('checkoutModal').classList.remove('hidden');
+  }
+
+  function closePairingModal() {
+    document.getElementById('checkoutModal').classList.add('hidden');
+  }
+
+  function redirectToStripe() {
+    if (currentTargetUrl) {
+      window.location.href = currentTargetUrl;
+    }
+  }
+</script>
+  </script>
+</body>
+</html>
