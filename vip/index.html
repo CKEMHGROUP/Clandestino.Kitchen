@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clandestino Kitchen</title>
+    <style>
+        /* Reset and full height setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Background container with 75% white overlay */
+        .landing-container {
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('https://clandestino.kitchen');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Transparent button styling */
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #333; /* Dark text for contrast against the white overlay */
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 2px solid #333;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Hover effect */
+        .contact-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="landing-container">
+        <!-- The href uses a standard mailto link to open the visitor's email client -->
+        <a href="mailto:jc@clandestino.vip?subject=request%20information%20about" class="contact-btn">CONTACT</a>
+    </div>
+
+</body>
+</html>
